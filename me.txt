@@ -57,12 +57,27 @@ Cấu trúc và cấu hình nâng cao của Wordpress
         Thiết lập tiền tố cho các bảng trong database WP
             $table_prefix  = 'wp_';
         Thay đổi URL chạy chính của WP
-            define( 'WP_SITEURL', 'http://wordpress.xyz/' );
-            define( 'WP_HOME', 'http://wordpress.xyz/' );
+            define( 'WP_SITEURL', 'http://wordpress.xyz' );
+            define( 'WP_HOME', 'http://wordpress.xyz' );
             http://wordpress.xyz/wp-admin/options-general.php(Admin)
                 -> Settings
             WordPress Address (URL): Đường dẫn đến thư mục
             Site Address (URL): Đường dẫn khi truy cập trên Browser
             ↓
             Sẽ bị disable và người dùng sẽ không thể thay đổi giá trị được 
+    Wp-config 03
+        Thay đổi đường dẫn đến thư mục chứa Plugin
+        define( 'WP_PLUGIN_DIR', dir(__FILE__) . '/wp-content/plugins');
+        define( 'WP_PLUGIN_URL', 'http://wordpress.xyz/wp-content/plugins');
+        Thay đổi giá trị của WP_POST_REVISIONS
+            REVISIONS lưu lại các bài viết trước đó mà mình đã chỉnh sửa, có thể back về các 
+                bài viết trước đó
+            SELECT * FROM wordpress.wp_posts;
+                post_content    post_title      post_status
+                    ~           Hello world!    publish
+                    ~           Hello world!    inherit
+                publish là thể hiện giá trị đang hiển thị hiện tại, inherit là đang nằm ở REVISIONS để
+                    mình có thể quay ngược lại
+            define( 'WP_POST_REVISIONS', false ); -> Tắt chế độ lưu lại các Version trước đó của bài viết
+            define( 'WP_POST_REVISIONS', 3 ); -> Tối đa lưu lại 3 lần
     

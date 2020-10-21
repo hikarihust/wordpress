@@ -78,6 +78,7 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
+require_once ABSPATH . 'new_config.php';
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -88,4 +89,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-require_once ABSPATH . 'new_config.php';
