@@ -38,4 +38,19 @@ Cài đặt Wordpress và công cụ lập trình
         Appearance -> Themes -> Add New -> Popular 
         Twenty Ten -> Install -> Active
     Lap trinh WordPress -> Visit Site -> Will be entry http://wordpress.xyz/ and see that Twenty Ten will be display 
+Cấu trúc và cấu hình nâng cao của Wordpress
+    Wp-config 01
+        Cấu trúc thư mục và các tập tin
+        Có 3 thư mục chính: 
+            /wp-admin
+            /wp-content
+            /wp-includes
+        Có 2 tập tin trong thư mục gốc giúp chúng ta thiết lập các giá trị cấu hình cho WP đó là tập tin: 
+            wp-config.php
+            .htaccess
+        Thay đổi thư mục chứa tập tin wp-config.php
+            C:\xampp\htdocs\wordpress\wp-config.php
+            C:\xampp\htdocs\wp-config.php
+            Khi hệ thống wordpress không tìm thất tập tin wp-config.php nằm trong cùng thư mục với nó thì hệ thống sẽ tìm 
+                ra thư mục ngoài 1 cấp -> điều này giúp bảo mật đường dẫn của wp-config.php
     
