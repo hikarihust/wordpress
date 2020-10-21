@@ -153,4 +153,39 @@ Cấu trúc và cấu hình nâng cao của Wordpress
         Thiết lập giá trị không chỉnh sửa trong Admin
             Thiết lập giá trị TRUE thì link Edit trong các Plugin sẽ biến mất
             define('DISALLOW_FILE_EDIT', TRUE); 
+Plugin In WordPress
+    Plugin 01
+        Download Plugin tại www.wordpress.org
+        Wordpress API 
+            http://codex.wordpress.org/WordPress_APIs
+        Các nhóm API trong WP
+            Plugin API
+                Cung 1 tập hợp các Hook, để gắn các plugins vào và mở rộng hệ thống ra
+                Có 2 loại Hook khác nhau: Action Hook và Filter Hook 
+                Action Hook cho phép kích hoạt các mã Plugin, bổ xung tại các vị trí cụ thể trong quá trình
+                    vận hành của WordPress
+                Filter Hook Cho phép thay đổi nội dung của bài viết trước khi đưa vào Database của WordPress hoặc 
+                    sau khi hệ thống lấy dữ liệu từ trong database ra, có thể thay đổi nội dung đó trước khi hiển 
+                    thị trên trình duyệt  
+            Widgets API
+                Hỗ trợ tạo ra các Widgets nằm trên website
+            Shortcode API 
+                Là 1 đoạn mã ngắn sử dụng cho posts and pages.
+            HTTP API
+                Giúp nhận dữ liệu hoặc gửi dữ liệu từ website của mình đến website khác
+            Settings API 
+                Tập hợp các hàm hỗ trợ việc thiết lập các giá trị
+            Options API
+                Tập hợp các phương thức để lưu dữ liệu vào bảng wp_options
+            Dashboard Widgets API
+                Là các phương thức tạo ra các khối trong trang Dashboard của phần Admin
+            Rewrite AIP
+                Hỗ trợ trong quá trình thay đổi đường dẫn trên thanh địa chỉ
+                Settings -> Permalink
+                (Plain) http://wordpress.xyz/?p=123
+            Transients API
+                Tạo ra dữ liệu tạm lưu sẵn vào trong hệ thống để giảm tải quá trình xử lý dữ liệu của hệ thống WordPress
+                    và làm cho website chạy nhanh hơn
+            Database API
+            Và một số nhóm khác
     
