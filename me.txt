@@ -1,0 +1,41 @@
+                                        Lập trình WordPress
+
+Cài đặt Wordpress và công cụ lập trình
+    Create new Database with name: wordpress
+    https://wordpress.org/download/
+    Download wordpress-5.5.1.zip and unzip, then copy to C:\xampp\htdocs\wordpress
+    C:\Windows\System32\drivers\etc\hosts
+        127.0.0.1       wordpress.xyz
+    C:\xampp\apache\conf\extra\httpd-vhosts.conf
+        <VirtualHost *:80>
+            ServerAdmin wordpress.xyz
+            DocumentRoot "C:/xampp/htdocs/wordpress"
+            ServerName wordpress.xyz
+            ErrorLog "logs/wordpress.xyz-error.log"
+            CustomLog "logs/wordpress.xyz-access.log" common
+        </VirtualHost>
+    Browser access http://wordpress.xyz/wp-admin/setup-config.php
+    Language: English 
+    ↓
+    Database name: wordpress
+    Database username: root
+    Database password:
+    Database host: localhost
+    Table prefix: wp_
+    ↓
+    Information needed
+    Site Title: Lap trinh WordPress
+    Username: admin
+    Password: 123456
+    Confirm use of weak password
+    Your Email: vudinhquangk53@gmail.com
+    Search engine visibility
+    -> Install 
+    ↓
+    Login with Username: admin and Password: 123456
+    Will be entry http://wordpress.xyz/wp-admin/
+    Thay đổi giao diện cho Visit Site
+        Appearance -> Themes -> Add New -> Popular 
+        Twenty Ten -> Install -> Active
+    Lap trinh WordPress -> Visit Site -> Will be entry http://wordpress.xyz/ and see that Twenty Ten will be display 
+    
