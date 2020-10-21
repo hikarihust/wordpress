@@ -188,4 +188,28 @@ Plugin In WordPress
                     và làm cho website chạy nhanh hơn
             Database API
             Và một số nhóm khác
+    Plugin 02
+        Vị trí Plugin được load trong quá trình xử lý
+            Wordpress URL 　　 → 　　 wp-config Loaded 　　→ 　 Functions Loaded
+                                    　　　　　　　　　　　    　　　　↓
+            Translations Loaded　←　　Pluggables Loaded　　←　　Plugins Loaded
+            　　↓　
+            Theme Loaded　　→　　Page Content
+            Wordpress URL: Gõ địa chỉ để truy cập đến 1 website được xây dựng trên hệ thống mã nguồn mở của WordPress 
+            wp-config Loaded : Load các cấu hình nằm ở trong file config, load các cấu hình nằm ở trong Database của WordPress
+            Functions Loaded: Gọi các hàm xử lý chính trong lõi của WordPress
+            Plugins Loaded: Lạp toàn bộ các Plugin của nó vào hệ thống, giai đoạn này là thực hiện đưa các plugins vào hệ thống 
+                nhưng các plugins đó chưa hoạt động. Các Plugin này chỉ hoạt động khi hệ thống WordPress gọi đến các Action Hook 
+                hay các Filter Hook
+            Pluggables Loaded: Nạp các phương thức nằm trong tập tin mã nguồn của WordPress(wordpress\wp-includes\pluggable.php)
+                Trong tập tin này chứa các phương thức mà mình có thể override lại
+            Translations Loaded: Nạp phần ngôn ngữ cũng như định dạng của các quốc gia
+            Theme Loaded: Load Theme mà mình mặc định trong hệ thống WordPress, đưa các dữ liệu đã xử xong vào trong Theme đó
+            Page Content: Gửi đên trình duyệt Web cho người dùng
+        Quản lý và cài đặt Plugin
+            Truy cập Admin Site
+            Chọn Plugins menu 
+            Chọn Installed Plugins
+        Plugin Directory 
+            http://wordpress.org/extend/plugins/
     
