@@ -80,4 +80,77 @@ Cấu trúc và cấu hình nâng cao của Wordpress
                     mình có thể quay ngược lại
             define( 'WP_POST_REVISIONS', false ); -> Tắt chế độ lưu lại các Version trước đó của bài viết
             define( 'WP_POST_REVISIONS', 3 ); -> Tối đa lưu lại 3 lần
+    Wp-config 04
+        Thay đổi giá trị thời gian cho AUTOSAVE_INTERVAL
+            define( 'AUTOSAVE_INTERVAL', 150 ); Thời gian lưu 1 bài viết khi thêm mới or Edit, mặc định là 60s
+        Hiển thị các câu truy vấn trên một trang của WP
+            define( 'SAVEQUERIES', true );
+        Hiển thị chi tiết các câu truy vấn trên trang
+            global $wpdb;
+            print_r( $wpdb->queries );
+        Plugin and Active to check
+            function debug() {
+                global $wpdb;
+                echo '<pre>';
+                print_r($wpdb->queries );
+                echo '</pre>';
+            }
+            add_action('wp_footer', 'debug');
+        Tăng bộ nhớ cho ứng dụng WP
+            Trong quá trình vận hành 1 hệ thống bất kỳ bằng PHP thì có những lúc sẽ gặp thông báo:
+                Allowed memory size of xxxxx bytes exhausted
+                -> Ứng dụng đã vượt khỏi bộ nhớ cho phép của Server
+            define( 'WP_MEMORY_LIMIT', '128M' );
+                -> Bộ nhớ tối đa mà WordPress sẽ sử dụng là 128M 
+                Giá trị được thiết lập này thì còn phụ thuộc vào cả cấu hình Server
+                Đối với tập tin php.ini giá trị memory_limit=512M thì giá trị WP_MEMORY_LIMIT được 
+                    thiết lập lớn hơn 512M thì cũng không có tác dụng 
+        Thiết lập ngôn ngữ và định dạng quốc tế, giá trị mặc định là 'en-US'
+            define ( 'WPLANG', 'en-US' );
+        Thiết lập thư mục chứa các tập tin ngôn ngữ
+            Default: define( 'LANGDIR', '/wp-content/languages' );
+            Custom: define( 'LANGDIR', '/wp-content/my/languages' ); 
+        Chia sẽ dữ liệu người dùng (Multisite) cho nhiều trang web liên kết với nhau
+            define( 'CUSTOM_USER_TABLE', 'share_users' );
+            define( 'CUSTOM_USER_META_TABLE', 'share_usermeta' );
+            -> Hai bẳng này dùng để chia sẻ thông tin qua lại giữa các website với nhau
+        Thiết lập COOKIE cho nhiều domain (Multisite) cho nhiều trang web liên kết với nhau
+            define( 'COOKIE_DOMAIN', '.domain.com' );
+            define( 'COOKIEPATH', '/' );
+            define( 'SITECOOKIEPATH', '/' );
+        Thiết lập tài khoản FTP cho website
+            Khi upload 1 tập tin nào đó cho website nhưng có những tập tin rất lớn thì nó sẽ ko cho upload 
+                thông qua Browser mà lúc này cần sử dụng đến cấu hình của tài khoản FTP để upload file liên
+                Server
+            define( 'FTP_USER', 'username' );
+            define( 'FTP_PASS', 'password' );
+            define( 'FTP_HOST', 'ftp.example.com:21' );
+        Cấu hình thư mục FTP và SSH 
+            -> Liên quan đến Hosting khi upload lên internet
+            define( 'FS_METHOD', 'ftpext' );
+            define( 'FTP_BASE', '/public_html/wordpress/' );
+            define( 'FTP_CONTENT_DIR', '/public_html/wordpress/wp-content/' );
+            define( 'FTP_PLUGIN_DIR ', '/ public_html /wordpress/wp-content/plugins/' );
+            define( 'FTP_PUBKEY', '/home/username/.ssh/id_rsa.pub' );
+            define( 'FTP_PRIVKEY', '/home/username/.ssh/id_rsa' );
+            define( 'FTP_SSL', false );
+        Thiết lập cấp phép cho thư mục
+            define( 'FS_CHMOD_FILE',0644 );
+            define( 'FS_CHMOD_DIR',0755 );
+        Thiết lập Cache nâng cao
+            define( 'WP_CACHE', true ); 
+            wp-content/advanced-cache.php
+        Thiết lập chế độ login
+            Khi user login thì có sử dụng đường dẫn trên thanh địa chỉ là HTTPS hay không, mặc định 
+                là false có nghĩa là chỉ sử dụng đường dẫn thường, có địa chỉ là HTTP 
+            define( 'FORCE_SSL_LOGIN', true ); //HTTPS - HTTP
+            define( 'FORCE_SSL_ADMIN', true );
+        Thiết lập thời gian xóa TRASH
+            Thiết lập time xóa đi các tập tin nằm trong thư mục trash
+            define( 'EMPTY_TRASH_DAYS', 7 ); 
+        Thiết lập chế độ Cron
+            define( 'DISABLE_WP_CRON', true );
+        Thiết lập giá trị không chỉnh sửa trong Admin
+            Thiết lập giá trị TRUE thì link Edit trong các Plugin sẽ biến mất
+            define('DISALLOW_FILE_EDIT', TRUE); 
     
