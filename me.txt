@@ -212,4 +212,12 @@ Plugin In WordPress
             Chọn Installed Plugins
         Plugin Directory 
             http://wordpress.org/extend/plugins/
+Xây dựng Plugin căn bản
+    Create plugin
+        Tạo một thư mục để chứa plugin mới để dễ dàng nâng cấp và bổ xung thêm chức năng trong tương lai
+        Không nên có khoảng trắng và dấu gạch dưới trong tên của thư mục
+        Khi chúng ta tạo một Plugin để trách bị trùng tên chúng ta nên tạo ra một tiền tố cho Plugin mới
+        Cách tạo tiền tố: <tên bạn>_<tên plugin>_
+        Ví dụ: ZendVN tạo Shopping plugin vậy tiền tố sẽ là: zendvn_sp_
+        Nên sử dụng tiền tố này cho các biến và hàm trong Plugin của mình
     
