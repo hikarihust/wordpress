@@ -53,4 +53,16 @@ Cấu trúc và cấu hình nâng cao của Wordpress
             C:\xampp\htdocs\wp-config.php
             Khi hệ thống wordpress không tìm thất tập tin wp-config.php nằm trong cùng thư mục với nó thì hệ thống sẽ tìm 
                 ra thư mục ngoài 1 cấp -> điều này giúp bảo mật đường dẫn của wp-config.php
+    Wp-config 02
+        Thiết lập tiền tố cho các bảng trong database WP
+            $table_prefix  = 'wp_';
+        Thay đổi URL chạy chính của WP
+            define( 'WP_SITEURL', 'http://wordpress.xyz/' );
+            define( 'WP_HOME', 'http://wordpress.xyz/' );
+            http://wordpress.xyz/wp-admin/options-general.php(Admin)
+                -> Settings
+            WordPress Address (URL): Đường dẫn đến thư mục
+            Site Address (URL): Đường dẫn khi truy cập trên Browser
+            ↓
+            Sẽ bị disable và người dùng sẽ không thể thay đổi giá trị được 
     
