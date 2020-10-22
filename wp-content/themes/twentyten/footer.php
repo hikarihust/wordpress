@@ -58,7 +58,7 @@
 
 <?php
 	// do_action('new_action_hook');
-	new_action_hook();
+	// new_action_hook();
 ?>
 <?php
 	/*

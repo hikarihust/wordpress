@@ -401,4 +401,5 @@ Hook Action
             Mở tập tin /wp-content/themes/twentyten/footer.php thêm vào 1 trong 2 dòng sau:
                 <?php the_new_action(); ?>
                 <?php do_action('new_action_hook','ZF 2x','ZendVN'); ?>
+    Create Class for Action
     
