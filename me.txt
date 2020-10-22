@@ -287,4 +287,23 @@ Xây dựng Plugin căn bản
             Khi hệ thống WordPress chạy nó sẽ load các giá trị nằm trong cột option_value lên. Trong trường hợp mà tắt Plugin
             đó rồi mà các giá trị option_value vẫn load thì sẽ làm tốn tài nguyên.
             -> Giải pháp là chuyển giá trị của autoload thành 'no' khi Deactive, khi Active thì chuyển là 'yes' 
+    Uninstall plugin
+        Khi thực hiện Delete Plugin nào đó thì sự kiện Uninstall sẽ được kích hoạt
+        Cú pháp:
+            register_uninstall_hook( $file, $function ); 
+        Các thông số: 
+            $file - (string) (required) - Đường dẫn đến tập tin chính của Plugin. 
+            $function - (string) (required) - Hàm để thực thi khi Plugin được gỡ bỏ
+        Thực hiện các nhiệm vụ khi chúng ta xóa Plugin ra khỏi hệ thống: 
+            Xóa các giá trị mặc định đã lưu vào bảng _option trong database. 
+            Xóa các bảng đã tạo trong database trong quá trình cài đặt Plugin của bạn.
+            Hệ thống WP sẽ giúp bạn xóa thư mục Plugin của bạn
+        Có 2 cách để thực hiện trong quá trình uninstall plugin
+            Sử dụng register_uninstall_hook()
+            Sử dụng uninstall.php; 
+        Cách viết mã chuẩn trong WP
+            http://make.wordpress.org/core/handbook/coding-standards/php/
+            http://make.wordpress.org/core/handbook/coding-standards/html/
+            http://make.wordpress.org/core/handbook/coding-standards/css/
+            http://make.wordpress.org/core/handbook/coding-standards/javascript/
     
