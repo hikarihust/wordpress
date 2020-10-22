@@ -238,4 +238,22 @@ Xây dựng Plugin căn bản
             Version: 1.0
             Author URI: http://www.zend.vn
             */
+    Path 
+        Đường dẫn tuyệt đối (Local path): 
+            Là đường dẫn vật lý  đến các tập tin và thư mục trên máy của chúng ta (VD: C:\window)
+            Khi nhúng các tập tin php vào trong 1 tập tin nào đó thì sẽ sử dụng đường dẫn tuyệt đối
+        Đường dẫn tương đối (URL path): 
+            Là đường dẫn mà người sử dụng truy cập vào máy chủ của chúng ta thông qua các trình duyệt web
+            Khi nhúng các tập tin như css, js, images vào trong 1 tập tin nào đó thì sử dụng đường dẫn 
+                tương đối
+            plugin_dir_path( ) – đường dẫn vật lý thư mục /plugins
+                plugin_dir_path( __FILE__);
+            plugins_url() - đường dẫn URL thư mục /plugins 
+                plugins_url("css/abc.css", __FILE__);
+            includes_url() - đường dẫn URL đến thư mục /wp-includes
+                includes_url("css/buttons.css");
+            content_url() - đường dẫn URL đến thư mục /wp-content
+            admin_url() - đường dẫn URL đến thư mục  /wp-admin 
+            site_url() - Đường dẫn URL của website 
+            home_url() - Đường dẫn URL home của website
     
