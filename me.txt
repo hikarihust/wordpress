@@ -416,4 +416,5 @@ Hook Filter
             $priority – Độ ưu tiên của Filter
             $accepted_args - Số lượng các tham số sẽ được truyền vào hàm của bạn.
         support.php -> showFunc() In ra các hàm nằm trong 1 Hook nào đó 
+    Add_filter-the_title
     
