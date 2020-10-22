@@ -220,4 +220,22 @@ Xây dựng Plugin căn bản
         Cách tạo tiền tố: <tên bạn>_<tên plugin>_
         Ví dụ: ZendVN tạo Shopping plugin vậy tiền tố sẽ là: zendvn_sp_
         Nên sử dụng tiền tố này cho các biến và hàm trong Plugin của mình
+    Structure plugin
+        /unique-plugin-name
+            unique-plugin-name.php — Tập tin PHP chạy chính của Plugin
+            uninstall.php — Tập tin uninstall plugin
+            /js — Thư mục chứa các tâp tin JavaScript
+            /css — Thư mục chứa các tâp tin stylesheet 
+            /includes — Thư mục chứa các tâp tin PHP khác
+            /images — Thư mục chứa các tâp tin hình ảnh của plugin
+        Header Plugin là yêu cầu duy nhất với Plugin để nó hoạt động trong WordPress 
+            <?php
+            /*
+            Plugin Name: ZendVN MyPlugin
+            Plugin URI: http://www.zend.vn
+            Description: Tim hieu ve qua trinh chuan xay dung Plugin.
+            Author: ZendVN group
+            Version: 1.0
+            Author URI: http://www.zend.vn
+            */
     
