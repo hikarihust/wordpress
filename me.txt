@@ -270,4 +270,5 @@ Xây dựng Plugin căn bản
             Chỉ thêm giá trị vào trong bảng wp_options khi option_name chưa tồn tại trong bảng wp_options
             serialize() Chuyển mảng thành chuỗi
             unserialize() Chuyển chuỗi thành mảng
+    Active plugin 2
     
