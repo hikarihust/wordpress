@@ -271,4 +271,20 @@ Xây dựng Plugin căn bản
             serialize() Chuyển mảng thành chuỗi
             unserialize() Chuyển chuỗi thành mảng
     Active plugin 2
+    Deactive plugin
+        Cú pháp:
+            register_ deactivation_hook( $file, $function ); 
+            Tạo ra hành động nào đó trong quá trình vô hiệu hóa Plugin
+        Các thông số: 
+            $file - (string) (bắt buộc) - Đường dẫn đến tập tin chính của Plugin
+            $function - (string) (yêu cầu) - Tên hàm, hàm này sẽ thực hiện khi plugin được vô hiệu hóa.
+        Chức năng chính của Deactive plugin
+            Hàm này sẽ vô hiệu hóa Plugin của bạn
+            Thay đổi một số giá trị trong bảng wp_options (nếu thực sự cần thiết)
+            Có thể không cần gọi hàm này nếu bạn thực sự không làm điều gì trong quá trình vô hiệu hóa plugin
+        Trong trường hợp khi kích hoạt 1 plugin mà đưa vào 1 số tham số mặc định cho plugin của mình vào bảng wp_options
+            Ở Active plugin trên đã đưa vào 'zendvn_mp_version' và 'zendvn_mp_options' khi đó giá trị của autoload là 'yes'.
+            Khi hệ thống WordPress chạy nó sẽ load các giá trị nằm trong cột option_value lên. Trong trường hợp mà tắt Plugin
+            đó rồi mà các giá trị option_value vẫn load thì sẽ làm tốn tài nguyên.
+            -> Giải pháp là chuyển giá trị của autoload thành 'no' khi Deactive, khi Active thì chuyển là 'yes' 
     
