@@ -306,4 +306,31 @@ Xây dựng Plugin căn bản
             http://make.wordpress.org/core/handbook/coding-standards/html/
             http://make.wordpress.org/core/handbook/coding-standards/css/
             http://make.wordpress.org/core/handbook/coding-standards/javascript/
+Hook Action
+    Add_action 1
+        Hook
+            Hook giúp chúng ta gắn một số chức năng để thực thi những hành động mà chúng ta muốn mà không phải đụng 
+                vào bất cứ thứ gì ở trong core của WP.
+            Plugin chỉ có một cách duy nhất là tương tác với Hook để thay đổi cách quá trình xử lý của WP. 
+            Hook cũng được sử dụng trong Core của WP
+            WordPress có 2 kiểu Hook chính: Action hook và Filter hook. 
+        Có 2 loại action Hook Action hook:
+            Một loại Action Hook sẽ phụ thuộc vào giao diện sử dụng
+            Một loại phụ thuộc vào luồng xử lý của WordPress
+        Action
+            Action là một hàm được viết bằng PHP trong Plugin
+            Gắn Action vào hệ thống WP thông qua hàm có sẳn add_action() 
+            Action được viết ra để thực hiện một điều gì đó với hệ thống WP
+            Xác định vị trí (Hook) để gắn Action đã viết của chúng ta 
+        Gắn Action vào Hook
+            Để gắn một Action vào một vị trí (hook) nào đó chúng ta sẽ sử dụng hàm: 
+                add_action( $tag, $function, $priority, $accepted_args );
+            Tham số:
+            $ tag -  Là tên của một 'action hook'  của WP (hơn 600 Hooks)
+                -> Xác định vị trí (Hook) để gắn Action đã viết của chúng ta
+            $function - Tên Action mà bạn viết để tương tác vào hệ thống
+            $priority – Độ ưu tiên của Action
+            $accepted_args - Số lượng các tham số truy action hook sẽ được truyền vào hàm của bạn. 
+            Nếu add 1 hàm 2 lần vào trong 1 action Hook nào đó có cùng độ ưu tiên thì nó chỉ thực thi 1 lần, 
+                độ ưu tiên khác nhau thì sẽ thực hiện 2 lần 
     
