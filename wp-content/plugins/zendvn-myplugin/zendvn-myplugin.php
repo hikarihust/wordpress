@@ -8,22 +8,12 @@ Version: 1.0
 Author URI: http://www.zend.vn
 */
 
-class ZendvnMp{
-	
-	public static function init(){
-		echo '<br/>' . __CLASS__;
-		add_action('wp_footer', array(__CLASS__,'newFooter'));
-		add_action('wp_footer', array(__CLASS__,'newFooter2'));
-	}
-	
-	public static function newFooter(){
-		echo '<div>Hello World</div>';
-	}
-	
-	public static function newFooter2(){
-		echo '<div>Hello World 2</div>';
-	}
+define('ZENDVN_MP_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('ZENDVN_MP_PLUGIN_DIR', plugin_dir_path(__FILE__));
+
+if(!is_admin()){
+	require_once ZENDVN_MP_PLUGIN_DIR . '/includes/public.php';
+	new ZendvnMp();
+}else{
 	
 }
-
-ZendvnMp::init();

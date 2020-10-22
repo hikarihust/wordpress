@@ -402,4 +402,18 @@ Hook Action
                 <?php the_new_action(); ?>
                 <?php do_action('new_action_hook','ZF 2x','ZendVN'); ?>
     Create Class for Action
+Hook Filter
+    Add_filter - basic
+        Filter là một hàm được viết bằng PHP trong Plugin
+        Gắn Filter vào hệ thống WP thông qua hàm có sẳn add_filter() 
+        Filter được viết ra để thực hiện lọc dữ liệu input và output trong hệ thống WP
+        Xác định vị trí (Hook) để gắn Filter đã viết của chúng ta 
+        Để gắn một Filter vào một vị trí (hook) nào đó chúng ta sẽ sử dụng hàm: 
+            add_filter( $tag, $function, $priority, $accepted_args );
+        Tham số:
+            $tag -  Là tên của một 'filter hook'  của WP
+            $function - Tên Filter mà bạn viết để tương tác vào hệ thống
+            $priority – Độ ưu tiên của Filter
+            $accepted_args - Số lượng các tham số sẽ được truyền vào hàm của bạn.
+        support.php -> showFunc() In ra các hàm nằm trong 1 Hook nào đó 
     
