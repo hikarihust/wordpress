@@ -57,6 +57,10 @@
 </div><!-- #wrapper -->
 
 <?php
+	// do_action('new_action_hook');
+	new_action_hook();
+?>
+<?php
 	/*
 	 * Always have wp_footer() just before the closing </body>
 	 * tag of your theme, or you will break many plugins, which

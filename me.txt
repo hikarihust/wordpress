@@ -368,4 +368,37 @@ Hook Action
             admin_menu: Hook này được gọi khi tải menu trong phần admin lên
             template_redirect
             wp_head
+    Create Action Hook
+        Vì nhu cầu của website chúng ta cần tạo ra một Action Hook mới
+        Các Action Hook mới thường được gắn vào theme đang được sử dụng
+        Chúng ta sẽ phải sử dụng 2 hàm có  sẵn trong WP: là add_action() và do_action() để xây dựng Action Hook mới này.
+        do_action() Thực hiện hành động đã được thêm vào trong 1 Action Hook nào đó
+        Tạo một Action Hook mới trong Plugin
+            add_action('new_action_hook', 'new_action_callback');
+            function new_action_callback()
+            {
+                echo '<p>Khoa hoc lap trinh Wordpress tai ZendVN</p>';
+            }
+            function new_action_hook()
+            {
+                do_action('new_action_hook');
+            }
+        Nhúng Action Hook mới vào theme đang sử dụng
+            Mở tập tin /wp-content/themes/twentyten/footer.php thêm vào 1 trong 2 dòng sau:
+            <?php the_new_action(); ?>
+            <?php do_action('new_action_hook'); ?>
+        Tạo một Action Hook mới trong Plugin
+            add_action('new_action_hook', 'new_action_callback',20,2);
+            function new_action_callback($courseName,$author)
+            {
+                echo '<p>Khoa hoc lap trinh ' . $courseName 
+                    . ' tai ' . $author . ' </p>';
+            }
+            function new_action_hook($courseName = 'Wordpress',$author = "ZendVN")
+            {
+                do_action('new_action_hook',$courseName,$author);
+            }
+            Mở tập tin /wp-content/themes/twentyten/footer.php thêm vào 1 trong 2 dòng sau:
+                <?php the_new_action(); ?>
+                <?php do_action('new_action_hook','ZF 2x','ZendVN'); ?>
     

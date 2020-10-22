@@ -8,5 +8,12 @@ Version: 1.0
 Author URI: http://www.zend.vn
 */
 
-// remove_all_actions('wp_head',20);
-echo '<br/>' . has_action( 'wp_head', 'feed_links' );
+add_action('new_action_hook', 'new_action_callback', 10, 3);
+
+function  new_action_callback($courseName, $author, $year){
+	echo '<p>Khoa hoc lap trinh ' . $courseName . ' tai ' . $author . ' ' . $year;
+}
+
+function new_action_hook($courseName = 'Wordpress', $author='ZendVN', $year = '2014'){
+	do_action('new_action_hook', $courseName, $author, $year);
+}
