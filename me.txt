@@ -333,4 +333,5 @@ Hook Action
             $accepted_args - Số lượng các tham số truy action hook sẽ được truyền vào hàm của bạn. 
             Nếu add 1 hàm 2 lần vào trong 1 action Hook nào đó có cùng độ ưu tiên thì nó chỉ thực thi 1 lần, 
                 độ ưu tiên khác nhau thì sẽ thực hiện 2 lần 
-    
+    Add_action 2
+        
