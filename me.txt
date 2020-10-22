@@ -256,4 +256,18 @@ Xây dựng Plugin căn bản
             admin_url() - đường dẫn URL đến thư mục  /wp-admin 
             site_url() - Đường dẫn URL của website 
             home_url() - Đường dẫn URL home của website
+    Active plugin 1
+        Cú pháp:
+            register_activation_hook( $file, $function ); 
+            Thực hiện chạy các hành động trong quá trình kích hoạt plugin đó
+        Các thông số: 
+            $file - (string) (bắt buộc) - Đường dẫn đến tập tin chính của Plugin
+            $function - (string) (yêu cầu) - Tên hàm, hàm này sẽ thực hiện khi plugin được kích hoạt.
+        Chức năng chính của Active plugin
+            Tạo các giá trị mặc định và lưu vào bảng _option trong database của WP. 
+            Tạo các bảng mới trong database để chứa các dữ liệu Plugin bạn tạo ra.
+        add_option( $option, $value = , $deprecated = , $autoload = 'yes' );
+            Chỉ thêm giá trị vào trong bảng wp_options khi option_name chưa tồn tại trong bảng wp_options
+            serialize() Chuyển mảng thành chuỗi
+            unserialize() Chuyển chuỗi thành mảng
     
