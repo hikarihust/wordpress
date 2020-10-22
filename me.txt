@@ -326,7 +326,7 @@ Hook Action
             Để gắn một Action vào một vị trí (hook) nào đó chúng ta sẽ sử dụng hàm: 
                 add_action( $tag, $function, $priority, $accepted_args );
             Tham số:
-            $ tag -  Là tên của một 'action hook'  của WP (hơn 600 Hooks)
+            $tag -  Là tên của một 'action hook'  của WP (hơn 600 Hooks)
                 -> Xác định vị trí (Hook) để gắn Action đã viết của chúng ta
             $function - Tên Action mà bạn viết để tương tác vào hệ thống
             $priority – Độ ưu tiên của Action
@@ -334,4 +334,38 @@ Hook Action
             Nếu add 1 hàm 2 lần vào trong 1 action Hook nào đó có cùng độ ưu tiên thì nó chỉ thực thi 1 lần, 
                 độ ưu tiên khác nhau thì sẽ thực hiện 2 lần 
     Add_action 2
-        
+    Remove, remove_all, has_action
+        Để loại bỏ một Action ra khỏi một vị trí (hook) nào đó chúng ta sẽ sử dụng hàm: 
+            remove_action( $tag, $function_to_remove, $priority,$accepted_args );
+        Tham số:
+            $tag -  Là tên của một 'action hook' của WP (hơn 600 Hooks)
+            $function - Tên Action mà bạn viết để tương tác vào hệ thống
+            $priority – Độ ưu tiên của Action
+            $accepted_args - Số lượng các tham số truy action hook sẽ được truyền vào hàm của bạn.
+        Sử dụng hàm loại bỏ Action
+            Để loại bỏ một Action bất kỳ ra khỏi một vị trí (hook) kể cả Action đã có sẵn trong hệ thống WP
+            Hàm remove_action() phải được sử dụng sau hàm add_action() thì mới có tác dụng
+            Nhiều trong số các action mặc định của WP được định nghĩa trong tập tin:
+                wp-includes/default-filters.php
+                Trong tập tin này chứa các Action được chạy khi hệ thống WordPress được khởi động lên.
+                -> Vẫn có thể loại bỏ được 
+        Loại bỏ tất cả Action
+            Để loại bỏ tất cả Action ra khỏi một vị trí (hook) nào đó chúng ta sẽ sử dụng hàm: 
+                remove_all_actions( $tag, $priority );
+            Tham số:
+                $tag -  Tên của action hook
+                $priority - Độ ưu tiên của action để loại bỏ.
+        Kiểm tra sự tồn tại Action trong Hook
+            Để kiểm tra sự tồn tại của Action trong một Action Hook nào đó chúng ta sử dụng hàm 
+                has_action( $tag, $function_to_check );
+            Tham số:
+                $tag -  Tên của action hook
+                $function_to_check - Tên của một hàm để kiểm tra xem nó có đã thêm vào hook chưa.
+            Trả về giá trị độ ưu tiên cửa action đó trong Hook
+        Các Action Hook thường sử dụng
+            plugins_loaded
+            init: Được kích hoạt sau khi WordPress được thiết lập
+            admin_menu: Hook này được gọi khi tải menu trong phần admin lên
+            template_redirect
+            wp_head
+    
