@@ -425,4 +425,33 @@ Hook Filter
             ZendvnMpSupport::showFunc();            ->  Check tất cả các hook và các hàm đang được thực thi
             ZendvnMpSupport::showFunc('wp_footer'); ->  Check tất cả các hàm đang được thực thi trong wp_footer
         global $post; Là 1 biến toàn cục rất quan trọng dùng để xử lý các phần liên quan đến bài viết 
-        
+    Remove, remove_all
+        Remove
+            Để loại bỏ một Filter ra khỏi một vị trí (hook) nào đó chúng ta sẽ sử dụng hàm: 
+                remove_filter( $tag, $function, $priority)
+            Tham số:
+                $tag -  Là tên của một 'filter hook'  của WP
+                $function - Tên Filter mà bạn muốn loại bỏ khỏi hệ thống
+                $priority – Độ ưu tiên của Filter
+            Admin Page -> Page -> Edit Sample Page
+                Thêm vào ký tự :) vào Sample Page ở 2 vị trí bất kỳ 
+                :) được chuyển đổi sang 🙂 bởi hàm convert_smilies
+            ZendvnMpSupport::showFunc('the_content');
+                Hook Name: the_content
+                8: 000000004a01c1bc0000000021be8e1brun_shortcode, 000000004a01c1bc0000000021be8e1bautoembed
+                9: do_blocks
+                10: wptexturize, shortcode_unautop, prepend_attachment, wp_filter_content_tags, wpautop
+                11: capital_P_dangit, do_shortcode
+                20: convert_smilies
+            Do đó nếu mà ta Remove đi hàm convert_smilies này thì nội dung page sẽ ko còn hiển thị ký tự cảm xúc :)
+                bằng hình ảnh 🙂 nữa 
+            remove_filter('the_content', 'convert_smilies', 20);
+        remove_all
+            Để loại bỏ tất cả Filter ra khỏi một vị trí (hook) nào đó chúng ta sẽ sử dụng hàm: 
+                remove_all_filters($tag, $priority)
+            Tham số:
+                $tag -  Là tên của một 'filter hook'  của WP
+                $priority – Độ ưu tiên của Filter
+            Có thể loại bỏ theo độ ưu tiên bằng cách truyền thêm tham số $priority, hoặc loại bỏ tất cả các hàm bằng 
+                trong hook đó bằng cách chỉ truyền $tag
+      

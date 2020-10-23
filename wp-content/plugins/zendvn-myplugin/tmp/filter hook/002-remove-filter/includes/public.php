@@ -7,7 +7,7 @@ class ZendvnMp{
 		//=====================================================
 		//1. Ham thay doi toan bo title trong hook 'the_title'
 		//=====================================================
-		@add_filter('the_title', array($this,'theTitle'));
+		add_filter('the_title', array($this,'theTitle'));
 
 		//=====================================================
 		//2. Hiển thị các Action đang thực thi trong Hook
@@ -15,14 +15,10 @@ class ZendvnMp{
 		add_action('wp_footer', array($this,'showFunction'));
 
 		//=====================================================
-		//3. Loai bo tat cac ham trong Hook theo do uu tien
+		//3. Hiển thị các Action đang thực thi trong Hook
 		//=====================================================
-		remove_all_filters('the_content',10);
-
-		//=====================================================
-		//4. Loai bo tat cac ham trong Hook 
-		//=====================================================
-		remove_all_filters('the_content');
+		remove_filter('the_content', 'convert_smilies', 20);
+		remove_filter('the_title', array($this,'theTitle'));
 	}
 
 	//=====================================================
@@ -37,7 +33,7 @@ class ZendvnMp{
 	//2. Hiển thị các Action đang thực thi trong Hook
 	//=====================================================
 	public function showFunction(){
-		ZendvnMpSupport::showFunc('the_content');
+		ZendvnMpSupport::showFunc('the_title');
 	}
 
 }
