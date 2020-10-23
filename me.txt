@@ -574,4 +574,13 @@ Option API
                 vào bảng option
             $value có thể là 1 mảng hoặc 1 giá trị 
                 Mảng được lưu vào Database ở dạng chuỗi, muốn đưa nó về mảng ban đầu thì dùng hàm unserialize()
+    Get_option
+        Phương thức get_option()
+            Phương thức này giúp chúng ta lấy ra giá trị nằm trong bảng wp_options 
+                get_option( $option, $default );
+            Tham số:
+                $option - Tên của tùy chọn trong database(giá trị của trường 'option_name'). 
+                $value - giá trị mặc định nếu giá trị của trường 'option_name' không tồn tại. 
+            Trong trường hợp giá trị được lưu trong Database là 1 mảng được lưu dưới dạng chuỗi thì hàm get_option() sẽ tự động 
+                biến đổi chuỗi đó thành mảng(trong get_option() nó cũng sử dụng đến hàm unserialize()) 
     
