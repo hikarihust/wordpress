@@ -518,4 +518,33 @@ Admin Menu
             function: Chức năng  được gọi  để hiển thị nội dung trang cho 
                         các mục
             Position: Vị trí trong thứ tự menu, nơi nó sẽ xuất hiện
-    
+    Remove_menu - remove_submenu
+        Để thêm nhóm Menu vào vị trí bất kỳ trong hệ thống menu của WP. Chúng ta sử dụng tham số position  trong phương 
+            thức add_menu_page()
+            Khi điền vào giá trị position là số nguyên thì nó sẽ nhóm Menu đến vị trí mình muốn. trong trường hợp điền trùng 
+                với position đã có sẵn trong hệ thống thì nó tự động sẽ điền lên Menu đã có sẵn đó
+            2 Dashboard
+            4 Separator
+            5 Posts
+            10 Media
+            15 Links
+            20 Pages
+            25 Comments	
+            59 Separator
+            60 Appearance
+            65 Plugins
+            70 Users
+            75 Tools
+            80 Settings
+            99 Separator
+        Remove_menu - remove_submenu
+            Để xóa một menu đã tồn tại trong hệ thống chúng ta dùng phương thức sau
+                remove_menu_page( $menu_slug )
+                    menu_slug: tên Slug của các menu; phải là một tên duy nhất 
+                remove_submenu_page( $menu_slug, $submenu_slug );
+                    menu_slug: tên Slug của menu cha; phải là một tên duy nhất 
+                    submenu_slug: tên Slug của menu muốn xóa; phải là một tên duy nhất 
+            Có thể remove đi cả các Menu mở rộng được tạo thêm và các Menu đã có sẵn trong hệ thống
+                remove_submenu_page( 'edit.php', 'post-new.php');
+                remove_menu_page( 'edit.php' );
+        
