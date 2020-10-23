@@ -454,4 +454,16 @@ Hook Filter
                 $priority – Độ ưu tiên của Filter
             Có thể loại bỏ theo độ ưu tiên bằng cách truyền thêm tham số $priority, hoặc loại bỏ tất cả các hàm bằng 
                 trong hook đó bằng cách chỉ truyền $tag
-      
+    Has_filter & current_filter
+        Has_filter
+            Kiểm tra sự tồn tại của Filter trong một Hook nào đó: 
+                has_filter($tag, $function_to_check)
+            Tham số:
+                $tag -  Là tên của một 'filter hook'  của WP
+                $function_to_check - Tên Filter mà bạn muốn kiểm tra
+            Kết quả trả về độ ưu tiên của hàm đã gắn vào trong filter hook($tag), nếu giá trị null có nghĩa là hàm đó chưa tồn tại 
+        current_filter
+            Lấy tên của một Filter tại một thời điểm nào đó : 
+                current_filter()
+            Giúp lấy được tên của Hook trong quá trình xử lý của WordPress
+     
