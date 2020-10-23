@@ -13,7 +13,12 @@ class ZendvnMpAdmin {
         print_r($tmp);
         echo "</pre>";
         */
-        add_action('admin_init', array($this,'get_options'));
+        // add_action('admin_init', array($this,'get_options'));
+        // add_action('admin_init', array($this,'update_options'));
+        // add_action('admin_init', array($this,'update_options2'));
+        // add_action('admin_init', array($this,'del_options'));
+        // add_action('admin_init', array($this,'update_autoload'));
+        add_action('admin_init', array($this,'update_options3'));
     }
 
 	public function add_new_option(){
@@ -44,5 +49,38 @@ class ZendvnMpAdmin {
 		echo '<pre>';
 		print_r($tmp);
 		echo '</pre>';
-    }     
+    }  
+    
+	public function update_options(){
+		update_option('zendvn_mp_wp_version', '4.5');	
+		$arrOption = array(
+				'course' => 'Wordpress 4.5',
+				'author' => 'ZendVN group',
+				'website' => 'www.zend.vn'
+			);
+		update_option('zendvn_mp_wp_course', $arrOption);
+    }
+    
+	public function update_options2(){
+		$old_options = get_option('zendvn_mp_wp_course');
+		$old_options['course'] = 'Wordpress 5';
+		
+		update_option('zendvn_mp_wp_course', $old_options);
+    }
+    
+	public function del_options(){
+		delete_option('zendvn_mp_wp_version');
+		delete_option('zendvn_mp_wp_course');
+    }
+    
+	public function update_autoload(){
+		$old_option = get_option('zendvn_mp_plugin_version');
+		delete_option('zendvn_mp_plugin_version');
+		add_option('zendvn_mp_plugin_version',$old_option,'','yes');
+    }
+    
+	public function update_options3(){
+		update_option('zendvn_mp_plugin_version', '2.0');
+		update_option('zendvn_mp_wp_version', '2.0');
+	}
 }

@@ -583,4 +583,19 @@ Option API
                 $value - giá trị mặc định nếu giá trị của trường 'option_name' không tồn tại. 
             Trong trường hợp giá trị được lưu trong Database là 1 mảng được lưu dưới dạng chuỗi thì hàm get_option() sẽ tự động 
                 biến đổi chuỗi đó thành mảng(trong get_option() nó cũng sử dụng đến hàm unserialize()) 
+    Update & delete_option
+        Phương thức update_option()
+            Phương thức này giúp chúng ta cập nhật giá trị trong bảng wp_options 
+                update_option( $option, $new_value );
+            Tham số:
+                $option - Tên của tùy chọn trong database(giá trị của trường 'option_name'). 
+                $new_value - Giá trị mới của tùy chọn. 
+            Phương thức update_option() có 1 hạn chế đó là nó không cập nhật lại giá trị của autoload(no/yes)
+            Trong trường hợp giá trị của $option đã tồn tại trong bảng wp_options thì nó sẽ thực hiên cập nhật lại giá trị của 
+                option_value, trong trường hợp giá trị option_name chưa tồn tại thì nó sẽ thêm record mới vào
+        Phương thức delete_option()
+            Phương thức này giúp chúng ta xóa 1 dòng nào đó trong bảng wp_options khi biết được giá trị của option_name
+                delete_option($option);
+            Tham số:
+                $option -  Tên của tùy chọn trong database(giá trị của trường 'option_name'). 
     
