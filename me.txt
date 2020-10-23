@@ -417,4 +417,12 @@ Hook Filter
             $accepted_args - Số lượng các tham số sẽ được truyền vào hàm của bạn.
         support.php -> showFunc() In ra các hàm nằm trong 1 Hook nào đó 
     Add_filter-the_title
-    
+    Add_filter-the_content
+        Tra cứu Filter Hook
+            http://codex.wordpress.org/Plugin_API/Filter_Reference
+        support.php -> showFunc() Để xem trong 1 trang có bao nhiêu Hook được chạy, và trong những hook đó có những hàm nào 
+            đang tương tác đến hook
+            ZendvnMpSupport::showFunc();            ->  Check tất cả các hook và các hàm đang được thực thi
+            ZendvnMpSupport::showFunc('wp_footer'); ->  Check tất cả các hàm đang được thực thi trong wp_footer
+        global $post; Là 1 biến toàn cục rất quan trọng dùng để xử lý các phần liên quan đến bài viết 
+        
