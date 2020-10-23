@@ -547,4 +547,31 @@ Admin Menu
             Có thể remove đi cả các Menu mở rộng được tạo thêm và các Menu đã có sẵn trong hệ thống
                 remove_submenu_page( 'edit.php', 'post-new.php');
                 remove_menu_page( 'edit.php' );
-        
+Option API
+    Add_option
+        Option API là tập hợp một số hàm của WP.
+        Option API cung cấp cho chúng ta các phương thức để thao tác với dữ liệu trong bảng wp_options và trong trường hợp multisite
+        Các phương thức trong Option API
+        Add/Delete Option
+            add_option()
+            delete_option()
+            add_site_option()
+            delete_site_option()
+            Get/Update Option
+            get_option()
+            update_option()
+            get_site_option()
+            update_site_option()
+        Phương thức add_option()
+            Phương thức này giúp chúng ta thêm một dòng vào trong bảng wp_options 
+                add_option( $option, $value, $deprecated, $autoload );
+            Tham số:
+                $option - Tên của tùy chọn muốn thêm vào trong bảng wp_options(Giá trị nằm trong cột option_name). 
+                $value - Giá trị của tùy chọn(Giá trị nằm trong cột option_value). 
+                $deprecated – Giá trị này đã bị loại bỏ và không còn sử dụng từ phiên bản 2.3
+                $autoload - Nếu giá trị ở đây là YES nó sẽ được tự động load bởi phương thức wp_load_alloptions().
+            admin_init; Hook này được khởi tạo rất sớm khi truy cập vào Admin, nên thường dùng hook này để thêm giá trị
+                vào bảng option
+            $value có thể là 1 mảng hoặc 1 giá trị 
+                Mảng được lưu vào Database ở dạng chuỗi, muốn đưa nó về mảng ban đầu thì dùng hàm unserialize()
+    
