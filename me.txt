@@ -655,4 +655,29 @@ Setting API
                 <input type="hidden" id="_wpnonce" name="_wpnonce" value="f3d9326d3f">   -> Được tạo bởi hàm wp_nonce_field() từ giá trị trên thanh địa chỉ URL
                 <input type="hidden" name="_wp_http_referer"                             -> Giá trị này giúp sau khi lưu giữ liệu xong thì quay về trang hiện tại
                     value="/wp-admin/admin.php?page=zendvn-mp-my-setting">	
+    Add section & add field
+        Phương thức add_settings_section()
+            Tạo các phân đoạn cho các vùng nhập liệu của Form
+                add_settings_section( $id, $title, $callback, $page );
+            Tham số:
+                $id - id của section. 
+                $title - tên của section. 
+                $callback –  hàm xử lý cho phần section khi cần thiết
+                $page –  Trang hoặc menu_slug mà chúng ta muốn section hiển thị
+        Phương thức do_settings_sections()
+            Để tạo ra một số phần tử ẩn hỗ trợ cho Form
+                do_settings_sections($page);
+            Tham số:
+                $page – Tên page hoặc menu slug
+            Khi chạy phương thức này sẽ tạo ra các phân đoạn (section), được đăng ký trong Form
+            Ở mỗi phân đoạn này sẽ có phần tử form
+        Phương thức add_settings_field()
+            Để tạo ra các phần tử trong Form
+                add_settings_field($id, $title, $callback, $page, $section, $args);
+            Tham số:
+                $id - Giá trị của thuộc tính id trong phần tử HTML. 
+                $title - Tiêu đề của phần tử. 
+                $callback – Hàm callback sử dụng tạo ra phần tử HTML theo ý muốn
+                $page – menu page hoặc menu slug của trang
+                $args - Có thể truyền hoặc không, mảng tham số được dùng khi tạo phần tử Form 
     

@@ -14,6 +14,13 @@ class ZendvnMpAdmin {
 	public function register_setting_and_fields(){
 		register_setting('zendvn_mp_options', 'zendvn_mp_name', array($this,'validate_setting'));
 	
+		//MAIN SETTING
+		$mainSection = 'zendvn_mp_main_section';
+		add_settings_section($mainSection, "Main setting", 
+							array($this,'main_section_view'), $this->_menuSlug);
+
+		add_settings_field('zendvn_mp_new_title', 'Site title', array($this,'create_form'), 
+							$this->_menuSlug,$mainSection,array('name'=>'new_title_input'));	
 	}
 
 	//===============================================
@@ -21,6 +28,20 @@ class ZendvnMpAdmin {
 	//===============================================
 	public function validate_setting($data_input) {
 
+	}
+
+	public function main_section_view(){
+		
+	}
+
+	public function create_form($args){
+				
+		if($args['name']== 'new_title_input'){
+			echo '<input type="text" name="zendvn_mp_name[zendvn_mp_new_title]"
+						value=""/>';
+			echo '<p class="description">Nhập vào một chuỗi không quá 20 ký tự</p>';
+		}
+		
 	}
 
 	public function settingMenu(){
