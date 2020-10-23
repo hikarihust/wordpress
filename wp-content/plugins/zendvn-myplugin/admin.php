@@ -18,7 +18,7 @@ class ZendvnMpAdmin {
         // add_action('admin_init', array($this,'update_options2'));
         // add_action('admin_init', array($this,'del_options'));
         // add_action('admin_init', array($this,'update_autoload'));
-        add_action('admin_init', array($this,'update_options3'));
+        // add_action('admin_init', array($this,'update_options3'));
     }
 
 	public function add_new_option(){

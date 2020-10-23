@@ -598,4 +598,21 @@ Option API
                 delete_option($option);
             Tham số:
                 $option -  Tên của tùy chọn trong database(giá trị của trường 'option_name'). 
+    Other option
+        Để kiểm tra giá trị option_name thì có thể xem trong bảng wp_options hoặc cũng có thể xem ở trang
+            http://wordpress.xyz/wp-admin/options.php
+        Các giá trị Option cần quan tâm
+            admin_email
+            blogname
+            blogdescription
+            blog_charset
+            date_format
+            default_category
+            home
+            siteurl
+            template
+            start_of_week
+            upload_path
+            posts_per_page
+            posts_per_rss
     
