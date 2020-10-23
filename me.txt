@@ -615,4 +615,44 @@ Option API
             upload_path
             posts_per_page
             posts_per_rss
+Setting API
+    About Setting API
+        Setting API là tập hợp một số hàm của WP.
+        Cung cấp các phương thức để chúng ta có thể tạo ra các phần tử trong Form
+        Cung cấp các phương thức để chúng ta xử lý dữ liệu trước khi đưa vào bảng wp_option
+        Cung cấp các phương thức hiển thị các thông báo khi xử lý dữ liệu (error & update) 
+    Các phương thức trong Setting API
+        Setting Register/Unregister
+            register_setting()
+            unregister_setting()
+        Add Field/Section
+            add_settings_field()
+            add_settings_section()
+        Options Form Rendering
+            settings_fields()
+            do_settings_sections()
+            do_settings_fields()
+        Errors
+            add_settings_error()
+            get_settings_errors()
+            settings_errors()
+    Register & setting_fields
+        Phương thức register_setting()
+            Phương thức này cũng giúp bạn tạo ra thêm các phần setting trong phần Setting Admin 
+                register_setting($option_group,$option_name,$sanitize_callback);
+            Tham số:
+                $option_group - Tên của nhóm setting
+                $option_name - Giá trị này sẽ được đưa vào cột option_name trong bảng wp_options. 
+                $sanitize_callback – Hàm dùng để xử lý dữ liệu trước khi lưu vào database(lưu vào trường option_value)
+        Phương thức settings_fields()
+            Để tạo ra một số phần tử ẩn hỗ trợ cho Form 
+                settings_fields( $option_group);
+            Tham số:
+                $option_group – Tên của tùy chọn
+            Khi chạy phương thức này sẽ tạo ra một số phần HTML:
+                <input type="hidden" name="option_page" value="zendvn_mp_options">       -> Chứa giá trị của option_group
+                <input type="hidden" name="action" value="update">                       -> Thực hiện hành động update
+                <input type="hidden" id="_wpnonce" name="_wpnonce" value="f3d9326d3f">   -> Được tạo bởi hàm wp_nonce_field() từ giá trị trên thanh địa chỉ URL
+                <input type="hidden" name="_wp_http_referer"                             -> Giá trị này giúp sau khi lưu giữ liệu xong thì quay về trang hiện tại
+                    value="/wp-admin/admin.php?page=zendvn-mp-my-setting">	
     
