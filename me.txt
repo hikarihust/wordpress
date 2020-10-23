@@ -491,4 +491,31 @@ Admin Menu
                     được tạo
         manage_options: capability này chỉ có nhóm người dùng có roles là Super Admin và Administrator có quyền truy cập
         is_admin() Kiểm tra vùng đang truy cập là Admin hay Public 
+    Add_menu_page & add_submenu_page
+        Add_menu_page
+            Add 1 nhóm Menu vào 1 vị trí bất kỳ trong hệ thống Menu của WordPress, Add_menu_page sẽ add vào nhóm Menu cùng cấp với các 
+                Menu có trong hệ thống WordPress chứ không phải là thực hiện Add vào Menu con
+            add_menu_page( page_title, menu_title, capability,
+                        menu_slug, function,icon_url, position );
+                page_title: Tiêu đề của trang, cái mà sẽ  hiển thị trong thẻ <title> 
+                menu_title: Tên của menu hiển thị trên bảng điều khiển 
+                capability: khả năng tối thiểu cần thiết để xem menu 
+                menu_slug: tên Slug để tham khảo đến menu; phải là một tên duy nhất 
+                function: Chức năng  được gọi  để hiển thị nội dung trang cho 
+                            các mục 
+                icon_url: URL đến một hình ảnh tùy chỉnh để sử dụng như là 
+                            biểu tượng Menu 
+                Position: Vị trí trong thứ tự menu, nơi nó sẽ xuất hiện
+        add_submenu_page
+            Thêm submenu vào Menu mới mà mình đã tạo ra
+            add_submenu_page( parent_slug, page_title, menu_title,
+                                capability,menu_slug, function );
+            parent_slug: slug của Menu parent
+            page_title: Tiêu đề của trang, cái mà sẽ  hiển thị trong thẻ <title> 
+            menu_title: Tên của menu hiển thị trên bảng điều khiển 
+            capability: khả năng tối thiểu cần thiết để xem menu 
+            menu_slug: tên Slug để tham khảo đến menu; phải là một tên duy nhất 
+            function: Chức năng  được gọi  để hiển thị nội dung trang cho 
+                        các mục
+            Position: Vị trí trong thứ tự menu, nơi nó sẽ xuất hiện
     
