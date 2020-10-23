@@ -466,4 +466,29 @@ Hook Filter
             Lấy tên của một Filter tại một thời điểm nào đó : 
                 current_filter()
             Giúp lấy được tên của Hook trong quá trình xử lý của WordPress
-     
+Admin Menu
+    Add_dashboard_page
+        Thêm vào những nhóm Menu đã có sẵn: Thêm vào hệ thống menu có sẵn của WordPress 
+            add_dashboard_page(…)
+            add_media_page (…)
+            add_pages_page (…)
+            add_comments_page (…)
+            add_theme_page (…)
+            add_plugins_page (…)
+            add_users_page (…)
+            add_management_page (…)
+            add_options_page (…)
+            add_posts_page(…)
+        Cú pháp
+            add_posts_page( $page_title, $menu_title, $capability, 
+                        $menu_slug, $function);
+                page_title: Tiêu đề của trang, cái mà sẽ  hiển thị trong thẻ <title> 
+                menu_title: Tên của menu hiển thị trên bảng điều khiển 
+                capability: khả năng tối thiểu cần thiết để xem menu, người nào có quyền truy cập vào Menu đó 
+                        (https://wordpress.org/support/article/roles-and-capabilities/)
+                menu_slug: tên Slug để tham khảo đến menu; phải là một tên duy nhất 
+                function: Chức năng  được gọi  để hiển thị nội dung trang cho các mục, hàm này sẽ được gọi khi nhấn vào Menu mới
+                    được tạo
+        manage_options: capability này chỉ có nhóm người dùng có roles là Super Admin và Administrator có quyền truy cập
+        is_admin() Kiểm tra vùng đang truy cập là Admin hay Public 
+    
