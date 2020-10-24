@@ -681,4 +681,8 @@ Setting API
                 $page – menu page hoặc menu slug của trang
                 $args - Có thể truyền hoặc không, mảng tham số được dùng khi tạo phần tử Form 
     Save & show setting 1
+    Do_setting_field
+        Phương thức do_setting_field()
+            Dùng để đưa 1 phần tử input nào đó vào trong Form ở 1 vị trí bất kỳ mà ko theo định dạng chuẩn của WordPress 
+                là đưa vào trong 1 bảng 
     

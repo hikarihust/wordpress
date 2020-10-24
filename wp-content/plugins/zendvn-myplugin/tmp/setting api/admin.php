@@ -31,6 +31,9 @@ class ZendvnMpAdmin {
 							array($this,'main_section_view'), $this->_menuSlug);
 		add_settings_field('zendvn_mp_slogan', 'Slogan:', array($this,'create_form'),
 							$this->_menuSlug,$extSection, array('name'=>'slogan_input'));
+
+		add_settings_field('zendvn_mp_security_code', '', array($this,'security_code_input'),
+							$this->_menuSlug);
 	}
 
 	//===============================================
@@ -58,6 +61,13 @@ class ZendvnMpAdmin {
 			echo '<p class="description">Nhập vào một chuỗi không quá 20 ký tự</p>';
 		}
 		
+	}
+
+	public function security_code_input() {
+		echo '<div style="line-height: 1.3;font-weight: 600; vertical-align: top;text-align: left;width: 200px;">Security code:</div>';
+		echo '<p>This is security code</p>';
+		echo '<input type="text" name="zendvn_mp_name[zendvn_mp_security_code]"
+						value=""/>';
 	}
 
 	public function settingMenu(){

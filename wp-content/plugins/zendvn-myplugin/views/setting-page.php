@@ -7,6 +7,7 @@
         <?php echo settings_fields('zendvn_mp_options');?>
         <?php echo do_settings_sections($this->_menuSlug);?>
 
+        <?php do_settings_fields($this->_menuSlug, 'default');?>
         <p class="submit">
             <input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes">
         </p>
