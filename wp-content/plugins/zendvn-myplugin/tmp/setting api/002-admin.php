@@ -33,17 +33,18 @@ class ZendvnMpAdmin {
 	//Kiem tra cac dieu kien truoc khi luu du lieu vao database
 	//===============================================
 	public function validate_setting($data_input) {
-		echo "<pre>";
-		print_r($data_input);
-		echo "</pre>";
-		die();
-
 		if(!empty($_FILES['zendvn_mp_logo']['name'])){
+			if(!empty($this->_setting_options['zendvn_mp_logo_path'])){
+				@unlink($this->_setting_options['zendvn_mp_logo_path']);
+			}
+
 			$override = array('test_form'=>false);
 			$fileInfo = wp_handle_upload($_FILES['zendvn_mp_logo'],$override);	
 			$data_input['zendvn_mp_logo'] 		= $fileInfo['url'];		
 			$data_input['zendvn_mp_logo_path'] 	= $fileInfo['file'];
 		}else{
+			$data_input['zendvn_mp_logo'] 		= $this->_setting_options['zendvn_mp_logo'];
+			$data_input['zendvn_mp_logo_path'] 	= $this->_setting_options['zendvn_mp_logo_path'];
 		}
 		return $data_input;
 	}
@@ -63,6 +64,9 @@ class ZendvnMpAdmin {
 		if($args['name']== 'logo_input'){
 			echo '<input type="file" name="zendvn_mp_logo" />';
 			echo '<p class="description">Chỉ được phép upload các tập tin có định dang JPG - PNG - GIF</p>';
+			if(!empty( $this->_setting_options['zendvn_mp_logo'])){
+				echo "<img src='" . $this->_setting_options['zendvn_mp_logo'] . "' width='200' />";
+			}
 		}
 	}
 

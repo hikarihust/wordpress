@@ -696,4 +696,7 @@ Setting API
         Lấy thông tin file đã upload dựa vào biến $_FILES
         wp_handle_upload() Sẽ thực hiện upload file 
         Hình ảnh Upload được lưu ở  wp-content\uploads
+    Upload file 2
+        Hiển thị hình đã Upload vào Form
+        Khi Upload 1 hình mới lên thì thực hiện xóa đi hình cũ 
     
