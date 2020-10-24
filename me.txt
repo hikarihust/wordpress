@@ -699,4 +699,13 @@ Setting API
     Upload file 2
         Hiển thị hình đã Upload vào Form
         Khi Upload 1 hình mới lên thì thực hiện xóa đi hình cũ 
+    Validate & Message 1
+        Phương thức add_settings_error()
+            Thêm thông báo error cho Setting page
+                add_settings_error($setting, $code, $message, $type);
+            Tham số:
+                $setting – menu slug của trang. 
+                $code – giá trị này sẽ kết hợp với chuỗi 'setting-error-' để tạo ra thuộc tính id trong mã HTML. 
+                $message – Chuỗi thông báo lỗi
+                $type – kiểu thông báo, Possible values include 'error', 'success', 'warning', 'info'.
     
