@@ -680,4 +680,5 @@ Setting API
                 $callback – Hàm callback sử dụng tạo ra phần tử HTML theo ý muốn
                 $page – menu page hoặc menu slug của trang
                 $args - Có thể truyền hoặc không, mảng tham số được dùng khi tạo phần tử Form 
+    Save & show setting 1
     
