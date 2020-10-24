@@ -708,4 +708,22 @@ Setting API
                 $code – giá trị này sẽ kết hợp với chuỗi 'setting-error-' để tạo ra thuộc tính id trong mã HTML. 
                 $message – Chuỗi thông báo lỗi
                 $type – kiểu thông báo, Possible values include 'error', 'success', 'warning', 'info'.
+        -> Sau khi add_settings_error() thì có thể hiển thị error cho trường hợp Add submenu page to the Settings 
+            main menu by add_options_page().
+    Validate & Message 2
+        Phương thức get_settings_errors()
+            Lấy ta các thông báo lỗi đã đưa vào bằng phương thức add_settings_error()
+                get_settings_errors( $setting, $sanitize );
+            Tham số:
+                $setting – menu slug của trang. 
+                $sanitize – chỉ có 2 giá trị true/false. Dùng để lọc sạch dữ liệu trước khi hiển thị thông báo
+        Phương thức settings_errors()
+            Hiển thị thông báo trên trang
+                settings_errors( $setting, $sanitize, $hide_on_update );
+            Tham số:
+                $setting – menu slug của trang. 
+                $sanitize – chỉ có 2 giá trị true/false. Dùng để lọc sạch dữ liệu trước khi hiển thị thông báo
+                $hide_on_update – chỉ có 2 giá trị true/false. Nếu là true nó sẽ không hiển thị thông báo error
+        -> settings_errors() Dùng cho trường hợp thị error cho trường hợp Add a top-level menu page by add_menu_page()
+            sau khi đã add_settings_error()
     
