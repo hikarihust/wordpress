@@ -3,7 +3,7 @@ require_once ZENDVN_MP_PLUGIN_DIR . '/includes/support.php';
 class ZendvnMp{
 	
 	public function __construct(){
-		echo '<br/>' . __METHOD__;
+		// echo '<br/>' . __METHOD__;
 		//=====================================================
 		//1. current_filter
 		//=====================================================
@@ -40,7 +40,7 @@ class ZendvnMp{
 	//2. Hiển thị các Action đang thực thi trong Hook
 	//=====================================================
 	public function showFunction(){
-		ZendvnMpSupport::showFunc('the_content');
+		// ZendvnMpSupport::showFunc('the_content');
 	}
 
 }

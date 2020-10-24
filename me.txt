@@ -726,4 +726,23 @@ Setting API
                 $hide_on_update – chỉ có 2 giá trị true/false. Nếu là true nó sẽ không hiển thị thông báo error
         -> settings_errors() Dùng cho trường hợp thị error cho trường hợp Add a top-level menu page by add_menu_page()
             sau khi đã add_settings_error()
+Widgets
+    About Widgets
+        Widgets API là tập hợp 1 số hàm của WP
+        Cung cấp các phương thức có thể tạo ra cá khối hiển thị thông tin ở Frontend và Backend
+        Widgets hiển thị ở các phần: Ngoài Frontend, phần quản lý Widgets của Admin, Phần Dashboard của Admin
+    Các phương thức trong Widgets API
+        Widget Functions:
+            is_active_widget();
+            the_widget();
+            register_widget();
+            unregister_widget();
+        Internal Functions:
+            wp_register_widget_control();
+            wp_unregister_sidebar_widget();
+            wp_convert_widget_settings();
+            wp_get_widget_defaults();
+            wp_widget_description()
+    ZendvnHtml 1
+        Tạo ra các phần tử trong Form bằng 1 Class -> Giảm thiểu quá trình viết mã và hạn chế sai sót
     

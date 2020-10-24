@@ -13,11 +13,13 @@ define('ZENDVN_MP_IMAGES_URL', ZENDVN_MP_PLUGIN_URL . '/images');
 
 define('ZENDVN_MP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('ZENDVN_MP_VIEWS_DIR', ZENDVN_MP_PLUGIN_DIR . '/views');
+define('ZENDVN_MP_INCLUDES_DIR', ZENDVN_MP_PLUGIN_DIR . '/includes');
 
 if(!is_admin()){
 	require_once ZENDVN_MP_PLUGIN_DIR . '/public.php';
 	new ZendvnMp();
 }else{
+	require_once ZENDVN_MP_INCLUDES_DIR . '/html.php';
 	require_once ZENDVN_MP_PLUGIN_DIR . '/admin.php';
 	new ZendvnMpAdmin();
 }
