@@ -685,4 +685,9 @@ Setting API
         Phương thức do_setting_field()
             Dùng để đưa 1 phần tử input nào đó vào trong Form ở 1 vị trí bất kỳ mà ko theo định dạng chuẩn của WordPress 
                 là đưa vào trong 1 bảng 
+    Save & show setting 2
+        Ở Save & show setting 1 thì mình đã lưu vào Database bảng wp_option ở dạng dữ liệu mảng -> chỉ lưu 1 dòng duy nhất 
+            -> Giải quyết vấn đề lưu được nhiều dòng vào trong Database 
+        Các giá trị trong Form được post được lưu trong $_POST
+        Sử dụng các phương thức trong nhóm option api để lưu các giá trị vào bảng wp_option thành các dòng khác nhau 
     

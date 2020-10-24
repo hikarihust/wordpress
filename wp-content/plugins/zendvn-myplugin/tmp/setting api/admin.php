@@ -29,17 +29,20 @@ class ZendvnMpAdmin {
 		$extSection = 'zendvn_mp_ext_section';
 		add_settings_section($extSection, "Ext setting", 
 							array($this,'main_section_view'), $this->_menuSlug);
-		add_settings_field('zendvn_mp_slogan', 'Slogan:', array($this,'create_form'),
-							$this->_menuSlug,$extSection, array('name'=>'slogan_input'));
+		add_settings_field('zendvn_mp_slogan', 'Slogan:', array($this,'slogan_input'),
+							$this->_menuSlug,$extSection);
 
+		/*
 		add_settings_field('zendvn_mp_security_code', '', array($this,'security_code_input'),
 							$this->_menuSlug);
+		*/
 	}
 
 	//===============================================
 	//Kiem tra cac dieu kien truoc khi luu du lieu vao database
 	//===============================================
 	public function validate_setting($data_input) {
+		update_option('zendvn_mp_slogan', $_POST['zendvn_mp_slogan']);
 		return $data_input;
 	}
 
@@ -53,14 +56,7 @@ class ZendvnMpAdmin {
 			echo '<input type="text" name="zendvn_mp_name[zendvn_mp_new_title]"
 						value="' . $this->_setting_options['zendvn_mp_new_title'] . '"/>';
 			echo '<p class="description">Nhập vào một chuỗi không quá 20 ký tự</p>';
-		}
-
-		if($args['name']== 'slogan_input'){
-			echo '<input type="text" name="zendvn_mp_name[zendvn_mp_slogan]"
-						value="' . $this->_setting_options['zendvn_mp_slogan'] . '"/>';
-			echo '<p class="description">Nhập vào một chuỗi không quá 20 ký tự</p>';
-		}
-		
+		}		
 	}
 
 	public function security_code_input() {
@@ -68,6 +64,13 @@ class ZendvnMpAdmin {
 		echo '<p>This is security code</p>';
 		echo '<input type="text" name="zendvn_mp_name[zendvn_mp_security_code]"
 						value=""/>';
+	}
+
+	public function slogan_input(){	
+		$val = get_option('zendvn_mp_slogan', '');
+		echo '<input type="text" name="zendvn_mp_slogan"
+				value="' . $val . '"/>';
+		echo '<p class="description">Nhập vào một chuỗi không quá 20 ký tự</p>';
 	}
 
 	public function settingMenu(){
