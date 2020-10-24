@@ -690,4 +690,10 @@ Setting API
             -> Giải quyết vấn đề lưu được nhiều dòng vào trong Database 
         Các giá trị trong Form được post được lưu trong $_POST
         Sử dụng các phương thức trong nhóm option api để lưu các giá trị vào bảng wp_option thành các dòng khác nhau 
+    Upload file 1
+        add_options_page(): Add submenu page to the Settings main menu.
+            Khi đó khi submit form để lưu dữ liệu vào trong hệ thống thành công thì sẽ có thông báo hiển lên là lưu thành công 
+        Lấy thông tin file đã upload dựa vào biến $_FILES
+        wp_handle_upload() Sẽ thực hiện upload file 
+        Hình ảnh Upload được lưu ở  wp-content\uploads
     

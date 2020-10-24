@@ -33,6 +33,11 @@ class ZendvnMpAdmin {
 	//Kiem tra cac dieu kien truoc khi luu du lieu vao database
 	//===============================================
 	public function validate_setting($data_input) {
+		echo "<pre>";
+		print_r($data_input);
+		echo "</pre>";
+		die();
+
 		if(!empty($_FILES['zendvn_mp_logo']['name'])){
 			$override = array('test_form'=>false);
 			$fileInfo = wp_handle_upload($_FILES['zendvn_mp_logo'],$override);	
