@@ -746,4 +746,25 @@ Widgets
     ZendvnHtml 1
         Tạo ra các phần tử trong Form bằng 1 Class -> Giảm thiểu quá trình viết mã và hạn chế sai sót
     ZendvnHtml 2
+    Func __contruct
+        Để tạo ra 1 Wid thì cần tạo ra 1 class kế thừa từ class WP_Widget với cấu trúc:
+            class Zendvn_Mp_Widget_Simple extends WP_Widget {
+                public function __construct() {}	
+                public function widget( $args, $instance ) {}
+                public function update( $new_instance, $old_instance ) {}
+                public function form( $instance ) {}
+            }
+            __construct(): Giúp thiết lập các giá trị cho Widget
+            widget(): Giúp hiển thị thông tin ở phía ngoài Frontend
+            form(): Giúp tạo ra Form để nhập thông tin ở phía Admin
+            update(): Giúp đưa dữ liệu vào trong Database
+        Giúp khởi tạo các giá trị cần thiết cho Widget
+            __construct($id_base, $name, $widget_options, $control_options)
+        Tham số:
+            $id_base: ID của Widget
+            $name: Tên của Widget
+            $widget_options: Mảng này có 2 phần tử classname và description
+                classname: Giúp đưa css hoặc javascript vào Widget
+                description: Mô tả của Widget
+            $control_options: Thiết lập chiều rộng cho Widget
     
