@@ -767,4 +767,7 @@ Widgets
                 classname: Giúp đưa css hoặc javascript vào Widget
                 description: Mô tả của Widget
             $control_options: Thiết lập chiều rộng cho Widget
+    func form 
+        get_field_id(): WordPress sẽ tạo ra id cho Widget
+        get_field_name(): Tạo ra name cho ô input
     
