@@ -11,9 +11,31 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
         parent::__construct($id_base, $name,$widget_options, $control_options);
     }	
     
-    public function widget( $args, $instance ) {}
+    public function widget( $args, $instance ) {
+		extract($args);				
+				
+		$title = apply_filters('widget_title', $instance['title']);
+		$title = (empty($title))? 'Abc simple': $title;
+		$movie = (empty($instance['movie']))? '&nbsp;':$instance['movie'];
+		$song = (empty($instance['song']))? '&nbsp;':$instance['song'];
+		echo $before_widget;
+		echo $before_title . $title . $after_title;		
+		echo '<ul>';
+		echo '<li>Fav Movie: ' . $movie . '</li>';
+		echo '<li>Fav Song: ' . $song . '</li>';
+		echo '</ul>';
+		echo $after_widget;
+	}
 
-    public function update( $new_instance, $old_instance ) {}
+    public function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		
+		$instance['title'] = strip_tags($new_instance['title']);
+		$instance['movie'] = strip_tags($new_instance['movie']);
+		$instance['song'] = strip_tags($new_instance['song']);
+		
+		return $instance;
+	}
 
     public function form( $instance ) {
 		$htmlObj =  new ZendvnHtml();
@@ -21,7 +43,7 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 		//Tao phan tu chua Title
 		$inputID 	= $this->get_field_id('title');
 		$inputName 	= $this->get_field_name('title');
-		$inputValue = '';
+		$inputValue = $instance['title'];
 		$arr = array('class' =>'widefat','id' => $inputID);			
 		echo '<p><label for="' . $inputID . '">'. translate('Title') .'</label>'
 		. $htmlObj->textbox($inputName, $inputValue, $arr) 
@@ -30,7 +52,7 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 		//Tao phan tu chua Movie
 		$inputID 	= $this->get_field_id('movie');
 		$inputName 	= $this->get_field_name('movie');
-		$inputValue = '';
+		$inputValue = $instance['movie'];
 		$arr = array('class' =>'widefat','id' => $inputID);
 		echo '<p><label for="' . $inputID . '">' . translate('Movie') . '</label>'
 		. $htmlObj->textbox($inputName,$inputValue,$arr)
@@ -39,7 +61,7 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 		//Tao phan tu chua Song
 		$inputID 	= $this->get_field_id('song');
 		$inputName 	= $this->get_field_name('song');
-		$inputValue = '';
+		$inputValue = $instance['song'];
 		$arr = array('class' =>'widefat','id' => $inputID);
 		echo '<p><label for="' . $inputID . '">' . translate('Song') . '</label>'
 		. $htmlObj->textbox($inputName,$inputValue,$arr)

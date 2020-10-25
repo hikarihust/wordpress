@@ -41,6 +41,7 @@ class ZendvnMp{
 	//=====================================================
 	public function showFunction(){
 		// ZendvnMpSupport::showFunc('the_content');
+		ZendvnMpSupport::showFunc('widget_title');
 	}
 
 }

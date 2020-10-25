@@ -770,4 +770,18 @@ Widgets
     func form 
         get_field_id(): WordPress sẽ tạo ra id cho Widget
         get_field_name(): Tạo ra name cho ô input
+    Func update & widget
+        strip_tags() — 文字列から HTML および PHP タグを取り除く
+            Loại bỏ đi những giá trị html ko cần thiết nếu mình nhập vào 
+        extract() extract các phần tử của 1 mảng thành các phần tử nằm trên mảng
+        $before_widget và $after_widget sẽ sinh ra thẻ đóng và thẻ mở <li>
+            $before_widget: <li id="zendvn-mp-widget-simple-2" class="widget-container zendvn-mp-wg-css-simple">
+            $after_widget: </li>
+        $before_title và $after_title sinh ra thẻ bao ngoài của Widget Title
+            $before_title: <h3 class="widget-title">
+            $after_title: </h3>
+        apply_filters(): Giúp lọc đi các giá trị không cần thiết ở Title đó
+            $title = apply_filters('widget_title', $instance['title']);
+            Trong hook 'widget_title' này có các hàm giúp lọc đi các giá trị không cần thiết:
+                wptexturize, convert_chars, esc_html
     
