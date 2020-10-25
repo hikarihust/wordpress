@@ -745,4 +745,5 @@ Widgets
             wp_widget_description()
     ZendvnHtml 1
         Tạo ra các phần tử trong Form bằng 1 Class -> Giảm thiểu quá trình viết mã và hạn chế sai sót
+    ZendvnHtml 2
     
