@@ -977,4 +977,15 @@ Tương tác với database
             $usermeta		= wp_usermeta
             $links		= wp_links
             $options		= wp_options
+WP_Query
+    WP_Query 1
+        Đối tượng WP_Query giúp ta truy cập vào tất cả các bảng mặc định của hệ thống WordPress
+        Create new user
+            editor      editor@gmail.com
+            contributor contributor@gmail.com
+            author      author@gmail.com
+        https://developer.wordpress.org/reference/classes/wp_query/
+        Setting -> Reading -> Blog pages show at most -> Setting cho giá trị posts_per_page
+        get_the_ID() lấy id của bài viết
+        get_the_title() lấy tiêu đề bài viết
     

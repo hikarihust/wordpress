@@ -28,35 +28,5 @@ if(!is_admin()){
 
 	require_once ZENDVN_MP_WIDGET_DIR . '/db_simple.php';
 	new ZendvnMp_Widget_Db_Simple();
-	/*
-	add_action('wp_dashboard_setup', 'zendvn_mp_widget_db');
-	
-	function zendvn_mp_widget_db(){
-		wp_add_dashboard_widget('zendvn_mp_widget_db_simple', 'My Plugin Information', 
-						'zendvn_mp_widget_db_simple_display');
-	}
-	
-	function zendvn_mp_widget_db_simple_display(){
-		echo '<p> Đây là khóa học lập trình WP 5.x</p>';
-		echo '<ul>'
-			 . '<li>contact: training@zend.vn</li>'
-			 . '<li>website: www.zend.vn</li>'	
-			 . '</ul>';	
-	} 
-	*/
+
 }
-/*
-require_once ZENDVN_MP_WIDGET_DIR . '/simple.php';
-
-add_action('widgets_init', 'zendvn_mp_widget_simple');
-
-function zendvn_mp_widget_simple(){
-	register_widget('Zendvn_Mp_Widget_Simple');
-}
-
-add_action('widgets_init', 'zendvn_mp_widget_remove');
-
-function zendvn_mp_widget_remove(){
-	unregister_widget('Zendvn_Mp_Widget_Simple');
-}
-*/
