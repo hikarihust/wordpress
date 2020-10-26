@@ -784,4 +784,8 @@ Widgets
             $title = apply_filters('widget_title', $instance['title']);
             Trong hook 'widget_title' này có các hàm giúp lọc đi các giá trị không cần thiết:
                 wptexturize, convert_chars, esc_html
+    Add CSS 1
+        Đưa 1 tập tin Css vào trong WordPress nói chung và trong Widget nói riêng
+        Dùng phương thức add_action() để đưa phương thức 'add_css' vào trong hook 'wp_head'
+            add_action('wp_head',array($this,'add_css'));
     
