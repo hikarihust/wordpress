@@ -890,3 +890,17 @@ Widgets
             $callback: Hàm sẽ hiển thị nội dung của Widget đó
             $control_callback: Hàm xử lý Widget khi muốn lưu dữ liệu vào trong Database
             $callback_args: Mảng chứa tham số truyền vào trong biến post
+Tương tác với database
+    Khởi tạo đối tượng wpdb
+        global $wpdb;
+    get_row
+        Phương thức get_row() này giúp chúng ta lấy ra một dòng dữ liệu trong một bảng nào đó của database WP.
+            $wpdb->get_row($query,$output,$y)
+        Tham số:
+            $query: câu truy vấn SQL
+            $output : Kiểu hiển thị dữ liệu sau khi lấy dữ liệu từ table ra  
+                            ARRAY_A | ARRAY_N | OBJECT
+                ARRAY_A: Các khóa của mảng ở dạng chuỗi
+                ARRAY_N: Các khóa của mảng ở dạng số
+            $y : Thứ tự record
+    
