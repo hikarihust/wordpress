@@ -903,4 +903,45 @@ Tương tác với database
                 ARRAY_A: Các khóa của mảng ở dạng chuỗi
                 ARRAY_N: Các khóa của mảng ở dạng số
             $y : Thứ tự record
+    Get_col - insert - replace - update
+        Phương thức get_col()
+            Phương thức này giúp chúng ta lấy ra một tập hợp các dòng dữ liệu trong một bảng nào đó của database WP. 
+            Nhưng nó chỉ lấy ra 1 cột duy nhất
+                $wpdb->get_col( $query, $x )
+            Tham số
+                $query: câu truy vấn đến bảng trong database
+                $x: Vị trí cột chúng ta muốn lấy dữ liệu ra 
+        Phương thức get_results() 
+            Phương thức này giúp chúng ta lấy ra một tập hợp các dòng dữ liệu trong một bảng nào đó của database WP. 
+                $wpdb->get_results( $query = null, $output = OBJECT )
+            Tham số:
+                $query: câu truy vấn SQL
+                $output : Kiểu hiển thị dữ liệu sau khi lấy dữ liệu từ table ra  
+                            ARRAY_A | ARRAY_N | OBJECT
+        Phương thức insert() 
+            Phương thức này giúp chúng ta một dòng dữ liệu trong một bảng nào đó của database WP. 
+            Nếu đưa vào thành công thì phương thức sẽ trả về giá trị 1. 
+                $wpdb->insert( $table, $data, $format );
+            Tham số:
+                $table: Tên của bảng chúng ta
+                $data: Mảng chứa dữ liệu của dòng mới
+                $format: Định dạng dữ liệu trước khi thêm vào bảng
+        Phương thức replace () 
+            Phương thức này giúp chúng ta thay đổi thông tin của một dòng trong table nếu nó tồn tại và thêm mới nếu nó chưa tồn tại. 
+                $wpdb->replace( $table, $data, $format );
+            Tham số:
+                $table: Tên của bảng chúng ta
+                $data: Mảng chứa dữ liệu của dòng mới
+                $format: Định dạng dữ liệu trước khi thêm vào bảng
+        Phương thức update() 
+            Phương thức này giúp chúng ta thay đổi thông tin của một dòng trong table. 
+                $wpdb->update( $table,$data,$where,$format,$where_format);
+            Tham số:
+                $table: Tên bảng chứa dữ liệu
+                $data: Mảng dữ liệu sẽ cập nhật
+                $where: Điều kiện cập nhật
+                $format: Định dạng cho dữ liệu trong mảng $data
+                $where_format: Định dạng cho điều kiện $where
+            Phương thức này có 1 hạn chế đó là $where không thể truyền nhiều điều kiện vào mà nó thường chứa giá trị của khóa chính trong
+                bảng                
     

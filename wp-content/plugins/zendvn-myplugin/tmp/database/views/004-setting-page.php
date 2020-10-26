@@ -14,19 +14,17 @@
 
             $table = $wpdb->prefix . 'zendvn_mp_article';
 			$data = array(
-                'title' => 'This is a test 246',
-                'picture' => 'abc123.jpg',
-                'content' => 'This is a content 246',
+                'title' => 'This is a test',
+                'picture' => 'abc.jpg',
+                'content' => 'This is a content',
                 'status' => 1
             );	
-            $where = array('id'=>20);
             $format = array('%s','%s','%s','%d');
-            $where_format = array('%d');
-            $info = $wpdb->update($table, $data, $where, $format,$where_format);
+            $info = $wpdb->insert($table, $data, $format);
             
             echo '<pre>';
             print_r($info);
-            echo '</pre>';	
+            echo '</pre>';
 		?>
 
         <!-- 
