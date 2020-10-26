@@ -788,4 +788,28 @@ Widgets
         Đưa 1 tập tin Css vào trong WordPress nói chung và trong Widget nói riêng
         Dùng phương thức add_action() để đưa phương thức 'add_css' vào trong hook 'wp_head'
             add_action('wp_head',array($this,'add_css'));
-    
+    Add CSS 2
+        Phương thức wp_register_style()
+            Đăng ký tập tin css vào hệ thống WP(không hiển thị trong tập tin html)
+                wp_register_style($handle, $src = '', $deps = array(), $ver = false, $media = 'all')
+            Tham số:
+                $handle: id của phần tử <link> trong mã HTML
+                $src: Đường dẫn đến tập tin CSS
+                $deps: Tập tin CSS gọi vào phụ thuộc vào tập tin CSS khác?, các tập tin trong mảng $deps sẽ được load vào trước 
+                $ver: Phiên bản của tập tin CSS
+                $media: CSS này hiển thị trên các thiết bị nào
+            Muốn đưa tập tin css này vào hệ thống WP thì dùng wp_enqueue_style($handle);
+        Phương thức wp_enqueue_style()
+            Đưa tập tin css vào hệ thống WP(không hiển thị trong tập tin html)
+                wp_enqueue_style($handle, $src = '', $deps = array(), $ver = false, $media = 'all')
+            Tham số:
+                $handle: id của phần tử <link> trong mã HTML
+                $src: Đường dẫn đến tập tin CSS
+                $deps: Tập tin CSS gọi vào phụ thuộc vào tập tin CSS khác?, các tập tin trong mảng $deps sẽ được load vào trước 
+                $ver: Phiên bản của tập tin CSS
+                $media: CSS này hiển thị trên các thiết bị nào
+        Dùng phương thức wp_register_style() và wp_enqueue_style() trực tiếp trong __construct() thì các tập tin css
+            được thêm vào sẽ được nằm ở phía trên các thẻ link của các tập tin css có sẵn trong hệ thống WordPress
+        Dùng phương thức wp_register_style() và wp_enqueue_style() trong 1 phương thức khác rồi sau đó add vào wp_enqueue_scripts hook
+            thì các tập tin css được thêm vào sẽ được nằm ở phía dưới các thẻ link của các tập tin css có sẵn trong hệ thống WordPress
+        
