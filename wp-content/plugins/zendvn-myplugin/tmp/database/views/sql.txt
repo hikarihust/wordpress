@@ -85,3 +85,15 @@ $table = $wpdb->prefix . 'zendvn_mp_article';
 			echo '<pre>';
 			print_r($info);
 			echo '</pre>';
+
+==============================================
+7. $wpdb->delete
+===============================================	
+	$table = $wpdb->prefix . 'zendvn_mp_article';			
+			$where = array('id'=>19);			
+			$where_format = array('%d');
+			$info = $wpdb->delete($table, $where, $where_format);
+			
+			echo '<pre>';
+			print_r($info);
+			echo '</pre>';

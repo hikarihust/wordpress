@@ -11,22 +11,15 @@
 
         <?php 
             global $wpdb;
-            /*
+
             $table = $wpdb->prefix . 'zendvn_mp_article';
-			$title 		= "This is a test 2"; //$_POST - $_GET - $_POST['title']
-			$picture 	= "abc2.png";				// $_POST['title']
-			$content 	= "This is a content 2";
-			$status 	= 0;		
-			
-			$query = "INSERT INTO {$table} (`title`,`picture`,`content`,`status`) 
-								  VALUES (%s,%s,%s,%d)";
-			$info = $wpdb->prepare($query, $title,$picture,$content,$status);
-            $wpdb->query($info); 
-            */
+			$where = array('id'=>19);			
+			$where_format = array('%d');
+			$info = $wpdb->delete($table, $where, $where_format);
 			
 			echo '<pre>';
-			print_r($wpdb->users);
-			echo '</pre>';	
+			print_r($info);
+			echo '</pre>';		
 		?>
 
         <!-- 

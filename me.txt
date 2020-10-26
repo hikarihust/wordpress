@@ -944,4 +944,37 @@ Tương tác với database
                 $where_format: Định dạng cho điều kiện $where
             Phương thức này có 1 hạn chế đó là $where không thể truyền nhiều điều kiện vào mà nó thường chứa giá trị của khóa chính trong
                 bảng                
+    Delete - prepare - query
+        Phương thức delete() 
+            Phương thức này giúp chúng ta xóa dữ liệu trong table. 
+                $wpdb->delete( $table, $where, $where_format);
+            Tham số:
+                $table: Tên bảng chứa dữ liệu
+                $where: Điều kiện để xóa
+                $where_format: Định dạng cho điều kiện $where
+        Phương thức prepare()  
+            Phương thức này giúp chúng ta tạo ra một câu truy vấn an toàn để bảo mật website tránh được các lỗi SQL injection 
+                $wpdb->prepare( $query, $args )
+            Tham số:
+                $query: Câu truy vấn SQL
+                $args: Các tham số truyền vào câu truy vấn
+            Chỉ thực hiện lọc dữ liệu truyền vào để tạo ra 1 câu truy vấn an toàn. Để thực thi câu lệnh thì cần dùng phương thức query()
+        Phương thức query()  
+            Các phương thức chúng ta đã học ở phía trên trong core của WP không thể nào đáp ứng được mọi trường hợp trong quá trình truy vấn vào database vì vậy chúng ta sẽ thường xuyên phải viết các câu SQL theo cách thông thường và sau đó thực hiện với phương thức $wpdb->query() 
+                $wpdb->query( $query )
+            Tham số:
+                $query: Câu truy vấn SQL được xây dựng từ phương thức prepare()
+        $wpdb->table_name
+            Truy cập vào các bảng trong WP để lấy tên bảng
+            $posts	 	= wp_posts
+            $postmeta		 = wp_postmeta
+            $comments	 = wp_comments
+            $commentmeta	= wp_commentmeta
+            $terms		= wp_terms
+            $term_taxonomy	= wp_term_taxonomy 
+            $term_relationships	= wp_term_relationships
+            $users		= wp_users
+            $usermeta		= wp_usermeta
+            $links		= wp_links
+            $options		= wp_options
     
