@@ -845,4 +845,38 @@ Widgets
                 Optional. Status of the stylesheet to check. Default 'enqueued'. Accepts 'enqueued', 'registered', 
                     'queue', 'to_do', and 'done'.
         Có thê gọi ở bất kỳ chỗ nào mà mình muốn: Có thể trong widget, plugin, setting page 
+    Check active - unregister
+        active
+            Kiểm tra xem Widget đã được sử dụng hay chưa
+                is_active_widget($callback = false, $widget_id = false, $id_base = false, $skip_inactive = true);
+            Tham số:
+                $callback: Hàm dùng để xử lý thêm các chức năng trong quá trình kiểm tra
+                $widget_id: ID của Widget, ít được xử dụng bởi vì Id của Widget được tự động sinh ra bởi hệ thống
+                $id_base: ID mà mình đặt cho WG, là tham số chính được sử dụng
+                $skip_inactive: Nên để giá trị mặc định là true
+            Giá trị trả về là id của vùng chứa Widget của mình -> Widget đang được sử dụng. Vậy trong trường hợp đang 
+                được sử dụng thì có thể tiến hành add các tập tin css và js vào tại thời điểm mà mình muốn giúp tối ưu
+                hệ thống vì các tập tin js hay css đưa vào với mục đích dùng cho Widget nên chỉ thêm các tập tin đó vào 
+                khi Widget hiển thị mà thôi
+        unregister
+            Tạm thời tắt(loại bỏ) 1 Widget nào đó trong hệ thống của Widget. Widget này có thể là Widget đã được tích hợp sẵn hoặc là 
+                các Widget mở rộng 
+                unregister_widget($widget)
+            Tham số:
+                $widget: Tên class cửa Widget -> tên class chứa Widget(Zendvn_Mp_Widget_Simple)
+            Cách sử dụng là đưa vào trong hàm rồi đưa hàm đó 1 hook tương ứng
+        Danh sách các Widget nằm trong hệ thống cửa Widget
+            WP_Widget_Pages — Pages Widget
+            WP_Widget_Calendar — Calendar Widget
+            WP_Widget_Archives — Archives Widget
+            WP_Widget_Links — Links Widget
+            WP_Widget_Meta — Meta Widget
+            WP_Widget_Search — Search Widget
+            WP_Widget_Text — Text Widget
+            WP_Widget_Categories — Categories Widget
+            WP_Widget_Recent_Posts — Recent Posts Widget
+            WP_Widget_Recent_Comments — Recent Comments Widget
+            WP_Widget_RSS — RSS Widget
+            WP_Widget_Tag_Cloud — Tag Cloud Widget
+            WP_Nav_Menu_Widget - Navigation Menu Widget
     

@@ -34,3 +34,9 @@ add_action('widgets_init', 'zendvn_mp_widget_simple');
 function zendvn_mp_widget_simple(){
 	register_widget('Zendvn_Mp_Widget_Simple');
 }
+
+add_action('widgets_init', 'zendvn_mp_widget_remove');
+
+function zendvn_mp_widget_remove(){
+	unregister_widget('Zendvn_Mp_Widget_Simple');
+}

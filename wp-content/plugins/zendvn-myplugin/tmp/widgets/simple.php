@@ -9,10 +9,9 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 				);
 		$control_options = array('width'=>'250px');
 		parent::__construct($id_base, $name,$widget_options, $control_options);
-		
+		/*
 		wp_enqueue_style('my_stylesheet',
 						ZENDVN_MP_CSS_URL . '/abc.css',array(),'1.0');
-		/*
 		$handle = 'my_stylesheet';
 		if (wp_style_is( $handle)) {
 			echo 'ton tai tap tin ' . $handle;
@@ -20,7 +19,7 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 			echo 'Khong ton tai tap tin ' . $handle;
 		} 
 		*/
-
+		/*
 		wp_enqueue_script('zendvn_js123',
 					ZENDVN_MP_JS_URL . '/abc123.js',array('jquery'),'1.0',false);
 		
@@ -30,7 +29,14 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 		} else {
 			echo 'Khong ton tai tap tin ' . $handle;
 		}
-
+		*/
+		
+		if(!empty(is_active_widget(false, false,$id_base,true))){
+			wp_enqueue_style('my_stylesheet',
+							ZENDVN_MP_CSS_URL . '/abc.css',array(),'1.0');
+			wp_enqueue_script('zendvn_js123',
+							ZENDVN_MP_JS_URL . '/abc123.js',array('jquery'),'1.0',false);
+		} 
     }	
     
     public function widget( $args, $instance ) {
