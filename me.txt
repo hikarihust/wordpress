@@ -820,4 +820,18 @@ Widgets
         is_page(): Trang page 
             http://wordpress.xyz/?page_id=2
         Thay đổi được giao diện của Widget theo ý thích 
+    Add JS 1
+        Đưa tập tin javascript vào trong WordPress nói chung và Widget nói riêng. Cách làm cũng khá giống như đưa css
+        Nhúng trực tiếp file JavaScript vào
+            wp_enqueue_script($handle, $src, $deps, $ver, $in_footer)
+        Tham số:
+            $handle: Tên or id của tập tin javascript
+            $src: Đường dẫn đến tập tin JavaScript
+            $deps: Mảng chứa các tập tin javascript liên quan
+            $ver: Phiên bản của tập tin javascript
+            $in_footer: Tập tin javascript này được add vào phía đầu hay phía cuối của trang 
+        global $wp_scripts Biến toàn cục này giúp có thể xem được nhiều thông tin hơn ở trong Widget
+        wp_enqueue_script('abc',ZENDVN_MP_JS_URL . '/abc.js',array('jquery'),'1.0',true);
+            WordPress đã chuẩn bị sãn cho mình tập tin jquery nên khi viết mã javascript bằng các cú pháp của jquery thì
+                chỉ cần truyền thêm tham số array('jquery') trong cú pháp của wp_enqueue_script()
     
