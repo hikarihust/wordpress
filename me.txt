@@ -879,4 +879,14 @@ Widgets
             WP_Widget_RSS — RSS Widget
             WP_Widget_Tag_Cloud — Tag Cloud Widget
             WP_Nav_Menu_Widget - Navigation Menu Widget
-    
+    Dashboar widget
+        Hiển thị widget trong Dashboar của Admin
+        Mục đích của Dashboar widget là để tóm tắt các chức năng hoặc bài viết, những cái mới nhất, quan trọng nhất
+            mà mình muốn thông báo cho Admin để Admin có thể xử lý trong hệ thống        
+	    zendvn_mp_widget_db($widget_id, $widget_name, $callback, $control_callback = null, $callback_args = null)
+        Tham số:
+            $widget_id: id của Widget
+            $widget_name: Tiêu đè của Widget
+            $callback: Hàm sẽ hiển thị nội dung của Widget đó
+            $control_callback: Hàm xử lý Widget khi muốn lưu dữ liệu vào trong Database
+            $callback_args: Mảng chứa tham số truyền vào trong biến post
