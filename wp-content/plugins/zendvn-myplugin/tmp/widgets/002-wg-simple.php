@@ -16,7 +16,8 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 		wp_enqueue_style("wg-simple-01");
 		*/
 		
-		add_action('wp_enqueue_scripts', array($this,'add_file_css'));
+		// add_action('wp_enqueue_scripts', array($this,'add_file_css'));
+		add_action('wp_enqueue_scripts', array($this,'add_file_css2'));
     }	
     
     public function widget( $args, $instance ) {
@@ -95,5 +96,25 @@ class Zendvn_Mp_Widget_Simple extends WP_Widget {
 		wp_enqueue_style("wg-simple",ZENDVN_MP_CSS_URL . '/wg-simple.css',array("wg-simple-01", 'wg-simple-02'),'1.0','all');
 		wp_register_style("wg-simple-01",ZENDVN_MP_CSS_URL . '/wg-simple-01.css',array(),'1.0','all');
 		wp_register_style("wg-simple-02",ZENDVN_MP_CSS_URL . '/wg-simple-02.css',array(),'1.0','all');
+
+
+		global $wp_styles;
+		echo '<pre>';
+		print_r($wp_styles);
+		echo '</pre>';
 	}
+
+	public function add_file_css2(){
+		wp_register_style("wg-simple",ZENDVN_MP_CSS_URL . '/wg-simple.css',array(),'1.0','all');
+		wp_register_style("wg-simple-01",ZENDVN_MP_CSS_URL . '/wg-simple-01.css',array(),'1.0','all');
+		wp_register_style("wg-simple-02",ZENDVN_MP_CSS_URL . '/wg-simple-02.css',array(),'1.0','all');
+		if(is_front_page()){
+			wp_enqueue_style("wg-simple");
+		}else if(is_page()){
+			wp_enqueue_style("wg-simple-01");
+		}else{
+			wp_enqueue_style("wg-simple-02");
+		}
+	}
+
 }

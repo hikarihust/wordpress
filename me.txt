@@ -812,4 +812,12 @@ Widgets
             được thêm vào sẽ được nằm ở phía trên các thẻ link của các tập tin css có sẵn trong hệ thống WordPress
         Dùng phương thức wp_register_style() và wp_enqueue_style() trong 1 phương thức khác rồi sau đó add vào wp_enqueue_scripts hook
             thì các tập tin css được thêm vào sẽ được nằm ở phía dưới các thẻ link của các tập tin css có sẵn trong hệ thống WordPress
-        
+    Add CSS 3
+        global $wp_styles: Biến toàn cục này giúp mình thấy được các tập tin css đã có sẵn trong hệ thống của WordPress có bao gồm cả
+            các tập tin mà mình đăng ký thêm vào 
+        is_front_page(): Trang chủ
+            http://wordpress.xyz/
+        is_page(): Trang page 
+            http://wordpress.xyz/?page_id=2
+        Thay đổi được giao diện của Widget theo ý thích 
+    
