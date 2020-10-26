@@ -11,6 +11,7 @@ class ZendvnMp_Widget_Db_Simple{
 						array($this,'display'));
 	}
 	
+	/*
 	public function display(){
 		$wpQuery = new WP_Query('author=1');
 		$lnkPost = '#';
@@ -28,4 +29,29 @@ class ZendvnMp_Widget_Db_Simple{
 
 		wp_reset_postdata();
 	}
+	*/
+
+	/*
+	public function display(){
+		$wpQuery = new WP_Query('author=1');
+		$lnkPost = '#';
+		if(count($wpQuery->posts)>0){
+			foreach ($wpQuery->posts as $key => $val){
+				echo '<br/>' . $val->post_title;
+			}
+		}
+	}
+	*/
+
+	public function display(){
+		$arrQuery = array(
+			'author' => 1,
+			'cat' => 1,
+			'posts_per_page' => 4
+		);
+
+		// $wpQuery = new WP_Query('author=1&p=49');
+		$wpQuery = new WP_Query($arrQuery);
+	}
+
 }

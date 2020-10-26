@@ -988,4 +988,6 @@ WP_Query
         Setting -> Reading -> Blog pages show at most -> Setting cho giá trị posts_per_page
         get_the_ID() lấy id của bài viết
         get_the_title() lấy tiêu đề bài viết
-    
+    WP_Query 2
+        Kết quả của câu truy vấn 
+        
