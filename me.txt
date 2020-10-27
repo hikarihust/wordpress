@@ -1113,4 +1113,16 @@ WP_Query
             Post Type Parameters
         Status Parameters
             Chỉ sử dụng cho các bài viết(post) 
+    Pagination
+        Pagination Parameters
+        nopaging (boolean) – show all posts or use pagination. Default value is ‘false’, use paging.
+        posts_per_page (int) – number of post to show per page. Use 'posts_per_page'=>-1 to show all posts (the 'offset' 
+            parameter is ignored with a -1 value). 
+        offset (int) – number of post to displace or pass over.
+        paged (int) – number of page. Show the posts that would normally show up just on page X.
+        ignore_sticky_posts (boolean) – ignore post stickiness
+            Make this post sticky
+            Bài quan trọng, sẽ được hiển thị ở vị trí dễ thấy nhất để cho người truy cập vào website có thế nhìn thấy nội 
+                dung của bài viết 
+            false (default): move sticky posts to the start of the set. true: do not move sticky posts to the start of the set.
     
