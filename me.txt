@@ -1178,4 +1178,31 @@ Transients API
             field là field của bảng wp_terms
             taxonomy là field của bảng wp_term_taxonomy
             Rồi từ đó lấy được id của các post trong bảng wp_term_relationships
+    Transients API 4
+        Saving Transients
+            set_transient( $transient, $value, $expiration )
+        Tham số:
+            $transient (string): Transient name.
+                Expected to not be SQL-escaped. Must be 172 characters or fewer in length.
+                Đây là tên sẽ được lưu vào cột 'option_name' của bảng 'wp_options'
+            $value (array|object): Data to save, either a regular variable or an array/object.
+                The API will handle serialization of complex data for you.
+                Đây là giá trị sẽ được lưu vào cột 'option_value' của bảng 'wp_options'
+            $expiration (integer): The maximum of seconds to keep the data before refreshing.
+                Transients may expire before the $expiration (Due to External Object Caches, or database upgrades) 
+                    but will never return their value past $expiration.
+                Thời gian lưu trữ
+        Fetching Transients
+            get_transient( $transient )
+        If the transient does not exist, or has expired, then get_transient() will return false
+        Tham số:
+            $transient: the unique slug used while saving the transient with set_transient().
+        Removing Saved Transients
+            delete_transient( $transient )
+            Our transient will die naturally of old age once $expiration seconds have passed since we last ran set_transient(), 
+                but we can force the transient to die early by manually deleting it. This is useful for times when a given activity 
+                (saving a post, adding a category etc.) will make the cached data inherently stale and in need of updating.
+            -> Cho vào update() của Widget
+        Tham số:
+            $transient: the unique name used when saving with set_transient().
     
