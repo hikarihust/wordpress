@@ -1135,4 +1135,13 @@ WP_Query
             orderby (string | array) – Sort retrieved posts by parameter. Defaults to ‘date (post_date)’. One or more options can be passed
             Display one random post:
                 $wpQuery = new WP_Query(  array (  'orderby' => 'rand', 'posts_per_page' => 1));
+Transients API
+    About Transients
+        https://developer.wordpress.org/apis/handbook/transients/
+        This page contains the technical documentation of WordPress Transients API, which offers a simple and standardized way of 
+            storing cached data in the database temporarily by giving it a custom name and a timeframe after which it will expire 
+            and be deleted.
+        The Transients API is very similar to the Options API but with the added feature of an expiration time, which simplifies 
+            the process of using the wp_options database table to temporarily store cached information.
+    Transients API 1
     

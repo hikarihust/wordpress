@@ -30,3 +30,11 @@ if(!is_admin()){
 	new ZendvnMp_Widget_Db_Simple();
 
 }
+
+require_once ZENDVN_MP_WIDGET_DIR . '/last_post.php';
+
+function last_post_widget_init(){
+	register_widget('Zendvn_Mp_Widget_Last_Post');
+}
+
+add_action('widgets_init','last_post_widget_init');
