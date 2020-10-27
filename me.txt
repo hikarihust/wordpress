@@ -1144,4 +1144,5 @@ Transients API
         The Transients API is very similar to the Options API but with the added feature of an expiration time, which simplifies 
             the process of using the wp_options database table to temporarily store cached information.
     Transients API 1
+    Transients API 2
     
