@@ -1145,4 +1145,37 @@ Transients API
             the process of using the wp_options database table to temporarily store cached information.
     Transients API 1
     Transients API 2
+    Transients API 3
+        ignore_sticky_posts: Không có tác dụng trên trang Admin 
+        wp_terms: 
+            9  - post-format-aside
+            10 -post-format-gallery
+        wp_term_taxonomy: 
+            9 - post_format
+            10 - post_format
+        wp_term_relationships:  
+            20 - 10
+            26 - 9
+        Taxonomy Parameters
+            tax_query (array) – use taxonomy parameters 
+            relation (string) – The logical relationship between each inner taxonomy array when there is more than one. 
+                Possible values are ‘AND’, ‘OR’. Do not use with a single inner taxonomy array.
+            taxonomy (string) – Taxonomy.
+            field (string) – Select taxonomy term by. Possible values are ‘term_id’, ‘name’, ‘slug’ or ‘term_taxonomy_id’. 
+                Default value is ‘term_id’.
+            terms (int/string/array) – Taxonomy term(s).
+            include_children (boolean) – Whether or not to include children for hierarchical taxonomies. Defaults to true.
+            operator (string) – Operator to test. Possible values are ‘IN’, ‘NOT IN’, ‘AND’, ‘EXISTS’ and ‘NOT EXISTS’. 
+                Default value is ‘IN’
+            $tax_query =array(
+                             array(						
+                                    'field' => 'slug',
+                                    'terms' => 'post-format-' . $format,
+                                    'taxonomy' => 'post_format',
+                                    'operator' => 'IN'
+                                 )
+                        );
+            field là field của bảng wp_terms
+            taxonomy là field của bảng wp_term_taxonomy
+            Rồi từ đó lấy được id của các post trong bảng wp_term_relationships
     

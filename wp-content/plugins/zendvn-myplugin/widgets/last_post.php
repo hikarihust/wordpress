@@ -32,6 +32,18 @@ class Zendvn_Mp_Widget_Last_Post extends WP_Widget {
             'ignore_sticky_posts' => true
         );
 
+        if($format != 'standard'){
+            $tax_query =array(
+                             array(						
+                                    'field' => 'slug',
+                                    'terms' => 'post-format-' . $format,
+                                    'taxonomy' => 'post_format',
+                                    'operator' => 'IN'
+                                 )
+                        );
+            $args['tax_query'] = $tax_query;
+        }
+
         $wpQuery = new WP_Query($args);
 		if($wpQuery->have_posts()){
 			echo '<ul>';
