@@ -992,18 +992,20 @@ WP_Query
         query
         query_vars
         Kết quả của câu truy vấn 
-    WP_Query 3
+    WP_Query 3: Properties
+        queried_object
         get_queried_object() có 2 trường hợp
             - Câu query chỉ hiển thị được 1 bài viết thì nó sẽ lấy ra thông tin của bài viết đó 
             - Trong trường hợp câu query hiển thị được nhiều bài viết thì nó sẽ lấy ra 1 đối tượng là 
                 thông tin đầy đủ với giá trị id tương ứng truyền vào
             If queried object is not set, then the queried object will be set from the category, tag, taxonomy, 
                 posts page, single post, page, or author query variable. After it is set up, it will be returned.
+        queried_object_id
         get_queried_object_id()
             If the request is a category, author, permalink or post / page, holds the corresponding ID
             Nếu kết quả câu truy vấn hiển thị được nhiều bài viết thì giá trị trả về sẽ là id ccuar user 
             Nếu giá kết quả câu query chỉ hiển thị được 1 bài viết thì giá trị trả về sẽ là id của bài viết
-        post()
+        posts
         post_count: The number of posts being displayed.
             Hệ thống sẽ hiển thị 5 bài viết trên 1 trang 
         found_posts: The total number of posts found matching the current query parameters
@@ -1016,4 +1018,25 @@ WP_Query
             (available during The Loop) The post currently being displayed.
         is_admin: Vùng đang truy cập là vùng Admin
         is_page
+    WP_Query 4: Methods 
+        init(): Initiates object properties and sets default values.
+            Khởi tạo lại đối tượng bằng cách thiết lập các giá trị null zero vào trong các thuộc tính của đối tượng đó 
+        parse_query($query = ''): Parse a query string and set query type booleans.
+            Truyền vào 1 chuỗi truy vấn hoặc 1 mảng truy vấn sau đó phương thức này sẽ phân tích chuỗi or mảng truyền vào
+                đưa các giá trị trong chuỗi or mảng truyền vào đó đến các thuộc tính có sẵn của đối tượng WP_Query(Nó sẽ
+                xóa đi toàn bộ giá trị đã truyền trước đó sau đó thiết lập lại giá trị mới)
+            Xử dụng kèm với phương thức get_posts()↓
+        get_posts(): Retrieves an array of posts based on query variables.
+        get($query_var, $default = ''):  Retrieve query variable
+            Phương thức này lấy ra các giá trị nằm ở trong phần tử query_vars của WP_Query
+        set($query_var, $value): Set query variable.
+            Phương thức này đưa các giá trị vào nằm ở trong phần tử query_vars của WP_Query
+            Xử dụng kèm với phương thức get_posts()
+        next_post(): Set up the next post and iterate current post index.
+            Phương thức này sẽ gắn bài viết hiện thời bằng bài viết kế tiếp
+        the_post(): Thiết lập giá trị global cho $post
+        have_posts(): Determines whether there are more posts available in the loop.
+        rewind_posts(): Rewind the posts and reset post index.
+        query(): Sets up the WordPress query by parsing query string.
+            Là sự kết hợp của 2 phương thức đó là parse_query() và get_posts()
     
