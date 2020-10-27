@@ -8,7 +8,7 @@ class ZendvnMp_Widget_Db_Simple{
 	
 	public function widget(){
 		wp_add_dashboard_widget('zendvn_mp_widget_db_simple', 'My Plugin Information', 
-						array($this,'post_page'));
+						array($this,'password'));
 	}
 	
 	/*
@@ -138,6 +138,22 @@ class ZendvnMp_Widget_Db_Simple{
 
 	public function post_page(){
 		$wpQuery = new WP_Query(array( 'post_parent' => 0, 'post_type' => 'page' ));
+		
+		if($wpQuery->have_posts()){
+			echo '<ul>';
+			while ($wpQuery->have_posts()){
+				$wpQuery->the_post();
+				echo '<li>' . get_the_ID() . ' - ' . get_the_title() . '</li>';
+		
+			}
+			echo '</ul>';
+		}else{
+			echo '<p>' . translate('No post found') . '</p>';
+		}
+	}
+
+	public function password(){
+		$wpQuery = new WP_Query(array( 'post_password' => '123456' ) );
 		
 		if($wpQuery->have_posts()){
 			echo '<ul>';

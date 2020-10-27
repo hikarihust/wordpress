@@ -1103,4 +1103,14 @@ WP_Query
                     $wpQuery = new WP_Query(array( 'post_parent' => 2, 'post_type' => 'page' ));
                 Display only top-level pages, exclude all child pages:
                     $wpQuery = new WP_Query(array( 'post_parent' => 0, 'post_type' => 'page' ));
+    Password - Type
+        Password
+            Password Parameters
+            has_password (bool) – true for posts with passwords ; false for posts without passwords ; null for all posts 
+                with and without passwords 
+            post_password (string) – show posts with a particular password 
+        Type
+            Post Type Parameters
+        Status Parameters
+            Chỉ sử dụng cho các bài viết(post) 
     
