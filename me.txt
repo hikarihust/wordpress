@@ -1069,4 +1069,19 @@ WP_Query
                 -> Không lấy các bài viết nằm trong danh mục con của nó
             category__not_in (array) – use category id.
         post=49 -> thêm category và tag 
+    Tag
+        Tag Parameters
+        Sử dụng các gia trị của tag để liệt kê ra các bài viết
+        Show posts associated with certain tags.
+        Các tham số liên quan đến tag
+            tag (string) – use tag slug.
+            tag_id (int) – use tag id.
+            tag__and (array) – use tag ids.
+            tag__in (array) – use tag ids.
+            tag__not_in (array) – use tag ids.
+            tag_slug__and (array) – use tag slugs.
+            tag_slug__in (array) – use tag slugs.
+        Khi có 1 tag thì cần kiểm tra xem nó có bao nhiêu từ, khi nó có hơn 1 từ thì không được dùng 'tag' mà 
+            cần dùng đến 'tag_slug__in' hoặc 'tag_slug__and' để tìm các bài viết có tag nhiều hơn 2 từ. Hoặc 
+            cũng có thể tìm theo id 
     

@@ -8,7 +8,7 @@ class ZendvnMp_Widget_Db_Simple{
 	
 	public function widget(){
 		wp_add_dashboard_widget('zendvn_mp_widget_db_simple', 'My Plugin Information', 
-						array($this,'category'));
+						array($this,'tag'));
 	}
 	
 	/*
@@ -90,6 +90,22 @@ class ZendvnMp_Widget_Db_Simple{
 
 	public function category(){
 		$wpQuery = new WP_Query(array('cat'=>'3,5') );
+	
+		if($wpQuery->have_posts()){
+			echo '<ul>';
+			while ($wpQuery->have_posts()){
+				$wpQuery->the_post();
+				echo '<li>' . get_the_ID() . ' - ' . get_the_title() . '</li>';
+	
+			}
+			echo '</ul>';
+		}else{
+			echo '<p>' . translate('No post found') . '</p>';
+		}
+	}
+
+	public function tag(){
+		$wpQuery = new WP_Query(array( 'tag_slug__in'=>array('php-course') ) );
 	
 		if($wpQuery->have_posts()){
 			echo '<ul>';
