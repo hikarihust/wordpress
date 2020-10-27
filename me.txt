@@ -1084,4 +1084,23 @@ WP_Query
         Khi có 1 tag thì cần kiểm tra xem nó có bao nhiêu từ, khi nó có hơn 1 từ thì không được dùng 'tag' mà 
             cần dùng đến 'tag_slug__in' hoặc 'tag_slug__and' để tìm các bài viết có tag nhiều hơn 2 từ. Hoặc 
             cũng có thể tìm theo id 
+    Search - Post - Page
+        Search
+            Search Parameters
+                Show posts based on a keyword search.
+                    s (string) – Search keyword.
+        Post - Page
+            Post & Page Parameters 
+            Display content based on post and page parameters. Remember that default post_type is only set to display posts but not pages.
+            Lấy ra các bài viết bằng các thuộc tính ở trong phần bài viết
+            p (int) – use post id.
+            page_id (int) – use page id.
+            name (string) – use post slug.
+            pagename (string) – use page slug.
+                Display child page using the slug of the parent and the child page, separated by a slash (e.g. ‘parent_slug/child_slug’):
+            post_parent (int) – use page id to return only child pages. Set to 0 to return only top-level entries.
+                Cần chỉ rõ bài viết đó thuộc kiểu nào(post hay page)
+                    $wpQuery = new WP_Query(array( 'post_parent' => 2, 'post_type' => 'page' ));
+                Display only top-level pages, exclude all child pages:
+                    $wpQuery = new WP_Query(array( 'post_parent' => 0, 'post_type' => 'page' ));
     

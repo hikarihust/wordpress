@@ -8,7 +8,7 @@ class ZendvnMp_Widget_Db_Simple{
 	
 	public function widget(){
 		wp_add_dashboard_widget('zendvn_mp_widget_db_simple', 'My Plugin Information', 
-						array($this,'tag'));
+						array($this,'post_page'));
 	}
 	
 	/*
@@ -113,6 +113,38 @@ class ZendvnMp_Widget_Db_Simple{
 				$wpQuery->the_post();
 				echo '<li>' . get_the_ID() . ' - ' . get_the_title() . '</li>';
 	
+			}
+			echo '</ul>';
+		}else{
+			echo '<p>' . translate('No post found') . '</p>';
+		}
+	}
+
+	public function search(){
+		$wpQuery = new WP_Query(array( 's' => 'công trình' ));
+	
+		if($wpQuery->have_posts()){
+			echo '<ul>';
+			while ($wpQuery->have_posts()){
+				$wpQuery->the_post();
+				echo '<li>' . get_the_ID() . ' - ' . get_the_title() . '</li>';
+	
+			}
+			echo '</ul>';
+		}else{
+			echo '<p>' . translate('No post found') . '</p>';
+		}
+	}
+
+	public function post_page(){
+		$wpQuery = new WP_Query(array( 'post_parent' => 0, 'post_type' => 'page' ));
+		
+		if($wpQuery->have_posts()){
+			echo '<ul>';
+			while ($wpQuery->have_posts()){
+				$wpQuery->the_post();
+				echo '<li>' . get_the_ID() . ' - ' . get_the_title() . '</li>';
+		
 			}
 			echo '</ul>';
 		}else{
