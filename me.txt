@@ -1039,4 +1039,14 @@ WP_Query
         rewind_posts(): Rewind the posts and reset post index.
         query(): Sets up the WordPress query by parsing query string.
             Là sự kết hợp của 2 phương thức đó là parse_query() và get_posts()
+    Author
+        Author Parameters
+        Show posts associated with certain author.
+        Các tham số liên quan đến author khi truyền vào WP_Query()
+            author (int) – use author id.
+            author_name (string) – use ‘user_nicename‘ – NOT name.
+            author__in (array) – use author id
+            author__not_in (array) – use author id
+        wp_users:wp_usermeta -> 1:n 
+        wp_users:wp_posts -> 1:n 
     

@@ -8,7 +8,7 @@ class ZendvnMp_Widget_Db_Simple{
 	
 	public function widget(){
 		wp_add_dashboard_widget('zendvn_mp_widget_db_simple', 'My Plugin Information', 
-						array($this,'display'));
+						array($this,'author'));
 	}
 	
 	/*
@@ -70,6 +70,22 @@ class ZendvnMp_Widget_Db_Simple{
 		echo "<pre>";
 		print_r($wpQuery);
 		echo "</pre>";
+	}
+
+	public function author(){
+		$wpQuery = new WP_Query( array('author__not_in' => array( 1, 2, 3 ) ) );
+
+		if($wpQuery->have_posts()){
+			echo '<ul>';
+			while ($wpQuery->have_posts()){
+				$wpQuery->the_post();
+				echo '<li>' . get_the_ID() . ' - ' . get_the_title() . '</li>';
+		
+			}
+			echo '</ul>';
+		}else{
+			echo '<p>' . translate('No post found') . '</p>';
+		}
 	}
 
 }
