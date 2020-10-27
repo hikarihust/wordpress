@@ -978,13 +978,13 @@ Tương tác với database
             $links		= wp_links
             $options		= wp_options
 WP_Query
+    https://developer.wordpress.org/reference/classes/wp_query/
     WP_Query 1
         Đối tượng WP_Query giúp ta truy cập vào tất cả các bảng mặc định của hệ thống WordPress
         Create new user
             editor      editor@gmail.com
             contributor contributor@gmail.com
             author      author@gmail.com
-        https://developer.wordpress.org/reference/classes/wp_query/
         Setting -> Reading -> Blog pages show at most -> Setting cho giá trị posts_per_page
         get_the_ID() lấy id của bài viết
         get_the_title() lấy tiêu đề bài viết
@@ -1049,4 +1049,24 @@ WP_Query
             author__not_in (array) – use author id
         wp_users:wp_usermeta -> 1:n 
         wp_users:wp_posts -> 1:n 
+    Category
+        Sử dụng các giá trị của category để hiển thị ra các bài viết
+        Show posts associated with certain categories.
+        Bảng để chứa các Category và Tag: wp_terms
+        wp_terms:wp_term_taxonomy -> 1:n
+        wp_term_taxonomy:wp_term_taxonomy -> 1:n
+        Các tham số liên quan đến category
+            cat (int) – use category id.
+                Display posts that have one category (and any children of that category), using category id
+                -> Lấy luôn các bài viết nằm ở trong danh mục con
+            category_name (string) – use category slug.
+                Display posts that have this category (and any children of that category), using category slug
+                -> Lấy luôn các bài viết nằm ở trong danh mục con
+            category__and (array) – use category id.
+                Display posts that are in multiple categories. 
+            category__in (array) – use category id.
+                Display posts that have this category (not children of that category), using category id
+                -> Không lấy các bài viết nằm trong danh mục con của nó
+            category__not_in (array) – use category id.
+        post=49 -> thêm category và tag 
     
