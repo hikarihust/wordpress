@@ -46,12 +46,30 @@ class ZendvnMp_Widget_Db_Simple{
 	public function display(){
 		$arrQuery = array(
 			'author' => 1,
-			'cat' => 1,
-			'posts_per_page' => 4
+			// 'p' => 47
 		);
 
 		// $wpQuery = new WP_Query('author=1&p=49');
 		$wpQuery = new WP_Query($arrQuery);
+		/*
+		if($wpQuery->have_posts()){
+			while ($wpQuery->have_posts()){
+				$wpQuery->the_post();
+				echo "<pre>";
+				print_r($wpQuery->post);
+				echo "</pre>";
+				echo "<br />======================";
+			}
+		}
+		*/
+
+		print_r($wpQuery->is_page);
+		echo "<br />======================";
+
+		echo "<br />======================";
+		echo "<pre>";
+		print_r($wpQuery);
+		echo "</pre>";
 	}
 
 }

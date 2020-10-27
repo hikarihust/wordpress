@@ -989,5 +989,31 @@ WP_Query
         get_the_ID() lấy id của bài viết
         get_the_title() lấy tiêu đề bài viết
     WP_Query 2
+        query
+        query_vars
         Kết quả của câu truy vấn 
-        
+    WP_Query 3
+        get_queried_object() có 2 trường hợp
+            - Câu query chỉ hiển thị được 1 bài viết thì nó sẽ lấy ra thông tin của bài viết đó 
+            - Trong trường hợp câu query hiển thị được nhiều bài viết thì nó sẽ lấy ra 1 đối tượng là 
+                thông tin đầy đủ với giá trị id tương ứng truyền vào
+            If queried object is not set, then the queried object will be set from the category, tag, taxonomy, 
+                posts page, single post, page, or author query variable. After it is set up, it will be returned.
+        get_queried_object_id()
+            If the request is a category, author, permalink or post / page, holds the corresponding ID
+            Nếu kết quả câu truy vấn hiển thị được nhiều bài viết thì giá trị trả về sẽ là id ccuar user 
+            Nếu giá kết quả câu query chỉ hiển thị được 1 bài viết thì giá trị trả về sẽ là id của bài viết
+        post()
+        post_count: The number of posts being displayed.
+            Hệ thống sẽ hiển thị 5 bài viết trên 1 trang 
+        found_posts: The total number of posts found matching the current query parameters
+            Tổng số bài viết của 1 người nào đó 
+        max_num_pages: Số trang hiển thị bài viết của 1 người nào đó 
+        current_post
+            (available during The Loop) Index of the post currently being displayed.
+            Trả về chỉ số mảng của phần tử trong mảng $posts
+        post
+            (available during The Loop) The post currently being displayed.
+        is_admin: Vùng đang truy cập là vùng Admin
+        is_page
+    
