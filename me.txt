@@ -1205,4 +1205,24 @@ Transients API
             -> Cho vào update() của Widget
         Tham số:
             $transient: the unique name used when saving with set_transient().
+Shortcode API
+    About Shortcode
+        https://developer.wordpress.org/apis/handbook/shortcode/
+        Hỗ trợ thêm các tiện ích mở rộng vào trong các bài viết hoặc các mã nguồn PHP
+        Shortcode API functions list:
+            Function: do_shortcode()
+            Function: add_shortcode()
+            Function: remove_shortcode()
+            Function: remove_all_shortcodes()
+            Function: shortcode_atts()
+            Function: strip_shortcodes()
+            Function: shortcode_exists()
+            Function: has_shortcode()
+            Function: get_shortcode_regex()
+            Function: wp_audio_shortcode()
+            Function: wp_video_shortcode()
+            Filter: no_texturize_shortcodes
+    Shortcode API 1
+        Khi đoạn mã shortcode gắn vào 1 vị trí nào trong bài viết thì lúc đó nó sẽ gọi đến hàm thực thi
+            tương ứng
     
