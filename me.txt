@@ -1251,4 +1251,7 @@ Shortcode API
                 6. Triều Tiên chế được đầu nổ hạt nhân vừa tên lửa đạn đạo
                     id=24
             [zendvn_mp_sc_titles ids='47,41,24' title='Các bài viết lên quan đến Triều Tiên']
+    Shortcode API 5
+        post__in (array) – use post ids. Specify posts to retrieve. ATTENTION If you use sticky posts, they will be 
+            included (prepended!) in the posts you retrieve whether you want it or not. To suppress this behaviour use ignore_sticky_posts.
     

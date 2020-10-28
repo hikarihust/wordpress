@@ -6,18 +6,36 @@ class Zendvn_Mp_SC_Titles{
         // echo '<br/>' . __METHOD__;
 	}
 	
-	public function show(){
+	public function show($attr){
 
 		if(is_single()) {
-			$postObj = get_post(get_the_ID());
-			if(has_shortcode($postObj->post_content, 'zendvn_mp_sc_date') == 1){
-				wp_enqueue_style('zendvn_mp_sc_date_css',ZENDVN_MP_CSS_URL . '/abc.css', array(),'1.0');
-			}
-			$str = '<div class="zendvn_mp_sc_date_css">'
-			. date('l jS \of F Y h:i:s A')
-			. '</div>';
+            extract($attr);
+            $ids = explode(',', $ids);
+            $list = '';
 
-			return $str;
+            if(count($ids)>0) {
+				$args = array(
+                    'post_type' 		=> 'post',
+                    'post__in' 			=> $ids,
+                    'post_status' 		=>'publish',
+                    'ignore_sticky_posts' => true
+                );
+                $wpQuery = new WP_Query($args);
+                
+                if($wpQuery->have_posts()){
+                    $list .='<ul>';
+                    while ($wpQuery->have_posts()){
+                        $wpQuery->the_post();
+                        $lnk = $wpQuery->post->guid;
+                        $list .='<li><a href="' . $lnk .'">' . get_the_title() . '</a></li>';
+                    }
+                    $list .='</ul>';
+                }
+                wp_reset_postdata();
+            }
+            
+            $html = "<div><b><i>{$title}</i></b>{$list}</div>";
+            return $html;
 		}
 	}
 }
