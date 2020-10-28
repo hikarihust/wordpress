@@ -68,6 +68,31 @@ class Zendvn_Mp_Widget_Last_Post extends WP_Widget {
 			echo '</ul>';
 			wp_reset_postdata();
 		}
+
+		// echo do_shortcode('[zendvn_mp_sc_date]');
+		// echo do_shortcode("[zendvn_mp_sc_titles ids='47,41,24' title='Các bài viết liên quan đến Triều Tiên']");
+		/*
+		$attr = array(
+				'src'      => 'http://wordpress.xyz/wp-content/uploads/2020/10/Westlife.mp3',
+				'loop'     => '',
+				'autoplay' => '',
+				'preload' => 'none'
+		);
+		echo wp_audio_shortcode( $attr );
+		*/
+		/*
+		$defaults_atts = array(
+			'src'      => 'http://wordpress.xyz/wp-content/uploads/2020/10/video.mp4',
+			'poster'   => '',
+			'loop'     => '',
+			'autoplay' => '',
+			'preload'  => 'metadata',
+			'width'    => 640,
+			'height'   => 360,
+			'class'    => 'wp-video-shortcode',
+		);
+		echo wp_video_shortcode( $defaults_atts );
+		*/
 	}
 	
 	public function update( $new_instance, $old_instance ) {

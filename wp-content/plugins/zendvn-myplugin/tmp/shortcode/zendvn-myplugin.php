@@ -23,8 +23,8 @@ if(!is_admin()){
 	require_once ZENDVN_MP_PLUGIN_DIR . '/public.php';
 	new ZendvnMp();
 
-	require_once ZENDVN_MP_SHORTCODE_DIR . '/date.php';
-	new Zendvn_Mp_SC_Date();
+	require_once ZENDVN_MP_SHORTCODE_DIR . '/main.php';
+	new Zendvn_Mp_SC_Main();
 }else{
 	require_once ZENDVN_MP_INCLUDES_DIR . '/html.php';
 	require_once ZENDVN_MP_PLUGIN_DIR . '/admin.php';
@@ -34,7 +34,7 @@ if(!is_admin()){
 	new ZendvnMp_Widget_Db_Simple();
 
 }
-/*
+
 require_once ZENDVN_MP_WIDGET_DIR . '/last_post.php';
 
 function last_post_widget_init(){
@@ -42,4 +42,4 @@ function last_post_widget_init(){
 }
 
 add_action('widgets_init','last_post_widget_init');
-*/
+

@@ -19,7 +19,7 @@ class Zendvn_Mp_SC_Main{
 		// echo "<br />shortcode_exists: " . shortcode_exists("zendvn_mp_sc_date");
 
 		// add_action('the_content', array($this,'remove_all_shortcode'));
-		add_action('the_content',array($this,'get_shortcode_regex'));
+		// add_action('the_content',array($this,'get_shortcode_regex'));
     }
     
 	public function date(){

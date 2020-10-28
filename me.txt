@@ -1263,4 +1263,18 @@ Shortcode API
             Gắn giá trị mặc định vào trong 1 shortcode nào đó 
         get_shortcode_regex( array $tagnames = null )
             Retrieve the shortcode regular expression for searching.
-    
+    Shortcode API 7
+        do_shortcode( string $content, bool $ignore_html = false )
+            Search content for shortcodes and filter shortcodes through their hooks.
+            Thông thường shortcode dùng để đưa vào các bài viết để hiển thị các phần nội dung mong muốn.
+            do_shortcode() có thể đưa shortcode vào các mã nguồn PHP của các phần mở rộng trong WordPress để nó hiển thị ra
+        wp_audio_shortcode( array $attr, string $content = '' )
+            Builds the Audio shortcode output.
+            This implements the functionality of the Audio Shortcode for displaying WordPress mp3s in a post.
+            Giúp nhúng 1 tập tin Audio vào trong bài viết 
+            [audio 'src'='http://wordpress.xyz/wp-content/uploads/2020/10/Westlife.mp3' 'loop'='' 'autoplay'='' 'preload'='none']
+        wp_video_shortcode( array $attr, string $content = '' )
+            Builds the Video shortcode output.
+            This implements the functionality of the Video Shortcode for displaying WordPress mp4s in a post.
+            http://wordpress.xyz/wp-content/uploads/2020/10/video.mp4
+            [video 'src'='http://wordpress.xyz/wp-content/uploads/2020/10/video.mp4' 'preload'='metadata' 'width'=640 'height'=360 'class'='wp-video-shortcode']
