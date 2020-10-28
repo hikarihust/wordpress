@@ -1254,4 +1254,13 @@ Shortcode API
     Shortcode API 5
         post__in (array) – use post ids. Specify posts to retrieve. ATTENTION If you use sticky posts, they will be 
             included (prepended!) in the posts you retrieve whether you want it or not. To suppress this behaviour use ignore_sticky_posts.
+    Shortcode API 6
+        strip_shortcodes( string $content )
+            Remove all shortcode tags from the given content.
+            Loại bỏ shortcode trong 1 nội dung nào đó 
+        shortcode_atts( array $pairs, array $atts, string $shortcode = '' )
+            Combine user attributes with known attributes and fill in defaults when needed.
+            Gắn giá trị mặc định vào trong 1 shortcode nào đó 
+        get_shortcode_regex( array $tagnames = null )
+            Retrieve the shortcode regular expression for searching.
     

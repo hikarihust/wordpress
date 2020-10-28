@@ -9,6 +9,13 @@ class Zendvn_Mp_SC_Titles{
 	public function show($attr){
 
 		if(is_single()) {
+			//ids='57,48,30' title='Các bài viết liên quan đến Triều Tiên'
+			$pairs = array(
+                'ids' => '45,28,26',
+                'title' => 'Các bài viết khác'
+            );
+            $attr = shortcode_atts($pairs, $attr,'zendvn_mp_sc_titles');
+
             extract($attr);
             $ids = explode(',', $ids);
             $list = '';
