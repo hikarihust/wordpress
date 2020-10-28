@@ -1227,4 +1227,15 @@ Shortcode API
             tương ứng
     Shortcode API 2
         Viết 1 class để quản lý các shortcode
+    Shortcode API 3
+        remove_shortcode( string $tag )
+            Removes hook for shortcode.
+        add_shortcode('zendvn_mp_sc_date', '__return_false')
+            Loại bỏ đi mã shortcode trong bài viết khi shortcode đang bị tắt
+        shortcode_exists( string $tag )
+            Whether a registered shortcode exists named $tag
+            Kiểm tra xem shortcode đó đã được đăng ký vào hệ thống hay chưa
+        has_shortcode( string $content, string $tag )
+            Whether the passed content contains the specified shortcode
+            Kiểm tra xem trong 1 nội dung nào đó shortcode có được thêm vào hay không 
     

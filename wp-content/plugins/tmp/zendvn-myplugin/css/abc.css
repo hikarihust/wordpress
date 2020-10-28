@@ -1,2 +1,8 @@
-
 @CHARSET "ISO-8859-1";
+.zendvn_mp_sc_date_css{
+	padding: 5px;
+	margin: 5px 0px;
+	border: solid 1px #ccc;
+	text-align: center;
+	
+}
