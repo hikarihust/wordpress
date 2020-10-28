@@ -23,8 +23,8 @@ if(!is_admin()){
 	require_once ZENDVN_MP_PLUGIN_DIR . '/public.php';
 	new ZendvnMp();
 
-	require_once ZENDVN_MP_SHORTCODE_DIR . '/date.php';
-	new Zendvn_Mp_SC_Date();
+	require_once ZENDVN_MP_SHORTCODE_DIR . '/main.php';
+	new Zendvn_Mp_SC_Main();
 }else{
 	require_once ZENDVN_MP_INCLUDES_DIR . '/html.php';
 	require_once ZENDVN_MP_PLUGIN_DIR . '/admin.php';

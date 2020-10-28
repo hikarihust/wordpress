@@ -1225,4 +1225,6 @@ Shortcode API
     Shortcode API 1
         Khi đoạn mã shortcode gắn vào 1 vị trí nào trong bài viết thì lúc đó nó sẽ gọi đến hàm thực thi
             tương ứng
+    Shortcode API 2
+        Viết 1 class để quản lý các shortcode
     
