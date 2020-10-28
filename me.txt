@@ -1302,4 +1302,19 @@ Meta boxes & Metadata
                 make sure your menu slug conforms to the limits of sanitize_key() otherwise the 'screen' menu may not correctly 
                 render on your page.
     Form 1
+    Form 2
+        save_post hook
+        do_action( 'save_post', int $post_ID, WP_Post $post, bool $update )
+        http://wordpress.xyz/?p=121
+        update_post_meta(
+            $post_id,
+            $meta_key,
+            $meta_value
+        ) { }
+            @param int $post_id — Post ID.
+                id của post
+            @param string $meta_key — Metadata key.
+                Giá trị được lưu vào trường 'meta_key' của bảng wp_postmeta
+            @param mixed $meta_value — Metadata value. Must be serializable if non-scalar.
+                Giá trị được lưu vào trường 'meta_value' của bảng wp_postmeta
     

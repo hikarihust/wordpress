@@ -4,6 +4,7 @@ class Zendvn_Mp_Mb_Data{
 	public function __construct(){
 		add_action('add_meta_boxes', array($this,'create'));
 		
+		add_action('save_post', array($this,'save'));
 	}
 	
 	public function create(){
@@ -13,7 +14,8 @@ class Zendvn_Mp_Mb_Data{
 	}
 	
 	public function display(){
-		echo '<p>Welcome to my meta box!</p>';
+		echo '<div class="zendvn-mb-wrap">';
+		echo '<p><b><i>' . translate('Xin vui lòng nhập đầy đủ thông tin vào các ô sau') . ':</i></b></p>';
 
 		$htmlObj = new ZendvnHtml();
 		//Tao phan tu chua Price
@@ -57,6 +59,26 @@ class Zendvn_Mp_Mb_Data{
 				. $htmlObj->textarea($inputName,$inputValue,$arr)
 				. '</p>';
 		echo '</div>';
+	}
+
+	public function save($post_id){
+		
+		echo '<pre>';
+		print_r($post_id);
+		echo '</pre>';
+		echo '<pre>';
+		print_r($_POST);
+		echo '</pre>';
+		$postVal = $_POST;
+		update_post_meta($post_id, '_zend_mp_mb_data_price', 
+						sanitize_text_field($postVal['zend-mp-mb-data-price']));
+		update_post_meta($post_id, '_zend_mp_mb_data_author', 
+						sanitize_text_field($postVal['zend-mp-mb-data-author']));
+		update_post_meta($post_id, '_zend_mp_mb_data_level', 
+						sanitize_text_field($postVal['zend-mp-mb-data-level']));
+		update_post_meta($post_id, '_zend_mp_mb_data_profile', 
+						strip_tags($postVal['zend-mp-mb-data-profile']));
+		// die();
 	}
 
 	public function add_css_file(){
