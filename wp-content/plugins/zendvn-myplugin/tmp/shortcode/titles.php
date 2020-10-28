@@ -1,8 +1,9 @@
 <?php
-class Zendvn_Mp_SC_Date{
+class Zendvn_Mp_SC_Titles{
 	
 	public function __construct(){
-		add_shortcode('zendvn_mp_sc_date', array($this,'show'));
+        add_shortcode('zendvn_mp_sc_titles', array($this,'show'));
+        // echo '<br/>' . __METHOD__;
 	}
 	
 	public function show(){
