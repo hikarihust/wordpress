@@ -1354,4 +1354,15 @@ Meta boxes & Metadata
             Phương thức này cho phép lọc nội dung của editor
     Editor 2
     Media 1
+    Media 2
+        https://wordpress.stackexchange.com/questions/190147/tb-show-not-showing-a-media-upload-window-custom-plugin/223244
+        esc_url($url, $protocols = null, $_context = 'display') { }
+            Checks and cleans a URL.
+            A number of characters are removed from the URL. If the URL is for displaying (the default behaviour) ampersands 
+                are also replaced. The {@see 'clean_url'} filter is applied to the returned cleaned URL.
+            @param string $url — The URL to be cleaned.
+            @param string[] $protocols
+                Optional. An array of acceptable protocols. Defaults to return value of wp_allowed_protocols().
+            @param string $_context — Private. Use esc_url_raw() for database usage.
+            @return string — The cleaned URL after the {@see 'clean_url'} filter is applied.
     

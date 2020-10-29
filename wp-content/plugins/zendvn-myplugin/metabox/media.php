@@ -50,18 +50,13 @@ class Zendvn_Mp_Mb_Media{
 						. $htmlObj->textbox($inputName,$inputValue,$arr) . ' ' . $btnMedia;
 		echo $htmlObj->pTag($html);
 
+		echo $this->add_js_file($this->create_id('button'), $this->create_id('file'));
+
 		echo '</div>';
 	}
 
 	public function save($post_id){
-		/*
-		echo '<pre>';
-		print_r($post_id);
-		echo '</pre>';
-		echo '<pre>';
-		print_r($_POST);
-		echo '</pre>';
-		*/
+
 		$postVal = $_POST;
 
 		if(!isset($postVal[$this->_meta_box_id . '-nonce'])) return $post_id;
@@ -73,7 +68,7 @@ class Zendvn_Mp_Mb_Media{
 		if(!current_user_can('edit_post', $post_id)) return $post_id;
 
 		$arrData = array(
-			'content' 	=> wp_filter_post_kses($postVal[$this->create_id('content')])
+			'file' 	=> esc_url($postVal[$this->create_id('file')])
 		);
 
 		foreach ($arrData as $key => $val){
@@ -85,13 +80,37 @@ class Zendvn_Mp_Mb_Media{
 	//$button_id = zend-mp-mb-media-button
 	//$input_id = zend-mp-mb-media-file
 	public function add_js_file($button_id, $input_id ){
-		$js = '
-				<script>
-					jQuery(document).ready(function($){
-
+		$js="
+			<script>
+				var file_frame;
+				jQuery(document).ready(function($){
+					$('#{$button_id}').on('click', function(event){
+						event.preventDefault();
+						if ( file_frame ) {
+							file_frame.open();
+					return;
+					}
+					// Create the media frame.
+					file_frame = wp.media.frames.file_frame = wp.media({
+						title: $( this ).data( 'File upload' ),
+						button: {
+							text: $( this ).data( 'Upload' ),
+						},
+						multiple: false  // Set to true to allow multiple files to be selected
 					});
-				</script>
-			';
+					// When an image is selected, run a callback.
+					file_frame.on( 'select', function() {
+						// We set multiple to false so only get one image from the uploader
+						attachment = file_frame.state().get('selection').first().toJSON();
+						$('#{$input_id}').attr('value',attachment.url);
+					});
+					
+					// Finally, open the modal
+					file_frame.open();
+					});
+				});
+			</script>
+		";
 
 		return $js;
 	}
