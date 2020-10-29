@@ -1353,4 +1353,5 @@ Meta boxes & Metadata
             Sanitizes content for allowed HTML tags for post content
             Phương thức này cho phép lọc nội dung của editor
     Editor 2
+    Media 1
     
