@@ -1345,4 +1345,11 @@ Meta boxes & Metadata
             Khi bài viết được tự động lưu thì sẽ không lưu phần Metabox
         current_user_can($capability, ...$args) { }
             Kiểm tra quyền hạn của user
+    Editor 1
+        Đưa text Editor vào trong phần Metabox
+        wp_editor($content, $editor_id, $settings = array()) { }
+            Renders an editor.
+        wp_filter_post_kses($data) { }
+            Sanitizes content for allowed HTML tags for post content
+            Phương thức này cho phép lọc nội dung của editor
     
