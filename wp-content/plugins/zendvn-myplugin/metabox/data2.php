@@ -27,6 +27,7 @@ class Zendvn_Mp_Mb_Data2{
 	}
 	
 	public function display($post){
+		wp_nonce_field($this->_meta_box_id,$this->_meta_box_id . '-nonce');
 		echo '<div class="zendvn-mb-wrap">';
 		echo '<p><b><i>' . translate('Xin vui lòng nhập đầy đủ thông tin vào các ô sau') . ':</i></b></p>';
 
@@ -84,14 +85,25 @@ class Zendvn_Mp_Mb_Data2{
 		echo '</pre>';
 		*/
 		$postVal = $_POST;
-		update_post_meta($post_id, $this->create_key('price'), 
-						sanitize_text_field($postVal[$this->create_id('price')]));
-		update_post_meta($post_id, $this->create_key('author'), 
-						sanitize_text_field($postVal[$this->create_id('author')]));
-		update_post_meta($post_id, $this->create_key('level'), 
-						sanitize_text_field($postVal[$this->create_id('level')]));
-		update_post_meta($post_id, $this->create_key('profile'), 
-						strip_tags($postVal[$this->create_id('profile')]));
+
+		if(!isset($postVal[$this->_meta_box_id . '-nonce'])) return $post_id;
+
+		if(!wp_verify_nonce($postVal[$this->_meta_box_id . '-nonce'],$this->_meta_box_id))  return $post_id;
+
+		if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
+
+		if(!current_user_can('edit_post', $post_id)) return $post_id;
+
+		$arrData = array(
+			'price' 	=> sanitize_text_field($postVal[$this->create_id('price')]),
+			'author' 	=> sanitize_text_field($postVal[$this->create_id('author')]),
+			'level'		=> sanitize_text_field($postVal[$this->create_id('level')]),
+			'profile' 	=> strip_tags($postVal[$this->create_id('profile')])
+		);
+
+		foreach ($arrData as $key => $val){
+			update_post_meta($post_id, $this->create_key($key),$val);
+		}
 		// die();
 	}
 

@@ -1331,4 +1331,18 @@ Meta boxes & Metadata
         strip_tags($str, $allowable_tags = null)
             Strip HTML and PHP tags from a string
     Form 4
+    Form 5
+        wp_nonce_field(
+            $action = -1,
+            $name = '_wpnonce',
+            $referer = true,
+            $echo = true
+        ) 
+            Retrieve or display nonce hidden field for forms.
+        wp_verify_nonce($nonce, $action = -1) { }
+            Verifies that a correct security nonce was used with time limit.
+        if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
+            Khi bài viết được tự động lưu thì sẽ không lưu phần Metabox
+        current_user_can($capability, ...$args) { }
+            Kiểm tra quyền hạn của user
     
