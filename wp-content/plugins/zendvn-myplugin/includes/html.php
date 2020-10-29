@@ -6,6 +6,15 @@ class ZendvnHtml{
 		
 	}
 
+	public function btn_media_script($button_id,$input_id){
+		$script = "<script>
+						jQuery(document).ready(function($){
+							$('#{$button_id}').zendvnBtnMedia('{$input_id}');
+						});
+					</script>";
+		return $script;
+	}
+
 	public function pTag($val = '', $attr = array(), $options = null){
 		return '<p>' . $val . '</p>';
 	}

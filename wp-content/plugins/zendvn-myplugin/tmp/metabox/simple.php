@@ -7,7 +7,7 @@ class Zendvn_Mp_Mb_Simple{
 	}
 	
 	public function create(){
-		// echo '<br/>' . __METHOD__;
+		echo '<br/>' . __METHOD__;
 		add_meta_box('zend-mp-mb-simple', 'My Custom Meta box', array($this,'display'),'post');
 	}
 	
