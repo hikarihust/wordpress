@@ -36,18 +36,18 @@ class Zendvn_Mp_Mb_Data2{
 		$inputName 	= $this->create_id('price');
 		$inputValue = get_post_meta($post->ID,$this->create_key('price'),true);
 		$arr = array('size' =>'25','id' => $inputID);
-		echo '<p><label for="' . $inputID . '">' . translate('Price') . ':</label>'
-				. $htmlObj->textbox($inputName,$inputValue,$arr)
-				. '</p>';
+		$html 		= $htmlObj->label(translate('Price')) 
+						. $htmlObj->textbox($inputName,$inputValue,$arr);
+		echo $htmlObj->pTag($html);
 
 		//Tao phan tu chua Author
 		$inputID 	= $this->create_id('author');
 		$inputName 	= $this->create_id('author');
 		$inputValue = get_post_meta($post->ID,$this->create_key('author'),true);
 		$arr = array('size' =>'25','id' => $inputID);
-		echo '<p><label for="' . $inputID . '">' . translate('Author') . ':</label>'
-				. $htmlObj->textbox($inputName,$inputValue,$arr)
-				. '</p>';
+		$html 		= $htmlObj->label(translate('Author')) 
+						. $htmlObj->textbox($inputName,$inputValue,$arr);
+		echo $htmlObj->pTag($html);
 
 		//Tao phan tu chua Level
 		$inputID 	= $this->create_id('level');
@@ -59,18 +59,18 @@ class Zendvn_Mp_Mb_Data2{
 					'intermediate' => translate('Intermediate'),
 					'advanced' => translate('Advanced'),
 				);
-		echo '<p><label for="' . $inputID . '">' . translate('Level') . ':</label>'
-				. $htmlObj->selectbox($inputName,$inputValue,$arr,$options)
-				. '</p>';
+		$html 		= $htmlObj->label(translate('Level')) 
+						.$htmlObj->selectbox($inputName,$inputValue,$arr,$options);
+		echo $htmlObj->pTag($html);
 
 		//Tao phan tu chua Author profile
 		$inputID 	= $this->create_id('profile');
 		$inputName 	= $this->create_id('profile');
 		$inputValue = get_post_meta($post->ID,$this->create_key('profile'),true);;
 		$arr 		= array('id' => $inputID,'rows'=>6, 'cols'=>60);
-		echo '<p><label for="' . $inputID . '">' . translate('Author profile') . ':</label>'
-				. $htmlObj->textarea($inputName,$inputValue,$arr)
-				. '</p>';
+		$html		= $htmlObj->label(translate('Author profile')) 
+						. $htmlObj->textarea($inputName,$inputValue,$arr);
+		echo $htmlObj->pTag($html);
 		echo '</div>';
 	}
 

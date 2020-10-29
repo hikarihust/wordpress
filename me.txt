@@ -1330,4 +1330,5 @@ Meta boxes & Metadata
             $single = true: Dữ liệu được lấy ra ở dạng chuỗi, khi là mảng thì có giá trị là false 
         strip_tags($str, $allowable_tags = null)
             Strip HTML and PHP tags from a string
+    Form 4
     
