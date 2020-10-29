@@ -1317,4 +1317,17 @@ Meta boxes & Metadata
                 Giá trị được lưu vào trường 'meta_key' của bảng wp_postmeta
             @param mixed $meta_value — Metadata value. Must be serializable if non-scalar.
                 Giá trị được lưu vào trường 'meta_value' của bảng wp_postmeta
+    Form 3
+        sanitize_text_field($str): Sanitizes a string from user input or from the database
+            Checks for invalid UTF-8,
+            Converts single < characters to entities
+            Strips all tags
+            Removes line breaks, tabs, and extra whitespace
+            Strips octets
+            -> Làm sạch dữ liệu
+        get_post_meta($post_id, $key = '', $single = false)
+            Retrieves a post meta field for the given post ID
+            $single = true: Dữ liệu được lấy ra ở dạng chuỗi, khi là mảng thì có giá trị là false 
+        strip_tags($str, $allowable_tags = null)
+            Strip HTML and PHP tags from a string
     

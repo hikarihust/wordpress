@@ -1,6 +1,11 @@
 <?php
-class Zendvn_Mp_Mb_Data{
-	
+class Zendvn_Mp_Mb_Data2{
+	private $_meta_box_id = 'zend-mp-mb-data2';
+
+	private $_prefix_key  = '_zend_mp_mb_data2_';
+
+	private $_prefix_id = 'zend-mp-mb-data2-';
+
 	public function __construct(){
 		add_action('add_meta_boxes', array($this,'create'));
 		
@@ -10,7 +15,15 @@ class Zendvn_Mp_Mb_Data{
 	public function create(){
 		add_action('admin_enqueue_scripts', array($this,'add_css_file'));
 		// echo '<br/>' . __METHOD__;
-		add_meta_box('zend-mp-mb-data', 'My Data', array($this,'display'),'post');
+		add_meta_box($this->_meta_box_id, 'My Data', array($this,'display'),'post');
+	}
+
+	private function create_key($val){
+		return $this->_prefix_key . $val;
+	}
+
+	private function create_id($val){
+		return $this->_prefix_id . $val;
 	}
 	
 	public function display($post){
@@ -19,27 +32,27 @@ class Zendvn_Mp_Mb_Data{
 
 		$htmlObj = new ZendvnHtml();
 		//Tao phan tu chua Price
-		$inputID 	= 'zend-mp-mb-data-price';
-		$inputName 	= 'zend-mp-mb-data-price';
-		$inputValue = get_post_meta($post->ID,'_zend_mp_mb_data_price',true);
+		$inputID 	= $this->create_id('price');
+		$inputName 	= $this->create_id('price');
+		$inputValue = get_post_meta($post->ID,$this->create_key('price'),true);
 		$arr = array('size' =>'25','id' => $inputID);
 		echo '<p><label for="' . $inputID . '">' . translate('Price') . ':</label>'
 				. $htmlObj->textbox($inputName,$inputValue,$arr)
 				. '</p>';
 
 		//Tao phan tu chua Author
-		$inputID 	= 'zend-mp-mb-data-author';
-		$inputName 	= 'zend-mp-mb-data-author';
-		$inputValue = get_post_meta($post->ID,'_zend_mp_mb_data_author',true);
+		$inputID 	= $this->create_id('author');
+		$inputName 	= $this->create_id('author');
+		$inputValue = get_post_meta($post->ID,$this->create_key('author'),true);
 		$arr = array('size' =>'25','id' => $inputID);
 		echo '<p><label for="' . $inputID . '">' . translate('Author') . ':</label>'
 				. $htmlObj->textbox($inputName,$inputValue,$arr)
 				. '</p>';
 
 		//Tao phan tu chua Level
-		$inputID 	= 'zend-mp-mb-data-level';
-		$inputName 	= 'zend-mp-mb-data-level';
-		$inputValue = get_post_meta($post->ID,'_zend_mp_mb_data_level',true);;
+		$inputID 	= $this->create_id('level');
+		$inputName 	= $this->create_id('level');
+		$inputValue = get_post_meta($post->ID,$this->create_key('level'),true);;
 		$arr = array('id' => $inputID);
 		$options['data'] = array(
 					'beginner' => translate('Beginner'),
@@ -51,9 +64,9 @@ class Zendvn_Mp_Mb_Data{
 				. '</p>';
 
 		//Tao phan tu chua Author profile
-		$inputID 	= 'zend-mp-mb-data-profile';
-		$inputName 	= 'zend-mp-mb-data-profile';
-		$inputValue = get_post_meta($post->ID,'_zend_mp_mb_data_profile',true);;
+		$inputID 	= $this->create_id('profile');
+		$inputName 	= $this->create_id('profile');
+		$inputValue = get_post_meta($post->ID,$this->create_key('profile'),true);;
 		$arr 		= array('id' => $inputID,'rows'=>6, 'cols'=>60);
 		echo '<p><label for="' . $inputID . '">' . translate('Author profile') . ':</label>'
 				. $htmlObj->textarea($inputName,$inputValue,$arr)
@@ -71,14 +84,14 @@ class Zendvn_Mp_Mb_Data{
 		echo '</pre>';
 		*/
 		$postVal = $_POST;
-		update_post_meta($post_id, '_zend_mp_mb_data_price', 
-						sanitize_text_field($postVal['zend-mp-mb-data-price']));
-		update_post_meta($post_id, '_zend_mp_mb_data_author', 
-						sanitize_text_field($postVal['zend-mp-mb-data-author']));
-		update_post_meta($post_id, '_zend_mp_mb_data_level', 
-						sanitize_text_field($postVal['zend-mp-mb-data-level']));
-		update_post_meta($post_id, '_zend_mp_mb_data_profile', 
-						strip_tags($postVal['zend-mp-mb-data-profile']));
+		update_post_meta($post_id, $this->create_key('price'), 
+						sanitize_text_field($postVal[$this->create_id('price')]));
+		update_post_meta($post_id, $this->create_key('author'), 
+						sanitize_text_field($postVal[$this->create_id('author')]));
+		update_post_meta($post_id, $this->create_key('level'), 
+						sanitize_text_field($postVal[$this->create_id('level')]));
+		update_post_meta($post_id, $this->create_key('profile'), 
+						strip_tags($postVal[$this->create_id('profile')]));
 		// die();
 	}
 
