@@ -36,7 +36,7 @@ class Zendvn_Mp_Mb_Editor{
 			'wpautop'           => true,
 			'media_buttons'     => true,
 			'default_editor'    => '',
-			'drag_drop_upload'  => false,
+			'drag_drop_upload'  => true,
 			'textarea_name'     => $inputID,
 			'textarea_rows'     => 20,
 			'tabindex'          => '',
