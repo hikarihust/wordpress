@@ -1411,4 +1411,6 @@ The Loop & Custimizing the Loop
         Multiple Loops
         Sử dụng nhiều loop trên cùng 1 trang, sử dụng đối tượng $wp_query
         Hiển thị thêm các phần tử ở trang kế tiếp 
+Global Variables
+    https://codex.wordpress.org/Global_Variables
     
