@@ -1387,4 +1387,13 @@ The Loop & Custimizing the Loop
             The Loop trong loop.php thì in ra nhiều kết quả
     Loop 1
         loop.php hiển thị danh sách các bài viết trong Home và Categories
+    Loop 2
+        Sau khi chạy vòng lặp xong thì nên hủy kết quả đi là wp_reset_query() và wp_reset_postdata() nhưng wp_reset_postdata() 
+            thường hay được dùng hơn
+        wp_reset_query()
+            Destroys the previous query and sets up a new query.
+            Hủy đi đối tượng wp_query và tạo ra đối tượng mới
+        wp_reset_postdata()
+            After looping through a separate query, this function restores the $post global to the current post in the main query.
+            Khôi hủy đi đối tượng wp_query mà nó chỉ thiết lập lại các giá trị trong đối tượng đó mà thôi
     
