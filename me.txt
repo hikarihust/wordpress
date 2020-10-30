@@ -1407,4 +1407,8 @@ The Loop & Custimizing the Loop
             @return bool — True if the current post is in any of the given categories.
         get_query_var($var, $default = '') { }
             Retrieve variable in the WP_Query class.
+    Loop 4
+        Multiple Loops
+        Sử dụng nhiều loop trên cùng 1 trang, sử dụng đối tượng $wp_query
+        Hiển thị thêm các phần tử ở trang kế tiếp 
     

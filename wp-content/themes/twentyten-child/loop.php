@@ -67,3 +67,25 @@
 					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
 				</div><!-- #nav-below -->
 <?php endif; ?>
+
+<?php 
+	
+	$paged = (get_query_var('paged'))?get_query_var('paged'):1;
+	$myOffset = 3 * $paged;
+	$arrQuery = array(
+		'post_type' 			=> 'post',
+		'ignore_sticky_posts' 	=> 1,
+		'post_status' 			=> 'publish',
+		'posts_per_page' 		=> 5,
+		'paged'					=> $paged,
+		'offset'				=> $myOffset
+	);
+
+	$wp_query = new WP_Query($arrQuery);
+?>
+<div>
+	<div>Cac bai viet khac</div>
+	<?php if(have_posts()): while(have_posts()): the_post();?>
+		<a href="<?php the_permalink();?>"><?php the_title();?></a><br/>
+	<?php endwhile; wp_reset_postdata(); endif;?>
+</div>
