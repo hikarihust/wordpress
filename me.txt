@@ -1413,4 +1413,9 @@ The Loop & Custimizing the Loop
         Hiển thị thêm các phần tử ở trang kế tiếp 
 Global Variables
     https://codex.wordpress.org/Global_Variables
+JavaScript & Ajax trong WordPress
+    Sử dụng Ajax trong plugin
+    https://codex.wordpress.org/AJAX_in_Plugins
+    Ajax của WordPress được chia làm 2 phần là: admin và frontend
+    Optimize Setting page 1
     
