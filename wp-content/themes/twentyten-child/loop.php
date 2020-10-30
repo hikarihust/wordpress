@@ -13,6 +13,10 @@
 	padding: 8px;
 	margin-bottom: 10px;
 }
+
+.zendvn-loop .blue{
+	background: #41b7d8;
+}
 </style>
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 				<div id="nav-below" class="navigation">
@@ -20,14 +24,26 @@
 					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
 				</div><!-- #nav-below -->
 <?php endif; ?>
-
+<?php 
+	$paged = (get_query_var('paged'))?get_query_var('paged'):1;
+	$arrQuery = array(
+				'post_type' 			=> 'post',
+				'ignore_sticky_posts' 	=> 1,
+				'post_status' 			=> 'publish',
+				'posts_per_page' 		=> 3,
+				'paged'					=> $paged
+			);
+	$wp_query = new WP_Query($arrQuery);
+?>
 <?php 
     if( have_posts()){
         echo '<ul class="zendvn-loop">';
         while(have_posts()){
             the_post();
+			$css = '';
+			if(in_category(3)) $css = ' class="blue" ';
 ?>
-        <li>
+        <li <?php echo $css;?>>
             <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
             <div>id: <?php the_ID(); ?> - time: <?php the_time(); ?></div>
 			<div>Author: <?php the_author();?></div>

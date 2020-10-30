@@ -1396,4 +1396,15 @@ The Loop & Custimizing the Loop
         wp_reset_postdata()
             After looping through a separate query, this function restores the $post global to the current post in the main query.
             Khôi hủy đi đối tượng wp_query mà nó chỉ thiết lập lại các giá trị trong đối tượng đó mà thôi
+    Loop 3
+        Custom Loop: Chỉnh lại các giá trị mà WordPress đã cung cấp cho ta để hiển thị theo ý muốn
+        Để thực hiển custom loop thì cần gán lại giá trị $arrQuery rồi khởi tạo đối tượng $wp_query
+            $wp_query = new WP_Query($arrQuery);
+        in_category($category, $post = null) { }
+            Checks if the current post is within any of the given categories
+            @param int|string|array $category — Category ID, name or slug, or array of said.
+            @param int|object $post — Optional. Post to check instead of the current post.
+            @return bool — True if the current post is in any of the given categories.
+        get_query_var($var, $default = '') { }
+            Retrieve variable in the WP_Query class.
     
