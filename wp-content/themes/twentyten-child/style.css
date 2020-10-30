@@ -11,9 +11,3 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  twenty-ten-child
 */
-
-@import url('../twentyten/style.css');
-
-.entry-title a:link, .entry-title a:visited{
-	color: red;
-}

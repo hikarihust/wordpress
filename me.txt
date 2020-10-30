@@ -1371,4 +1371,10 @@ Meta boxes & Metadata
         WordPress child theme
         https://developer.wordpress.org/themes/advanced-topics/child-themes/
         Active My Theme - Twenty Ten Child
+    Meta boxes frontend 2
+        get_the_ID()
+            Retrieve the ID of the current item in the WordPress Loop.
+        Có thể sử dụng Metabox cho phần page
+            add_meta_box($this->_meta_box_id, 'My Data', array($this,'display'),'page');
+        https://tcd-theme.com/2018/06/how-to-make-child-theme.html
     

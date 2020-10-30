@@ -31,7 +31,12 @@ if ( have_posts() ) {
 
 					<div class="entry-meta">
 						<?php twentyten_posted_on(); ?>
-					</div><!-- .entry-meta -->
+                    </div><!-- .entry-meta -->
+                    
+					<?php
+						echo _zend_mp_mb_data2_fnc();
+ 
+                    ?>
 
 					<div class="entry-content">
 						<?php the_content(); ?>
