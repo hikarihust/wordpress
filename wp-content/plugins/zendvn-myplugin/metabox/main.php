@@ -9,9 +9,9 @@ class Zendvn_Mp_Metabox_Main{
 		$defaultOption = array(
             'zendvn_mp_mb_simple' => false,
             'zendvn_mp_mb_data' => false,
-			'zendvn_mp_mb_data2' => false,
+			'zendvn_mp_mb_data2' => true,
 			'zendvn_mp_mb_editor' => false,
-			'zendvn_mp_mb_media' => true
+			'zendvn_mp_mb_media' => false
         );
         $this->_metabox_option = get_option($this->_metabox_name,$defaultOption);
         // echo '<br/>' . __METHOD__;
