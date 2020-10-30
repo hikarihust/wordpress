@@ -1377,4 +1377,14 @@ Meta boxes & Metadata
         Có thể sử dụng Metabox cho phần page
             add_meta_box($this->_meta_box_id, 'My Data', array($this,'display'),'page');
         https://tcd-theme.com/2018/06/how-to-make-child-theme.html
+The Loop & Custimizing the Loop
+    About Loop
+        https://codex.wordpress.org/the_loop
+        Khi làm theme cho WordPress thì ko cần viết lại các câu truy vấn để lấy ra 1 hay nhiều bài viết...
+            mà WordPress đã tạo sẵn các câu sql và trả về cho ta dữ liệu và chỉ cần in ra trên các Theme có sẵn bằng The Loop
+        The Loop có 2 loại là in ra 1 kết quả và in ra nhiều kết quả
+            The Loop trong loop-single.php chỉ in ra 1 kết quả duy nhất 
+            The Loop trong loop.php thì in ra nhiều kết quả
+    Loop 1
+        loop.php hiển thị danh sách các bài viết trong Home và Categories
     
