@@ -18,6 +18,10 @@ class Zendvn_Mp_Setting_Ajax{
     }
 
 	public function register_setting_and_fields(){
+        add_action('admin_enqueue_scripts', array($this,'add_js_file'));
+
+        add_action('wp_ajax_zendvn_check_form', array($this,'zendvn_check_form'));
+
 		register_setting($this->_menu_slug,$this->_option_name, array($this,'validate_setting'));
 	
 		//MAIN SETTING
@@ -27,6 +31,14 @@ class Zendvn_Mp_Setting_Ajax{
 		add_settings_field($this->create_id('title'), 'Site title', array($this,'create_form'), 
 							$this->_menu_slug,$mainSection,array('name'=>'title'));	
     }
+
+	public function zendvn_check_form(){
+		echo __METHOD__;
+		echo '<pre>';
+		print_r($_POST);
+		echo '</pre>';
+        die();
+	}
 
 	public function create_form($args){
 		$htmlObj = new ZendvnHtml();
@@ -40,6 +52,11 @@ class Zendvn_Mp_Setting_Ajax{
 			            . $htmlObj->pTag('Nhập vào một chuỗi không quá 20 ký tự',array('class'=>'description'));
 			echo $html;
 		}	
+    }
+    
+	public function add_js_file(){
+		wp_register_script($this->_menu_slug, ZENDVN_MP_JS_URL . '/ajax.js', array('jquery'),'1.0');
+		wp_enqueue_script($this->_menu_slug);
 	}
 
 	//===============================================
