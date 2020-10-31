@@ -1431,4 +1431,5 @@ JavaScript & Ajax trong WordPress
         Hook giúp gọi Ajax trong hệ thống WordPress
             wp_ajax_ + method name(zendvn_check_form)
             add_action('wp_ajax_zendvn_check_form', array($this,'zendvn_check_form'));
+    Check form 2
     

@@ -33,11 +33,31 @@ class Zendvn_Mp_Setting_Ajax{
     }
 
 	public function zendvn_check_form(){
+        /*
 		echo __METHOD__;
 		echo '<pre>';
 		print_r($_POST);
-		echo '</pre>';
-        die();
+        echo '</pre>';
+        */
+		$postVal = $_POST;
+		$errors = array();
+		
+		if(!empty($postVal['value'])){
+			if($this->stringMaxValidate($postVal['value'], 20) == false){
+				$errors['zendvn_mp_st_ajax_title'] = "Chuoi dai qua 20 ky tu";
+			}
+		}
+
+		$msg = array();
+		if(count($errors)>0){
+			$msg['status'] = false;
+			$msg['errors'] = $errors;
+		}else{
+			$msg['status'] = true;
+		}
+		
+		echo json_encode($msg);
+        wp_die();
 	}
 
 	public function create_form($args){
