@@ -1476,4 +1476,27 @@ Template Tags
         wp_register( string $before = '<li>', string $after = '</li>', bool $echo = true )
             Display the Registration or Admin link.
             Tạo ra 1 text link, nếu đang login thì sẽ link đến trang Admin, còn chưa login thì sẽ đến trang Registration
+    Template Tags 2
+        bloginfo( string $show = '' )
+            Displays information about the current site.
+        get_bloginfo( string $show = '', string $filter = 'raw' )
+            Retrieves information about the current site.
+        wp_title( string $sep = '&raquo;', bool $display = true, string $seplocation = '' )
+            Display or retrieve page title for all areas of blog.
+        single_post_title( string $prefix = '', bool $display = true )
+            Display or retrieve page title for post.
+            This is optimized for single.php template file for displaying the post title.
+            Giúp thêm tiền tố vào phía tiêu đề của bài viết 
+            Chỉ có tác dụng ở single post page(loop-single.php)
+        single_cat_title( string $prefix = '', bool $display = true )
+            Display or retrieve page title for category archive.
+            Useful for category template files for displaying the category page title
+            Có tác dụng đối với trang hiển thị các bài viết trong 1 Category
+        single_tag_title( string $prefix = '', bool $display = true )
+            Display or retrieve page title for tag post archive.
+        single_month_title( string $prefix = '', bool $display = true )
+            Display or retrieve page title for post archive based on date.
+        wp_get_archives( string|array $args = '' )
+            Display archive links based on type and format.
+            Lấy ra các bài viết lưu trữ theo 'daily', 'weekly', 'monthly', 'yearly', 'postbypost', or 'alpha'
     
