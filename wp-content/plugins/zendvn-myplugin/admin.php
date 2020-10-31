@@ -5,7 +5,13 @@ class ZendvnMpAdmin{
 	
 	public function __construct(){		
 		// $this->ajaxPage();
-		$this->ajaxPage2();
+		// $this->ajaxPage2();
+		$this->tabsPage();
+	}
+
+	public function tabsPage(){
+		require_once ZENDVN_MP_SETTING_DIR . '/tabs.php';
+		new Zendvn_Mp_Setting_Tabs();
 	}
 	
 	public function ajaxPage(){

@@ -1436,4 +1436,6 @@ JavaScript & Ajax trong WordPress
         Chuyển ajax.js sang thành 1 Plugin trong jquery để nếu trong Form có nhiều phần tử thì có thể sử dụng Plugin này 
     Check form 4
         filter_var($postVal['value'], FILTER_VALIDATE_EMAIL) Validate Email
+    Ajax - Tab 1
+        Xây dựng trang để hiển thị dữ liệu trong phần Admin
     
