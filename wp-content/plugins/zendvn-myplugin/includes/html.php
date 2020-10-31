@@ -15,11 +15,7 @@ class ZendvnHtml{
 		return $script;
 	}
 
-	public function pTag($val = '', $attr = array(), $options = null){
-		return '<p>' . $val . '</p>';
-	}
-	
-	public function label($val = '',$attr = array(), $options = null){
+	public function pTag($value = '', $attr = array(), $options = null){
 		$strAttr = '';
 		if(count($attr)> 0){
 			foreach ($attr as $key => $val){
@@ -28,7 +24,20 @@ class ZendvnHtml{
 				}
 			}
 		}
-		return '<label ' . $strAttr . ' >' . $val . ':</label>';
+		
+		return '<p ' . $strAttr .' >' . $value . '</p>';
+	}
+	
+	public function label($value = '',$attr = array(), $options = null){
+		$strAttr = '';
+		if(count($attr)> 0){
+			foreach ($attr as $key => $val){
+				if($key != "type" && $key != 'value'){
+					$strAttr .= ' ' . $key . '="' . $val . '" ';
+				}
+			}
+		}
+		return '<label ' . $strAttr . ' >' . $value . ':</label>';
 	}
 	
 	//Phần tử TEXTBOX

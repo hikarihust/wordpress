@@ -1418,4 +1418,13 @@ JavaScript & Ajax trong WordPress
     https://codex.wordpress.org/AJAX_in_Plugins
     Ajax của WordPress được chia làm 2 phần là: admin và frontend
     Optimize Setting page 1
+    Optimize Setting page 2
+        Settings API: Two update notices after saving settings?
+            Custimizing settings_errors()
+                $result = array();
+                foreach ($settings_errors as $key => $value){
+                if(!in_array($value, $result))
+                    $result[$key]=$value;
+                }
+                $settings_errors = $result;
     
