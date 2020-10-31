@@ -1434,4 +1434,6 @@ JavaScript & Ajax trong WordPress
     Check form 2
     Check form 3
         Chuyển ajax.js sang thành 1 Plugin trong jquery để nếu trong Form có nhiều phần tử thì có thể sử dụng Plugin này 
+    Check form 4
+        filter_var($postVal['value'], FILTER_VALIDATE_EMAIL) Validate Email
     

@@ -30,6 +30,12 @@ class Zendvn_Mp_Setting_Ajax2{
 							array($this,'main_section_view'), $this->_menu_slug);
 		add_settings_field($this->create_id('title'), 'Site title', array($this,'create_form'), 
 							$this->_menu_slug,$mainSection,array('name'=>'title'));	
+
+		add_settings_field($this->create_id('email'), 'Email', array($this,'create_form'),
+							$this->_menu_slug,$mainSection,array('name'=>'email'));
+
+		add_settings_field($this->create_id('logo'), 'Logo', array($this,'create_form'),
+							$this->_menu_slug,$mainSection,array('name'=>'logo'));
     }
 
 	public function zendvn_check_form2(){
@@ -48,6 +54,18 @@ class Zendvn_Mp_Setting_Ajax2{
 			}
 		}
 
+		if(!empty($postVal['value']) && $postVal['inputID'] == 'zendvn_mp_st_ajax2_email'){
+			if(!filter_var($postVal['value'], FILTER_VALIDATE_EMAIL)){
+				$errors['msg'] = "Gia tri khong phai lai dia chi email";
+			}
+		}
+
+		if(!empty($postVal['value']) && $postVal['inputID'] == 'zendvn_mp_st_ajax2_logo'){
+			if($this->fileExtionsValidate($postVal['value'], 'JPG|PNG|GIF') == false){
+				$errors['msg'] = "Phần mở rộng của tập tin không đúng định dạng kiểu";
+			}
+		}
+
 		$msg = array();
 		if(count($errors)>0){
 			$msg['status'] = false;
@@ -63,7 +81,7 @@ class Zendvn_Mp_Setting_Ajax2{
 	public function create_form($args){
 		$htmlObj = new ZendvnHtml();
 		if($args['name']== 'title'){
-			//Tao phan tu chua Price
+			//Tao phan tu chua Title
 			$inputID 	= $this->create_id('title');
 			$inputName 	= $this->create_name('title');
 			$inputValue = @$this->_setting_options['title'];
@@ -72,6 +90,28 @@ class Zendvn_Mp_Setting_Ajax2{
 			            . $htmlObj->pTag('Nhập vào một chuỗi không quá 20 ký tự',array('class'=>'description'));
 			echo $html;
 		}	
+
+		if($args['name']== 'email'){
+			//Tao phan tu chua Email
+			$inputID 	= $this->create_id('email');
+			$inputName 	= $this->create_name('email');
+			$inputValue = @$this->_setting_options['email'];
+			$arr 		= array('size' =>'25','id' => $inputID);
+			$html 		= $htmlObj->textbox($inputName,$inputValue,$arr);
+			
+			echo $html;
+		}
+
+		if($args['name']== 'logo'){
+			//Tao phan tu chua Logo
+			$inputID 	= $this->create_id('logo');
+			$inputName 	= $this->create_name('logo');
+			$inputValue = '';
+			$arr 		= array('id' => $inputID);
+			$html 		= $htmlObj->fileupload($inputName,$inputValue,$arr);
+				
+			echo $html;
+		}
     }
     
 	public function add_js_file(){
