@@ -14,21 +14,10 @@
  */
 
 get_header(); ?>
-<style>
-#zendvn-mp-info{
-	background-color: white;
-	min-height: 300px;
-	border: solid 1px #ccc;
-	padding: 10px;
-}
-</style>
+
 		<div id="container">
 			<div id="content" role="main">
-			<div id="zendvn-mp-info">
-				<ul>
-					<li>get_calendar()		: <?php get_calendar();?> </li>
-				</ul>
-			</div>
+
 			<?php
 			/*
 			 * Run the loop to output the posts.

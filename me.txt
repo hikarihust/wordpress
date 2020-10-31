@@ -1529,4 +1529,29 @@ Template Tags
             List all the authors of the site, with several options available.
         get_author_posts_url( int $author_id, string $author_nicename = '' )
             Retrieve the URL to the author page for the user with the ID provided.
+    Template Tags 4
+        Các phương thức của Category tags sẽ được hiển thị tốt ở trong The Loop hoặc category.php 
+        category_description($category_id)
+            Returns the description of a category defined in the category settings screen for the current category (Posts > Categories).
+        single_cat_title( string $prefix = '', bool $display = true )
+            Display or retrieve page title for category archive.
+        the_category( string $separator = '', string $parents = '', int $post_id = false )
+            Displays category list for a post in either HTML list or custom format.
+        wp_dropdown_categories( array|string $args = '' )
+            Displays or retrieves the HTML dropdown list of categories.
+            Các Category có bài viết 
+        wp_list_categories( array|string $args = '' )
+            Displays or retrieves the HTML list of categories.
+            Liệt kê danh sách các category theo kiểu ul-li 
+        single_tag_title( string $prefix = '', bool $display = true )
+            Display or retrieve page title for tag post archive.
+        tag_description( int $tag )
+            Retrieves tag description.
+        the_tags( $before, $sep, $after )
+            This template tag displays a link to the tag or tags a post belongs to. If no tags are associated with 
+            the current entry, nothing is displayed. This tag should be used within The Loop.
+        wp_tag_cloud( $args )
+            The wp_tag_cloud() function displays a list of tags in what is called a 'tag cloud', where the size of each tag 
+                is determined by how many times that particular tag has been assigned to posts.
+            Hiển thị tất cả các tag có trong hệ thống, tag nào được sử dụng nhiều thì nó sẽ được hiển thị cỡ chữ lớn hơn
     
