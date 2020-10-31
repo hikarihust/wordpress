@@ -7,10 +7,26 @@ class Zendvn_Mp_Setting_Tabs{
 	public function __construct(){
 		// echo "<br/>" . __METHOD__;   
 		add_action('admin_menu', array($this,'settingMenu'));
+		add_action("wp_ajax_zendvn_load_content", array($this,'zendvn_load_content'));
     }
 
 	public function zendvn_load_content(){
-
+		$tab = $_POST['tab'];
+		if($tab == "#tab1"){
+			echo '<h3>Đã load thành công tab 1</h3>';
+		}
+		
+		if($tab == "#tab2"){
+			echo '<h3>Đã load thành công tab 2</h3>';
+		}
+		
+		if($tab == "#tab3"){
+			echo '<h3>Đã load thành công tab 3</h3>';
+		}
+		
+		if($tab == "#tab4"){
+			echo '<h3>Đã load thành công tab 4</h3>';
+		}
         wp_die();
 	}
 

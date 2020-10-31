@@ -1438,4 +1438,6 @@ JavaScript & Ajax trong WordPress
         filter_var($postVal['value'], FILTER_VALIDATE_EMAIL) Validate Email
     Ajax - Tab 1
         Xây dựng trang để hiển thị dữ liệu trong phần Admin
+    Ajax - Tab 2
+        beforeSend: Trong quá trình đợi dữ liệu trả về
     
