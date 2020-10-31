@@ -1432,4 +1432,6 @@ JavaScript & Ajax trong WordPress
             wp_ajax_ + method name(zendvn_check_form)
             add_action('wp_ajax_zendvn_check_form', array($this,'zendvn_check_form'));
     Check form 2
+    Check form 3
+        Chuyển ajax.js sang thành 1 Plugin trong jquery để nếu trong Form có nhiều phần tử thì có thể sử dụng Plugin này 
     
