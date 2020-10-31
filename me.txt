@@ -1440,4 +1440,9 @@ JavaScript & Ajax trong WordPress
         Xây dựng trang để hiển thị dữ liệu trong phần Admin
     Ajax - Tab 2
         beforeSend: Trong quá trình đợi dữ liệu trả về
+Template Tags
+    https://codex.wordpress.org/Template_Tags
+    Prepare
+        Copy all source from twentyten to twentyten-child
+    Rất quan trọng cho việc xây dựng theme hoặc các template cho hệ thống của WordPress
     
