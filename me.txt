@@ -1445,4 +1445,35 @@ Template Tags
     Prepare
         Copy all source from twentyten to twentyten-child
     Rất quan trọng cho việc xây dựng theme hoặc các template cho hệ thống của WordPress
+    Template Tags 1
+        get_header( string $name = null, array $args = array() )
+            Load header template.
+            Kéo tập tin header.php vào trong mã nguồn của Theme 
+        get_sidebar( string $name = null, array $args = array() )
+            Load sidebar template.
+        get_footer( string $name = null, array $args = array() )
+            Load footer template.
+        get_template_part( string $slug, string $name = null, array $args = array() )
+            Loads a template part into a template.
+        get_search_form( array $args = array() )
+            Display search form.
+            Tạo ra 1 Form tìm kiếm trong phần Frontend của website
+        wp_loginout( string $redirect = '', bool $echo = true )
+            Display the Log In/Out link.
+            Phương thức này cung cấp cho mình 2 trường hợp. Khi đang login vào hệ thống thì nó sẽ cung cấp cho 
+                mình 1 text link là "Log out", còn khi chưa login vào hệ thống thì nó sẽ cung cấp cho mình 1 text link 
+                là Log in
+        wp_logout_url( string $redirect = '' )
+            Retrieves the logout URL.
+            Cung cấp cho mình 1 đường dẫn để gắn vào thẻ <a>, khi nhấn vào thẻ <a> đó thì có thể logout ra khỏi hệ thống 
+        wp_login_url( string $redirect = '', bool $force_reauth = false )
+            Retrieves the login URL.
+        wp_login_form( array $args = array() )
+            Provides a simple login form for use anywhere within WordPress.
+            Tạo ra 1 Form Login để đăng nhập tài khoản, pwd login vào hệ thống
+        wp_lostpassword_url( string $redirect = '' )
+            Returns the URL that allows the user to retrieve the lost password
+        wp_register( string $before = '<li>', string $after = '</li>', bool $echo = true )
+            Display the Registration or Admin link.
+            Tạo ra 1 text link, nếu đang login thì sẽ link đến trang Admin, còn chưa login thì sẽ đến trang Registration
     
