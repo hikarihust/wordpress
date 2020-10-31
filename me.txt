@@ -1499,4 +1499,34 @@ Template Tags
         wp_get_archives( string|array $args = '' )
             Display archive links based on type and format.
             Lấy ra các bài viết lưu trữ theo 'daily', 'weekly', 'monthly', 'yearly', 'postbypost', or 'alpha'
+    Template Tags 3
+        get_calendar( bool $initial = true, bool $echo = true )
+            Display calendar with days that have posts as links.
+            The calendar is cached, which will be retrieved, if it exists. If there are no posts for the month, 
+                then it will not be displayed.
+            Hiển thị Calendar, trong Calendar có 1 số link, cho user biết những ngày nào có gửi bài mới lên trên website
+        the_author( string $deprecated = '', bool $deprecated_echo = true )
+            Display the name of the author of the current post.
+        get_the_author( string $deprecated = '' )
+            Retrieve the author of the current post.
+        the_author_link()
+            Display either author’s link or author’s name.
+        get_the_author_link()
+            Retrieve either author’s link or author’s name.
+        the_author_meta( string $field = '', int|false $user_id = false )
+            Outputs the field from the user’s DB object. Defaults to current post’s author.
+            Thông tin phần mở rộng nằm trong bảng wp_usermeta dựa vào giá trị của meta_key hay user_id truyền vào
+        the_author_posts()
+            Display the number of posts by the author of the current post.
+            Số bài viết của tác giả trong hệ thống 
+        the_author_posts_link( string $deprecated = '' )
+            Displays an HTML link to the author page of the current post’s author.
+            Link đến trang hiển thị các bài viết của tác giả 
+        wp_dropdown_users( array|string $args = '' )
+            Create dropdown HTML content of users.
+            Danh sách các tài khoản có trong hệ thống 
+        wp_list_authors( string|array $args = '' )
+            List all the authors of the site, with several options available.
+        get_author_posts_url( int $author_id, string $author_nicename = '' )
+            Retrieve the URL to the author page for the user with the ID provided.
     
