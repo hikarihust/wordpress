@@ -1554,4 +1554,52 @@ Template Tags
             The wp_tag_cloud() function displays a list of tags in what is called a 'tag cloud', where the size of each tag 
                 is determined by how many times that particular tag has been assigned to posts.
             Hiển thị tất cả các tag có trong hệ thống, tag nào được sử dụng nhiều thì nó sẽ được hiển thị cỡ chữ lớn hơn
+    Template Tags 5
+        Comment tags
+        wp_list_comments( string|array $args = array(), WP_Comment[] $comments = null )
+            Displays a list of comments.
+            Lấy ra các giá trị comment của 1 bài viết nào đó
+        comment_ID() : 2
+        comment_author() : admin
+        comment_author_email() : vudinhquangk53@gmail.com
+        comment_author_email_link() : vudinhquangk53@gmail.com
+        comment_author_IP() : 127.0.0.1
+        comment_author_link() : admin
+        comment_author_rss() : admin
+        comment_author_url() : http://wordpress.xyz
+        comment_author_url_link() : wordpress.xyz
+        comment_class() : class="comment byuser comment-author-admin even thread-even depth-1"
+        comment_date() : October 31, 2020
+        comment_excerpt() : 1 Comment
+        comment_form_title() : Leave a Reply
+        comment_form() :
+        comment_ID()
+            Displays the comment ID of the current comment.
+            Hiển thị giá trị id của comment
+        comment_author( int|WP_Comment $comment_ID )
+            Displays the author of the current comment.
+        comment_author_email( int|WP_Comment $comment_ID )
+            Displays the email of the author of the current global $comment.
+        comment_author_email_link( string $linktext = '', string $before = '', string $after = '', int|WP_Comment $comment = null )
+            Displays the HTML email link to the author of the current comment.
+        comment_author_IP( int|WP_Comment $comment_ID )
+            Displays the IP address of the author of the current comment.
+        comment_author_link( int|WP_Comment $comment_ID )
+            Displays the HTML link to the URL of the author of the current comment.
+        comment_author_url( int|WP_Comment $comment_ID )
+            Displays the URL of the author of the current comment, not linked.
+        comment_author_url_link( string $linktext = '', string $before = '', string $after = '', int|WP_Comment $comment )
+            Displays the HTML link of the URL of the author of the current comment.
+        comment_class( string|array $class = '', int|WP_Comment $comment = null, int|WP_Post $post_id = null, bool $echo = true )
+            Generates semantic classes for each comment element.
+            Cung cấp class của comment
+        comment_date( string $format = '', int|WP_Comment $comment_ID )
+            Displays the comment date of the current comment.
+        comment_excerpt( int|WP_Comment $comment_ID )
+            Displays the excerpt of the current comment.
+        comment_form_title( string $no_reply_text = false, string $reply_text = false, string $link_to_parent = true )
+            Displays text based on comment reply status.
+            Tiêu đề của Form
+        comment_form( array $args = array(), int|WP_Post $post_id = null )
+            Outputs a complete commenting form for use within a template.
     
