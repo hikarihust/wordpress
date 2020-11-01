@@ -1590,6 +1590,7 @@ Template Tags
             Displays the URL of the author of the current comment, not linked.
         comment_author_url_link( string $linktext = '', string $before = '', string $after = '', int|WP_Comment $comment )
             Displays the HTML link of the URL of the author of the current comment.
+            -> wp_comments.comment_author_url
         comment_class( string|array $class = '', int|WP_Comment $comment = null, int|WP_Post $post_id = null, bool $echo = true )
             Generates semantic classes for each comment element.
             Cung cấp class của comment
@@ -1602,4 +1603,32 @@ Template Tags
             Tiêu đề của Form
         comment_form( array $args = array(), int|WP_Post $post_id = null )
             Outputs a complete commenting form for use within a template.
+    Template Tags 6
+        comment_id_fields( int $post_id )
+            Outputs hidden input HTML for replying to comments.
+            Adds two hidden inputs to the comment form to identify the comment_post_ID and comment_parent values for threaded comments.
+        comment_reply_link( array $args = array(), int|WP_Comment $comment = null, int|WP_Post $post = null )
+            Displays the HTML content for reply to comment link.
+        comment_text( int|WP_Comment $comment_ID, array $args = array() )
+            Displays the text of the current comment.
+        comment_time( string $format = '' )
+            Displays the comment time of the current comment.
+        comment_type( string $commenttxt = false, string $trackbacktxt = false, string $pingbacktxt = false )
+            Displays the comment type of the current comment.
+        comments_link( string $deprecated = '', string $deprecated_2 = '' )
+            Displays the link to the current post comments.
+        comments_number( string $zero = false, string $one = false, string $more = false, int|WP_Post $post_id )
+            Displays the language string for the number of comments the current post has.
+        comments_popup_link( false|string $zero = false, false|string $one = false, false|string $more = false, 
+                            string $css_class = '', false|string $none = false )
+        Displays the link to the comments for the current post ID.
+            Là sự kết hợp của comments_number() và comments_popup_link()
+        get_avatar( mixed $id_or_email, int $size = 96, string $default = '', string $alt = '', array $args = null )
+            Retrieve the avatar <img> tag for a user, email address, MD5 hash, comment, or post.
+            Setting -> Discussion -> Default Avatar để thay đổi avatar
+        Phân trang cho comment
+            Setting -> Discussion -> Break comments into pages with
+            next_comments_link()
+            paginate_comments_links()
+            previous_comments_link()
     
