@@ -1631,4 +1631,78 @@ Template Tags
             next_comments_link()
             paginate_comments_links()
             previous_comments_link()
+    Template Tags 7
+        Link tags: 
+            Cung cấp các đường dẫn để gắn vào các thẻ <a>
+            Không phải nó sẽ hiển thị trên tất cả các trang của WordPress mà nó chỉ hiển thị trong 1 số vùng nhất định 
+                như The Loop(loop.php) của WordPress
+            loop.php có vai trò in ra các tiêu đề và tóm tắt bài viết giống như ở phần trang chủ(http://wordpress.xyz)
+            the_permalink() : http://wordpress.xyz/?p=30
+            user_trailingslashit() :
+            permalink_anchor() :
+            get_permalink() : http://wordpress.xyz/?p=30
+            get_post_permalink() : http://wordpress.xyz/?post_type=post&p=30
+            post_permalink() :
+            get_page_link() : http://wordpress.xyz/?page_id=30
+            get_attachment_link() : http://wordpress.xyz/?attachment_id=30
+            wp_shortlink_header() :
+            wp_shortlink_wp_head() :
+            edit_bookmark_link() :
+            edit_comment_link() :
+            edit_post_link() : Edit This
+            get_edit_post_link() : http://wordpress.xyz/wp-admin/post.php?post=30&action=edit
+            get_delete_post_link() : http://wordpress.xyz/wp-admin/post.php?post=30&action=trash&_wpnonce=5fae0950fb
+            edit_tag_link() :
+            get_admin_url() : http://wordpress.xyz/wp-admin/
+            get_home_url() : http://wordpress.xyz
+            get_site_url() : http://wordpress.xyz
+            home_url() : http://wordpress.xyz
+            site_url() : http://wordpress.xyz
+            get_search_link() : http://wordpress.xyz/?s=happy
+            get_search_query() :
+            the_permalink( int|WP_Post $post )
+                Displays the permalink for the current post.
+                Hiển thị đường dẫn của bài viết hiện thời 
+            get_permalink( int|WP_Post $post, bool $leavename = false )
+                Retrieves the full permalink for the current post or post ID.
+            get_post_permalink( int|WP_Post $id, bool $leavename = false, bool $sample = false )
+                Retrieves the permalink for a post of a custom post type.
+            edit_post_link( string $text = null, string $before = '', string $after = '', int|WP_Post $id, string $class = 'post-edit-link' )
+                Displays the edit post link for post.
+            get_delete_post_link( int|WP_Post $id, string $deprecated = '', bool $force_delete = false )
+                Retrieves the delete posts link for post.
+            get_admin_url( int $blog_id = null, string $path = '', string $scheme = 'admin' )
+                Retrieves the URL to the admin area for a given site.
+            get_home_url( int $blog_id = null, string $path = '', string|null $scheme = null )
+                Retrieves the URL for a given site where the front end is accessible.
+            get_site_url( int $blog_id = null, string $path = '', string $scheme = null )
+                Retrieves the URL for a given site where WordPress application files (e.g. wp-blog-header.php or the wp-admin/ folder) 
+                    are accessible.
+            get_search_link( string $query = '' )
+                Retrieves the permalink for a search.
+        Post tags
+            Vùng phù hợp cho Post tags là ở phần hiển thị các bài viết(loop.php) và hiển thị 1 bài viết(loop-single.php)
+            body_class( string|string[] $class = '' )
+                Displays the class names for the body element.
+            next_post_link( string $format = '%link &raquo;', string $link = '%title', bool $in_same_term = false, array|string $excluded_terms = '', string $taxonomy = 'category' )
+                Displays the next post link that is adjacent to the current post.
+            post_class( string|array $class = '', int|WP_Post $post_id = null )
+                Displays the classes for the post container element.
+            previous_post_link( string $format = '&laquo; %link', string $link = '%title', bool $in_same_term = false, 
+                array|string $excluded_terms = '', string $taxonomy = 'category' )
+                Displays the previous post link that is adjacent to the current post.
+            single_post_title( string $prefix = '', bool $display = true )
+                Display or retrieve page title for post.
+            the_category( string $separator = '', string $parents = '', int $post_id = false )
+                Displays category list for a post in either HTML list or custom format.
+            the_content( string $more_link_text = null, bool $strip_teaser = false )
+                Display the post content.
+            the_excerpt()
+                Display the post excerpt.
+            the_ID()
+                Display the ID of the current item in the WordPress Loop.
+            the_meta()
+                Display a list of post custom fields(stored in the wp_postmeta table).
+            the_title( string $before = '', string $after = '', bool $echo = true )
+                Display or retrieve the current post title with optional markup.
     
