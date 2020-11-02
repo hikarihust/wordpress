@@ -1705,4 +1705,78 @@ Template Tags
                 Display a list of post custom fields(stored in the wp_postmeta table).
             the_title( string $before = '', string $after = '', bool $echo = true )
                 Display or retrieve the current post title with optional markup.
+Custom Post Types
+    https://wordpress.org/support/article/post-types/
+    About Custom Post Types
+        Posts
+        Pages
+        Attachments
+        Revisions
+        Navigation Menus
+        Custom CSS
+        Changesets
+        Default Post Types
+    Custom Post Types 1
+        register_post_type( string $post_type, array|string $args = array() )
+            Registers a post type.
+        labels
+            name: General name for the post type, usually plural. The same and overridden by $post_type_object->label. 
+                Default is ‘Posts’ / ‘Pages’.
+            singular_name: Name for one object of this post type. Default is ‘Post’ / ‘Page’.
+            menu_name: Label for the menu name. Default is the same as name.
+            name_admin_bar: Name given for the "Add New" dropdown on admin bar. Defaults to 'singular_name' if it exists, 'name' otherwise
+            add_new: Default is ‘Add New’ for both hierarchical and non-hierarchical types.
+            add_new_item: Label for adding a new singular item. Default is ‘Add New Post’ / ‘Add New Page’.
+            search_items: Label for searching plural items. Default is ‘Search Posts’ / ‘Search Pages’.
+            not_found: Label used when no items are found. Default is ‘No posts found’ / ‘No pages found’.
+            not_found_in_trash: Label used when no items are in the Trash. Default is ‘No posts found in Trash’ / ‘No pages found in Trash’.
+            view_item: Label for viewing a singular item. Default is ‘View Post’ / ‘View Page’.
+
+
+        args    
+            public: Một số giá trị được kế thừa từ phần public đó là 
+                exclude_from_search, publicly_queryable, show_ui, show_in_nav_menus, show_in_admin_bar
+            show_in_nav_menus
+                (bool) Makes this post type available for selection in navigation menus. Default is value of $public.
+            show_ui
+                (bool) Whether to generate and allow a UI for managing this post type in the admin. Default is value of $public.
+            show_in_nav_menus
+                (bool) Makes this post type available for selection in navigation menus. Default is value of $public.
+                http://wordpress.xyz/wp-admin/nav-menus.php
+            show_in_admin_bar
+                (bool) Makes this post type available via the admin bar. Default is value of $show_in_menu.
+            menu_position
+                (int) The position in the menu order the post type should appear. To work, $show_in_menu must be true. 
+                Default null (at the bottom).
+            menu_icon
+                (string) The url to the icon to be used for this menu. Pass a base64-encoded SVG using a data URI, 
+                which will be colored to match the color scheme -- this should begin with 'data:image/svg+xml;base64,'. 
+                Pass the name of a Dashicons helper class to use a font icon, e.g. 'dashicons-chart-pie'. 
+                Pass 'none' to leave div.wp-menu-image empty so an icon can be added via CSS. Defaults to use the posts icon.
+            capability_type
+                (string) The string to use to build the read, edit, and delete capabilities. May be passed as an array to allow 
+                for alternative plurals when using this argument as a base to construct the capabilities, e.g. array('story', 'stories'). 
+                Default 'post'.
+            hierarchical
+                (bool) Whether the post type is hierarchical (e.g. page). Default false.
+                Cho thực hiện phân cấp cha con
+            supports
+                (array) Core feature(s) the post type supports. Serves as an alias for calling add_post_type_support() directly. 
+                Core features include 'title', 'editor', 'comments', 'revisions', 'trackbacks', 'author', 'excerpt', 'page-attributes', 
+                'thumbnail', 'custom-fields', and 'post-formats'
+            register_meta_box_cb
+                (callable) Provide a callback function that sets up the meta boxes for the edit form. Do remove_meta_box() 
+                and add_meta_box() calls in the callback. Default null.
+            has_archive
+                (bool|string) Whether there should be post type archives, or if a string, the archive slug to use. 
+                Will generate the proper rewrite rules if $rewrite is enabled. Default false.
+                Phần lưu trữ theo ngày tháng năm 
+            rewrite
+                (bool|array) Triggers the handling of rewrites for this post type. To prevent rewrite, set to false. 
+                Defaults to true, using $post_type as slug. To specify rewrite rules, an array can be passed with any of these keys:
+                    slug, with_front
+                'rewrite'              => array('slug'=>'zproduct'),
+                http://wordpress.xyz/?zproduct=product-01
+        http://wordpress.xyz/?post_type=zproduct
+            Hiển thị danh sách các bài viết của Products
     
