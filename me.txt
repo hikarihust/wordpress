@@ -1796,4 +1796,15 @@ Custom Post Types
         is_single( int|string|int[]|string[] $post = '' )
             Determines whether the query is for an existing single post.
             Để kiểm tra xem có đang xem 1 bài viết hay không 
-    
+    Custom Post Types 6
+        http://wordpress.xyz/?post_type=zproduct
+            Mặc định trang này thì nó sẽ sử dụng template là wordpress/wp-content/themes/twentyten/archive.php
+        get_template_part( 'loop', 'archive' );
+            Array
+            (
+                [0] => loop-archive.php
+                [1] => loop.php
+            )
+            Thường thì phần tử đứng đầu sẽ được ưu tiên cho phần tử đứng đầu, nếu phần tử đứng đầu không tồn tại thì mới 
+            ưu tiên cho phần tử thứ 2
+        
