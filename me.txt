@@ -1716,7 +1716,7 @@ Custom Post Types
         Custom CSS
         Changesets
         Default Post Types
-    Custom Post Types 1
+    Custom Post Types 1-3
         register_post_type( string $post_type, array|string $args = array() )
             Registers a post type.
         labels
@@ -1731,8 +1731,7 @@ Custom Post Types
             not_found: Label used when no items are found. Default is ‘No posts found’ / ‘No pages found’.
             not_found_in_trash: Label used when no items are in the Trash. Default is ‘No posts found in Trash’ / ‘No pages found in Trash’.
             view_item: Label for viewing a singular item. Default is ‘View Post’ / ‘View Page’.
-
-
+            edit_item: Label for editing a singular item. Default is ‘Edit Post’ / ‘Edit Page’.
         args    
             public: Một số giá trị được kế thừa từ phần public đó là 
                 exclude_from_search, publicly_queryable, show_ui, show_in_nav_menus, show_in_admin_bar
@@ -1779,4 +1778,14 @@ Custom Post Types
                 http://wordpress.xyz/?zproduct=product-01
         http://wordpress.xyz/?post_type=zproduct
             Hiển thị danh sách các bài viết của Products
+    Custom Post Types 4
+        Add custom message on custom post
+            wordpress/wp-admin/edit-form-advanced.php
+            https://stackoverflow.com/questions/49668277/add-custom-message-on-custom-post
+        Change message given when deleting post from custom post type
+            https://wordpress.stackexchange.com/questions/359980/change-message-given-when-deleting-post-from-custom-post-type
+            http://hookr.io/filters/bulk_post_updated_messages/
+        Ở Frontend được hiển thị ở loop-single.php và loop.php
+        Đối với theme twentyten thì tập tin loop.php để hiển thị nhiều bài viết và loop-single.php để hiển thị 1 bài viết 
+        Hook pre_get_posts: Trước khi lấy ra các bài viết 
     
