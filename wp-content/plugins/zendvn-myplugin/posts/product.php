@@ -25,6 +25,16 @@ class Zendvn_Mp_Cp_Product{
 					$template_file = $file;
 				}
 			}
+        }
+        
+		if(is_archive()){
+				
+			if($wp->query_vars['post_type'] == 'zproduct'){
+				$file = ZENDVN_MP_CP_DIR . '/templates/list-zproduct.php';
+				if(file_exists($file)){
+					$template_file = $file;
+				}
+			}
 		}
 		
 		return $template_file;

@@ -1807,4 +1807,7 @@ Custom Post Types
             )
             Thường thì phần tử đứng đầu sẽ được ưu tiên cho phần tử đứng đầu, nếu phần tử đứng đầu không tồn tại thì mới 
             ưu tiên cho phần tử thứ 2
-        
+    Custom Post Types 7
+        Gắn thêm Metabox data2 cho Custom Post
+            add_meta_box($this->_meta_box_id, 'My Data', array($this,'display'),'zproduct');
+    
