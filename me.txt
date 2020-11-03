@@ -1788,4 +1788,12 @@ Custom Post Types
         Ở Frontend được hiển thị ở loop-single.php và loop.php
         Đối với theme twentyten thì tập tin loop.php để hiển thị nhiều bài viết và loop-single.php để hiển thị 1 bài viết 
         Hook pre_get_posts: Trước khi lấy ra các bài viết 
+    Custom Post Types 5
+        Tạo 1 Template để hiển thị 1 Product
+        apply_filters( 'template_include', string $template )
+        add_filter('template_include', array($this,'load_template'));
+            Filters the path of the current template before including it.
+        is_single( int|string|int[]|string[] $post = '' )
+            Determines whether the query is for an existing single post.
+            Để kiểm tra xem có đang xem 1 bài viết hay không 
     

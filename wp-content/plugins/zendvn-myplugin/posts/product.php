@@ -7,7 +7,28 @@ class Zendvn_Mp_Cp_Product{
         add_filter('pre_get_posts', array($this,'show_home'));
         add_filter( 'post_updated_messages', array($this,'zproduct_updated_messages'));
         add_filter( 'bulk_post_updated_messages', array($this,'filter_bulk_zproduct_updated_messages'), 10, 2  ); 
+
+        add_filter('template_include', array($this,'load_template'));
     }
+
+	public  function load_template($template_file){
+		global $wp;
+		/* echo __FUNCTION__;
+		echo '<br/>' . $template_file;
+		echo '<br/>' . $wp->query_vars['post_type'];
+		echo '<br/>' . is_archive(); */
+		if(is_single()){
+			
+			if($wp->query_vars['post_type'] == 'zproduct'){
+				$file = ZENDVN_MP_CP_DIR . '/templates/loop-zproduct.php';
+				if(file_exists($file)){
+					$template_file = $file;
+				}
+			}
+		}
+		
+		return $template_file;
+	}
 
 	public function show_home($query){
 		
