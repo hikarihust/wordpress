@@ -21,6 +21,7 @@ define('ZENDVN_MP_SHORTCODE_DIR', ZENDVN_MP_PLUGIN_DIR . 'shortcodes');
 define('ZENDVN_MP_METABOX_DIR', ZENDVN_MP_PLUGIN_DIR . 'metabox');
 define('ZENDVN_MP_SETTING_DIR', ZENDVN_MP_PLUGIN_DIR . 'settings');
 define('ZENDVN_MP_CP_DIR', ZENDVN_MP_PLUGIN_DIR . '/posts');
+define('ZENDVN_MP_CT_DIR', ZENDVN_MP_PLUGIN_DIR . '/taxonomy');
 
 if(!is_admin()){
 	require_once ZENDVN_MP_PLUGIN_DIR . '/public.php';
@@ -42,6 +43,9 @@ if(!is_admin()){
 
 require_once ZENDVN_MP_CP_DIR . '/product.php';
 new Zendvn_Mp_Cp_Product();
+
+require_once ZENDVN_MP_CT_DIR . '/book.php';
+new Zendvn_Mp_CT_BookCategory();
 
 /*
 require_once ZENDVN_MP_WIDGET_DIR . '/last_post.php';

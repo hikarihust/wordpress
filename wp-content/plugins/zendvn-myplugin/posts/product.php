@@ -13,13 +13,15 @@ class Zendvn_Mp_Cp_Product{
 
 	public  function load_template($template_file){
 		global $wp;
-		/* echo __FUNCTION__;
+        /*
+        echo __FUNCTION__;
 		echo '<br/>' . $template_file;
 		echo '<br/>' . $wp->query_vars['post_type'];
-		echo '<br/>' . is_archive(); */
+        echo '<br/>' . is_archive(); 
+        */
 		if(is_single()){
 			
-			if($wp->query_vars['post_type'] == 'zproduct'){
+			if(isset($wp->query_vars['post_type']) && $wp->query_vars['post_type'] == 'zproduct'){
 				$file = ZENDVN_MP_CP_DIR . '/templates/loop-zproduct.php';
 				if(file_exists($file)){
 					$template_file = $file;
@@ -29,7 +31,7 @@ class Zendvn_Mp_Cp_Product{
         
 		if(is_archive()){
 				
-			if($wp->query_vars['post_type'] == 'zproduct'){
+			if(isset($wp->query_vars['post_type']) && $wp->query_vars['post_type'] == 'zproduct'){
 				$file = ZENDVN_MP_CP_DIR . '/templates/list-zproduct.php';
 				if(file_exists($file)){
 					$template_file = $file;
@@ -51,18 +53,18 @@ class Zendvn_Mp_Cp_Product{
     
     public function create() {
 		$labels = array(
-            'name' 				=> __('Products'),
-            'singular_name' 	=> __('Product'),
-            'menu_name'			=> __('ZProduct'),
-            'name_admin_bar' 	=> __('ZProduct'),
-            'add_new'			=> __('Add Product'),
-            'add_new_item'		=> __('Add New Product'),
-            'search_items' 		=> __('Search Product'),
-            'not_found'			=> __('No products found.'),
-            'not_found_in_trash'=> __('No products found in Trash'),
-            'view_item' 		=> __('View product'),
-            'item_updated ' 	=> __('View product'),
-            'edit_item'			=> __('Edit product'),
+            'name' 				=> __('Books'),
+            'singular_name' 	=> __('Books'),
+            'menu_name'			=> __('ZBooks'),
+            'name_admin_bar' 	=> __('ZBooks'),
+            'add_new'			=> __('Add Books'),
+            'add_new_item'		=> __('Add New Books'),
+            'search_items' 		=> __('Search Books'),
+            'not_found'			=> __('No books found.'),
+            'not_found_in_trash'=> __('No books found in Trash'),
+            'view_item' 		=> __('View book'),
+            'item_updated ' 	=> __('View book'),
+            'edit_item'			=> __('Edit book'),
         );
 		$args = array(
             'labels'               => $labels,
@@ -82,7 +84,7 @@ class Zendvn_Mp_Cp_Product{
             //'map_meta_cap'         => null,
             'supports'             => array('title' ,'editor','author','thumbnail','excerpt','trackbacks' ,'custom-fields' ,'comments','revisions' ,'page-attributes','post-formats'),
             //'register_meta_box_cb' => null,
-            //'taxonomies'           => array(),
+            'taxonomies'           => array('book-category'),
             'has_archive'          => true,
             'rewrite'              => array('slug'=>'zproduct'),
             //'query_var'            => true,

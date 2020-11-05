@@ -1776,6 +1776,9 @@ Custom Post Types
                     slug, with_front
                 'rewrite'              => array('slug'=>'zproduct'),
                 http://wordpress.xyz/?zproduct=product-01
+            taxonomies
+                (array) An array of taxonomy identifiers that will be registered for the post type. Taxonomies can be registered later 
+                with register_taxonomy() or register_taxonomy_for_object_type().
         http://wordpress.xyz/?post_type=zproduct
             Hiển thị danh sách các bài viết của Products
     Custom Post Types 4
@@ -1810,4 +1813,79 @@ Custom Post Types
     Custom Post Types 7
         Gắn thêm Metabox data2 cho Custom Post
             add_meta_box($this->_meta_box_id, 'My Data', array($this,'display'),'zproduct');
+Custom Taxonomies
+    About Taxonomies
+        https://developer.wordpress.org/plugins/taxonomies/working-with-custom-taxonomies/
+        Taxonomies là 1 cấu trúc giúp xây dựng các danh mục thông qua 3 bảng là:
+            wp_terms, wp_term_relationships, wp_term_taxonomy
+            3 bảng này chứa 1 số thông tin liên quan đến Categories, Tags và kiểu hiển thị dữ liệu(Format)
+    Custom Taxonomies
+        Custom Taxonomy does’t showup on Edit post page.
+            https://github.com/WordPress/gutenberg/issues/12826
+            'show_in_rest'          => true
+        register_taxonomy( string $taxonomy, array|string $object_type, array|string $args = array() )
+            Creates or modifies a taxonomy object.
+            $taxonomy: (string) (Required) Taxonomy key, must not exceed 32 characters.
+            $object_type: (array|string) (Required) Object type or array of object types with which the taxonomy should be associated.
+                post
+                page
+                attachment
+                revision
+                nav_menu_item
+                custom_css
+                customize_changeset
+            $args: (array|string) (Optional) Array or query string of arguments for registering a taxonomy.
+        labels:
+            'name'
+                (string) General name for the taxonomy, usually plural. The same as and overridden by $tax->label. Default 'Tags'/'Categories'.
+                Là tên số nhiều của Taxonomy
+            'singular_name'
+                (string) Name for one object of this taxonomy. Default 'Tag'/'Category'.
+                Tên số ít của Taxonomy
+            'menu_name': the menu name text. This string is the name to give menu items. If not set, defaults to value of name label.
+            'all_items': chua xac dinh
+            'view_item': chua xac dinh
+            'edit_item': the edit item text. Default is __( 'Edit Tag' ) or __( 'Edit Category' )
+                Nhãn của trang Edit	
+            'show_in_rest': (bool) Whether to include the taxonomy in the REST API. Set this to true for the taxonomy to be available 
+                in the block editor.
+            'update_item': the update item text. Default is __( 'Update Tag' ) or __( 'Update Category' )
+            'add_new_item': the add new item text. Default is __( 'Add New Tag' ) or __( 'Add New Category' )
+            'new_item_name': chua xac dinh
+            'parent_item': chua xac dinh
+            'parent_item_colon': chua xac dinh
+            'search_items': (string) Default 'Search Tags'/'Search Categories'.	
+            'popular_items'		
+            'separate_items_with_commas' 
+            'choose_from_most_used' 
+            'not_found': (string) Default 'No tags found'/'No categories found', used in the meta box and taxonomy list table.
+        args:
+            'labels'				
+            'public': Có cho hiển thị hay không
+                $publicly_queryable, $show_ui, and $show_in_nav_menus are inherited from $public.				
+            'show_ui': (bool) Whether to generate and allow a UI for managing terms in this taxonomy in the admin. If not set, 
+                the default is inherited from $public (default true).		
+            'show_in_nav_menus': (bool) Makes this taxonomy available for selection in navigation menus. If not set, the default 
+                is inherited from $public (default true).
+                Appearance->Menu
+            'show_tagcloud': (bool) Whether to list the taxonomy in the Tag Cloud Widget controls. If not set, the default is 
+                inherited from $show_ui (default true).	
+                Appearance->Widget->Tag Cloud
+            'hierarchical': (bool) Either hierarchical rewrite tag or not. Default false. Khi có giá trị false thì được hiển thị 
+                theo kiểu Tag, Khi có giá trị true thì hiển thị theo kiểu category
+                Book categories -> Khi tạo thêm category mới thì có thể phân câp cho category đó
+            'show_admin_column': (bool) Whether to display a column for the taxonomy on its post type listing screens. Default false.
+                Nếu là có giá trị true thì cột 'Custom Taxonomies' sẽ được hiển thị trong trên list của admin:
+                    http://wordpress.xyz/wp-admin/edit.php	
+            'query_var': Mặc định có giá trị true và ko nên sửa chữa		
+            'rewrite': (bool|array) Triggers the handling of rewrites for this taxonomy. Default true, using $taxonomy as slug. 
+                To prevent rewrite, set to false. 
+                Phần này có tác dụng khi:
+                Settings -> Permalink -> Post name 
+                'rewrite' => array('slug' => 'book-cat'),
+                http://wordpress.xyz/book-cat/book-1/
+        Kết hợp giữa Custom Post và Custom Taxonomies(Category) để tạo ra phần quản lý sách trong hệ thống WordPress mà không cần sử dụng 
+            đến phần Post và Category của WordPress
+        Để tạo Tag thì cũng vẫn dùng Custom Taxonomies nhưng
+            'hierarchical'			=> false
     
