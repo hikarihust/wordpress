@@ -1888,4 +1888,13 @@ Custom Taxonomies
             đến phần Post và Category của WordPress
         Để tạo Tag thì cũng vẫn dùng Custom Taxonomies nhưng
             'hierarchical'			=> false
+Custom Taxonomy Format
+    Tạo ra phần Metabox cho Taxonomy
+    Custom Taxonomy Format 1
+        do_action( "{$taxonomy}_add_form_fields", string $taxonomy )
+            Fires after the Add Term form fields.
+            The dynamic portion of the hook name, $taxonomy, refers to the taxonomy slug.
+            post_tag, category
+            http://wordpress.xyz/wp-admin/edit-tags.php?taxonomy=post_tag
+            http://wordpress.xyz/wp-admin/edit-tags.php?taxonomy=category
     
