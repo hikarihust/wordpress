@@ -1900,4 +1900,11 @@ Custom Taxonomy Format
     Custom Taxonomy Format 2
         https://stackoverflow.com/questions/36545961/upload-file-path-not-shown-in-field-using-wp-media-uploader
     Custom Taxonomy Format 3
+    Custom Taxonomy Format 4
+        do_action( "edited_{$taxonomy}", int $term_id, int $tt_id )
+            Fires after a term for a specific taxonomy has been updated, and the term cache has been cleaned.
+            The dynamic portion of the hook name, $taxonomy, refers to the taxonomy slug.
+        do_action( "{$taxonomy}_edit_form_fields", WP_Term $tag, string $taxonomy )
+            Fires after the Edit Term form fields are displayed.
+            The dynamic portion of the hook name, $taxonomy, refers to the taxonomy slug.
     

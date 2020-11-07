@@ -13,11 +13,21 @@ class Zendvn_Mp_Mb_Taxonomy{
 				//echo __METHOD__;
 				add_action('admin_enqueue_scripts', array($this,'add_js_file'));	
 				add_action('admin_enqueue_scripts',array($this,'add_css_file'));	
-			}	
+            }	
+            
+            add_action('edited_category',array($this,'save'));
+            add_action('create_category',array($this,'save'));
 		}else{
 		
 		}	
     }
+
+	public function save($term_id){
+		if(isset($_POST[$this->_prefix_name])){
+			$option_name = $this->_prefix_id . $term_id;			
+			update_option($option_name, $_POST[$this->_prefix_name]);
+		}
+	}
     
 	public function add_form(){
         // echo '<br/>' . __METHOD__;
@@ -58,8 +68,11 @@ class Zendvn_Mp_Mb_Taxonomy{
 		echo $html;
     }
     
-	public function edit_form(){
-        echo '<br/>' . __METHOD__;
+	public function edit_form($term){
+        // echo '<br/>' . __METHOD__;
+		$option_name 	= $this->_prefix_id . $term->term_id;
+        $option_value	= get_option($option_name);
+        
         $htmlObj = new ZendvnHtml();
 
 		//Tao phan tu chua Button
@@ -73,7 +86,7 @@ class Zendvn_Mp_Mb_Taxonomy{
 		//Tao phan tu chua file
 		$inputID 	= $this->create_id('picture');
 		$inputName 	= $this->create_name('picture');
-		$inputValue = '';
+		$inputValue = @$option_value['picture'];
 		$arr 		= array('size' =>'40','id' => $inputID);
 		
         $lblPicture 	= $htmlObj->label(translate('Picture'),array('for'=>$inputID));
@@ -85,7 +98,7 @@ class Zendvn_Mp_Mb_Taxonomy{
         //Tao phan tu chua Summary
 		$inputID 	= $this->create_id('summary');
 		$inputName 	= $this->create_name('summary');
-		$inputValue = '';
+		$inputValue = @$option_value['summary'];
 		$arr 		= array('id' => $inputID,'rows'=>6, 'cols'=>60);
 
 		$lblSummary 	= $htmlObj->label(translate('Summary'),array('for'=>"tag-name"));
