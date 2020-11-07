@@ -1899,4 +1899,5 @@ Custom Taxonomy Format
             http://wordpress.xyz/wp-admin/edit-tags.php?taxonomy=category
     Custom Taxonomy Format 2
         https://stackoverflow.com/questions/36545961/upload-file-path-not-shown-in-field-using-wp-media-uploader
+    Custom Taxonomy Format 3
     

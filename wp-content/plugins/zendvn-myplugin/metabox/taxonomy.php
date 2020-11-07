@@ -59,7 +59,40 @@ class Zendvn_Mp_Mb_Taxonomy{
     }
     
 	public function edit_form(){
-		echo '<br/>' . __METHOD__;
+        echo '<br/>' . __METHOD__;
+        $htmlObj = new ZendvnHtml();
+
+		//Tao phan tu chua Button
+		$inputID 	= $this->create_id('button');
+		$inputName 	= $this->create_id('button');
+		$inputValue = translate('Media Library Image');
+		$arr 		= array('class' =>'button-secondary','id' => $inputID);
+		$options	= array('type'=>'button');		
+		$btnMedia	= $htmlObj->button($inputName,$inputValue,$arr,$options);
+
+		//Tao phan tu chua file
+		$inputID 	= $this->create_id('picture');
+		$inputName 	= $this->create_name('picture');
+		$inputValue = '';
+		$arr 		= array('size' =>'40','id' => $inputID);
+		
+        $lblPicture 	= $htmlObj->label(translate('Picture'),array('for'=>$inputID));
+        $inputPicture 	= $htmlObj->textbox($inputName,$inputValue,$arr);
+        $pPicture		= $htmlObj->pTag('Mo ta cho phan hinh anh',array('class'=>'description'));
+
+        $jsMedia		= $htmlObj->btn_media_script($this->create_id('button'),$this->create_id('picture'));
+        
+        //Tao phan tu chua Summary
+		$inputID 	= $this->create_id('summary');
+		$inputName 	= $this->create_name('summary');
+		$inputValue = '';
+		$arr 		= array('id' => $inputID,'rows'=>6, 'cols'=>60);
+
+		$lblSummary 	= $htmlObj->label(translate('Summary'),array('for'=>"tag-name"));
+		$inputSummary 	= $htmlObj->textarea($inputName,$inputValue,$arr);
+		$pSummary 		= $htmlObj->pTag('Mo ta cho Summary',array('class'=>'description'));
+
+        require_once ZENDVN_MP_VIEWS_DIR . '/taxonomy-category.php';
     }
 
 	public function add_js_file(){
