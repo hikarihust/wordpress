@@ -8,7 +8,35 @@
  */
 
 get_header(); ?>
+<style>
+.zendvn_mp_taxonomy_category{
+	border: solid 1px #CCC;
+	padding: 5px;
+	margin-bottom: 10px;
+	background: #F2F7FC;
+}
 
+.zendvn_mp_taxonomy_category .img{
+	float: left;
+	margin: 5px;
+}
+
+.zendvn_mp_taxonomy_category .summary{
+	font-size: 14px;
+	font-style: italic;
+}
+
+.zendvn_mp_taxonomy_category h1{
+	clear: none;
+	margin-bottom: 7px !important;
+	font-size: 16px;
+}
+
+.clr{
+	clear: both;
+}
+
+</style>
 		<div id="container">
 			<div id="content" role="main">
 				<div class="zendvn_mp_taxonomy_category">
@@ -17,11 +45,12 @@ get_header(); ?>
 						<h1 class="page-title">
 							<?php
 								/* translators: %s: Category title. */
-								printf( __( 'Category Archives: %s', 'twentyten' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+								printf( __( 'Category: %s', 'twentyten' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 							?>
 						</h1>
 						<?php echo $zendvn_mp_taxonomy_category['summary'];?>
 					</div>
+					<div class="clr"></div>
 				</div>
 				<?php
 				/*

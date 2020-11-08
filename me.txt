@@ -1920,4 +1920,5 @@ Custom Taxonomy Format
             Khi trong trang hiển thị category(trong trang hiển thị 1 category) thì is_category() sẽ có giá trị 1 
         global $zendvn_mp_taxonomy_category
             Cách truyền giá trị từ trong 1 hàm trong Plugin ra phía ngoài template để sử lý
+    Custom Taxonomy Format 7
     
