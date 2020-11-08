@@ -1921,4 +1921,6 @@ Custom Taxonomy Format
         global $zendvn_mp_taxonomy_category
             Cách truyền giá trị từ trong 1 hàm trong Plugin ra phía ngoài template để sử lý
     Custom Taxonomy Format 7
+Phát triển Theme (P1: Menus, Widgets, Customize ...)
+    Prepare for theme 
     
