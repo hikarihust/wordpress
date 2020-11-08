@@ -27,15 +27,20 @@ class Zendvn_Mp_Mb_Taxonomy{
         echo '<br/>'  . __METHOD__;
         echo '<br/>'  . $template_file;
         */
-		global $wp;
-		if(is_single()){
-			
-			if(isset($wp->query_vars['post_type']) && $wp->query_vars['post_type'] == 'zproduct'){
-				$file = ZENDVN_MP_CP_DIR . '/templates/loop-zproduct.php';
-				if(file_exists($file)){
-					$template_file = $file;
-				}
-			}
+        global $wp_query;
+        global $zendvn_mp_taxonomy_category;
+		if(is_category()){
+            $cat_id = $wp_query->query_vars['cat'];
+            $option_name = $this->_prefix_id . $cat_id;
+
+            $option_value = get_option($option_name,array());
+            if(count($option_value) >0 ) {
+                $zendvn_mp_taxonomy_category = $option_value;
+                $file = ZENDVN_MP_METABOX_DIR . '/templates/category.php';
+                if(file_exists($file)){
+                    $template_file = $file;
+                }
+            }
         }
 		
 		return $template_file;

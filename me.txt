@@ -1912,4 +1912,12 @@ Custom Taxonomy Format
             Picture, Summary
         Frontend: Giá trị $template_file có thể kiểm tra tập tin đang load là tập tin nào 
             wordpress/wp-content/themes/twentyten/category.php
+    Custom Taxonomy Format 6
+        is_category( int|string|int[]|string[] $category = '' )
+            Determines whether the query is for an existing category archive page.
+            If the $category parameter is specified, this function will additionally check if the query is for one of 
+                the categories specified.
+            Khi trong trang hiển thị category(trong trang hiển thị 1 category) thì is_category() sẽ có giá trị 1 
+        global $zendvn_mp_taxonomy_category
+            Cách truyền giá trị từ trong 1 hàm trong Plugin ra phía ngoài template để sử lý
     
