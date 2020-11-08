@@ -18,9 +18,28 @@ class Zendvn_Mp_Mb_Taxonomy{
             add_action('edited_category',array($this,'save'));
             add_action('create_category',array($this,'save'));
 		}else{
-		
+            add_filter('template_include', array($this,'load_template'));
 		}	
     }
+
+	public  function load_template($template_file){
+        /*
+        echo '<br/>'  . __METHOD__;
+        echo '<br/>'  . $template_file;
+        */
+		global $wp;
+		if(is_single()){
+			
+			if(isset($wp->query_vars['post_type']) && $wp->query_vars['post_type'] == 'zproduct'){
+				$file = ZENDVN_MP_CP_DIR . '/templates/loop-zproduct.php';
+				if(file_exists($file)){
+					$template_file = $file;
+				}
+			}
+        }
+		
+		return $template_file;
+	}
 
 	public function save($term_id){
 		if(isset($_POST[$this->_prefix_name])){

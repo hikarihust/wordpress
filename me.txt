@@ -1907,4 +1907,9 @@ Custom Taxonomy Format
         do_action( "{$taxonomy}_edit_form_fields", WP_Term $tag, string $taxonomy )
             Fires after the Edit Term form fields are displayed.
             The dynamic portion of the hook name, $taxonomy, refers to the taxonomy slug.
+    Custom Taxonomy Format 5
+        Hiển thị các giá trị đã thêm vào Category ra ngoài trang chủ
+            Picture, Summary
+        Frontend: Giá trị $template_file có thể kiểm tra tập tin đang load là tập tin nào 
+            wordpress/wp-content/themes/twentyten/category.php
     
