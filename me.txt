@@ -1923,4 +1923,5 @@ Custom Taxonomy Format
     Custom Taxonomy Format 7
 Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Prepare for theme 
+    Chèn css, js, images
     

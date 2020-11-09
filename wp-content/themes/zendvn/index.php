@@ -9,12 +9,12 @@
 			<script src="js/html5.js" type="text/javascript"></script>
 	<![endif]-->
 	<meta name='robots' content='noindex,follow' />
-	<link rel='stylesheet' href='css/symple_shortcodes_styles.css' type='text/css' media='all' />
-	<link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
-	<link rel='stylesheet' href='css/responsive.css' type='text/css' media='all' />
-	<link rel='stylesheet' href='css/site.css' type='text/css' media='all' />
-	<script type='text/javascript' src='js/jquery/jquery.js'></script>
-	<script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
+	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/symple_shortcodes_styles.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/style.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/responsive.css' type='text/css' media='all' />
+	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/site.css' type='text/css' media='all' />
+	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/jquery/jquery-migrate.min.js'></script>
 	<!--[if IE 8]>
 		<link rel="stylesheet" type="text/css" href="css/ie8.css" media="screen">
 	<![endif]-->
@@ -113,7 +113,7 @@
 				<!-- .site-branding -->
 				<div class="ad-spot header-ad clr">
 					<a href="#" title="Ad"><img
-						src="images/ad-620x80.png" alt="Ad" /></a>
+						src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" alt="Ad" /></a>
 				</div>
 				<!-- .ad-spot -->
 			</header>
@@ -175,7 +175,7 @@
 									<!-- .entry-cat-tag -->
 									<div class="home-slider-media">
 										<a href="#" title="Model Shoot For GQ 2015">
-											<img src="files/uploads/2014/09/shutterstock_180775436-620x350.jpg" alt="Model Shoot For GQ 2015" />
+											<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_180775436-620x350.jpg" alt="Model Shoot For GQ 2015" />
 										</a>
 									</div>
 									<!-- .home-slider-media -->
@@ -200,7 +200,7 @@
 									<!-- .entry-cat-tag -->
 									<div class="home-slider-media">
 										<a href="#" title="New War Statistics Shared To The Public">
-											<img src="files/uploads/2014/09/shutterstock_136240700-620x350.jpg" alt="New War Statistics Shared To The Public" />
+											<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_136240700-620x350.jpg" alt="New War Statistics Shared To The Public" />
 										</a>
 									</div>
 									<!-- .home-slider-media -->
@@ -224,7 +224,7 @@
 									<!-- .entry-cat-tag -->
 									<div class="home-slider-media">
 										<a href="#" title="This is Syamil&#8217;s House">
-											<img src="files/uploads/2014/01/shutterstock_112421816-620x350.jpg" alt="This is Syamil&#8217;s House" />
+											<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/01/shutterstock_112421816-620x350.jpg" alt="This is Syamil&#8217;s House" />
 										</a>
 									</div>
 									<!-- .home-slider-media -->
@@ -248,7 +248,7 @@
 									<!-- .entry-cat-tag -->
 									<div class="home-slider-media">
 										<a href="#" title="Best Places To Buy Music">
-											<img src="files/uploads/2013/12/shutterstock_135052274-620x350.jpg" alt="Best Places To Buy Music" />
+											<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2013/12/shutterstock_135052274-620x350.jpg" alt="Best Places To Buy Music" />
 										</a>
 									</div>
 									<!-- .home-slider-media -->
@@ -280,7 +280,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout">
-												<img src="files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-26-bg">
 												<a href="#" title="Exercise">Exercise</a>
@@ -320,7 +320,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="Tucan In Amazon RainForest">
-												<img src="files/uploads/2014/09/shutterstock_141263962-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_141263962-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-4-bg">
 												<a href="#" title="Animals">Animals</a>
@@ -358,7 +358,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="Amazon Voted The Coolest Company of 2014">
-												<img src="files/uploads/2014/09/shutterstock_175315058-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_175315058-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-27-bg">
 												<a href="#" title="Global">Global</a>
@@ -399,7 +399,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="Mount Fuji Japan">
-												<img src="files/uploads/2014/09/shutterstock_146675243-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_146675243-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-5-bg">
 												<a href="#" title="Landscape">Landscape</a>
@@ -443,7 +443,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="Out Shopping With The Girls in Las Vegas">
-												<img src="files/uploads/2014/09/shutterstock_114526624-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_114526624-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-3-bg">
 												<a href="#" title="Shopping">Shopping</a>
@@ -484,7 +484,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="Formula 1 Is Boring But The Cars Are Super Awesome">
-												<img src="files/uploads/2014/02/shutterstock_80791570-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_80791570-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-28-bg">
 												<a href="#" title="Formula 1">Formula 1</a>
@@ -523,7 +523,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="Hiking Mount Everest">
-												<img src="files/uploads/2014/09/shutterstock_90586426-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_90586426-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-6-bg">
 												<a href="#" title="Asia">Asia</a>
@@ -565,7 +565,7 @@
 									<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
 											<a href="#" title="New War Statistics Shared To The Public">
-												<img src="files/uploads/2014/09/shutterstock_136240700-620x350.jpg" alt="" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_136240700-620x350.jpg" alt="" width="620" height="350" />
 											</a>
 											<div class="entry-cat-tag cat-2-bg">
 												<a href="#" title="Videos">Videos</a>
@@ -603,48 +603,48 @@
 							<div class="featured-carousel owl-carousel clr count-8">
 								<div class="featured-carousel-slide">
 									<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout">
-										<img src="files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="Don&#8217;t Forget To Stretch After Your Workout" />Don&#8217;t Forget To Stretch After Your Workout
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="Don&#8217;t Forget To Stretch After Your Workout" />Don&#8217;t Forget To Stretch After Your Workout
 									</a>
 								</div>
 								<!-- .featured-carousel-->
 								<div class="featured-carousel-slide">
 									<a href="#" title="20 Healthy Sandwich Recipes">
-										<img src="files/uploads/2014/09/shutterstock_167586029-620x350.jpg" alt="20 Healthy Sandwich Recipes" /> 20 Healthy Sandwich Recipes
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_167586029-620x350.jpg" alt="20 Healthy Sandwich Recipes" /> 20 Healthy Sandwich Recipes
 									</a>
 								</div>
 								<!-- .featured-carousel-->
 								<div class="featured-carousel-slide">
 									<a href="#" title="Bikini Booty Routine">
-										<img src="files/uploads/2014/09/shutterstock_167044349-620x350.jpg" alt="Bikini Booty Routine" /> Bikini Booty Routine
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_167044349-620x350.jpg" alt="Bikini Booty Routine" /> Bikini Booty Routine
 									</a>
 								</div>
 								<!-- .featured-carousel-->
 								<div class="featured-carousel-slide">
 									<a href="#" title="The Benefits Of The Fruit Diet">
-										<img src="files/uploads/2014/09/shutterstock_100830292-620x350.jpg" alt="The Benefits Of The Fruit Diet" /> The Benefits Of The Fruit Diet
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_100830292-620x350.jpg" alt="The Benefits Of The Fruit Diet" /> The Benefits Of The Fruit Diet
 									</a>
 								</div>
 								<!-- .featured-carousel-->
 								<div class="featured-carousel-slide">
 									<a href="#" title="Lose 50 Pounds With The Hamburger Diet">
-										<img src="files/uploads/2014/02/shutterstock_141514222-620x350.jpg" alt="Lose 50 Pounds With The Hamburger Diet" /> Lose 50 Pounds With The Hamburger Diet
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_141514222-620x350.jpg" alt="Lose 50 Pounds With The Hamburger Diet" /> Lose 50 Pounds With The Hamburger Diet
 									</a>
 								</div>
 								<!-- .featured-carousel-->
 								<div class="featured-carousel-slide">
-									<a href="#" title="Delicious Steak With Potatoes"><img src="files/uploads/2014/01/shutterstock_149846207-e1411415781675-620x350.jpg" alt="Delicious Steak With Potatoes" /> Delicious Steak With Potatoes
+									<a href="#" title="Delicious Steak With Potatoes"><img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/01/shutterstock_149846207-e1411415781675-620x350.jpg" alt="Delicious Steak With Potatoes" /> Delicious Steak With Potatoes
 									</a>
 								</div>
 								<!-- .featured-carousel-->
 								<div class="featured-carousel-slide">
 									<a href="#" title="10 Exercises For Slim Arms">
-										<img src="files/uploads/2014/01/shutterstock_140002237-620x350.jpg" alt="10 Exercises For Slim Arms" /> 10 Exercises For Slim Arms
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/01/shutterstock_140002237-620x350.jpg" alt="10 Exercises For Slim Arms" /> 10 Exercises For Slim Arms
 									</a>
 								</div>
 								<!-- .featured-carousel-->
 								<div class="featured-carousel-slide">
 									<a href="#" title="I&#8217;m Hungry, Make Me A Sandwich">
-										<img src="files/uploads/2013/12/shutterstock_167357615-620x350.jpg" alt="I&#8217;m Hungry, Make Me A Sandwich" /> I&#8217;m Hungry, Make Me A Sandwich
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2013/12/shutterstock_167357615-620x350.jpg" alt="I&#8217;m Hungry, Make Me A Sandwich" /> I&#8217;m Hungry, Make Me A Sandwich
 									</a>
 								</div>
 								<!-- .featured-carousel-->
@@ -654,7 +654,7 @@
 						<!-- .featured-carousel-wrap -->
 						<div class="ad-spot home-bottom-ad clr">
 							<a href="#" title="Ad">
-								<img src="images/ad-620x80.png" alt="Ad" />
+								<img src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" alt="Ad" />
 							</a>
 						</div>
 						<!-- .ad-spot -->
@@ -760,7 +760,7 @@
 												<ul class="clr">
 													<li class="clr">
 														<a href="#" title="Formula 1 Is Boring But The Cars Are Super Awesome" class="clr">
-															<img src="files/uploads/2014/02/shutterstock_80791570-100x100.jpg" alt="Formula 1 Is Boring But The Cars Are Super Awesome" width="100" height="100" />
+															<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_80791570-100x100.jpg" alt="Formula 1 Is Boring But The Cars Are Super Awesome" width="100" height="100" />
 															<span class="title strong">Formula 1 Is Boring But The Cars Are Super Awesome:</span> Quisque
 															pellentesque fringilla scelerisque. Donec porta urna eu
 															fringilla adipiscing.&hellip;
@@ -768,18 +768,18 @@
 													</li>
 													<li class="clr">
 														<a href="#" title="Hiking Mount Everest" class="clr">
-															<img src="files/uploads/2014/09/shutterstock_90586426-100x100.jpg" alt="Hiking Mount Everest" width="100" height="100" /> 
+															<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_90586426-100x100.jpg" alt="Hiking Mount Everest" width="100" height="100" /> 
 															<span class="title strong">Hiking Mount Everest:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue&hellip;
 														</a>
 													</li>
 													<li class="clr">
 														<a href="#" title="Nascar Final Results 2015" class="clr">
-															<img src="files/uploads/2014/09/shutterstock_124918517-100x100.jpg" alt="Nascar Final Results 2015" width="100" height="100" />
+															<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_124918517-100x100.jpg" alt="Nascar Final Results 2015" width="100" height="100" />
 															<span class="title strong">Nascar Final Results 2015:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue&hellip;
 													</a></li>
 													<li class="clr">
 														<a href="#" title="Mount Fuji Japan" class="clr">
-															<img src="files/uploads/2014/09/shutterstock_146675243-100x100.jpg" alt="Mount Fuji Japan" width="100" height="100" />
+															<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_146675243-100x100.jpg" alt="Mount Fuji Japan" width="100" height="100" />
 															<span class="title strong">Mount Fuji Japan:</span> Aenean pharetra lorem vel eros vestibulum, nec gravida elit pharetra.&hellip;
 														</a>
 													</li>
@@ -791,24 +791,24 @@
 												<ul class="clr">
 													<li class="clr">
 														<a href="#" title="Homepage" class="clr"> 
-															<img src='files/avatar/1c292955bf55ec6172964107fd325638.png' class="avatar avatar-100 photo" />
+															<img src='http://wordpress.xyz/wp-content/themes/zendvn/files/avatar/1c292955bf55ec6172964107fd325638.png' class="avatar avatar-100 photo" />
 															<span class="title strong">AJ Clarke:</span> Aenean ut blandit lorem. Nullam ut ultrices nulla, non tristique&hellip;&hellip;
 														</a>
 													</li>
 													<li class="clr">
 														<a href="#" title="Homepage" class="clr">
-															<img alt='' src='files/avatar/403d47c8b227172b283afd4e3ef7d969.png' class='avatar avatar-100 photo' height='100' width='100' />
+															<img alt='' src='http://wordpress.xyz/wp-content/themes/zendvn/files/avatar/403d47c8b227172b283afd4e3ef7d969.png' class='avatar avatar-100 photo' height='100' width='100' />
 															<span class="title strong">Matt Tucker:</span> Donec placerat, sapien eget eleifend mattis, sem urna sodales augue,&hellip;&hellip;
 														</a>
 													</li>
 													<li class="clr">
 														<a href="#" title="Homepage" class="clr">
-															<img alt='' src='files/avatar/6ab62b50dc9bfc3386899088c45fec03.jpeg' class='avatar avatar-100 photo' height='100' width='100' />
+															<img alt='' src='http://wordpress.xyz/wp-content/themes/zendvn/files/avatar/6ab62b50dc9bfc3386899088c45fec03.jpeg' class='avatar avatar-100 photo' height='100' width='100' />
 															<span class="title strong">Kyla G.:</span> Vivamus non arcu elementum, sollicitudin sem in, gravida lacus. Duis&hellip;&hellip;
 													</a></li>
 													<li class="clr">
 														<a href="#" title="Homepage" class="clr">
-														<img alt='' src='files/avatar/1c292955bf55ec6172964107fd325638.png' class='avatar avatar-100 photo' height='100' width='100' />
+														<img alt='' src='http://wordpress.xyz/wp-content/themes/zendvn/files/avatar/1c292955bf55ec6172964107fd325638.png' class='avatar avatar-100 photo' height='100' width='100' />
 															<span class="title strong">AJ Clarke:</span> Mauris eget magna sagittis, malesuada turpis in, varius arcu. Nullam&hellip;&hellip;
 														</a>
 													</li>
@@ -846,7 +846,7 @@
 									<div class="slider-widget owl-carousel clr">
 										<div class="slider-widget-slide clr">
 											<a href="#" title="Formula 1 Is Boring But The Cars Are Super Awesome" class="widget-recent-posts-thumbnail clr">
-												<img src="files/uploads/2014/02/shutterstock_80791570-620x350.jpg" alt="Formula 1 Is Boring But The Cars Are Super Awesome" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_80791570-620x350.jpg" alt="Formula 1 Is Boring But The Cars Are Super Awesome" width="620" height="350" />
 												<div class="slider-widget-title">Formula 1 Is Boring But The Cars Are Super Awesome</div>
 											</a>
 											<div class="entry-cat-tag cat-29-bg">
@@ -856,7 +856,7 @@
 										<!-- .widget-slider-slide -->
 										<div class="slider-widget-slide clr">
 											<a href="#" title="Online Fashion Shopping Tips" class="widget-recent-posts-thumbnail clr"> 
-												<img src="files/uploads/2013/12/shutterstock_147074498-620x350.jpg" alt="Online Fashion Shopping Tips" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2013/12/shutterstock_147074498-620x350.jpg" alt="Online Fashion Shopping Tips" width="620" height="350" />
 												<div class="slider-widget-title">Online Fashion Shopping Tips</div>
 											</a>
 											<div class="entry-cat-tag cat-3-bg">
@@ -868,7 +868,7 @@
 											<a href="#"
 												title="Model Shoot For GQ 2015"
 												class="widget-recent-posts-thumbnail clr"> <img
-												src="files/uploads/2014/09/shutterstock_180775436-620x350.jpg"
+												src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_180775436-620x350.jpg"
 												alt="Model Shoot For GQ 2015" width="620" height="350" />
 												<div class="slider-widget-title">Model Shoot For GQ 2015</div>
 											</a>
@@ -879,7 +879,7 @@
 										<!-- .widget-slider-slide -->
 										<div class="slider-widget-slide clr">
 											<a href="#" title="New War Statistics Shared To The Public" class="widget-recent-posts-thumbnail clr"> 
-											<img src="files/uploads/2014/09/shutterstock_136240700-620x350.jpg" alt="New War Statistics Shared To The Public" width="620" height="350" />
+											<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_136240700-620x350.jpg" alt="New War Statistics Shared To The Public" width="620" height="350" />
 												<div class="slider-widget-title">New War Statistics Shared To The Public</div>
 											</a>
 											<div class="entry-cat-tag cat-40-bg">
@@ -895,7 +895,7 @@
 									<ul class="widget-recent-posts clr">
 										<li class="clr widget-recent-posts-li left-thumbnail format-">
 											<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout" class="widget-recent-posts-thumbnail clr"> 
-												<img src="files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="Don&#8217;t Forget To Stretch After Your Workout" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="Don&#8217;t Forget To Stretch After Your Workout" width="620" height="350" />
 											</a>
 											<div class="widget-recent-posts-content clr">
 												<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout" class="widget-recent-posts-title">Don&#8217;t Forget To Stretch After Your Workout</a>
@@ -905,7 +905,7 @@
 										</li>
 										<li class="clr widget-recent-posts-li left-thumbnail format-">
 											<a href="#" title="20 Healthy Sandwich Recipes" class="widget-recent-posts-thumbnail clr"> 
-												<img src="files/uploads/2014/09/shutterstock_167586029-620x350.jpg" alt="20 Healthy Sandwich Recipes" width="620" height="350" />
+												<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_167586029-620x350.jpg" alt="20 Healthy Sandwich Recipes" width="620" height="350" />
 											</a>
 											<div class="widget-recent-posts-content clr">
 												<a href="#" title="20 Healthy Sandwich Recipes" class="widget-recent-posts-title">20 Healthy Sandwich Recipes</a>
@@ -915,7 +915,7 @@
 										</li>
 										<li class="clr widget-recent-posts-li left-thumbnail format-video">
 											<a href="#" title="Bikini Booty Routine" class="widget-recent-posts-thumbnail clr">
-											<img src="files/uploads/2014/09/shutterstock_167044349-620x350.jpg" alt="Bikini Booty Routine" width="620" height="350" />
+											<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_167044349-620x350.jpg" alt="Bikini Booty Routine" width="620" height="350" />
 										</a>
 											<div class="widget-recent-posts-content clr">
 												<a href="#" title="Bikini Booty Routine" class="widget-recent-posts-title">Bikini Booty Routine</a>
@@ -960,7 +960,7 @@
 							<li class="first-post clr">
 								<div class="first-post-media clr">
 									<a href="#" title="I&#8217;m Hungry, Make Me A Sandwich"> 
-										<img src="files/uploads/2013/12/shutterstock_167357615-620x350.jpg" alt="I&#8217;m Hungry, Make Me A Sandwich" width="620" height="350" />
+										<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2013/12/shutterstock_167357615-620x350.jpg" alt="I&#8217;m Hungry, Make Me A Sandwich" width="620" height="350" />
 									</a>
 									<div class="entry-cat-tag cat-36-bg">
 										<a href="category/health/food/index.html" title="Food">Food</a>
@@ -994,7 +994,7 @@
 						<ul class="widget-recent-posts clr">
 							<li class="clr widget-recent-posts-li top-thumbnail format-gallery">
 								<a href="#" title="Formula 1 Is Boring But The Cars Are Super Awesome" class="widget-recent-posts-thumbnail clr"> 
-									<img src="files/uploads/2014/02/shutterstock_80791570-650x250.jpg" alt="Formula 1 Is Boring But The Cars Are Super Awesome" width="650" height="250" />
+									<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_80791570-650x250.jpg" alt="Formula 1 Is Boring But The Cars Are Super Awesome" width="650" height="250" />
 								</a>
 								<div class="widget-recent-posts-content clr">
 									<a href="#" title="Formula 1 Is Boring But The Cars Are Super Awesome" class="widget-recent-posts-title">Formula 1 Is Boring But The Cars Are Super Awesome</a>
@@ -1004,7 +1004,7 @@
 							<li
 								class="clr widget-recent-posts-li top-thumbnail format-gallery">
 								<a href="#" title="Model Shoot For GQ 2015" class="widget-recent-posts-thumbnail clr"> 
-								<img src="files/uploads/2014/09/shutterstock_180775436-650x250.jpg" alt="Model Shoot For GQ 2015" width="650" height="250" />
+								<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_180775436-650x250.jpg" alt="Model Shoot For GQ 2015" width="650" height="250" />
 							</a>
 								<div class="widget-recent-posts-content clr">
 									<a href="#" title="Model Shoot For GQ 2015" class="widget-recent-posts-title">Model Shoot For GQ 2015</a>
@@ -1013,7 +1013,7 @@
 							</li>
 							<li class="clr widget-recent-posts-li top-thumbnail format-gallery">
 								<a href="#" title="Amazing Nature Photography by Matt Tucker" class="widget-recent-posts-thumbnail clr"> 
-									<img src="files/uploads/2014/02/shutterstock_170818697-650x250.jpg" alt="Amazing Nature Photography by Matt Tucker" width="650" height="250" />
+									<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_170818697-650x250.jpg" alt="Amazing Nature Photography by Matt Tucker" width="650" height="250" />
 								</a>
 								<div class="widget-recent-posts-content clr">
 									<a href="#" title="Amazing Nature Photography by Matt Tucker" class="widget-recent-posts-title">Amazing Nature Photography by Matt Tucker</a>
@@ -1055,7 +1055,7 @@
 					<div class="footer-widget widget_text clr">
 						<div class="textwidget">
 							<a href="#" title="Total Theme">
-								<img src="files/uploads/2014/09/total-theme.png" alt="Total Theme" />
+								<img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/total-theme.png" alt="Total Theme" />
 							</a>
 						</div>
 					</div>
@@ -1083,9 +1083,9 @@
 	<!-- #footer-wrap -->
 
 	<a href="#" class="site-scroll-top"><span class="fa fa-arrow-up"></span></a>
-	<script type='text/javascript' src='js/jquery.form.min.js'></script>
-	<script type='text/javascript' src='js/scripts.js'></script>
-	<script type='text/javascript' src='js/plugins.js'></script>
+	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/jquery.form.min.js'></script>
+	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/scripts.js'></script>
+	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/plugins.js'></script>
 	<script type='text/javascript'>
 		/*           */
 		var wpexLocalize = {
@@ -1099,6 +1099,6 @@
 		};
 		/*     */
 	</script>
-	<script type='text/javascript' src='js/global.js'></script>
+	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/global.js'></script>
 </body>
 </html>
