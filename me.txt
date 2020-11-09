@@ -1928,4 +1928,9 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         get_header()
         get_sidebar()
         get_footer()
+    Tách khối giao diện 2
+        get_sidebar( string $name = null, array $args = array() )
+            Load sidebar template.
+            Includes the sidebar template for a theme or if a name is specified then a specialised sidebar will be included.
+            For the parameter, if the file is called "sidebar-special.php" then specify "special".
     
