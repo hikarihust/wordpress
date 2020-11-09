@@ -1955,4 +1955,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         get_template_directory_uri()
             Retrieves template directory URI for current theme.
             Return (string) URI to current theme's template directory.
+    Nhúng CSS 2
+        add_data( string $handle, string $key, mixed $value )
+        https://developer.wordpress.org/reference/functions/wp_style_add_data/
     
