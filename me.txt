@@ -1958,4 +1958,14 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Nhúng CSS 2
         add_data( string $handle, string $key, mixed $value )
         https://developer.wordpress.org/reference/functions/wp_style_add_data/
+    Nhúng JS
+        wp_register_script( string $handle, string|bool $src, string[] $deps = array(), string|bool|null $ver = false, bool $in_footer = false )
+            Register a new script.
+            $in_footer
+                (bool) (Optional) Whether to enqueue the script before </body> instead of in the <head>. Default 'false'.
+                Default value: false
+        do_action( 'wp_footer' )
+            Prints scripts or data before the closing body tag on the front end.
+        <?php echo wp_footer() ?>
+            Hiển thị thanh topbar 
     

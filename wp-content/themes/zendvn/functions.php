@@ -1,11 +1,49 @@
 <?php
-/*
-<!--[if lt IE 9]>
-<script src="js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<meta name='robots' content='noindex,follow' />
-<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/jquery/jquery.js'></script>
-<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/jquery/jquery-migrate.min.js'></script>
+/*============================================================================
+ * 2. NẠP NHỮNG TẬP TIN JS VÀO THEME
+============================================================================*/
+add_action('wp_enqueue_scripts', 'zendvn_theme_register_js');
+
+function zendvn_theme_register_js(){
+    $jsUrl = get_template_directory_uri() . '/js';
+
+	wp_register_script('zendvn_theme_jquery', $jsUrl . '/jquery/jquery.js',array('jquery'),'1.0');
+    wp_enqueue_script('zendvn_theme_jquery');
+    
+	wp_register_script('zendvn_theme_jquery_migrate', $jsUrl . '/jquery/jquery-migrate.min.js',array('jquery'),'1.0');
+	wp_enqueue_script('zendvn_theme_jquery_migrate');
+    
+	wp_register_script('zendvn_theme_jquery_form_min', $jsUrl . '/jquery.form.min.js',array('jquery'),'1.0',true);
+	wp_enqueue_script('zendvn_theme_jquery_form_min');
+	
+	wp_register_script('zendvn_theme_scripts', $jsUrl . '/scripts.js',array('jquery'),'1.0',true);
+	wp_enqueue_script('zendvn_theme_scripts');
+	
+	wp_register_script('zendvn_theme_plugins', $jsUrl . '/plugins.js',array('jquery'),'1.0',true);
+	wp_enqueue_script('zendvn_theme_plugins');
+	
+	
+	wp_register_script('zendvn_theme_global', $jsUrl . '/global.js',array('jquery'),'1.0',true);
+	wp_enqueue_script('zendvn_theme_global');
+}
+
+add_action('wp_footer', 'zendvn_theme_script_code');
+
+function zendvn_theme_script_code(){
+	echo '<script type=\'text/javascript\'>
+	
+	var wpexLocalize = {
+		"mobileMenuOpen" : "Browse Categories",
+		"mobileMenuClosed" : "Close navigation",
+		"homeSlideshow" : "false",
+		"homeSlideshowSpeed" : "7000",
+		"UsernamePlaceholder" : "Username",
+		"PasswordPlaceholder" : "Password",
+		"enableFitvids" : "true"
+	};
+	
+	</script>';
+}
 
 /*============================================================================
  * 1. NẠP NHỮNG TẬP TIN CSS VÀO THEME
