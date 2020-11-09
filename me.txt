@@ -1924,4 +1924,8 @@ Custom Taxonomy Format
 Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Prepare for theme 
     Chèn css, js, images
+    Tách khối giao diện 1
+        get_header()
+        get_sidebar()
+        get_footer()
     
