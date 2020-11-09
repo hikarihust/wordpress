@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<html <?php language_attributes();?>>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="<?php bloginfo('charset')?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Spartan</title>
-	<!--[if lt IE 9]>
-			<script src="js/html5.js" type="text/javascript"></script>
-	<![endif]-->
-	<meta name='robots' content='noindex,follow' />
-	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/symple_shortcodes_styles.css' type='text/css' media='all' />
-	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/style.css' type='text/css' media='all' />
-	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/responsive.css' type='text/css' media='all' />
-	<link rel='stylesheet' href='http://wordpress.xyz/wp-content/themes/zendvn/css/site.css' type='text/css' media='all' />
-	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/jquery/jquery.js'></script>
-	<script type='text/javascript' src='http://wordpress.xyz/wp-content/themes/zendvn/js/jquery/jquery-migrate.min.js'></script>
-	<!--[if IE 8]>
-		<link rel="stylesheet" type="text/css" href="css/ie8.css" media="screen">
-	<![endif]-->
+	<title>
+		<?php 
+			wp_title('|', true,'right');
+			bloginfo('name');
+		?>
+	</title>
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?ver=20190507" />
+	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
+	<?php wp_head();?>
 </head>
 
 <body class="home fixed-nav">

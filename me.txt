@@ -1933,4 +1933,26 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Load sidebar template.
             Includes the sidebar template for a theme or if a name is specified then a specialised sidebar will be included.
             For the parameter, if the file is called "sidebar-special.php" then specify "special".
+    Nhúng CSS 1
+        <html lang="en-US">
+            language_attributes( string $doctype = 'html' )
+            Displays the language attributes for the ‘html’ tag.
+            Builds up a set of HTML attributes containing the text direction and language information for the page.
+        <meta charset="UTF-8">
+            <?php bloginfo('charset')?>
+            Displays information about the current site.
+        wp_title( string $sep = '&raquo;', bool $display = true, string $seplocation = '' )
+            Display or retrieve page title for all areas of blog.
+        wp_head()
+            Fire the wp_head action.
+            do_action( 'wp_head' )
+                Prints scripts or data in the head tag on the front end.
+                The wp_head action hook is triggered within the <head></head> section of the theme’s header.php template by 
+                the wp_head() function
+                Lạp vào các giá trị Css, javascript khi đưa các giá trị vào Hook wp_head
+        bloginfo( 'stylesheet_url' ): Displays the primary CSS (usually style.css) file URL of the active theme. Consider 
+            echoing get_stylesheet_uri() instead.
+        get_template_directory_uri()
+            Retrieves template directory URI for current theme.
+            Return (string) URI to current theme's template directory.
     
