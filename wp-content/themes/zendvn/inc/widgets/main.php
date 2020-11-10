@@ -7,7 +7,8 @@ class Zendvn_Theme_Widget_Main {
 		$this->_widget_options = array(
                     'searchForm' 	=> true,
                     'social' 		=> true,
-                    'tabs' 			=> true
+                    'tabs' 			=> true,
+                    'sliders'		=> true
                 );
         
         foreach ($this->_widget_options as $key => $val){	
@@ -16,6 +17,11 @@ class Zendvn_Theme_Widget_Main {
             }
         }
     }
+
+	public function sliders(){
+		require_once ZENDVN_THEME_WIDGET_DIR . '/sliders.php';
+		register_widget('Zendvn_Theme_Widget_Sliders');
+	}
     
 	public function searchForm(){
 		require_once ZENDVN_THEME_WIDGET_DIR . '/searchForm.php';
