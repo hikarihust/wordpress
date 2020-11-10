@@ -115,17 +115,27 @@
 			print_r($result_comment);
             echo '</pre>'; 
             */
+        ?>
+		<?php 
+			function __get_avatar_url($get_avatar){
+				preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+				return $matches[1];
+			}
 		?>
 		<?php if(count($result_comment)>0):?>
         <div id="wpex-widget-comments-tab"
             class="wpex-tabs-widget-tab clr">
             <ul class="clr">
-                <li class="clr">
-                    <a href="#" title="Homepage" class="clr"> 
-                        <img src='http://wordpress.xyz/wp-content/themes/zendvn/files/avatar/1c292955bf55ec6172964107fd325638.png' class="avatar avatar-100 photo" />
-                        <span class="title strong">AJ Clarke:</span> Aenean ut blandit lorem. Nullam ut ultrices nulla, non tristique&hellip;&hellip;
-                    </a>
-                </li>
+                <?php foreach ($result_comment as $comment):?>
+				<li class="clr"><a href="<?php echo get_permalink($comment->comment_post_ID);?>" title="Homepage" class="clr"> <img
+						src='<?php echo __get_avatar_url(get_avatar($comment->user_id,'100'));?>'
+						class="avatar avatar-100 photo" /> 
+						
+						<span class="title strong"><?php echo $comment->comment_author;?></span> 
+						<?php echo mb_substr($comment->comment_content, 0,55) . '...';?>
+				</a>
+				</li>
+				<?php endforeach;?>
             </ul>
         </div>
         <?php endif;?>

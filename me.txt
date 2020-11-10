@@ -1995,4 +1995,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Tab 4
         WP_Comment_Query
         https://developer.wordpress.org/reference/classes/wp_comment_query/
+    Widget Tab 5
+        get_permalink( int|WP_Post $post, bool $leavename = false )
+            Retrieves the full permalink for the current post or post ID.
     
