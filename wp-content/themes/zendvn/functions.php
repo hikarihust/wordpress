@@ -6,6 +6,9 @@ define('ZENDVN_THEME_DIR', get_template_directory());
 define('ZENDVN_THEME_INC_DIR', ZENDVN_THEME_DIR . '/inc');
 define('ZENDVN_THEME_WIDGET_DIR', ZENDVN_THEME_INC_DIR . '/widgets');
 
+require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
+new Zendvn_Theme_Widget_Main();
+
 /*============================================================================
  * 3. KHAI BÁO HỆ THỐNG WIDGET CỦA THEME
 ============================================================================*/
@@ -92,5 +95,8 @@ function zendvn_theme_script_code(){
 	
 	wp_register_style('zendvn_theme_ie8', $cssUrl . '/ie8.css',array(),'1.0');
     $wp_styles->add_data('zendvn_theme_ie8', 'conditional', 'IE 8');
-	wp_enqueue_style('zendvn_theme_ie8');
+    wp_enqueue_style('zendvn_theme_ie8');
+    
+	wp_register_style('zendvn_theme_customizer', $cssUrl . '/customizer.css',array(),'1.0');
+	wp_enqueue_style('zendvn_theme_customizer');
  }

@@ -1981,4 +1981,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Return
                 (bool) True, if widget sidebar was found and called. False if not found or not called.
     Folder inc
+    Widget Search 1
     
