@@ -1,5 +1,22 @@
 <?php
 /*============================================================================
+ * 3. KHAI BÁO HỆ THỐNG WIDGET CỦA THEME
+============================================================================*/
+add_action('widgets_init', 'zendvn_theme_widgets_init');
+
+function zendvn_theme_widgets_init() {
+	register_sidebar(array(
+		'name'          => __( 'Primary widget area', 'zendvn' ),
+		'id'            => 'primary-widget-area',
+		'description'   => __( 'Thêm Widget vào phía bên tay phải của Website', 'zendvn' ),
+	    'class'         => '',
+		'before_widget' => '<div id="%1$s" class="sidebar-widget %2$s clr">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<span class="widget-title">',
+		'after_title'   => '</span>'
+	));
+}
+/*============================================================================
  * 2. NẠP NHỮNG TẬP TIN JS VÀO THEME
 ============================================================================*/
 add_action('wp_enqueue_scripts', 'zendvn_theme_register_js');

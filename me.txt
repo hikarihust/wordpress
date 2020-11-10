@@ -1968,4 +1968,16 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Prints scripts or data before the closing body tag on the front end.
         <?php echo wp_footer() ?>
             Hiển thị thanh topbar 
+    About widget
+        register_sidebar( array|string $args = array() )
+            Builds the definition for a single sidebar and returns the ID.
+            Để khai báo 1 Widget cho hệ thống 
+        is_active_sidebar( string|int $index )
+            Determines whether a sidebar contains widgets.
+            Return
+                (bool) True if the sidebar has widgets, false otherwise.
+        dynamic_sidebar( int|string $index = 1 )
+            Display dynamic sidebar.
+            Return
+                (bool) True, if widget sidebar was found and called. False if not found or not called.
     
