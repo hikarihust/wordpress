@@ -1,4 +1,11 @@
 <?php
+define('ZENDVN_THEME_URL', get_template_directory_uri());
+
+define('ZENDVN_THEME_DIR', get_template_directory());
+
+define('ZENDVN_THEME_INC_DIR', ZENDVN_THEME_DIR . '/inc');
+define('ZENDVN_THEME_WIDGET_DIR', ZENDVN_THEME_INC_DIR . '/widgets');
+
 /*============================================================================
  * 3. KHAI BÁO HỆ THỐNG WIDGET CỦA THEME
 ============================================================================*/

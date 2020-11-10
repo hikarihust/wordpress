@@ -1980,4 +1980,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Display dynamic sidebar.
             Return
                 (bool) True, if widget sidebar was found and called. False if not found or not called.
+    Folder inc
     
