@@ -1984,4 +1984,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Search 1
     Widget Search 2
     Widget Search 3
+    Widget Social
     
