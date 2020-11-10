@@ -1986,4 +1986,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Search 3
     Widget Social
     Widget Tab 1
+    Widget Tab 2
     

@@ -6,7 +6,8 @@ class Zendvn_Theme_Widget_Main {
 	public function __construct(){
 		$this->_widget_options = array(
                     'searchForm' 	=> true,
-                    'social' 		=> true
+                    'social' 		=> true,
+                    'tabs' 			=> true
                 );
         
         foreach ($this->_widget_options as $key => $val){	
@@ -24,5 +25,10 @@ class Zendvn_Theme_Widget_Main {
 	public function social(){
 		require_once ZENDVN_THEME_WIDGET_DIR . '/social.php';
 		register_widget('Zendvn_Theme_Widget_Social');
+    }
+    
+	public function tabs(){
+		require_once ZENDVN_THEME_WIDGET_DIR . '/tabs.php';
+		register_widget('Zendvn_Theme_Widget_Tabs');
 	}
 }
