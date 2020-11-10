@@ -59,20 +59,64 @@
         <?php wp_reset_postdata();?>	
 
         <!-- wpex-tabs-widget-tab -->
+        <?php if(!empty($instance['recent_title'])):?>
+        <?php 
+			$recent_items = ((int)$instance['recent_items']==0)?5:$instance['recent_items'];
+			
+			$args = array(
+						'post_type' 		=> 'post',
+						'order'				=> 'DESC',
+						'posts_per_page' 	=> $recent_items,
+						'post_status'		=> 'publish',
+						'ignore_sticky_posts'=> true,
+						'orderby'			=> 'ID'
+					);
+			
+			$wpQuery = new WP_Query($args);
+			$i = 1;
+        ?>
+        <?php if($wpQuery->have_posts()):?>
         <div id="wpex-widget-recent-tab"
             class="wpex-tabs-widget-tab  clr">
             <ul class="clr">
+            <?php while($wpQuery->have_posts()) : $wpQuery->the_post(); ?>
                 <li class="clr">
-                    <a href="#" title="Formula 1 Is Boring But The Cars Are Super Awesome" class="clr">
-                        <img src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_80791570-100x100.jpg" alt="Formula 1 Is Boring But The Cars Are Super Awesome" width="100" height="100" />
-                        <span class="title strong">Formula 1 Is Boring But The Cars Are Super Awesome:</span> Quisque
-                        pellentesque fringilla scelerisque. Donec porta urna eu
-                        fringilla adipiscing.&hellip;
+                    <a href="<?php the_permalink();?>"
+                        title="<?php the_title();?>"
+                        class="clr"> <img
+                            src="<?php echo $this->get_img_url($wpQuery->post->post_content);?>"
+                            alt="<?php the_title();?>" width="100" height="100" /> 
+                            <span class="title strong"><?php the_title();?></span> 
+                            <?php echo mb_substr(get_the_excerpt(), 0,55) . '...';?>
                     </a>
                 </li>
+            <?php endwhile;?>	
             </ul>
         </div>
+        <?php endif;?>
+        <?php endif;?>
+        <?php wp_reset_postdata();?>
         <!-- wpex-tabs-widget-tab -->
+        
+        <?php if(!empty($instance['comment_title'])):?>
+        <?php 
+			$comment_items = ((int)$instance['comment_items']==0)?5:$instance['comment_items'];
+			$args = array(
+						'order' => 'DESC',
+						'status' => 'approve',
+						'number' => $comment_items
+					);
+			
+			$comment_query = new WP_Comment_Query();
+			$result_comment = $comment_query->query($args);
+			
+            /*
+            echo '<pre>';
+			print_r($result_comment);
+            echo '</pre>'; 
+            */
+		?>
+		<?php if(count($result_comment)>0):?>
         <div id="wpex-widget-comments-tab"
             class="wpex-tabs-widget-tab clr">
             <ul class="clr">
@@ -84,6 +128,8 @@
                 </li>
             </ul>
         </div>
+        <?php endif;?>
+        <?php endif;?>
         <!-- .wpex-tabs-widget-tab -->
     </div>
     <!-- .wpex-tabs-widget-inner -->

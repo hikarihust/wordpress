@@ -1992,4 +1992,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         Show posts associated with a certain custom field.
             meta_key (string) – Custom field key.
             meta_value (string) – Custom field value. 
+    Widget Tab 4
+        WP_Comment_Query
+        https://developer.wordpress.org/reference/classes/wp_comment_query/
     
