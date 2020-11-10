@@ -1987,4 +1987,9 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Social
     Widget Tab 1
     Widget Tab 2
+    Widget Tab 3
+        https://developer.wordpress.org/reference/classes/wp_query/#custom-field-post-meta-parameters
+        Show posts associated with a certain custom field.
+            meta_key (string) – Custom field key.
+            meta_value (string) – Custom field value. 
     

@@ -15,19 +15,49 @@
 				<?php endif;?>
 			</ul>
         </div>
+
         <!-- .wpex-tabs-widget-tabs -->
+        <?php if(!empty($instance['popular_title'])):?>
+            <?php 
+			$popular_items = ((int)$instance['popular_items']==0)?5:$instance['popular_items'];
+			
+			$meta_key = 'zendvn_post_views_count';
+			
+			$args = array(
+						'post_type' 		=> 'post',
+						'order'				=> 'DESC',
+						'posts_per_page' 	=> $popular_items,
+						'post_status'		=> 'publish',
+						'ignore_sticky_posts'=> true,
+						'meta_key'			=> $meta_key,
+						'orderby'			=> 'meta_value'
+					);
+			
+			$wpQuery = new WP_Query($args);
+			/* echo '<pre>';
+			print_r($wpQuery);
+			echo '</pre>'; */
+			$i = 1;
+        ?>
+        <?php if($wpQuery->have_posts()):?>
         <div id="wpex-widget-popular-tab"
             class="wpex-tabs-widget-tab active-tab clr">
             <ul class="clr">
+            <?php while($wpQuery->have_posts()) : $wpQuery->the_post(); ?>
                 <li class="clr">
-                    <a href="#" title="Amazing Nature Photography by Matt Tucker" class="clr">
-                        <span class="counter">1</span>
-                        <span class="title strong">Amazing Nature Photography by Matt Tucker:</span> Cras vehicula in purus ut blandit.
-                        Pellentesque tristique ornare ipsum&hellip;
+                    <a href="<?php the_permalink();?>" title="<?php the_title();?>" class="clr">
+                        <span class="counter"><?php echo $i; $i++;?></span>
+                        <span class="title strong"><?php the_title();?></span> 
+                        <?php echo mb_substr(get_the_excerpt(), 0,55) . '...';?>
                     </a>
                 </li>
+            <?php endwhile;?>
             </ul>
         </div>
+        <?php endif;?>
+        <?php endif;?>
+        <?php wp_reset_postdata();?>	
+
         <!-- wpex-tabs-widget-tab -->
         <div id="wpex-widget-recent-tab"
             class="wpex-tabs-widget-tab  clr">
