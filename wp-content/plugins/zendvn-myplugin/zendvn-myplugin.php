@@ -41,6 +41,7 @@ if(!is_admin()){
 	new Zendvn_Mp_Metabox_Main();
 }
 
+/*
 require_once ZENDVN_MP_METABOX_DIR . '/taxonomy.php';
 new Zendvn_Mp_Mb_Taxonomy();
 
@@ -49,6 +50,10 @@ new Zendvn_Mp_Cp_Product();
 
 require_once ZENDVN_MP_CT_DIR . '/book.php';
 new Zendvn_Mp_CT_BookCategory();
+*/
+
+require_once ZENDVN_MP_CP_DIR . '/count_views.php';
+new Zendvn_Mp_Count_Views();
 
 /*
 require_once ZENDVN_MP_WIDGET_DIR . '/last_post.php';
