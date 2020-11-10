@@ -15,6 +15,16 @@ require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
 new Zendvn_Theme_Widget_Main();
 
 /*============================================================================
+ * 4. KHAI BÁO HỆ THỐNG WIDGET CỦA THEME
+============================================================================*/
+add_action('after_setup_theme', 'zendvn_theme_support');
+
+function zendvn_theme_support(){
+	//array( 'aside', 'gallery','link','image','quote','status','video','audio','chat' );
+	add_theme_support( 'post-formats', array('gallery','video','audio') );
+}
+
+/*============================================================================
  * 3. KHAI BÁO HỆ THỐNG WIDGET CỦA THEME
 ============================================================================*/
 add_action('widgets_init', 'zendvn_theme_widgets_init');
