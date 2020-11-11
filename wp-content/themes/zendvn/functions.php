@@ -52,6 +52,17 @@ function zendvn_theme_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => ''
 	));
+
+	register_sidebar(array(
+		'name'          => __( 'Bottom content area', 'zendvn' ),
+		'id'            => 'bottom-content-widget-area',
+		'description'   => __( 'Hien thi noi dung trong vung Bottom Content', 'zendvn' ),
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => ''
+	));
 }
 /*============================================================================
  * 2. NẠP NHỮNG TẬP TIN JS VÀO THEME

@@ -2032,4 +2032,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             <?php dynamic_sidebar('top-content-widget-area')?>
         <?php endif;?>
     Widget Top Slider 2
+    Widget Bottom Slider
     
