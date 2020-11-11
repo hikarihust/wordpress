@@ -2034,4 +2034,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Top Slider 2
     Widget Bottom Slider
     Widget right last post 1
+    Widget right last post 2
     
