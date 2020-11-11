@@ -2015,4 +2015,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         Categories
         Show Post in category
         Post Format
+    Widget Slider 5
+        FEATURED
+        https://wordpress.stackexchange.com/questions/89202/query-posts-only-with-featured-image
     
