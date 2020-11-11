@@ -2035,4 +2035,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Bottom Slider
     Widget right last post 1
     Widget right last post 2
+    Widget footer last post news
     
