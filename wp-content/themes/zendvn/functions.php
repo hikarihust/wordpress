@@ -63,6 +63,50 @@ function zendvn_theme_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => ''
 	));
+
+	register_sidebar(array(
+		'name'          => __( 'Before Footer area 1', 'zendvn' ),
+		'id'            => 'before-footer-widget-area-1',
+		'description'   => __( 'Hien thi noi dung trong vung Before Footer 1', 'zendvn' ),
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<span class="widget-title">',
+		'after_title'   => '</span>'
+	));
+
+	register_sidebar(array(
+		'name'          => __( 'Before Footer area 2', 'zendvn' ),
+		'id'            => 'before-footer-widget-area-2',
+		'description'   => __( 'Hien thi noi dung trong vung Before Footer 2', 'zendvn' ),
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<span class="widget-title">',
+		'after_title'   => '</span>'
+	));
+	
+	register_sidebar(array(
+		'name'          => __( 'Before Footer area 3', 'zendvn' ),
+		'id'            => 'before-footer-widget-area-3',
+		'description'   => __( 'Hien thi noi dung trong vung Before Footer 3', 'zendvn' ),
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<span class="widget-title">',
+		'after_title'   => '</span>'
+	));
+	
+	register_sidebar(array(
+		'name'          => __( 'Before Footer area 4', 'zendvn' ),
+		'id'            => 'before-footer-widget-area-4',
+		'description'   => __( 'Hien thi noi dung trong vung Before Footer 4', 'zendvn' ),
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<span class="widget-title">',
+		'after_title'   => '</span>'
+	));
 }
 /*============================================================================
  * 2. NẠP NHỮNG TẬP TIN JS VÀO THEME

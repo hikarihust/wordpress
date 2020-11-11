@@ -8,7 +8,8 @@ class Zendvn_Theme_Widget_Main {
                     'searchForm' 	=> true,
                     'social' 		=> true,
                     'tabs' 			=> true,
-                    'sliders'		=> true
+					'sliders'		=> true,
+					'last_posts'	=> true,
                 );
         
         foreach ($this->_widget_options as $key => $val){	
@@ -16,7 +17,12 @@ class Zendvn_Theme_Widget_Main {
                 add_action('widgets_init',array($this,$key));
             }
         }
-    }
+	}
+	
+	public function last_posts(){
+		require_once ZENDVN_THEME_WIDGET_DIR . '/last_post.php';
+		register_widget('Zendvn_Theme_Widget_LastPost');
+	}
 
 	public function sliders(){
 		require_once ZENDVN_THEME_WIDGET_DIR . '/sliders.php';
