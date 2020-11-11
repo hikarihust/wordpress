@@ -2008,4 +2008,6 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Must be called in the theme’s functions.php file to work. If attached to a hook, it must be ‘after_setup_theme’. 
                 The ‘init’ hook may be too late for some features.
     Widget Slider 2
+    Widget Slider 3
+        $position
     
