@@ -2019,4 +2019,11 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         FEATURED
         https://wordpress.stackexchange.com/questions/89202/query-posts-only-with-featured-image
     Widget Right Slider 1
+    Widget Right Slider 2
+        get_post_thumbnail_id( int|WP_Post $post = null )
+            Retrieve post thumbnail ID.
+            wp_postmeta._thumbnail_id
+        wp_get_attachment_url( int $attachment_id )
+            Retrieve the URL for an attachment.
+        $wpImageEditor =  wp_get_image_editor( $imgDir);
     
