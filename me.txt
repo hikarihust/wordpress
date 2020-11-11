@@ -2026,4 +2026,9 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         wp_get_attachment_url( int $attachment_id )
             Retrieve the URL for an attachment.
         $wpImageEditor =  wp_get_image_editor( $imgDir);
+    Widget Top Slider 1 
+        Hiển thị Widget:
+        <?php if(is_active_sidebar('top-content-widget-area')):?>
+            <?php dynamic_sidebar('top-content-widget-area')?>
+        <?php endif;?>
     

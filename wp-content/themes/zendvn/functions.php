@@ -41,6 +41,17 @@ function zendvn_theme_widgets_init() {
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>'
 	));
+
+	register_sidebar(array(
+		'name'          => __( 'Top content area', 'zendvn' ),
+		'id'            => 'top-content-widget-area',
+		'description'   => __( 'Hien thi noi dung trong vung Top Content', 'zendvn' ),
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => ''
+	));
 }
 /*============================================================================
  * 2. NẠP NHỮNG TẬP TIN JS VÀO THEME
