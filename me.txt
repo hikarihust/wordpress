@@ -2018,4 +2018,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Slider 5
         FEATURED
         https://wordpress.stackexchange.com/questions/89202/query-posts-only-with-featured-image
+    Widget Right Slider 1
     
