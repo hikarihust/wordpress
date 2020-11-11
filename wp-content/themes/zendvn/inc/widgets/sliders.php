@@ -82,7 +82,7 @@ class Zendvn_Theme_Widget_Sliders extends WP_Widget {
 				$tax_query = array(
 							array(
 									'field' => 'slug',
-									'terms'=>'post-format-'	. $post_format,
+									'terms'=>array('post-format-'	. $post_format),
 									'taxonomy' => 'post_format',
 									'operator' => 'IN'
 								)

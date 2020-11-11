@@ -2010,4 +2010,9 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget Slider 2
     Widget Slider 3
         $position
+    Widget Slider 4
+        https://developer.wordpress.org/reference/classes/wp_query/
+        Categories
+        Show Post in category
+        Post Format
     
