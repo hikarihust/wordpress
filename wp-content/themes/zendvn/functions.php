@@ -15,6 +15,24 @@ require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
 new Zendvn_Theme_Widget_Main();
 
 /*============================================================================
+ * 7. MENU - CHINH SUA GIA TRI CUA THUOC TINH CLASS TRONG THE <li>
+============================================================================*/
+add_filter('nav_menu_css_class', 'zendvn_theme_nav_css',10,4);
+function zendvn_theme_nav_css($classes, $item, $args, $depth){
+	
+	if($args->theme_location == 'top-menu'){
+		$itemClass = $item->classes;
+		//menu-item-has-children
+		if(in_array('menu-item-has-children', $itemClass) && $item->menu_item_parent == 0){
+			
+			$classes[] = 'dropdown';
+		}
+	}
+	
+	return $classes;
+}
+
+/*============================================================================
  * 6. MENU - CHINH SUA GIA TRI TRONG THE <a>
 ============================================================================*/
 add_filter('walker_nav_menu_start_el', 'zendvn_theme_nav_description',10,4);
@@ -26,7 +44,25 @@ function zendvn_theme_nav_description($item_output,$item,$depth, $args){
 		if(in_array('menu-item-has-children', $itemClass) && $item->menu_item_parent == 0){
 			//$item_output = <a class="sf-with-ul" href="#">Features</a>
 			$item_output = str_replace('</a>', '<i class="fa fa-caret-down nav-arrow"></i></a>', $item_output);
-		}		
+		}	
+		
+		if($item->post_title == 'Login'){
+			//<span class="fa fa-lock"></span>
+			/* echo '<pre>';
+			print_r($item);
+			echo '</pre>'; */
+			if(is_user_logged_in()){
+				//echo '<br/>' . wp_logout_url();
+				$item_output = str_replace('>Login<', '>Logout<', $item_output);
+				$logoutURL = 'href="' . wp_logout_url() . '"';
+				$item_output = preg_replace('/href="(.*)"/', $logoutURL, $item_output);
+				$item_output = str_replace('>Logout', '><span class="fa fa-lock"></span>Logout', $item_output);
+			} else {
+				$loginURL = 'href="' . wp_login_url() . '"';
+				$item_output = preg_replace('/href="(.*)"/', $loginURL, $item_output);
+				$item_output = str_replace('>Login', '><span class="fa fa-lock"></span>Login', $item_output);
+			}
+		}
 	}
 	
 	return $item_output;

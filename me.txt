@@ -2047,4 +2047,9 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             The menu item’s starting output only includes $args->before, the opening <a>, the menu item’s title, the closing </a>, 
                 and $args->after. Currently, there is no filter for modifying the opening and closing <li> for a menu item.
     Widget menu 3
+    Widget menu 4
+        apply_filters( 'nav_menu_css_class', string[] $classes, WP_Post $item, stdClass $args, int $depth )
+            Filters the CSS classes applied to a menu item’s list item element.
+        is_user_logged_in()
+            Determines whether the current visitor is a logged in user.
     
