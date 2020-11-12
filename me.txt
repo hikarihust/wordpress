@@ -2062,4 +2062,10 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Custom control theme 2
         WP_Customize_Manager::add_control( WP_Customize_Control|string $id, array $args = array() )
             Add a customize control.
+    Custom control theme 3
+        Lấy các dữ liệu nằm trong wp_options.theme_mods_zendvn
+        get_theme_mods()
+            Retrieves all theme modifications.
+        get_theme_mod( string $name, string|false $default = false )
+            Retrieves theme modification value for the current theme.
     
