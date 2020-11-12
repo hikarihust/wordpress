@@ -2059,4 +2059,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Add a customize section.
         WP_Customize_Manager::add_setting( WP_Customize_Setting|string $id, array $args = array() )
             Add a customize setting.
+    Custom control theme 2
+        WP_Customize_Manager::add_control( WP_Customize_Control|string $id, array $args = array() )
+            Add a customize control.
     
