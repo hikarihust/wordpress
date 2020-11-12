@@ -21,7 +21,12 @@ add_filter('walker_nav_menu_start_el', 'zendvn_theme_nav_description',10,4);
 function zendvn_theme_nav_description($item_output,$item,$depth, $args){
 	
 	if($args->theme_location == 'top-menu'){
-			
+		$itemClass = $item->classes;
+		//menu-item-has-children
+		if(in_array('menu-item-has-children', $itemClass) && $item->menu_item_parent == 0){
+			//$item_output = <a class="sf-with-ul" href="#">Features</a>
+			$item_output = str_replace('</a>', '<i class="fa fa-caret-down nav-arrow"></i></a>', $item_output);
+		}		
 	}
 	
 	return $item_output;
