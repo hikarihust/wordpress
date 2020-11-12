@@ -1,4 +1,40 @@
+<?php if(has_nav_menu('center-menu')):?>
 <div id="site-navigation-wrap" class="clr">
+    <div id="site-navigation-inner" class="clr container">
+        <nav id="site-navigation" class="navigation main-navigation clr" role="navigation">
+<?php 
+    //<li><a href="#">Home</a></li>
+	$args = array( 
+        'menu' 				    => '', 
+        'container' 		    => 'div', 
+        'container_class' 	    => 'menu-categories-container', 
+        'container_id' 		    => '', 
+        'container_aria_label'  => '',
+        'menu_class' 		    => 'main-nav dropdown-menu sf-menu', 
+        'menu_id' 			    => 'menu-categories',	
+        'echo' 				    => true, 
+        'fallback_cb' 		    => 'wp_page_menu', 
+        'before' 			    => '', 
+        'after' 			    => '', 
+        'link_before' 		    => '', 
+        'link_after' 		    => '', 
+        'items_wrap' 		    => '<ul id="%1$s" class="%2$s">%3$s</ul>',	
+        'depth' 			    => 0, 
+        'walker' 			    => '', // new My_Walker_Menu
+        'theme_location' 	    => 'center-menu',
+        'item_spacing'          => 'preserve'
+    );
+	wp_nav_menu($args);
+?>
+            <a href="#mobile-nav" class="navigation-toggle">
+                <span class="fa fa-bars navigation-toggle-icon"></span>
+                <span class="navigation-toggle-text">Browse Categories</span>
+            </a>
+        </nav>
+    </div>
+</div>
+<?php endif;?>
+<!-- <div id="site-navigation-wrap" class="clr">
     <div id="site-navigation-inner" class="clr container">
         <nav id="site-navigation" class="navigation main-navigation clr" role="navigation">
             <div class="menu-categories-container">
@@ -34,7 +70,5 @@
                 <span class="navigation-toggle-text">Browse Categories</span>
             </a>
         </nav>
-        <!-- #site-navigation -->
     </div>
-    <!-- #site-navigation-inner -->
-</div>
+</div> -->

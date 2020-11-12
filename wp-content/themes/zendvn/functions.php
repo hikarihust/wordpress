@@ -15,6 +15,19 @@ require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
 new Zendvn_Theme_Widget_Main();
 
 /*============================================================================
+ * 6. MENU - CHINH SUA GIA TRI TRONG THE <a>
+============================================================================*/
+add_filter('walker_nav_menu_start_el', 'zendvn_theme_nav_description',10,4);
+function zendvn_theme_nav_description($item_output,$item,$depth, $args){
+	
+	if($args->theme_location == 'top-menu'){
+			
+	}
+	
+	return $item_output;
+}
+
+/*============================================================================
  * 5. THEM VUNG MENU VAO TRONG THEME
 ============================================================================*/
 add_action('init', 'zendvn_theme_register_menus');
