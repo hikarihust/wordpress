@@ -2052,4 +2052,11 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Filters the CSS classes applied to a menu item’s list item element.
         is_user_logged_in()
             Determines whether the current visitor is a logged in user.
+    Custom control theme 1
+        do_action( 'customize_register', WP_Customize_Manager $this )
+            Fires once WordPress has loaded, allowing scripts and styles to be initialized.
+        WP_Customize_Manager::add_section( WP_Customize_Section|string $id, array $args = array() )
+            Add a customize section.
+        WP_Customize_Manager::add_setting( WP_Customize_Setting|string $id, array $args = array() )
+            Add a customize setting.
     

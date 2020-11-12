@@ -14,6 +14,8 @@ if(!class_exists('ZendvnHtml') && is_admin()){
 require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
 new Zendvn_Theme_Widget_Main();
 
+require_once ZENDVN_THEME_INC_DIR . '/customizer.php';
+
 /*============================================================================
  * 7. MENU - CHINH SUA GIA TRI CUA THUOC TINH CLASS TRONG THE <li>
 ============================================================================*/
