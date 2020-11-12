@@ -2068,4 +2068,8 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Retrieves all theme modifications.
         get_theme_mod( string $name, string|false $default = false )
             Retrieves theme modification value for the current theme.
+    Custom control theme 4
+        WP_Customize_Upload_Control
+        WP_Customize_Image_Control
+        WP_Customize_Color_Control
     
