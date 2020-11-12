@@ -15,6 +15,20 @@ require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
 new Zendvn_Theme_Widget_Main();
 
 /*============================================================================
+ * 5. THEM VUNG MENU VAO TRONG THEME
+============================================================================*/
+add_action('init', 'zendvn_theme_register_menus');
+function zendvn_theme_register_menus(){
+	register_nav_menus(
+		array(
+			'top-menu' 		=> __('Top menu'),
+			'center-menu' 	=> __('Center menu'),
+			'footer-menu' 	=> __('Footer menu')
+		)
+	);
+}
+
+/*============================================================================
  * 4. KHAI BÁO HỆ THỐNG WIDGET CỦA THEME
 ============================================================================*/
 add_action('after_setup_theme', 'zendvn_theme_support');

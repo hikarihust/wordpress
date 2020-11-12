@@ -25,7 +25,7 @@ class ZendvnMp{
 		// $text = $content/$title
 		if(current_filter() == 'the_title'){
 			if(!is_page()){
-				$text .= ' - my title';
+				$text .= '';
 			}
 		}
 		

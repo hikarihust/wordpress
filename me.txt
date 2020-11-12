@@ -2036,4 +2036,9 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Widget right last post 1
     Widget right last post 2
     Widget footer last post news
+    Widget menu 1
+        register_nav_menus( array $locations = array() )
+            Registers navigation menu locations for a theme.
+            $locations
+                (array) (Optional) Associative array of menu location identifiers (like a slug) and descriptive text.
     
