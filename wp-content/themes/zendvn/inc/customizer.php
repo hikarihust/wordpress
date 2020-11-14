@@ -15,6 +15,26 @@ function zendvn_theme_customize_register($wp_customize) {
     ));
 
 	//=======================================================
+	// TAO O COLOR PICKER
+	//=======================================================
+	$inputName = 'my-cats';
+	$settingID = $sectionID . '[' . $inputName . ']';
+	$wp_customize->add_setting($settingID,array(
+			//'default' 		=> '#eaeaea',
+			'capability' 	=>'edit_theme_options',
+			'type'			=> 'theme_mod',
+			'transport'		=> 'postMessage',
+	));
+	
+	$controlID = 'zendvn-theme-' . $inputName;
+	$wp_customize->add_control(new WP_Customize_Category_List_Control($wp_customize, $controlID,array(
+			'label' 		=> __('My Categories'),
+			'section' 		=> $sectionID,
+            'settings' 		=> $settingID,
+            'description'   => 'Hien thi cac categories trong he thong',
+	)));
+
+	//=======================================================
 	// TAO O SELECTBOX
 	//=======================================================
 	$cats = get_categories();

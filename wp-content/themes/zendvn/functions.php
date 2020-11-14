@@ -5,6 +5,7 @@ define('ZENDVN_THEME_DIR', get_template_directory());
 
 define('ZENDVN_THEME_INC_DIR', ZENDVN_THEME_DIR . '/inc');
 define('ZENDVN_THEME_WIDGET_DIR', ZENDVN_THEME_INC_DIR . '/widgets');
+define('ZENDVN_THEME_CONTROL_DIR', ZENDVN_THEME_INC_DIR . '/controls');
 
 if(!class_exists('ZendvnHtml') && is_admin()){
 	//echo '<br>' . __FILE__;
@@ -15,6 +16,8 @@ require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
 new Zendvn_Theme_Widget_Main();
 
 require_once ZENDVN_THEME_INC_DIR . '/customizer.php';
+
+require_once ZENDVN_THEME_CONTROL_DIR . '/category_listbox.php';
 
 /*============================================================================
  * 7. MENU - CHINH SUA GIA TRI CUA THUOC TINH CLASS TRONG THE <li>

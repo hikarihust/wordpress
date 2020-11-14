@@ -2072,4 +2072,6 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         WP_Customize_Upload_Control
         WP_Customize_Image_Control
         WP_Customize_Color_Control
+    Customize category control 1
+        Tham khảo mã nguồn wordpress\wp-includes\class-wp-customize-control.php
     
