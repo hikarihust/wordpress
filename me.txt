@@ -2075,4 +2075,8 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Customize category control 1
         Tham khảo mã nguồn wordpress\wp-includes\class-wp-customize-control.php
     Customize category control 2
+    Section General 1
+        Bắt đầu xây dựng phần quản lý cho Theme
+        remove_theme_mods()
+            Removes theme modifications option for current theme.
     
