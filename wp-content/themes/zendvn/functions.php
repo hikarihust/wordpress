@@ -18,6 +18,7 @@ new Zendvn_Theme_Widget_Main();
 require_once ZENDVN_THEME_INC_DIR . '/customizer.php';
 
 require_once ZENDVN_THEME_CONTROL_DIR . '/category_listbox.php';
+require_once ZENDVN_THEME_CONTROL_DIR . '/category_multi_selectbox.php';
 
 /*============================================================================
  * 7. MENU - CHINH SUA GIA TRI CUA THUOC TINH CLASS TRONG THE <li>
