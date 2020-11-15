@@ -1,5 +1,7 @@
 <?php
 define('ZENDVN_THEME_URL', get_template_directory_uri());
+define('ZENDVN_THEME_JS_URL', ZENDVN_THEME_URL . '/js');
+define('ZENDVN_THEME_CSS_URL', ZENDVN_THEME_URL . '/css');
 
 define('ZENDVN_THEME_DIR', get_template_directory());
 

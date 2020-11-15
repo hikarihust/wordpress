@@ -2079,4 +2079,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         Bắt đầu xây dựng phần quản lý cho Theme
         remove_theme_mods()
             Removes theme modifications option for current theme.
+    Section General 2
+        do_action( 'customize_preview_init', WP_Customize_Manager $this )
+            Fires once the Customizer preview has initialized and JavaScript settings have been printed.
     
