@@ -10,7 +10,23 @@ class Zendvn_Theme_General_Section {
     }
 
     public function css() {
+        $options = $this->_theme_mods['zendvn_theme_general'];
+?>
+        <style type="text/css">
+        <?php if($options['date-time'] == 'no'):?>
+        #topbar-date{
+            display: none;
+        }
+        <?php endif;?>
 
+        <?php if($options['search-form'] == 'no'):?>
+        #topbar-search{
+            display: none;
+        }
+        <?php endif;?>
+
+        </style>
+<?php 
     }
 
     public function live_preview() {

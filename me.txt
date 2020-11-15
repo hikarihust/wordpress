@@ -2082,4 +2082,6 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Section General 2
         do_action( 'customize_preview_init', WP_Customize_Manager $this )
             Fires once the Customizer preview has initialized and JavaScript settings have been printed.
+    Section General 3
+        https://developer.wordpress.org/reference/hooks/customize_preview_init/
     
