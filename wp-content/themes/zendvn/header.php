@@ -17,7 +17,12 @@
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<?php wp_head();?>
 </head>
-
+<?php 
+	$options = get_theme_mods();
+	if(isset($options['zendvn_theme_general']) && !empty($options['zendvn_theme_general'])) {
+		$options = $options['zendvn_theme_general'];
+	}
+?>
 <body class="home fixed-nav">
 
 	<div id="wrap" class="clr">
@@ -52,15 +57,23 @@
 			<header id="header" class="site-header clr container" role="banner">
 				<div class="site-branding clr">
 					<div id="logo" class="clr">
-						<div class="site-text-logo clr">
-							<h1>
-								<a href="#" title="Spartan" rel="home">Spartan</a>
-							</h1>
-						</div>
+						<?php if( isset($options['site-logo']) && !empty($options['site-logo'])):?>
+							<div class="site-text-logo clr">
+								<?php echo $options['site-logo'] ?>
+							</div>
+						<?php else: ?>
+							<div class="site-text-logo clr">
+								<h1>
+									<a href="#" title="Spartan" rel="home">Spartan123</a>
+								</h1>
+							</div>
+						<?php endif;?>
 					</div>
 					<!-- #logo -->
 					<div id="blog-description" class="clr">
-						Edit your subheading via the theme customizer. <br /> It looks much better when it's 2 lines long.
+						<?php if( isset($options['site-description']) && !empty($options['site-description'])):?>
+							<?php echo $options['site-description'] ?>
+						<?php endif;?>
 					</div>
 					<!-- #blog-description -->
 				</div>

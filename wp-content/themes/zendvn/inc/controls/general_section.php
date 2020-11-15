@@ -25,6 +25,11 @@ class Zendvn_Theme_General_Section {
         }
         <?php endif;?>
 
+        <?php if($options['site-description-color'] != ''):?>
+        #blog-description{
+            color: <?php echo $options['site-description-color'];?>;
+        }
+        <?php endif;?>
         </style>
 <?php 
     }
@@ -137,7 +142,7 @@ class Zendvn_Theme_General_Section {
         //=======================================================
         // site-description-color
         //=======================================================
-        $inputName = 'my-color';
+        $inputName = 'site-description-color';
         $settingID = $sectionID . '[' . $inputName . ']';
         $wp_customize->add_setting($settingID,array(
                 'default' 		=> '#878787',
