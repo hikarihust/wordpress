@@ -24,12 +24,45 @@ class Zendvn_Theme_Customize_Control {
     
     public function ads_setion($val = '') {
         if(empty($val)) return false;
-        $options  = $this->_theme_mods['zendvn_theme_ads'];
+		$options  = $this->_theme_mods['zendvn_theme_ads'];
+		$value = '';
 		if($val == 'top-banner'){
-            echo '<pre>';
-			print_r($options);
-            echo '</pre>'; 
+			if(empty($options['top-banner-link'])){
+				$value = '<img alt="" src="' . $options['top-banner'] . '">';
+			}else{
+				$img = '<img alt="" src="' . $options['top-banner'] . '">';
+				$value = str_replace('</a>', $img . '</a>', $options['top-banner-link']);
+			}
+        }
+        
+		if($val == 'content-banner'){
+			if(empty($options['content-banner-link'])){
+				$value = '<img alt="" src="' . $options['content-banner'] . '">';
+			}else{
+				$img = '<img alt="" src="' . $options['content-banner'] . '">';
+				$value = str_replace('</a>', $img . '</a>', $options['content-banner-link']);
+			}
 		}
-		
-    }
+
+		return $value;
+	}
+	
+	public function general_setion($val = '') {
+        if(empty($val)) return false;
+		$options  = $this->_theme_mods['zendvn_theme_general'];
+		$value = '';
+		if($val == 'site-logo'){
+			$value = $options['site-logo'];
+		}
+
+		if($val == 'site-description'){
+			$value = $options['site-description'];
+		}
+
+		if($val == 'copyright'){
+			$value = $options['copyright'];
+		}
+
+		return $value;
+	}
 }

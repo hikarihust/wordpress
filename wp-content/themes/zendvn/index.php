@@ -337,9 +337,10 @@
 						<?php require_once ZENDVN_THEME_INC_DIR . '/bottom-content.php';?>
 						<!-- .featured-carousel-wrap -->
 						<div class="ad-spot home-bottom-ad clr">
-							<a href="#" title="Ad">
-								<img src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" alt="Ad" />
-							</a>
+							<?php 
+								global $zendvnCustomize;
+								echo $zendvnCustomize->ads_setion('content-banner');
+							?>
 						</div>
 						<!-- .ad-spot -->
                     </div>

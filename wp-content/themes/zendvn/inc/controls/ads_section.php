@@ -57,7 +57,7 @@ class Zendvn_Theme_Ads_Section {
         $inputName = 'top-banner-link';
         $settingID = $sectionID . '[' . $inputName . ']';
         $wp_customize->add_setting($settingID,array(
-                'default' 		=> '',
+                'default' 		=> '<a href="#" title="Ad"></a>',
                 'capability' 	        => 'edit_theme_options',
                 'type'			=> 'theme_mod',
                 'transport'		=> 'postMessage',
@@ -71,10 +71,29 @@ class Zendvn_Theme_Ads_Section {
                 'type'			=>'textarea',			
         ));
 
-        $inputName = 'top-banner-title';
+	//=======================================================
+	// Tao content-banner
+	//=======================================================
+	$inputName = 'content-banner';
+	$settingID = $sectionID . '[' . $inputName . ']';
+	$wp_customize->add_setting($settingID,array(
+			'default' 		=> 'http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png',
+			'capability' 	        =>'edit_theme_options',
+			'type'			=> 'theme_mod',
+			'transport'		=> 'postMessage',
+	));
+	
+	$controlID = 'zendvn-theme-' . $inputName;
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $controlID,array(
+			'label' 		=> __('Content banner'),
+			'section' 		=> $sectionID,
+			'settings' 		=> $settingID,
+	)));
+        
+        $inputName = 'content-banner-link';
         $settingID = $sectionID . '[' . $inputName . ']';
         $wp_customize->add_setting($settingID,array(
-                'default' 		=> '',
+                'default' 		=> '<a href="#" title="Ad"></a>',
                 'capability' 	        => 'edit_theme_options',
                 'type'			=> 'theme_mod',
                 'transport'		=> 'postMessage',
@@ -82,7 +101,27 @@ class Zendvn_Theme_Ads_Section {
         
         $controlID = 'zendvn-theme-' . $inputName;
         $wp_customize->add_control($controlID,array(
-                'label' 		=> __('Top banner title'),
+                'label' 		=> __('Content banner link'),
+                'section' 		=> $sectionID,
+                'settings' 		=> $settingID,
+                'type'			=>'textarea',			
+        ));
+
+        //=======================================================
+        // Tao banner-in-content
+        //=======================================================
+        $inputName = 'banner-in-content';
+        $settingID = $sectionID . '[' . $inputName . ']';
+        $wp_customize->add_setting($settingID,array(
+                'default' 		=> '<a href="#" title="Total Theme"><img src="http://wordpress.xyz/wp-content/uploads/2020/11/NAB-OLM-Quantum-Web-Banner-300X250-0218-r4.jpg" alt="Total Theme" /></a>',
+                'capability' 	        => 'edit_theme_options',
+                'type'			=> 'theme_mod',
+                'transport'		=> 'postMessage',
+        ));
+        
+        $controlID = 'zendvn-theme-' . $inputName;
+        $wp_customize->add_control($controlID,array(
+                'label' 		=> __('Banner in content'),
                 'section' 		=> $sectionID,
                 'settings' 		=> $settingID,
                 'type'			=>'textarea',			

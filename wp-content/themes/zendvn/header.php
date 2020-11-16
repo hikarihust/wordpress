@@ -17,12 +17,6 @@
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<?php wp_head();?>
 </head>
-<?php 
-	$options = get_theme_mods();
-	if(isset($options['zendvn_theme_general']) && !empty($options['zendvn_theme_general'])) {
-		$options = $options['zendvn_theme_general'];
-	}
-?>
 <body class="home fixed-nav">
 
 	<div id="wrap" class="clr">
@@ -57,23 +51,19 @@
 			<header id="header" class="site-header clr container" role="banner">
 				<div class="site-branding clr">
 					<div id="logo" class="clr">
-						<?php if( isset($options['site-logo']) && !empty($options['site-logo'])):?>
-							<div class="site-text-logo clr">
-								<?php echo $options['site-logo'] ?>
-							</div>
-						<?php else: ?>
-							<div class="site-text-logo clr">
-								<h1>
-									<a href="#" title="Spartan" rel="home">Spartan123</a>
-								</h1>
-							</div>
-						<?php endif;?>
+						<div class="site-text-logo clr">
+							<?php 
+								global $zendvnCustomize;
+								echo $zendvnCustomize->general_setion('site-logo');
+							?>
+						</div>
 					</div>
 					<!-- #logo -->
 					<div id="blog-description" class="clr">
-						<?php if( isset($options['site-description']) && !empty($options['site-description'])):?>
-							<?php echo $options['site-description'] ?>
-						<?php endif;?>
+						<?php 
+							global $zendvnCustomize;
+							echo $zendvnCustomize->general_setion('site-description');
+						?>
 					</div>
 					<!-- #blog-description -->
 				</div>
@@ -83,9 +73,6 @@
 						global $zendvnCustomize;
 						echo $zendvnCustomize->ads_setion('top-banner');
 					?>
-					<!-- <a href="#" title="Ad"><img
-						src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" alt="Ad" />
-					</a> -->
 				</div>
 				<!-- .ad-spot -->
 			</header>

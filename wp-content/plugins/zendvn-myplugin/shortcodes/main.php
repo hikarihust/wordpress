@@ -52,9 +52,9 @@ class Zendvn_Mp_SC_Main{
 		if(array_key_exists(2, $matches)){
 			$shortcodeArr = $matches[2];
 		}
-		echo '<pre>';
-		print_r($shortcodeArr);
-		echo '</pre>';
+		// echo '<pre>';
+		// print_r($shortcodeArr);
+		// echo '</pre>';
 		return $content;
 	}
 }

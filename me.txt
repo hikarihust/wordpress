@@ -2086,4 +2086,5 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         https://developer.wordpress.org/reference/hooks/customize_preview_init/
     Section General 4
     Section Ads 1
+    Section Ads 2
     
