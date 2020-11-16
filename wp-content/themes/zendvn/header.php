@@ -79,8 +79,13 @@
 				</div>
 				<!-- .site-branding -->
 				<div class="ad-spot header-ad clr">
-					<a href="#" title="Ad"><img
-						src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" alt="Ad" /></a>
+					<?php 
+						global $zendvnCustomize;
+						echo $zendvnCustomize->ads_setion('top-banner');
+					?>
+					<!-- <a href="#" title="Ad"><img
+						src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" alt="Ad" />
+					</a> -->
 				</div>
 				<!-- .ad-spot -->
 			</header>

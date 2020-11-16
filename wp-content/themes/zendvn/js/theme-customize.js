@@ -50,5 +50,28 @@
 		value.bind(function(newValue){
 			$('#copyright').html(newValue);
 		});
-    });
+	});
+	
+	/*======================================================================
+	 * ADS SECTION
+	 *======================================================================*/
+	//top-banner
+	wp.customize('zendvn_theme_ads[top-banner]', function(value){
+		value.bind(function(newValue){
+			$('.header-ad img').attr('src',newValue);
+		});
+	});
+
+	wp.customize('zendvn_theme_ads[top-banner-link]', function(value){
+		value.bind(function(newValue){
+			$('.header-ad a').attr('href',newValue);
+		});
+	});
+
+	wp.customize('zendvn_theme_ads[top-banner-title]', function(value){
+		value.bind(function(newValue){
+			$('.header-ad a').attr('title',newValue);
+		});
+	});
+
 }(jQuery));

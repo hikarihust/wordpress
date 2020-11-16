@@ -18,6 +18,7 @@ require_once ZENDVN_THEME_WIDGET_DIR . '/main.php';
 new Zendvn_Theme_Widget_Main();
 
 require_once ZENDVN_THEME_INC_DIR . '/customizer.php';
+global $zendvnCustomize;
 $zendvnCustomize = new Zendvn_Theme_Customize_Control();
 
 /*
