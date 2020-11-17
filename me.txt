@@ -2087,4 +2087,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Section General 4
     Section Ads 1
     Section Ads 2
+    Section Category color 1
+        get_categories( string|array $args = '' )
+            Retrieves a list of category objects.
     

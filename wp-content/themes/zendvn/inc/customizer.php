@@ -5,12 +5,19 @@ class Zendvn_Theme_Customize_Control {
     public function __construct() {
 		$options = array(
             'general' 		=> true,
-            'ads' 			=> true
+			'ads' 			=> true,
+			'menu_color'	=> true,
         );	
         $this->_theme_mods = get_theme_mods();
         if($options['general']== true) 			$this->general();
-        if($options['ads']== true)              $this->ads();
-    }
+		if($options['ads']== true)              $this->ads();
+		if($options['menu_color']== true) 		$this->menu_color();
+	}
+	
+	public function menu_color(){
+		require_once ZENDVN_THEME_CONTROL_DIR . '/menu_section.php';
+		new Zendvn_Theme_Menu_Color_Section($this->_theme_mods);
+	}
 
 	public function ads(){
 		require_once ZENDVN_THEME_CONTROL_DIR . '/ads_section.php';

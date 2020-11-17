@@ -40,6 +40,13 @@ function zendvn_theme_nav_css($classes, $item, $args, $depth){
 			$classes[] = 'dropdown';
 		}
 	}
+
+	if($args->theme_location == 'center-menu'){
+		if($item->menu_item_parent == 0){
+			$newClass = 'cat-' . $item->object_id;
+			$classes[] = $newClass;
+		}
+	}
 	
 	return $classes;
 }
@@ -253,7 +260,7 @@ function zendvn_theme_script_code(){
 	wp_enqueue_style('zendvn_theme_responsive');
 	
 	wp_register_style('zendvn_theme_site', $cssUrl . '/site.css',array(),'1.0');
-	wp_enqueue_style('zendvn_theme_site');
+	// wp_enqueue_style('zendvn_theme_site');
 	
 	wp_register_style('zendvn_theme_ie8', $cssUrl . '/ie8.css',array(),'1.0');
     $wp_styles->add_data('zendvn_theme_ie8', 'conditional', 'IE 8');
