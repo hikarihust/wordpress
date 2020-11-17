@@ -12,8 +12,12 @@ class Zendvn_Theme_Menu_Color_Section {
     public function css() {
         $options = @$this->_theme_mods['zendvn_theme_menu_color'];
 ?>
-        <style type="text/css">
-
+        <style type="text/css" id="zendvn-theme-customize">
+            <?php foreach ($options as $key => $val):?>
+                #site-navigation .<?php echo $key;?>:after { 
+                    background-color: <?php echo $val;?>
+                }
+            <?php endforeach;?>
         </style>
 <?php 
     }
@@ -25,7 +29,29 @@ class Zendvn_Theme_Menu_Color_Section {
             '1.0.0',
             true
         );
+        add_action('wp_footer', array($this,'jsMenu'),99);
     }
+
+	public function jsMenu(){
+		$cats = get_categories();
+		$jsStr = '';
+		foreach ($cats as $key => $info){
+			$cat = 'cat-' .  $info->cat_ID;
+		$jsStr .= "wp.customize('zendvn_theme_menu_color[" . $cat . "]', function(value){		
+						value.bind(function(newValue){
+							var css ='#site-navigation ." . $cat . ":after{ background-color: ' + newValue + '; }';
+                            $('style#zendvn-theme-customize').append(css);
+						});
+					});";
+        }
+        		
+		$jsTag = '<script type="text/javascript">' 
+				 . '(function($){ '
+				 . $jsStr
+				 . ' }(jQuery));'
+				 . '</script>';
+		echo $jsTag;
+	}
 
     public function register($wp_customize) {
         $sectionID = 'zendvn_theme_menu_color';
