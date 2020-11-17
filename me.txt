@@ -2091,4 +2091,6 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
         get_categories( string|array $args = '' )
             Retrieves a list of category objects.
     Section Category color 2
+    Default value 1
+        Xây dựng phương thức thiết lập các giá trị mặc định khi vừa mới bắt đầu cài đặt theme trong hệ thống
     

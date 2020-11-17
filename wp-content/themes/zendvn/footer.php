@@ -1,4 +1,4 @@
-
+	<?php global $zendvnCustomize;?>
 	<footer id="footer-wrap" class="site-footer clr">
 		<?php require_once ZENDVN_THEME_INC_DIR . '/footer.php';?>
 		<!-- #footer -->
@@ -6,7 +6,6 @@
 			<div class="container clr">
 				<div id="copyright" class="clr" role="contentinfo">
 					<?php 
-						global $zendvnCustomize;
 						echo $zendvnCustomize->general_setion('copyright');
 					?>
 				</div>

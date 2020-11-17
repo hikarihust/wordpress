@@ -41,7 +41,7 @@ class Zendvn_Theme_Ads_Section {
 	$inputName = 'top-banner';
 	$settingID = $sectionID . '[' . $inputName . ']';
 	$wp_customize->add_setting($settingID,array(
-			'default' 		=> 'http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png',
+			'default' 		=> ZENDVN_THEME_IMG_URL . '/ad-620x80.png',
 			'capability' 	        =>'edit_theme_options',
 			'type'			=> 'theme_mod',
 			'transport'		=> 'postMessage',
@@ -77,7 +77,7 @@ class Zendvn_Theme_Ads_Section {
 	$inputName = 'content-banner';
 	$settingID = $sectionID . '[' . $inputName . ']';
 	$wp_customize->add_setting($settingID,array(
-			'default' 		=> 'http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png',
+			'default' 		=> ZENDVN_THEME_IMG_URL . '/ad-620x80.png',
 			'capability' 	        =>'edit_theme_options',
 			'type'			=> 'theme_mod',
 			'transport'		=> 'postMessage',
@@ -113,7 +113,7 @@ class Zendvn_Theme_Ads_Section {
         $inputName = 'banner-in-content';
         $settingID = $sectionID . '[' . $inputName . ']';
         $wp_customize->add_setting($settingID,array(
-                'default' 		=> '<a href="#" title="Total Theme"><img src="http://wordpress.xyz/wp-content/uploads/2020/11/NAB-OLM-Quantum-Web-Banner-300X250-0218-r4.jpg" alt="Total Theme" /></a>',
+                'default' 		=> '<a href="#" title="Total Theme"><img src="' . ZENDVN_THEME_IMG_URL . '/banner_300x250.jpg" alt="Total Theme" /></a>',
                 'capability' 	        => 'edit_theme_options',
                 'type'			=> 'theme_mod',
                 'transport'		=> 'postMessage',

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php global $zendvnCustomize;?>
 <html <?php language_attributes();?>>
 <head>
 	<meta charset="<?php bloginfo('charset')?>">
@@ -53,7 +54,6 @@
 					<div id="logo" class="clr">
 						<div class="site-text-logo clr">
 							<?php 
-								global $zendvnCustomize;
 								echo $zendvnCustomize->general_setion('site-logo');
 							?>
 						</div>
@@ -61,7 +61,6 @@
 					<!-- #logo -->
 					<div id="blog-description" class="clr">
 						<?php 
-							global $zendvnCustomize;
 							echo $zendvnCustomize->general_setion('site-description');
 						?>
 					</div>
@@ -70,7 +69,6 @@
 				<!-- .site-branding -->
 				<div class="ad-spot header-ad clr">
 					<?php 
-						global $zendvnCustomize;
 						echo $zendvnCustomize->ads_setion('top-banner');
 					?>
 				</div>

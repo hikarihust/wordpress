@@ -8,10 +8,16 @@ class Zendvn_Theme_Customize_Control {
 			'ads' 			=> true,
 			'menu_color'	=> true,
         );	
-        $this->_theme_mods = get_theme_mods();
+		$this->_theme_mods = get_theme_mods();
+		$this->setDefault();
         if($options['general']== true) 			$this->general();
 		if($options['ads']== true)              $this->ads();
 		if($options['menu_color']== true) 		$this->menu_color();
+	}
+
+	public function setDefault() {
+		$arrDefault = array();
+		$arrDefault['theme_check'] = 1;
 	}
 	
 	public function menu_color(){
