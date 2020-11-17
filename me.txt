@@ -2098,4 +2098,7 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
             Updates the value of an option that was already added.
         do_action( 'after_switch_theme', string $old_name, WP_Theme $old_theme )
             Fires on the first WP load after a theme switch if the old theme still exists.
+    Default value 3
+        add_theme_support( string $feature, mixed $args )
+            Registers theme support for a given feature.
     
