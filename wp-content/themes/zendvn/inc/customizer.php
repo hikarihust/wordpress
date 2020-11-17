@@ -7,9 +7,12 @@ class Zendvn_Theme_Customize_Control {
             'general' 		=> true,
 			'ads' 			=> true,
 			'menu_color'	=> true,
-        );	
+		);	
 		$this->_theme_mods = get_theme_mods();
-		$this->setDefault();
+		if(!isset($this->_theme_mods['theme_check'])){
+			add_action('after_switch_theme', array($this,'setDefault'));
+		}
+
         if($options['general']== true) 			$this->general();
 		if($options['ads']== true)              $this->ads();
 		if($options['menu_color']== true) 		$this->menu_color();
@@ -18,6 +21,24 @@ class Zendvn_Theme_Customize_Control {
 	public function setDefault() {
 		$arrDefault = array();
 		$arrDefault['theme_check'] = 1;
+
+		$arrDefault['zendvn_theme_general'] = array(
+			'date-time' 				=> 'yes',
+			'search-form' 				=>'yes',
+			'site-logo' 				=> '<h1><a href="#" title="Spartan" rel="home">Spartan</a></h1>',
+			'site-description' 			=> 'Edit your subheading via the theme customizer. <br /> It looks much better when it\'s 2 lines long.',
+			'site-description-color' 	=> '#878787',
+			'copyright' 				=> 'Copyright 2014 Spartan'				
+		);
+		$arrDefault['zendvn_theme_ads'] = array(
+					'top-banner' 			=> ZENDVN_THEME_IMG_URL . '/ad-620x80.png',
+					'top-banner-link' 		=> '<a href="#" title="Ad"></a>',
+					'content-banner' 		=> ZENDVN_THEME_IMG_URL . '/ad-620x80.png',
+					'content-banner-link' 	=> '<a href="#" title="Ad"></a>',
+					'banner-in-content' 	=> '<a href="#" title="Total Theme"> <img src="' . ZENDVN_THEME_IMG_URL . '/banner_300x250.jpg" alt="Total Theme" />'
+				);
+		
+		update_option('theme_mods_zendvn', $arrDefault);
 	}
 	
 	public function menu_color(){

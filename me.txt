@@ -2093,4 +2093,9 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Section Category color 2
     Default value 1
         Xây dựng phương thức thiết lập các giá trị mặc định khi vừa mới bắt đầu cài đặt theme trong hệ thống
+    Default value 2
+        update_option( string $option, mixed $value, string|bool $autoload = null )
+            Updates the value of an option that was already added.
+        do_action( 'after_switch_theme', string $old_name, WP_Theme $old_theme )
+            Fires on the first WP load after a theme switch if the old theme still exists.
     
