@@ -2114,4 +2114,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             https://codex.wordpress.org/Template_Tags
     Page Index 3
     Page Category 1
+    Page Category 2
     
