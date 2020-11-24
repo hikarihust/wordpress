@@ -1,4 +1,30 @@
 <?php global $zendvnSupport; ?>
+<div style="border: 1px solid #ccc; padding: 10px;">
+    <?php 
+        global $wp_query;
+        $big = 999999999;
+        $args = array(
+            'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format'             => '?paged=%#%',
+            'total'              => $wp_query->max_num_pages,
+            'current'            => max( 1, get_query_var('paged') ),
+            'aria_current'       => 'page',
+            'show_all'           => false,
+            'prev_next'          => true,
+            'prev_text'          => __( '&laquo; Previous' ),
+            'next_text'          => __( 'Next &raquo;' ),
+            'end_size'           => 1,
+            'mid_size'           => 2,
+            'type'               => 'plain',
+            'add_args'           => array(), // Array of query args to add.
+            'add_fragment'       => '',
+            'before_page_number' => '',
+            'after_page_number'  => '',
+        );
+        
+        echo paginate_links( $args );
+    ?>
+</div>
 <header class="archive-header clr">
     <h1 class="archive-header-title"><?php echo translate('Home'); ?></h1>
     <div class="layout-toggle">

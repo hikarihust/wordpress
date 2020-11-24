@@ -2116,4 +2116,14 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
     Page Category 1
     Page Category 2
     Page Category 3
+    Pagination 1
+        https://developer.wordpress.org/themes/functionality/pagination/
+        posts_nav_link( string $sep = '', string $prelabel = '', string $nxtlabel = '' )
+            Displays the post pages link navigation for previous and next pages.
+        next_posts_link( string $label = null, int $max_page )
+            Displays the next posts page link.
+        previous_posts_link( string $label = null )
+            Displays the previous posts page link.
+        paginate_links( string|array $args = '' )
+            Retrieve paginated link for archive post pages.
     
