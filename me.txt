@@ -2126,4 +2126,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Displays the previous posts page link.
         paginate_links( string|array $args = '' )
             Retrieve paginated link for archive post pages.
+    Pagination 2
     
