@@ -2133,4 +2133,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Plain	    http://wordpress.xyz/?p=123
             Post name	http://wordpress.xyz/sample-post/
     Standard format 1
+    Standard format 2
     
