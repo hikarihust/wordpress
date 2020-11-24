@@ -1,3 +1,4 @@
+<?php global $zendvnSupport; ?>
 <header class="archive-header clr">
     <h1 class="archive-header-title"><?php echo translate('Home'); ?></h1>
     <div class="layout-toggle">
@@ -10,14 +11,35 @@
 <?php while (have_posts()): the_post(); ?>
     <article class="clr loop-entry col-1">
         <div class="loop-entry-media clr">
+            <?php 
+                $cats       = get_the_category($post->ID);
+                $catObj     = $cats[0];
+                $catId      = $catObj->cat_ID;
+                $catName    = get_cat_name($catId);
+                $catUrl     = get_category_link($catId);
+            ?>
             <div class="entry-cat-tag cat-28-bg">
-                <a title="Nascar" href="#"><?php the_category(); ?></a>
+                <a title="<?php echo $catName; ?>" href="<?php echo $catUrl ?>"><?php echo $catName; ?></a>
             </div>
             <!-- .entry-cat-tag -->
+            <?php
+                $width = 620;
+                $height = 350;
+                $feature_img = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+                if($feature_img == false){
+                    $imgUrl = $zendvnSupport->get_img_url($post->post_content); 
+                }else{
+                    $imgUrl = $feature_img;
+                }
+                if(!empty($imgUrl)){
+                    $imgUrl = $zendvnSupport->get_new_img_url($imgUrl, $width, $height);	
+                }
+            ?>
             <figure class="loop-entry-thumbnail">
-                <a title="Nascar Final Results 2015" href="#">
+                <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
                     <div class="post-thumbnail">
-                        <img width="620" height="350" alt="Nascar Final Results 2015" src="files/uploads/2014/09/shutterstock_124918517-620x350.jpg">
+                        <img width="620" height="350" alt="<?php the_title(); ?>" 
+                            src="<?php echo $imgUrl; ?>">
                     </div>
                     <!-- .post-thumbnail -->
                 </a>
@@ -28,15 +50,15 @@
         <div class="loop-entry-content clr">
             <header>
                 <h2 class="loop-entry-title">
-                    <a title="Nascar Final Results 2015" href="#">Nascar Final Results 2015</a>
+                    <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
                 <div class="loop-entry-meta clr">
                     <div class="loop-entry-meta-date">
-                        <span class="fa fa-clock-o"></span>September 23, 2014
+                        <span class="fa fa-clock-o"></span><?php the_modified_date(); ?>
                     </div>
                     <div class="loop-entry-meta-comments">
                         <span class="fa fa-comments"></span>
-                        <a title="Comment on Nascar Final Results 2015" href="#">3 Comments</a>
+                        <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php comments_number('No comment', 'one comment', '% comments'); ?></a>
                     </div>
                 </div>
                 <!-- .loop-entry-meta -->

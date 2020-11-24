@@ -2112,4 +2112,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Loads a template part into a template.
         Template_Tags
             https://codex.wordpress.org/Template_Tags
+    Page Index 3
     

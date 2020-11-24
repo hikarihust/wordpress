@@ -22,6 +22,10 @@ require_once ZENDVN_THEME_INC_DIR . '/customizer.php';
 global $zendvnCustomize;
 $zendvnCustomize = new Zendvn_Theme_Customize_Control();
 
+require_once ZENDVN_THEME_INC_DIR . '/support.php';
+global $zendvnSupport;
+$zendvnSupport = new Zendvn_Theme_Support();
+
 /*
 require_once ZENDVN_THEME_CONTROL_DIR . '/category_listbox.php';
 require_once ZENDVN_THEME_CONTROL_DIR . '/category_multi_selectbox.php';
