@@ -4,7 +4,26 @@ class Zendvn_Theme_Support {
     public function __construct()
     {
         
-    }
+	}
+
+	/*===================================================================================== 
+	* CAPTION SHORTCODE
+	* LẤY HÌNH ẢNH ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	public function get_first_img($postContent = null) {
+		$firstImg = '';
+		if($postContent) {
+			$pattern = '#<img.*>#imU';
+			preg_match_all($pattern, $postContent, $matches);
+			$imgArr = $matches[0];
+
+			if(count($imgArr) > 0) {
+				$firstImg = $imgArr[0];
+			}
+		}
+
+		return $firstImg;
+	}
 
 	public function get_img_url($post_content) {
 		

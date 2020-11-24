@@ -2134,4 +2134,7 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Post name	http://wordpress.xyz/sample-post/
     Standard format 1
     Standard format 2
+    Standard format 3
+        get_post_format( int|object|null $post = null )
+            Retrieve the format slug for a post
     

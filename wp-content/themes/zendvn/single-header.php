@@ -1,6 +1,18 @@
+<?php 
+global $wp_query;
+global $zendvnSupport;
+
+$postObj = $wp_query->post;
+$format = get_post_format($postObj->ID);
+?>
+<?php if(! $format): ?>
+<?php 
+	$firstImg = $zendvnSupport->get_first_img($postObj->post_content);
+?>
 <div class="single-post-media clr">
 	<div class="post-thumbnail">
-		<img width="620" height="350" alt="" src="http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/02/shutterstock_102783866-e1398207135808.jpg">
+		<?php echo $firstImg; ?>
 	</div>
 	<!-- .post-gallery -->
 </div>
+<?php endif; ?>
