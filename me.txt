@@ -2132,4 +2132,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
         Setting -> Permalink
             Plain	    http://wordpress.xyz/?p=123
             Post name	http://wordpress.xyz/sample-post/
+    Standard format 1
     
