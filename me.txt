@@ -2107,4 +2107,9 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
     https://developer.wordpress.org/themes/basics/template-hierarchy/
     https://wphierarchy.com/
     Page Index 1
+    Page Index 2
+        get_template_part( string $slug, string $name = null, array $args = array() )
+            Loads a template part into a template.
+        Template_Tags
+            https://codex.wordpress.org/Template_Tags
     

@@ -8,6 +8,7 @@
 						<?php require_once ZENDVN_THEME_INC_DIR . '/top-content.php';?>
 						<!-- #home-slider-wrap -->
 
+						<?php get_template_part('loop', 'index'); ?>
                         <!-- .home-cats -->
 						<?php require_once ZENDVN_THEME_INC_DIR . '/bottom-content.php';?>
 						<!-- .featured-carousel-wrap -->
