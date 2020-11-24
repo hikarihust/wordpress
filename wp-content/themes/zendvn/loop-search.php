@@ -12,20 +12,6 @@
 ?>
     <article class="clr loop-entry <?php echo $col; ?>">
         <div class="loop-entry-media clr">
-            <?php if(is_category()): ?>
-            <?php 
-                $cats       = get_the_category($post->ID);
-                $catObj     = $cats[0];
-                $catId      = $catObj->cat_ID;
-                $catName    = get_cat_name($catId);
-                $catUrl     = get_category_link($catId);
-                $catCss     = 'cat-' . $catId . '-bg';
-            ?>
-            <div class="entry-cat-tag <?php echo $catCss; ?>">
-                <a title="<?php echo $catName; ?>" href="<?php echo $catUrl ?>"><?php echo $catName; ?></a>
-            </div>
-            <?php endif; ?>
-            <!-- .entry-cat-tag -->
             <?php
                 $width = 620;
                 $height = 350;

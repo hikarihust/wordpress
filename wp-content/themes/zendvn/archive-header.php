@@ -14,6 +14,10 @@
     if(is_search()) {
         $title = translate('Search Results for') . ': ' . get_search_query();
     }
+
+    if(is_date()) {
+        $title = single_month_title('', false);
+    }
 ?>
 <header class="archive-header clr">
     <h1 class="archive-header-title"><?php echo $title; ?></h1>

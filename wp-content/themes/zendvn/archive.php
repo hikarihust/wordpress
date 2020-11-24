@@ -9,7 +9,7 @@
 						<!-- #home-slider-wrap -->
 						<?php require_once ZENDVN_THEME_DIR . '/archive-header.php';?>
 						<!-- .archive-header -->
-						<?php get_template_part('loop', 'category'); ?>
+						<?php get_template_part('loop', 'archive'); ?>
                         <!-- .home-cats -->
 						<?php require_once ZENDVN_THEME_INC_DIR . '/bottom-content.php';?>
 						<!-- .featured-carousel-wrap -->

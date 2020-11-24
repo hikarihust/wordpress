@@ -5,11 +5,10 @@
 			<div id="main" class="site-main clr container">
 				<div id="primary" class="content-area clr">
 					<div id="content" class="site-content left-content boxed-content" role="main">
-						<?php require_once ZENDVN_THEME_INC_DIR . '/top-content.php';?>
 						<!-- #home-slider-wrap -->
 						<?php require_once ZENDVN_THEME_DIR . '/archive-header.php';?>
 						<!-- .archive-header -->
-						<?php get_template_part('loop', 'category'); ?>
+						<?php get_template_part('loop', 'search'); ?>
                         <!-- .home-cats -->
 						<?php require_once ZENDVN_THEME_INC_DIR . '/bottom-content.php';?>
 						<!-- .featured-carousel-wrap -->
