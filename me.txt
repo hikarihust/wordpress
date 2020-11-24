@@ -2127,4 +2127,9 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
         paginate_links( string|array $args = '' )
             Retrieve paginated link for archive post pages.
     Pagination 2
+    Pagination 3
+        Test Pagination for Plain and Post name setting
+        Setting -> Permalink
+            Plain	    http://wordpress.xyz/?p=123
+            Post name	http://wordpress.xyz/sample-post/
     

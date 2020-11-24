@@ -1,30 +1,5 @@
 <?php global $zendvnSupport; ?>
-<div style="border: 1px solid #ccc; padding: 10px;">
-    <?php 
-        global $wp_query;
-        $big = 999999999;
-        $args = array(
-            'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-            'format'             => '?paged=%#%',
-            'total'              => $wp_query->max_num_pages,
-            'current'            => max( 1, get_query_var('paged') ),
-            'aria_current'       => 'page',
-            'show_all'           => false,
-            'prev_next'          => true,
-            'prev_text'          => __( '&laquo; Trang truoc' ),
-            'next_text'          => __( 'Trang tiep theo &raquo;' ),
-            'end_size'           => 1,
-            'mid_size'           => 2,
-            'type'               => 'plain',
-            'add_args'           => array(), // Array of query args to add.
-            'add_fragment'       => '',
-            'before_page_number' => '',
-            'after_page_number'  => '',
-        );
-        
-        echo paginate_links( $args );
-    ?>
-</div>
+
 <header class="archive-header clr">
     <h1 class="archive-header-title"><?php echo translate('Home'); ?></h1>
     <div class="layout-toggle">
@@ -109,13 +84,7 @@
     <?php endwhile; ?>
 </div>
 <!-- #blog-wrap -->
-<div class="site-pagination clr">
-    <span class="site-pagination-heading">Pages</span>
-    <ul class="page-numbers">
-        <li><span class="page-numbers current">1</span></li>
-        <li><a href="#" class="page-numbers">2</a></li>
-    </ul>
-</div>
+<?php include_once ZENDVN_THEME_DIR . '/paging.php'; ?>
 <div class="ad-spot archive-bottom-ad clr">
     <a title="Ad" href="#">
         <img alt="Ad" src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" width="620" height="80" />

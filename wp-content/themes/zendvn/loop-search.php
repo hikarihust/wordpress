@@ -64,13 +64,7 @@
     <?php endwhile; ?>
 </div>
 <!-- #blog-wrap -->
-<div class="site-pagination clr">
-    <span class="site-pagination-heading">Pages</span>
-    <ul class="page-numbers">
-        <li><span class="page-numbers current">1</span></li>
-        <li><a href="#" class="page-numbers">2</a></li>
-    </ul>
-</div>
+<?php include_once ZENDVN_THEME_DIR . '/paging.php'; ?>
 <div class="ad-spot archive-bottom-ad clr">
     <a title="Ad" href="#">
         <img alt="Ad" src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" width="620" height="80" />
