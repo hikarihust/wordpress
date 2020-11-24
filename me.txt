@@ -2101,4 +2101,10 @@ Phát triển Theme (P1: Menus, Widgets, Customize ...)
     Default value 3
         add_theme_support( string $feature, mixed $args )
             Registers theme support for a given feature.
+Phát triển Theme (P2: Show Post, Page, Pagination...)
+    wp-template-hierarchy diagram
+    a visualization resource
+    https://developer.wordpress.org/themes/basics/template-hierarchy/
+    https://wphierarchy.com/
+    Page Index 1
     

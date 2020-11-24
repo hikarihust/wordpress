@@ -78,3 +78,7 @@
             <?php require_once ZENDVN_THEME_INC_DIR . '/main-menu.php';?>
 			<!-- #site-navigation-wrap -->
 		</div>
+		<?php
+			require_once ZENDVN_THEME_INC_DIR . '/check_page.php';
+			new Check_Page();
+		?>
