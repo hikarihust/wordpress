@@ -8,8 +8,16 @@
 </header>
 <!-- .archive-header -->
 <div class="clr" id="blog-wrap">
+<?php
+    $i = 1;
+?>
 <?php while (have_posts()): the_post(); ?>
-    <article class="clr loop-entry col-1">
+<?php
+    $col = ($i%2) ? 1 : 2;
+    $col = 'col-' . $col;
+    $i ++;
+?>
+    <article class="clr loop-entry <?php echo $col; ?>">
         <div class="loop-entry-media clr">
             <?php 
                 $cats       = get_the_category($post->ID);
@@ -17,8 +25,9 @@
                 $catId      = $catObj->cat_ID;
                 $catName    = get_cat_name($catId);
                 $catUrl     = get_category_link($catId);
+                $catCss     = 'cat-' . $catId . '-bg';
             ?>
-            <div class="entry-cat-tag cat-28-bg">
+            <div class="entry-cat-tag <?php echo $catCss; ?>">
                 <a title="<?php echo $catName; ?>" href="<?php echo $catUrl ?>"><?php echo $catName; ?></a>
             </div>
             <!-- .entry-cat-tag -->
@@ -58,15 +67,14 @@
                     </div>
                     <div class="loop-entry-meta-comments">
                         <span class="fa fa-comments"></span>
-                        <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php comments_number('No comment', 'one comment', '% comments'); ?></a>
+                        <a title="<?php the_title(); ?>" href="<?php comments_link(); ?>"><?php comments_number('No comment', 'one comment', '% comments'); ?></a>
                     </div>
                 </div>
                 <!-- .loop-entry-meta -->
             </header>
-            <div class="loop-entry-excerpt entry clr">Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit. Donec congue
-                velit accumsan, feugiat massa in, sollicitudin metus. Nam
-                turpis neque, molestie vel nulla id, vulputate…</div>
+            <div class="loop-entry-excerpt entry clr">
+                <?php echo mb_substr(get_the_excerpt(), 0, 200) . '...'; ?>
+            </div>
             <!-- .loop-entry-excerpt -->
         </div>
         <!-- .loop-entry-content -->
@@ -84,7 +92,7 @@
 </div>
 <div class="ad-spot archive-bottom-ad clr">
     <a title="Ad" href="#">
-        <img alt="Ad" src="images/ad-620x80.png">
+        <img alt="Ad" src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png" width="620" height="80" />
     </a>
 </div>
 <!-- .ad-spot -->
