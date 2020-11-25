@@ -1,3 +1,6 @@
+<?php 
+    global $zendvnSupport;
+?>
 <?php if (have_posts()) while (have_posts()) : the_post(); ?>
 <!-- .single-post-media -->
 <header class="post-header clr">
@@ -18,7 +21,14 @@
         <a title="Ad" href="#"><img alt="Ad" src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-250x250.png"></a>
     </div>
     <!-- .ad-spot -->
-    <?php the_content(); ?>   
+    <?php 
+        $format = get_post_format($post->ID);
+        $content = get_the_content();
+        if(! $format) {
+            $firstImg = $zendvnSupport->get_first_img($content);
+            $content  = $zendvnSupport->remove_first_img($firstImg, $content);
+        }
+    ?>   
     <div class="ad-spot post-bottom-ad clr">
         <a title="Ad" href="#"><img alt="Ad" src="http://wordpress.xyz/wp-content/themes/zendvn/images/ad-620x80.png"></a>
     </div>

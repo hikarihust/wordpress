@@ -8,6 +8,16 @@ class Zendvn_Theme_Support {
 
 	/*===================================================================================== 
 	* CAPTION SHORTCODE
+	* XÓA HÌNH ẢNH ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	public function remove_first_img($image, $content) {
+		$pattern = '#' . $image . '#';
+		$content = preg_replace($pattern, '', $content);
+		return $content;
+	}
+
+	/*===================================================================================== 
+	* CAPTION SHORTCODE
 	* LẤY HÌNH ẢNH ĐẦU TIÊN TRONG BÀI VIẾT
 	  ===================================================================================== */
 	public function get_first_img($postContent = null) {
