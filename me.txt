@@ -2138,4 +2138,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
         get_post_format( int|object|null $post = null )
             Retrieve the format slug for a post
     Standard format 4
+    Standard format 5
     

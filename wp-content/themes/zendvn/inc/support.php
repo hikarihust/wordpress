@@ -11,8 +11,9 @@ class Zendvn_Theme_Support {
 	* XÓA HÌNH ẢNH ĐẦU TIÊN TRONG BÀI VIẾT
 	  ===================================================================================== */
 	public function remove_first_img($image, $content) {
-		$pattern = '#' . $image . '#';
-		$content = preg_replace($pattern, '', $content);
+		$pattern = '#<figure.*' . $image . '.*</figure>#';
+		$content = preg_replace($pattern, '', $content, 1);
+
 		return $content;
 	}
 
