@@ -2158,4 +2158,7 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             <figure class="wp-block-audio">
                 <audio controls src="http://wordpress.xyz/wp-content/uploads/2020/11/Ariana-Grande-positions-Lyrics.mp3"></audio>
             </figure>
+    Video format 1
+        MotoCross is Beautiful(Video) 
+        <figure class="wp-block-video"><video controls src="http://wordpress.xyz/wp-content/uploads/2020/10/video.mp4"></video></figure>
     

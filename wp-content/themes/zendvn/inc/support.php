@@ -7,6 +7,25 @@ class Zendvn_Theme_Support {
 	}
 
 	/*===================================================================================== 
+	* VIDEO PLAYLIST
+	* LẤY AUDIO OR PLAYLIST ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	  public function get_first_video($postContent = null) {
+		$firstVideo = '';
+		if($postContent) {
+			$pattern = '#<figure.*<video.*</video></figure>#imU';
+			preg_match_all($pattern, $postContent, $matches);
+			$videoArr = $matches[0];
+
+			if(count($videoArr) > 0) {
+				$firstVideo = $videoArr[0];
+			}
+		}
+
+		return $firstVideo;
+	}
+
+	/*===================================================================================== 
 	* AUDIO PLAYLIST
 	* XÓA AUDIO ĐẦU TIÊN TRONG BÀI VIẾT
 	  ===================================================================================== */
