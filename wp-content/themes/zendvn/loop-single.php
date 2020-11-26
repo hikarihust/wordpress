@@ -34,6 +34,12 @@
             $content  = $zendvnSupport->remove_first_audio($firstAudio, $content);
         }
 
+        if($format == 'video') {
+            $firstVideo = $zendvnSupport->get_first_video($content);
+            $content  = $zendvnSupport->remove_first_video($firstVideo, $content);
+            $content = $zendvnSupport->replace_video_embed($content);
+        }
+
         echo $content;
     ?>   
     <div class="ad-spot post-bottom-ad clr">

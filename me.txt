@@ -2161,4 +2161,11 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
     Video format 1
         MotoCross is Beautiful(Video) 
         <figure class="wp-block-video"><video controls src="http://wordpress.xyz/wp-content/uploads/2020/10/video.mp4"></video></figure>
+    Video format 2
+        Embed youtube video
+            https://www.youtube.com/watch?v=JGwWNGJdvx8
+            <figure class="wp-block-embed-youtube wp-block-embed"><div class="wp-block-embed__wrapper">
+                https://www.youtube.com/watch?v=JGwWNGJdvx8
+            </div></figure>
+            <iframe src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
     

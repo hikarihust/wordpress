@@ -12,7 +12,13 @@ $format = get_post_format($postObj->ID);
 ?>
 <div class="single-post-media clr">
 	<div class="post-thumbnail">
-		<?php echo $firstVideo; ?>
+		<?php 
+			if(preg_match_all('#<figure.*<video.*</video></figure>#im', $firstVideo)) {
+				echo $firstVideo;
+			} elseif(preg_match_all('#\[http.*www.youtube.com\S+\]#im', $firstVideo)) {
+				echo $zendvnSupport->video_embed($firstVideo);
+			}
+		?>
 	</div>
 	<!-- .post-gallery -->
 </div>

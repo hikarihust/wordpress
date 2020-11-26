@@ -7,13 +7,59 @@ class Zendvn_Theme_Support {
 	}
 
 	/*===================================================================================== 
+	* VIDEO
+	* XÓA VIDEO OR YOUTUBE ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	  public function remove_first_video($video, $content) {
+		if(preg_match_all('#\[#im', $video)) {
+			$pattern = '#\[http.*www.youtube.com\S+\]#im';
+		} else {
+			$pattern = '#' . $video . '#';
+		}
+
+		$content = preg_replace($pattern, '', $content, 1);
+		return $content;
+	}
+
+	function replace_video_embed ($content, $site = 'youtube')  {
+		$youtube = '';
+		if($site === 'youtube' && $content) {
+			$pattern = '#\[http.*www.youtube.com\S+\]#im';
+			preg_match_all($pattern, $content, $matches);
+			$youtubeArr = $matches[0];
+
+			if(count($youtubeArr) > 0) {
+				$youtube = $youtubeArr[0];
+			}
+			$video_embed = $this->video_embed($youtube);
+			$content     = preg_replace($pattern, $video_embed, $content, 1);
+		}
+		return $content;
+	}
+
+	function video_embed($url, $site = 'youtube') {
+		$html = '';
+		if($site === 'youtube') {
+			$url =  preg_replace('#\[#', '', $url, 1);
+			$url =  preg_replace('#\]#', '', $url, 1);
+			$tmp = explode('v=', $url);
+			$videoID = $tmp[1];
+			$src = 'https://www.youtube.com/embed/' . $videoID;
+
+			$html = '<iframe src="' . $src . '" frameborder="0" width="650" height="366" allowfullscreen></iframe>';
+		}
+
+		return $html;
+	}
+
+	/*===================================================================================== 
 	* VIDEO PLAYLIST
 	* LẤY AUDIO OR PLAYLIST ĐẦU TIÊN TRONG BÀI VIẾT
 	  ===================================================================================== */
 	  public function get_first_video($postContent = null) {
 		$firstVideo = '';
 		if($postContent) {
-			$pattern = '#<figure.*<video.*</video></figure>#imU';
+			$pattern = '#<figure.*<video.*</video></figure>|\[http.*www.youtube.com\S+\]#im';
 			preg_match_all($pattern, $postContent, $matches);
 			$videoArr = $matches[0];
 
