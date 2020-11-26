@@ -29,6 +29,11 @@
             $content  = $zendvnSupport->remove_first_img($firstImg, $content);
         }
 
+        if($format == 'audio') {
+            $firstAudio = $zendvnSupport->get_first_audio($content);
+            $content  = $zendvnSupport->remove_first_audio($firstAudio, $content);
+        }
+
         echo $content;
     ?>   
     <div class="ad-spot post-bottom-ad clr">

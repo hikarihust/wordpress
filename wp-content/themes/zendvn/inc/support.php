@@ -7,6 +7,36 @@ class Zendvn_Theme_Support {
 	}
 
 	/*===================================================================================== 
+	* AUDIO PLAYLIST
+	* XÓA AUDIO ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	  public function remove_first_audio($audio, $content) {
+		$pattern = '#' . $audio . '#';
+		$content = preg_replace($pattern, '', $content, 1);
+
+		return $content;
+	}
+
+	/*===================================================================================== 
+	* AUDIO PLAYLIST
+	* LẤY AUDIO OR PLAYLIST ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	  public function get_first_audio($postContent = null) {
+		$firstAudio = '';
+		if($postContent) {
+			$pattern = '#<figure.*</figure>#imU';
+			preg_match_all($pattern, $postContent, $matches);
+			$audioArr = $matches[0];
+
+			if(count($audioArr) > 0) {
+				$firstAudio = $audioArr[0];
+			}
+		}
+
+		return $firstAudio;
+	}
+
+	/*===================================================================================== 
 	* CAPTION SHORTCODE
 	* XÓA HÌNH ẢNH ĐẦU TIÊN TRONG BÀI VIẾT
 	  ===================================================================================== */

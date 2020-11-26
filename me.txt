@@ -2139,4 +2139,23 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Retrieve the format slug for a post
     Standard format 4
     Standard format 5
+    Audio format
+        can not find “Create Audio Playlist” in media library
+        No Create Audio Playlist link in media library
+        Shortcode not working in custom theme
+            [playlist ids="393,392"]
+            <?php echo do_shortcode('[codeworks ids="1,2"]'); ?>
+            function codes($atts) {
+                echo "<pre>";
+                print_r($atts);
+                echo "</pre>";
+                return 'Short code is working';
+            }
+            add_shortcode('codeworks','codes');
+        Playlist
+            [playlist ids="390,391,388"]
+        Audio
+            <figure class="wp-block-audio">
+                <audio controls src="http://wordpress.xyz/wp-content/uploads/2020/11/Ariana-Grande-positions-Lyrics.mp3"></audio>
+            </figure>
     
