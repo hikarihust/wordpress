@@ -20,12 +20,16 @@
     <?php 
         $args = array(
             'callback'          => 'zendvn_theme_comment',
-            'type'              => 'comment'
+            'type'              => 'comment',
+            'max_depth'         => 5,
         );
         wp_list_comments($args); 
     ?>
     </ol>
     <?php 
-        comment_form();
+        $args = array(
+            'cancel_reply_link'    => '<i class="fa fa-times"></i>' . __( 'Cancel comment reply' )
+        );
+        comment_form($args);
     ?>
 </div>

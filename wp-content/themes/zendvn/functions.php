@@ -58,11 +58,18 @@ function zendvn_theme_comment($comment, $args, $depth) {
 				</header>
 				<!-- .comment-meta -->
 				<div class="comment-content entry clr">
-					<p><?php comment_text(); ?></p>
+					<?php comment_text(); ?>
 				</div>
 				<!-- .comment-content -->
 				<div class="reply comment-reply-link">
-					<?php comment_reply_link(); ?>
+					<?php 
+						$args = array(
+							'reply_text'    => __( 'Reply to this message' ),
+							'depth'         => $depth,
+							'max_depth'     => $args['max_depth'] 
+						);
+						comment_reply_link($args); 
+					?>
 				</div>
 				<!-- .reply -->
 			</div>
@@ -309,6 +316,10 @@ function zendvn_theme_register_js(){
 	
 	wp_register_script('zendvn_theme_global', $jsUrl . '/global.js',array('jquery'),'1.0',true);
 	wp_enqueue_script('zendvn_theme_global');
+
+	if(is_singular() && comments_open()) {
+		wp_enqueue_script('comment-reply');	
+	} 
 }
 
 add_action('wp_footer', 'zendvn_theme_script_code');
