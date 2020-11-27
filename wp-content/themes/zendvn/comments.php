@@ -20,12 +20,21 @@
     <?php 
         $args = array(
             'callback'          => 'zendvn_theme_comment',
-            'type'              => 'comment',
             'max_depth'         => 5,
         );
         wp_list_comments($args); 
     ?>
     </ol>
+    <?php 
+        if(get_comment_pages_count() > 1 && get_option('page_comments') == 1) {
+            paginate_comments_links( array(
+                'prev_text'  => __( '&laquo; Previous Comments' ),
+                'next_text' => __( 'Next Comments &raquo;' )
+            ) );
+        }
+    ?>
+
+    <?php //} ?>
     <?php 
         $args = array(
             'cancel_reply_link'    => '<i class="fa fa-times"></i>' . __( 'Cancel comment reply' )

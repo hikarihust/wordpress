@@ -2183,4 +2183,9 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
     Comments 2
     Comments 3
         comment-reply.js() in wp-includes directory
+    Comments 4
+        Setting -> Discussion: Default post settings
+            Allow link notifications from other blogs (pingbacks and trackbacks) on new posts
+                -> Bỏ
+            Break comments into pages with ~ -> setting comment paging
     

@@ -35,6 +35,17 @@ function zendvn_theme_comment($comment, $args, $depth) {
 	global $post;
 	$author_id = $post->post_author;
 	switch($comment->comment_type) {
+		case 'pingback':
+		case 'trackback':
+?>
+		<li id="li-comment-<?php comment_ID(); ?>" <?php comment_class('clr'); ?>>
+			<div class="pingback-entry">
+				<span class="pingback-heading"><?php _e( 'Pingback:' ); ?></span>
+				<?php comment_author_link(); ?>
+			</div>
+		</li>
+<?php
+			break;
 		case 'comment':
 ?>
 	<li id="li-comment-<?php comment_ID(); ?>">
@@ -77,7 +88,7 @@ function zendvn_theme_comment($comment, $args, $depth) {
 		</article>
 	</li>
 <?php
-		break;
+			break;
 	}
 }
 
