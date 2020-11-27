@@ -40,6 +40,11 @@
             $content = $zendvnSupport->replace_video_embed($content);
         }
 
+        if($format == 'gallery') {
+            $firstGallery = $zendvnSupport->get_first_gallery_shortcode($content);
+            $content      = $zendvnSupport->remove_first_gallery($firstGallery, $content);
+        }
+
         echo $content;
     ?>   
     <div class="ad-spot post-bottom-ad clr">

@@ -6,6 +6,15 @@ $postObj = $wp_query->post;
 $format = get_post_format($postObj->ID);
 ?>
 
+<?php if($format === 'gallery'): ?>
+<?php 
+	$firstGallery = $zendvnSupport->get_first_gallery_shortcode($postObj->post_content);
+?>
+<div class="single-post-media clr">
+	<?php echo do_shortcode($firstGallery); ?>
+</div>
+<?php endif; ?>
+
 <?php if($format === 'video'): ?>
 <?php 
 	$firstVideo = $zendvnSupport->get_first_video($postObj->post_content);

@@ -7,17 +7,54 @@ class Zendvn_Theme_Support {
 	}
 
 	/*===================================================================================== 
+	* GALLERY
+	* XÓA GALLERY  ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	  public function remove_first_gallery($gallery, $content = '') {
+		if($gallery && $content) {
+			$gallery = str_replace('[', '\[', $gallery);
+			$gallery = str_replace(']', '\]', $gallery);
+			$pattern = '#' . $gallery .'#im';
+	
+			$content = preg_replace($pattern, '', $content, 1);
+		}
+
+		return $content;
+	}
+
+	/*===================================================================================== 
+	* GALLERY SHORTCODE
+	* LAY GALLERY SHORTCODE ĐẦU TIÊN TRONG BÀI VIẾT
+	  ===================================================================================== */
+	function get_first_gallery_shortcode($postContent = '') {
+		$gallery = '';
+		if($postContent) {
+			$pattern = '#\[gallery.*ids.*\]#im';
+			if(preg_match_all($pattern, $postContent,$matches)) {
+				$galleryArr = $matches[0];
+
+				if(count($galleryArr) > 0) {
+					$gallery = $galleryArr[0];
+				}
+			}
+		}
+
+		return $gallery;
+	}
+
+	/*===================================================================================== 
 	* VIDEO
 	* XÓA VIDEO OR YOUTUBE ĐẦU TIÊN TRONG BÀI VIẾT
 	  ===================================================================================== */
-	  public function remove_first_video($video, $content) {
-		if(preg_match_all('#\[#im', $video)) {
-			$pattern = '#\[http.*www.youtube.com\S+\]#im';
-		} else {
+	  public function remove_first_video($video, $content = '') {
+		if($video && $content) {
+			$video = str_replace('[', '\[', $video);
+			$video = str_replace(']', '\]', $video);
 			$pattern = '#' . $video . '#';
+	
+			$content = preg_replace($pattern, '', $content, 1);
 		}
 
-		$content = preg_replace($pattern, '', $content, 1);
 		return $content;
 	}
 

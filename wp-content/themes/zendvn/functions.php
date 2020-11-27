@@ -32,6 +32,43 @@ require_once ZENDVN_THEME_CONTROL_DIR . '/category_multi_selectbox.php';
 */
 
 /*============================================================================
+ * 8. GALLERY - 
+============================================================================*/
+
+add_action('after_setup_theme', 'zendvn_theme_gallery_shortcode');
+
+function zendvn_theme_gallery_shortcode() {
+	remove_shortcode('gallery');
+
+	add_shortcode('gallery', 'zendvn_theme_sc_gallery');
+}
+
+function zendvn_theme_sc_gallery($attr, $content = null) {
+	static $instance = 0;
+	$instance++;
+	$selector = 'gallery-' . $instance;
+	$imgIDs   = explode(',', $attr['ids']);
+	$out = '<div id="' . $selector . '" class="post-gallery owl-carousel wpex-gallery-lightbox owl-loaded owl-drag">';
+	foreach($imgIDs as $val) {
+		$imgUrl = wp_get_attachment_url($val); 
+		$out .=	'<div class="owl-item">
+			<div data-dot="<img src=\'' . $imgUrl . '\' alt=\'\'>">
+				<figure>
+					<a title="" href="' . $imgUrl . '">
+						<img width="620" height="350" alt="" src="' . $imgUrl . '">
+						<span class="overlay"></span>
+					</a>
+				</figure>
+			</div>
+		</div>';
+	}
+
+	$out .= '</div>';
+
+	return $out;
+}
+
+/*============================================================================
  * 7. MENU - CHINH SUA GIA TRI CUA THUOC TINH CLASS TRONG THE <li>
 ============================================================================*/
 add_filter('nav_menu_css_class', 'zendvn_theme_nav_css',10,4);

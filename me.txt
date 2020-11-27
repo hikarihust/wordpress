@@ -2168,4 +2168,6 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
                 https://www.youtube.com/watch?v=JGwWNGJdvx8
             </div></figure>
             <iframe src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0" allowfullscreen></iframe>
+    Gallery format
+        [gallery ids="454,453,452,451,450,449,448,447"]
     
