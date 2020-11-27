@@ -16,14 +16,15 @@
     ?>
 </div>
 <div class="comments-inner clr">
+    <ol class="commentlist">
     <?php 
         $args = array(
             'callback'          => 'zendvn_theme_comment',
             'type'              => 'comment'
         );
-
         wp_list_comments($args); 
     ?>
+    </ol>
     <?php 
         comment_form();
     ?>

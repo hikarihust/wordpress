@@ -32,7 +32,46 @@ require_once ZENDVN_THEME_CONTROL_DIR . '/category_multi_selectbox.php';
 */
 
 function zendvn_theme_comment($comment, $args, $depth) {
-	
+	global $post;
+	$author_id = $post->post_author;
+	switch($comment->comment_type) {
+		case 'comment':
+?>
+	<li id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" <?php comment_class('clr'); ?>>
+			<div class="comment-author vcard">
+				<?php echo get_avatar($comment, 60); ?>
+			</div>
+			<!-- .comment-author -->
+			<div class="comment-details clr ">
+				<header class="comment-meta">
+					<cite class="fn"> 
+						<?php echo get_comment_author_link(); ?>
+						<?php if($comment->user_id == $author_id): ?>
+							<span class="author-badge">Author</span>
+						<?php endif; ?>
+					</cite> 
+					<span class="comment-date">
+						<a href="#"><time datetime="2014-03-01T02:08:22+00:00"><?php comment_date(); ?></time></a> at <?php comment_time(); ?>
+					</span>
+					<!-- .comment-date -->
+				</header>
+				<!-- .comment-meta -->
+				<div class="comment-content entry clr">
+					<p><?php comment_text(); ?></p>
+				</div>
+				<!-- .comment-content -->
+				<div class="reply comment-reply-link">
+					<?php comment_reply_link(); ?>
+				</div>
+				<!-- .reply -->
+			</div>
+			<!-- .comment-details -->
+		</article>
+	</li>
+<?php
+		break;
+	}
 }
 
 /*============================================================================

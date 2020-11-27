@@ -2180,4 +2180,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Displays a list of comments.
         comment_form( array $args = array(), int|WP_Post $post_id = null )
             Outputs a complete commenting form for use within a template.
+    Comments 2
     
