@@ -108,4 +108,7 @@ global $zendvnSupport;
             ?>
         </div>
     </div>
+    <div class="comments-area clr" id="comments">
+        <?php comments_template('/comments.php', true); ?>
+    </div>
 <?php endwhile; ?>

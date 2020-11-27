@@ -31,6 +31,10 @@ require_once ZENDVN_THEME_CONTROL_DIR . '/category_listbox.php';
 require_once ZENDVN_THEME_CONTROL_DIR . '/category_multi_selectbox.php';
 */
 
+function zendvn_theme_comment($comment, $args, $depth) {
+	
+}
+
 /*============================================================================
  * 8. GALLERY - 
 ============================================================================*/

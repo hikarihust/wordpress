@@ -2171,4 +2171,13 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
     Gallery format
         [gallery ids="454,453,452,451,450,449,448,447"]
     Author info - Next - Prev
+    Comments 1
+        comments_open( int|WP_Post $post_id = null )
+            Determines whether the current post is open for comments.
+        get_comments_number( int|WP_Post $post_id )
+            Retrieves the amount of comments a post has.
+        wp_list_comments( string|array $args = array(), WP_Comment[] $comments = null )
+            Displays a list of comments.
+        comment_form( array $args = array(), int|WP_Post $post_id = null )
+            Outputs a complete commenting form for use within a template.
     

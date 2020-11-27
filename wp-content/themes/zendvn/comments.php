@@ -1,0 +1,30 @@
+<?php 
+    if(post_password_required()) return;
+
+    if( !comments_open() && get_comment_pages_count() == 0 ) return;
+?>
+<?php 
+    $comments_number = get_comments_number();
+?>
+<div class="comments-title">
+    <?php 
+        if($comments_number == 1) {
+            __('There is 1 comment for this article');
+        } elseif($comments_number > 1) {
+            sprintf(__('There are %s comments for this article'), $comments_number);
+        }
+    ?>
+</div>
+<div class="comments-inner clr">
+    <?php 
+        $args = array(
+            'callback'          => 'zendvn_theme_comment',
+            'type'              => 'comment'
+        );
+
+        wp_list_comments($args); 
+    ?>
+    <?php 
+        comment_form();
+    ?>
+</div>
