@@ -103,6 +103,7 @@ function zendvn_theme_sc_homepage($attr, $content = null) {
 	$cats   = explode(',', $attr['cats']);
 	$number = $attr['number'];
 	$i      = 1;
+	global $zendvnSupport;
 
 	if(count($cats) > 0) {
 		foreach($cats as $cat) {
@@ -130,28 +131,36 @@ function zendvn_theme_sc_homepage($attr, $content = null) {
 				while($wpQuery->have_posts()) {
 					$wpQuery->the_post();
 					if( $num == 1 ) {
+						$width = 620;
+						$height = 350;
+						$feature_img = wp_get_attachment_url(get_post_thumbnail_id($wpQuery->post->ID));
+						if($feature_img == false){
+							$imgUrl = $zendvnSupport->get_img_url($wpQuery->post->post_content); 
+						}else{
+							$imgUrl = $feature_img;
+						}
+						if(!empty($imgUrl)){
+							$imgUrl = $zendvnSupport->get_new_img_url($imgUrl, $width, $height);	
+						}
 						$out   .=   '<li class="home-cat-entry-post-first clr">
 										<div class="home-cat-entry-post-first-media clr">
-											<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout">
-												<img src=" http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="" width="620" height="350" />
+											<a href="' . get_permalink() . '" title="' . get_the_title() . '">
+												<img src="' . $imgUrl . '" alt="" width="620" height="350" />
 											</a>
-											<div class="entry-cat-tag cat-26-bg">
-												<a href="#" title="Exercise">Exercise</a>
+											<div class="entry-cat-tag cat-' . $cat . '-bg">
+												<a href="' . get_category_link($cat) . '" title="' . get_cat_name($cat) . '">' . get_cat_name($cat) . '</a>
 											</div>
-											<!-- .entry-cat-tag -->
 										</div>
 										<h3 class="home-cat-entry-post-first-title">
-											<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout">Don&#8217;t Forget To Stretch After Your Workout </a>
+											<a href="' . get_permalink() . '" 
+												title="' . get_the_title() . '">' . mb_substr(get_the_title(), 0, 40) . '...</a>
 										</h3>
-										<p>Etiam ac eros egestas, facilisis ex id, pharetra nulla.
-											Sed vel diam ut nibh viverra semper. Quisque imperdiet
-											imperdiet quam. Vestibulum iaculis ligula neque,
-											vitae&hellip;</p>
+										<p>' . mb_substr(get_the_excerpt(), 0, 120) . '...</p>
 									</li>';
 					}else {
 						$out .= '<li class="home-cat-entry-post-other clr">
 									<a href="' . get_permalink() . '" 
-										title=" '. get_the_title() .' ">' . mb_substr(get_the_title(), 0, 40) . '...' . '</a>
+										title=" '. get_the_title() .' ">' . mb_substr(get_the_title(), 0, 40) . '...</a>
 								</li>';
 					}
 					$num++;

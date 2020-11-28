@@ -2221,4 +2221,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Retrieves category link URL.
         get_cat_name( int $cat_id )
             Retrieves the name of a category from its ID.
+    Homepage 3
     
