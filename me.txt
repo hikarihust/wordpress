@@ -2203,4 +2203,10 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             Number of posts user has written.
         get_the_author_meta( string $field = '', int|false $user_id = false )
             Retrieves the requested data of the author of the current post.
+    Page 404 - Author page
+        Dashboard -> Settings -> Permalink
+            -> Post name: http://wordpress.xyz/sample-post/
+        Author ID in author.php
+            https://stackoverflow.com/questions/20742027/how-to-echo-wordpress-author-id-in-author-php
+            get_the_author_meta("ID");
     
