@@ -2196,4 +2196,11 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
         Page Templates
             https://developer.wordpress.org/themes/template-files-section/page-template-files/
     Page 2
+    Page 3
+        get_users( array $args = array() )
+            Retrieve list of users matching criteria.
+        count_user_posts( int $userid, array|string $post_type = 'post', bool $public_only = false )
+            Number of posts user has written.
+        get_the_author_meta( string $field = '', int|false $user_id = false )
+            Retrieves the requested data of the author of the current post.
     
