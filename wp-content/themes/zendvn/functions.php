@@ -106,7 +106,6 @@ function zendvn_theme_sc_homepage($attr, $content = null) {
 
 	if(count($cats) > 0) {
 		foreach($cats as $cat) {
-			echo $cat . '</br>';
 			$args = array(
 				'posts_per_page'      => $number,
 				'paged'			      => 1,
@@ -116,11 +115,49 @@ function zendvn_theme_sc_homepage($attr, $content = null) {
 				'cat'				  => $cat
 			);
 			$wpQuery = new WP_Query($args);
-			$out .= '<div class="home-cat-entry clr col-1">
+
+			$col = ($i%2) ? 1 : 2;
+			$col = 'col-' . $col;
+			$i ++;
+			$out .= '<div class="home-cat-entry clr ' . $col . '">
 						<h2 class="heading">
-							<a href="#" title="Heath">Heath</a>
+							<a href="' . get_category_link($cat) . '" title="' . get_cat_name($cat) . '">' . get_cat_name($cat) . '</a>
 						</h2>
-					</div>';
+						<ul>
+					';
+			if($wpQuery->have_posts()) {
+				$num = 1;
+				while($wpQuery->have_posts()) {
+					$wpQuery->the_post();
+					if( $num == 1 ) {
+						$out   .=   '<li class="home-cat-entry-post-first clr">
+										<div class="home-cat-entry-post-first-media clr">
+											<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout">
+												<img src=" http://wordpress.xyz/wp-content/themes/zendvn/files/uploads/2014/09/shutterstock_73219318-620x350.jpg" alt="" width="620" height="350" />
+											</a>
+											<div class="entry-cat-tag cat-26-bg">
+												<a href="#" title="Exercise">Exercise</a>
+											</div>
+											<!-- .entry-cat-tag -->
+										</div>
+										<h3 class="home-cat-entry-post-first-title">
+											<a href="#" title="Don&#8217;t Forget To Stretch After Your Workout">Don&#8217;t Forget To Stretch After Your Workout </a>
+										</h3>
+										<p>Etiam ac eros egestas, facilisis ex id, pharetra nulla.
+											Sed vel diam ut nibh viverra semper. Quisque imperdiet
+											imperdiet quam. Vestibulum iaculis ligula neque,
+											vitae&hellip;</p>
+									</li>';
+					}else {
+						$out .= '<li class="home-cat-entry-post-other clr">
+									<a href="' . get_permalink() . '" 
+										title=" '. get_the_title() .' ">' . mb_substr(get_the_title(), 0, 40) . '...' . '</a>
+								</li>';
+					}
+					$num++;
+				}
+			}
+			$out .= '</ul></div>';
 		}
 	}
 

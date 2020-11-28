@@ -2216,4 +2216,9 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
         Appearance -> Customize -> Homepage Settings -> A static page 
             Homepage Select: Homepage
             the_content() -> [zendvn_homepage cats=’2,14,1′ number=’5′]
-     
+    Homepage 2
+        get_category_link( int|object $category )
+            Retrieves category link URL.
+        get_cat_name( int $cat_id )
+            Retrieves the name of a category from its ID.
+    
