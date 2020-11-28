@@ -93,7 +93,42 @@ function zendvn_theme_comment($comment, $args, $depth) {
 }
 
 /*============================================================================
- * 8. GALLERY - 
+ * 9. ZENDVN_HOMEPAGE SHORTCODE
+============================================================================*/
+
+add_shortcode('zendvn_homepage', 'zendvn_theme_sc_homepage');
+
+function zendvn_theme_sc_homepage($attr, $content = null) {
+	$out    = '';
+	$cats   = explode(',', $attr['cats']);
+	$number = $attr['number'];
+	$i      = 1;
+
+	if(count($cats) > 0) {
+		foreach($cats as $cat) {
+			echo $cat . '</br>';
+			$args = array(
+				'posts_per_page'      => $number,
+				'paged'			      => 1,
+				'post_type'      	  => 'post',
+				'ignore_sticky_posts' => true,
+				// 'category__in'     	  => $cat
+				'cat'				  => $cat
+			);
+			$wpQuery = new WP_Query($args);
+			$out .= '<div class="home-cat-entry clr col-1">
+						<h2 class="heading">
+							<a href="#" title="Heath">Heath</a>
+						</h2>
+					</div>';
+		}
+	}
+
+	return $out;
+}
+
+/*============================================================================
+ * 8. GALLERY
 ============================================================================*/
 
 add_action('after_setup_theme', 'zendvn_theme_gallery_shortcode');
