@@ -2195,4 +2195,5 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
             https://theme.co/forum/t/display-page-template-option-for-custom-post-cpt-ui/27237/4
         Page Templates
             https://developer.wordpress.org/themes/template-files-section/page-template-files/
+    Page 2
     
