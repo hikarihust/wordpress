@@ -2240,4 +2240,5 @@ WP_List_Table (show - add - edit - del - filter - search ...)
             Enqueue scripts for all admin pages.
         WP_List_Table::row_actions( string[] $actions, bool $always_visible = false )
             Generates the required HTML for a list of row action links.
+    List Articles 4
     

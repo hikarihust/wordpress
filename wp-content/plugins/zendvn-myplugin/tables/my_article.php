@@ -14,17 +14,33 @@ class Zendvn_Mp_Table_MyArticle{
     }
     
 	public function article_menu(){
+
+        $func = $this->getFunc();
 		
 		add_menu_page('Articles', 'Articles', 'manage_options', 
-                      $this->_menuSlug,array($this, 'display'),'',3);
+                      $this->_menuSlug,array($this, $func),'',3);
         add_submenu_page($this->_menuSlug, 'Add New', 'Add New', 'manage_options', 
                       $this->_menuSlug . '-add',array($this,'display_add'));	       
     }	
+
+	private function getFunc(){
+		$action = @$_REQUEST['action'];
+		
+		switch ($action){
+			case 'edit'			: return 'display_edit';
+			
+			default				: return 'display';
+		}
+	}
     
 	public function display(){
         require_once ZENDVN_MP_TABLES_DIR . '/tbl_article.php';
         require_once ZENDVN_MP_TABLES_DIR . '/html/article_list.php';
     }
+
+	public function display_edit(){
+		echo '<br/>' . __METHOD__;
+	}
     
     public function display_add() {
         echo '<br/>' . __METHOD__;
