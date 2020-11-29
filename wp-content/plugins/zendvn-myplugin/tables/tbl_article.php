@@ -4,6 +4,10 @@ if(!class_exists('WP_List_Table')){
 }
 
 class Article_Table extends WP_List_Table{
+
+	private $_per_page = 5;
+	
+	private $_sql;
     
 	public function __construct(){
 		parent::__construct(array(
@@ -22,29 +26,44 @@ class Article_Table extends WP_List_Table{
 		
 		$this->_column_headers = array($columns,$hidden,$sortable);
 		$this->items = $this->table_data();
+
+		$total_items 	= $this->total_items();
+		$per_page 		= $this->_per_page;
+		$total_pages 	= ceil($total_items/$per_page);
+
+		$this->set_pagination_args(array(
+			'total_items' 	=> $total_items,
+			'per_page' 		=> $per_page,
+			'total_pages' 	=> $total_pages
+		));
 	}
 
 	private function table_data() {
 		$data = array();
-		$data[] = array(
-			'id' 		=> 1,
-			'title' 	=> 'Hàn Quốc vô địch, Thái Lan trắng tay tại ASIAD 17',
-			'picture' 	=> 'picture001.png',
-			'content' 	=> 'content - Hàn Quốc vô địch, Thái Lan trắng tay tại ASIAD 17',
-			'author_id' => 1,
-			'status' 	=> 0	
-		);
 
-		$data[] = array(
-			'id' 		=> 2,
-			'title' 	=> 'Messi Hàn Quốc dẫn đầu bộ tứ siêu đẳng đối đầu U19 Việt Nam',
-			'picture' 	=> 'picture002.png',
-			'content' 	=> 'content - Messi Hàn Quốc dẫn đầu bộ tứ siêu đẳng đối đầu U19 Việt Nam',
-			'author_id' => 1,
-			'status' 	=> 1	
-		);
+		global $wpdb;
+		$orderby 	= (@$_REQUEST['orderby'] == '')?'id':$_REQUEST['orderby'];
+		$order		= (@$_REQUEST['order'] == '')?'DESC':$_REQUEST['order'];
+		$tblArticle = $wpdb->prefix . 'zendvn_mp_article';
+
+		$sql = 'SELECT * 
+				FROM ' . $tblArticle 
+				. ' ORDER BY ' . $orderby . ' ' . $order;
+
+		$this->_sql  = $sql;
+
+		$paged 		= max(1,@$_REQUEST['paged']);
+		$offset 	= ($paged - 1) * $this->_per_page;
+		$sql .= ' LIMIT ' . $this->_per_page . ' OFFSET ' . $offset;
+
+		$data = $wpdb->get_results($sql,ARRAY_A);
 
 		return $data;
+	}
+
+	private function total_items(){
+		global $wpdb;
+		return $wpdb->query($this->_sql);
 	}
 
 	public function get_columns(){
@@ -66,8 +85,10 @@ class Article_Table extends WP_List_Table{
 	}
 
 	public function get_sortable_columns(){
-
-		return array();
+		return array(
+			'title' => array('title',false),
+			'id'	=> array('id', true)
+		);
 	}
 
 	public function column_default($item, $column_name){
