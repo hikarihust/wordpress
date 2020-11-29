@@ -83,6 +83,37 @@ class Article_Table extends WP_List_Table{
 		return $arr;
 	}
 
+	public function get_bulk_actions(){
+		$actions = array(
+					'delete' => __( 'Delete' ),
+					'active' => __( 'Active' ),
+					'inactive' => __( 'Inactive' )
+				);
+		return $actions;
+	}
+
+	protected function extra_tablenav($which){
+		if($which == 'top'){
+			$htmlObj =  new ZendvnHtml();
+			
+			$filterVal = @$_REQUEST['filter_status'];
+			$options['data'] = array(
+						'0' => 'Status filter',
+						'active' => 'Active',
+						'inactive' => 'Inactive'
+					);
+			
+			$slbFilter = $htmlObj->selectbox('filter_status',$filterVal,array(),$options);
+			
+			$attr = array('id'=>'filter_action','class'=>'button');
+			$btnFilter = $htmlObj->button('filter_action','Filter',$attr);
+			
+			echo '<div class="alignleft actions bulkactions">'
+				 . $slbFilter . $btnFilter
+				 .'</div>';
+		}
+	}
+
 	public function get_hidden_columns(){
 
 		return array('content','author_id');
@@ -102,6 +133,23 @@ class Article_Table extends WP_List_Table{
 
 	public function column_user_nicename($item){
 		return get_the_author_meta('display_name', $item['author_id']);
+	}
+
+	public function column_status($item){
+		$page = @$_REQUEST['page'];
+		if($item['status'] == 1 ){
+			$action = 'inactive';
+			$src = ZENDVN_MP_IMAGES_URL . '/active.png';
+		}else{
+			$action = 'active';
+			$src = ZENDVN_MP_IMAGES_URL . '/inactive.png';
+		}
+		$paged = max(1,@$_REQUEST['paged']);
+		
+		$html = '<img alt="" src="' . $src . '">';
+		$html = '<a href="?page=' . $page . '&paged=' . $paged 
+				.'&action=' . $action . '&article=' . $item['id'] . '">' . $html . '</a>';
+		return $html;
 	}
 
 	public function column_title($item){
