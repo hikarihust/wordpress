@@ -45,10 +45,13 @@ class Article_Table extends WP_List_Table{
 		$orderby 	= (@$_REQUEST['orderby'] == '')?'id':$_REQUEST['orderby'];
 		$order		= (@$_REQUEST['order'] == '')?'DESC':$_REQUEST['order'];
 		$tblArticle = $wpdb->prefix . 'zendvn_mp_article';
+		$tblUser	= $wpdb->prefix . 'users';
 
-		$sql = 'SELECT * 
-				FROM ' . $tblArticle 
-				. ' ORDER BY ' . $orderby . ' ' . $order;
+		$sql = 'SELECT a.*, u.user_nicename
+				FROM ' . $tblArticle . ' AS a
+				INNER JOIN ' . $tblUser . ' AS u 
+				ON a.author_id = u.ID 
+				ORDER BY a.' . $orderby . ' ' .$order;
 
 		$this->_sql  = $sql;
 
@@ -73,6 +76,7 @@ class Article_Table extends WP_List_Table{
 					'picture' 	=> 'Picture',
 					'content' 	=> 'Content',
 					'author_id' => 'Author ID',
+					'user_nicename' => 'Author',
 					'status' 	=> 'Status',
 					'id' 		=> 'ID'
 				);
@@ -94,6 +98,10 @@ class Article_Table extends WP_List_Table{
 	public function column_default($item, $column_name){
 		
 		return $item[$column_name];
+	}
+
+	public function column_user_nicename($item){
+		return get_the_author_meta('display_name', $item['author_id']);
 	}
 
 	public function column_title($item){

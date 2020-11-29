@@ -2246,4 +2246,5 @@ WP_List_Table (show - add - edit - del - filter - search ...)
             Gets a list of sortable columns.
         WP_List_Table::set_pagination_args( array|string $args )
             An internal method that sets all the necessary pagination arguments
+    List Articles 6
     
