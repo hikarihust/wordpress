@@ -49,12 +49,13 @@ class Article_Table extends WP_List_Table{
 
 	public function get_columns(){
 		$arr = 	array(
-					'id' 		=> 'ID',
+					'cb'		=> '<input type="checkbox" />',
 					'title' 	=> 'Title',
 					'picture' 	=> 'Picture',
 					'content' 	=> 'Content',
 					'author_id' => 'Author ID',
-					'status' 	=> 'Status'	
+					'status' 	=> 'Status',
+					'id' 		=> 'ID'
 				);
 		return $arr;
 	}
@@ -72,5 +73,24 @@ class Article_Table extends WP_List_Table{
 	public function column_default($item, $column_name){
 		
 		return $item[$column_name];
+	}
+
+	public function column_title($item){
+		$page = $_REQUEST['page'];
+		$actions = array(
+					'edit' 		=> '<a href="?page=' . $page . '&action=edit&article=' . $item['id'] . '">Edit</a>',
+					'delete' 	=> '<a href="?page=' . $page . '&action=delete&article=' . $item['id'] . '">Delete</a>',
+					'view' 		=> '<a href="#">View</a>'
+				);
+		
+		$html = '<strong><a href="?page=' . $page . '&action=edit&article=' . $item['id'] . '">' . $item['title'] .'</a></strong>' 
+				. $this->row_actions($actions);
+		return $html;
+	}
+
+	public function column_cb($item) {
+		$singular = $this->_args['singular'];
+		$html = '<input id="cb-select-' . $item['id'] . '" type="checkbox" name="' . $singular .'[]" value="' . $item['id'] .'" />';
+		return $html;
 	}
 }

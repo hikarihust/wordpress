@@ -2231,4 +2231,13 @@ WP_List_Table (show - add - edit - del - filter - search ...)
             Developers should use this class to query and filter data, handle sorting, and pagination, and any other 
             data-manipulation required prior to rendering. This method should be called explicitly after instantiating 
             your class, and before rendering.
+    List Articles 3
+        'plural' => 'article',
+        'singular' => 'article',
+            <table class="wp-list-table widefat fixed striped table-view-list article">
+            <tbody id="the-list" data-wp-lists="list:article">
+        do_action( 'admin_enqueue_scripts', string $hook_suffix )
+            Enqueue scripts for all admin pages.
+        WP_List_Table::row_actions( string[] $actions, bool $always_visible = false )
+            Generates the required HTML for a list of row action links.
     

@@ -5,6 +5,12 @@ class Zendvn_Mp_Table_MyArticle{
 	
 	public function __construct(){
         add_action('admin_menu', array($this,'article_menu'));
+    
+		$page = @$_REQUEST['page'];
+		if($page == $this->_menuSlug){
+			add_action('admin_enqueue_scripts', array($this,'add_css_file'));
+		}
+
     }
     
 	public function article_menu(){
@@ -23,4 +29,9 @@ class Zendvn_Mp_Table_MyArticle{
     public function display_add() {
         echo '<br/>' . __METHOD__;
     }
+
+	public function add_css_file(){
+		wp_register_style('zendvn_mp_tbl_article', ZENDVN_MP_CSS_URL . '/tbl_article.css',array(),'1.0');
+		wp_enqueue_style('zendvn_mp_tbl_article');
+	}
 }
