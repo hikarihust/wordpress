@@ -43,7 +43,8 @@ class Zendvn_Mp_Table_MyArticle{
 	}
     
     public function display_add() {
-        echo '<br/>' . __METHOD__;
+		
+		require_once ZENDVN_MP_TABLES_DIR . '/html/article_form.php';
     }
 
 	public function add_css_file(){

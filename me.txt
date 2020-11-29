@@ -2253,4 +2253,9 @@ WP_List_Table (show - add - edit - del - filter - search ...)
         WP_Plugins_List_Table::search_box( string $text, string $input_id )
             Displays the search box.
         WP_Links_List_Table::extra_tablenav( string $which )
+    Add action 1
+        wp_nonce_field( int|string $action = -1, string $name = '_wpnonce', bool $referer = true, bool $echo = true )
+            Retrieve or display nonce hidden field for forms.
+        wp_referer_field( bool $echo = true )
+            Retrieve or display referer hidden field for forms.
     
