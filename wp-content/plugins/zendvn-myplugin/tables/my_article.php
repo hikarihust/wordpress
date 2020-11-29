@@ -16,7 +16,8 @@ class Zendvn_Mp_Table_MyArticle{
     }	
     
 	public function display(){
-		echo '<br/>' . __METHOD__;
+        require_once ZENDVN_MP_TABLES_DIR . '/tbl_article.php';
+        require_once ZENDVN_MP_TABLES_DIR . '/html/article_list.php';
     }
     
     public function display_add() {

@@ -2226,4 +2226,9 @@ Phát triển Theme (P2: Show Post, Page, Pagination...)
 WP_List_Table (show - add - edit - del - filter - search ...)
     WP_List_Table: Đối tuongj WP_List_Table giúp tạo ra phần liệt kê nằm trong phần admin
     List Articles 1
+    List Articles 2
+        prepare_items()
+            Developers should use this class to query and filter data, handle sorting, and pagination, and any other 
+            data-manipulation required prior to rendering. This method should be called explicitly after instantiating 
+            your class, and before rendering.
     
