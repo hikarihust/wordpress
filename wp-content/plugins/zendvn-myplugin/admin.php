@@ -3,10 +3,16 @@ require_once ZENDVN_MP_PLUGIN_DIR . '/includes/support.php';
 
 class ZendvnMpAdmin{	
 	
-	public function __construct(){		
+	public function __construct(){	
 		// $this->ajaxPage();
 		// $this->ajaxPage2();
-		$this->tabsPage();
+		// $this->tabsPage();
+		$this->myArticle();
+	}
+
+	public function myArticle(){
+		require_once ZENDVN_MP_TABLES_DIR . '/my_article.php';
+		new Zendvn_Mp_Table_MyArticle();
 	}
 
 	public function tabsPage(){

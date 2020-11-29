@@ -22,6 +22,7 @@ define('ZENDVN_MP_METABOX_DIR', ZENDVN_MP_PLUGIN_DIR . 'metabox');
 define('ZENDVN_MP_SETTING_DIR', ZENDVN_MP_PLUGIN_DIR . 'settings');
 define('ZENDVN_MP_CP_DIR', ZENDVN_MP_PLUGIN_DIR . '/posts');
 define('ZENDVN_MP_CT_DIR', ZENDVN_MP_PLUGIN_DIR . '/taxonomy');
+define('ZENDVN_MP_TABLES_DIR', ZENDVN_MP_PLUGIN_DIR . '/tables');
 
 if(!is_admin()){
 	require_once ZENDVN_MP_PLUGIN_DIR . '/public.php';
@@ -30,7 +31,10 @@ if(!is_admin()){
 	require_once ZENDVN_MP_SHORTCODE_DIR . '/main.php';
 	new Zendvn_Mp_SC_Main();
 }else{
-	require_once ZENDVN_MP_INCLUDES_DIR . '/html.php';
+	if(!class_exists('ZendvnHtml') && is_admin()){
+		//echo '<br>' . __FILE__;
+		require_once ZENDVN_MP_INCLUDES_DIR . '/html.php';
+	}
 	require_once ZENDVN_MP_PLUGIN_DIR . '/admin.php';
 	new ZendvnMpAdmin();
 
