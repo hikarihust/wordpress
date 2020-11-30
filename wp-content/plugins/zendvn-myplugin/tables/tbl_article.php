@@ -154,9 +154,10 @@ class Article_Table extends WP_List_Table{
 
 	public function column_title($item){
 		$page = $_REQUEST['page'];
+		$security_code = wp_create_nonce('delete');
 		$actions = array(
 					'edit' 		=> '<a href="?page=' . $page . '&action=edit&article=' . $item['id'] . '">Edit</a>',
-					'delete' 	=> '<a href="?page=' . $page . '&action=delete&article=' . $item['id'] . '">Delete</a>',
+					'delete' 	=> '<a href="?page=' . $page . '&action=delete&security_code=' . $security_code . '&article=' . $item['id'] . '">Delete</a>',
 					'view' 		=> '<a href="#">View</a>'
 				);
 		

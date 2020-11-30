@@ -28,6 +28,8 @@ class Zendvn_Mp_Table_MyArticle{
 		
 		switch ($action){
 			case 'edit'			: return 'display_edit';
+
+			case 'delete'		: return 'delete_data';
 			
 			default				: return 'display';
 		}
@@ -80,6 +82,27 @@ class Zendvn_Mp_Table_MyArticle{
 			}	
 		}
 		require_once ZENDVN_MP_TABLES_DIR . '/html/article_form.php';
+	}
+
+	public function delete_data(){
+		global $wpdb;
+		$table = $wpdb->prefix . 'zendvn_mp_article';
+		$article_id = @$_REQUEST['article'];
+		$security_code = @$_REQUEST['security_code'];
+		if(wp_verify_nonce( $security_code, 'delete' )) {
+			if(!is_array($_REQUEST['article'])){
+				$where 			= array('id' => $article_id);
+				$where_format 	= array('%d');
+				$wpdb->delete($table, $where,$where_format);
+			}else{
+				$ids = join(',', $_REQUEST['article']);
+				$sql = 'DELETE FROM ' . $table . ' WHERE id IN ('. $ids . ')';
+				$wpdb->query($sql);
+			}
+			
+			$url = 'admin.php?page=' . $_REQUEST['page'] . '&msg=1';
+			wp_redirect($url);
+		}
 	}
 
 	private function save_data($action = 'add'){
