@@ -2258,4 +2258,7 @@ WP_List_Table (show - add - edit - del - filter - search ...)
             Retrieve or display nonce hidden field for forms.
         wp_referer_field( bool $echo = true )
             Retrieve or display referer hidden field for forms.
+    Add action 2
+        wp_verify_nonce( string $nonce, string|int $action = -1 )
+            Verifies that a correct security nonce was used with time limit.
     
