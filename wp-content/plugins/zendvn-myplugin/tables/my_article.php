@@ -40,9 +40,25 @@ class Zendvn_Mp_Table_MyArticle{
 	}
     
 	public function display(){
+		if(isset($_POST['_wpnonce'])){
+			$url = $this->createUrl();
+			wp_redirect($url);
+		}
         require_once ZENDVN_MP_TABLES_DIR . '/tbl_article.php';
         require_once ZENDVN_MP_TABLES_DIR . '/html/article_list.php';
-    }
+	}
+
+	private function createUrl(){		
+		$paged = max(1,@$_REQUEST['paged']);
+		$url = 'admin.php?page=' . $_REQUEST['page'];
+		
+		if(isset($_POST['filter_status']) && $_POST['filter_status'] !== '0'){
+			$url .= '&filter_status=' . $_POST['filter_status'];
+		}
+		$url .= '&paged='. $paged;
+		
+		return $url;
+	}
 
 	public function display_edit(){	
 		$errors = array();	

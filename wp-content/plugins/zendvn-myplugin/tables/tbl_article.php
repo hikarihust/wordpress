@@ -53,9 +53,18 @@ class Article_Table extends WP_List_Table{
 		$sql = 'SELECT a.*, u.user_nicename
 				FROM ' . $tblArticle . ' AS a
 				INNER JOIN ' . $tblUser . ' AS u 
-				ON a.author_id = u.ID 
-				ORDER BY a.' . $orderby . ' ' .$order;
+				ON a.author_id = u.ID ';
 
+		$filer_status = @$_GET['filter_status'];
+		if(isset($_GET['filter_status']) && $filer_status !== '0'){
+			$status = ($filer_status == 'active')?1:0;
+			$whereArr[] = " (a.status = $status) "; 
+		}
+		if(count($whereArr) > 0){
+			$sql .= " WHERE " . join(" AND ", $whereArr);
+		}
+		
+		$sql .= ' ORDER BY a.' . $orderby . ' ' . $order;
 		$this->_sql  = $sql;
 
 		$paged 		= max(1,@$_REQUEST['paged']);
