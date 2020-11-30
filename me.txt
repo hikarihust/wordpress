@@ -2276,4 +2276,5 @@ WP_List_Table (show - add - edit - del - filter - search ...)
     Status action
     Filter 1
     Filter 2
+    Articles in Frontend 1
     
