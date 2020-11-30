@@ -2261,4 +2261,12 @@ WP_List_Table (show - add - edit - del - filter - search ...)
     Add action 2
         wp_verify_nonce( string $nonce, string|int $action = -1 )
             Verifies that a correct security nonce was used with time limit.
+    Add action 3
+        get_current_user_id()
+            Get the current user’s ID
+        wp_redirect( string $location, int $status = 302, string $x_redirect_by = 'WordPress' )
+            Redirects to another page.
+        Warning: Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\wordpress\wp-content\plugins\hello.php:73) in C:\xampp\htdocs\wordpress\wp-includes\pluggable.php on line 1296
+        Warning: Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\wordpress\wp-content\plugins\hello.php:73) in C:\xampp\htdocs\wordpress\wp-includes\pluggable.php on line 1299
+            ob_start();
     

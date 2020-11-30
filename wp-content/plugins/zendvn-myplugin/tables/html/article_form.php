@@ -17,6 +17,10 @@ if (count(@$errors) > 0) {
     $vStatus     = @$_POST['status'];
 }
 
+if(@$_GET['msg'] == '1'){
+    $msg .='<div class="updated"><p>Cap nhat thanh cong</p></div>';
+}
+
 $title   = $htmlObj->textbox('title', @$vTitle, array('class' => 'regular-text'));
 $picture = $htmlObj->textbox('picture', @$vPicture, array('class' => 'regular-text'));
 $content = $htmlObj->textarea('content', @$vContent, array('rows' => 6, 'cols' => 60));

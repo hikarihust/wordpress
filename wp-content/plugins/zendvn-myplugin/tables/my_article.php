@@ -10,7 +10,7 @@ class Zendvn_Mp_Table_MyArticle{
 		if($page == $this->_menuSlug){
 			add_action('admin_enqueue_scripts', array($this,'add_css_file'));
 		}
-
+		add_action('init',array($this,'do_output_buffer'));
     }
     
 	public function article_menu(){
@@ -54,11 +54,30 @@ class Zendvn_Mp_Table_MyArticle{
 				if(count($errors)>0){
 					require_once ZENDVN_MP_TABLES_DIR . '/html/article_form.php';
 				}else{
+					$this->save_data('add');
+					$url = 'admin.php?page=' . $_REQUEST['page'] . '&msg=1';
+					wp_redirect($url);
 				}
-			}
-			
+			}	
 		}
 		require_once ZENDVN_MP_TABLES_DIR . '/html/article_form.php';
+	}
+
+	private function save_data($action = 'add'){
+		global $wpdb;
+		$table = $wpdb->prefix . 'zendvn_mp_article';
+		$data = array(
+				'title' 	=> $_POST['title'],
+				'picture' 	=> $_POST['picture'],
+				'content' 	=> $_POST['content'],
+				'author_id' => get_current_user_id(),
+				'status' 	=> $_POST['status'],
+			);
+		
+		$format =  array('%s','%s','%s','%d','%d');
+		if($action == 'add'){				
+			$wpdb->insert($table, $data,$format);
+		}
 	}
 	
 	private function validate_form(){
@@ -77,5 +96,9 @@ class Zendvn_Mp_Table_MyArticle{
 	public function add_css_file(){
 		wp_register_style('zendvn_mp_tbl_article', ZENDVN_MP_CSS_URL . '/tbl_article.css',array(),'1.0');
 		wp_enqueue_style('zendvn_mp_tbl_article');
+	}
+
+	public function do_output_buffer(){
+		ob_start();
 	}
 }
