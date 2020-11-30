@@ -30,6 +30,10 @@ class Zendvn_Mp_Table_MyArticle{
 			case 'edit'			: return 'display_edit';
 
 			case 'delete'		: return 'delete_data';
+
+			case 'inactive'		: return 'status';
+
+			case 'active'		: return 'status';
 			
 			default				: return 'display';
 		}
@@ -84,12 +88,36 @@ class Zendvn_Mp_Table_MyArticle{
 		require_once ZENDVN_MP_TABLES_DIR . '/html/article_form.php';
 	}
 
+	public function status() {
+		global $wpdb;
+		$table = $wpdb->prefix . 'zendvn_mp_article';
+		$article_id = @$_REQUEST['article'];
+		
+		$status = ($_REQUEST['action'] == 'inactive')?0:1;
+		
+		if(!is_array($_REQUEST['article'])){
+			$data 			= array('status' => $status);
+			$format 		= array('%d');
+			$where 			= array('id'=> $article_id);
+			$where_format 	= array('%d');
+			$wpdb->update($table, $data, $where,$format,$where_format);		
+		}else{
+			$ids = join(',', $_REQUEST['article']);
+			$sql = 'UPDATE '. $table . ' SET status=' . $status . ' WHERE id IN (' . $ids . ')';
+			$wpdb->query($sql);
+		}
+		
+		$paged = max(1,@$_REQUEST['paged']);	
+		$url = 'admin.php?page=' . $_REQUEST['page'] . '&paged='. $paged .'&msg=status';
+		wp_redirect($url);
+	}
+
 	public function delete_data(){
 		global $wpdb;
 		$table = $wpdb->prefix . 'zendvn_mp_article';
 		$article_id = @$_REQUEST['article'];
-		$security_code = @$_REQUEST['security_code'];
-		if(wp_verify_nonce( $security_code, 'delete' )) {
+		$security_code = @$_REQUEST['my-nonce'];
+		if(wp_verify_nonce( $security_code, 'my-nonce' )) {
 			if(!is_array($_REQUEST['article'])){
 				$where 			= array('id' => $article_id);
 				$where_format 	= array('%d');
@@ -100,7 +128,7 @@ class Zendvn_Mp_Table_MyArticle{
 				$wpdb->query($sql);
 			}
 			
-			$url = 'admin.php?page=' . $_REQUEST['page'] . '&msg=1';
+			$url = 'admin.php?page=' . $_REQUEST['page'] . '&msg=delete';
 			wp_redirect($url);
 		}
 	}

@@ -2273,4 +2273,5 @@ WP_List_Table (show - add - edit - del - filter - search ...)
     Delete action
         wp_verify_nonce( string $nonce, string|int $action = -1 )
             Verifies that a correct security nonce was used with time limit.
+    Status action
     

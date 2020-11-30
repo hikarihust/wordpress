@@ -6,6 +6,8 @@ if(!class_exists('WP_List_Table')){
 class Article_Table extends WP_List_Table{
 
 	private $_per_page = 5;
+
+	private $security_code = '';
 	
 	private $_sql;
     
@@ -16,6 +18,7 @@ class Article_Table extends WP_List_Table{
 			'ajax' => false,
 			'screen' => null,
 		));
+		$this->security_code = wp_create_nonce('my-nonce');
 	}
 
 	public function prepare_items(){
@@ -154,10 +157,9 @@ class Article_Table extends WP_List_Table{
 
 	public function column_title($item){
 		$page = $_REQUEST['page'];
-		$security_code = wp_create_nonce('delete');
 		$actions = array(
 					'edit' 		=> '<a href="?page=' . $page . '&action=edit&article=' . $item['id'] . '">Edit</a>',
-					'delete' 	=> '<a href="?page=' . $page . '&action=delete&security_code=' . $security_code . '&article=' . $item['id'] . '">Delete</a>',
+					'delete' 	=> '<a href="?page=' . $page . '&action=delete&my-nonce=' . $this->security_code . '&article=' . $item['id'] . '">Delete</a>',
 					'view' 		=> '<a href="#">View</a>'
 				);
 		
