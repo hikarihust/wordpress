@@ -55,6 +55,11 @@ class Zendvn_Mp_Table_MyArticle{
 		if(isset($_POST['filter_status']) && $_POST['filter_status'] !== '0'){
 			$url .= '&filter_status=' . $_POST['filter_status'];
 		}
+
+		if(isset($_POST['s']) && strlen($_POST['s']) > 2){
+			$url .= '&s=' . $_POST['s'];
+		}
+
 		$url .= '&paged='. $paged;
 		
 		return $url;

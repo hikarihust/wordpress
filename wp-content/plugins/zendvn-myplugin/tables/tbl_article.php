@@ -43,6 +43,7 @@ class Article_Table extends WP_List_Table{
 
 	private function table_data() {
 		$data = array();
+		$whereArr = array();
 
 		global $wpdb;
 		$orderby 	= (@$_REQUEST['orderby'] == '')?'id':$_REQUEST['orderby'];
@@ -60,10 +61,16 @@ class Article_Table extends WP_List_Table{
 			$status = ($filer_status == 'active')?1:0;
 			$whereArr[] = " (a.status = $status) "; 
 		}
+
+		if(isset($_GET['s']) && strlen($_GET['s']) > 0){
+			$s = $_GET['s'];
+			$whereArr[] = " (a.title LIKE '%$s%' OR a.content LIKE  '%$s%') ";
+		}
+
 		if(count($whereArr) > 0){
 			$sql .= " WHERE " . join(" AND ", $whereArr);
 		}
-		
+
 		$sql .= ' ORDER BY a.' . $orderby . ' ' . $order;
 		$this->_sql  = $sql;
 

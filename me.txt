@@ -2275,4 +2275,5 @@ WP_List_Table (show - add - edit - del - filter - search ...)
             Verifies that a correct security nonce was used with time limit.
     Status action
     Filter 1
+    Filter 2
     
