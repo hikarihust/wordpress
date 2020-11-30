@@ -18,8 +18,10 @@
                 WHERE a.status = 1
                 ORDER BY a.id DESC
                 ';
+
+        $total_item = $wpdb->query($sql);
         $per_page    = 5;
-        $paged         = max(1, @$_REQUEST['paged']);
+        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
         $offset     = ($paged - 1) * $per_page;
         $sql .= ' LIMIT ' . $per_page . ' OFFSET ' . $offset;
 
@@ -27,7 +29,7 @@
 
         echo '<ul>';
         foreach ($data as $info) {
-            $url = '?article=' . $info['id'];
+            $url = get_the_permalink() . '?article=' . $info['id'];
             $title = '<a href="' . $url . '">' . $info['title'] . '</a>';
             $content = '<p>' . $info['content'] . '</p>';
             echo '<li>'

@@ -2277,4 +2277,5 @@ WP_List_Table (show - add - edit - del - filter - search ...)
     Filter 1
     Filter 2
     Articles in Frontend 1
+    Articles in Frontend 2
     

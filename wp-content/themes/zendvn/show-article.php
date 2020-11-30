@@ -12,7 +12,13 @@ get_header();?>
 						<?php require_once ZENDVN_THEME_INC_DIR . '/top-content.php';?>
 					
                         <?php if(have_posts()) while (have_posts()): the_post();?>
-                        <?php require_once 'pages/article-list.php'; ?>
+                        <?php 
+                            if(!isset($_GET['article'])){
+                                require_once 'pages/article-list.php';
+                            }else{
+                                require_once 'pages/article.php';
+                            }
+                        ?>
                         <?php endwhile;?>
 
                         <!-- .home-cats -->
