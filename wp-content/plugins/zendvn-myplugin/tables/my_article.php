@@ -38,12 +38,31 @@ class Zendvn_Mp_Table_MyArticle{
         require_once ZENDVN_MP_TABLES_DIR . '/html/article_list.php';
     }
 
-	public function display_edit(){
-		echo '<br/>' . __METHOD__;
+	public function display_edit(){	
+		$errors = array();	
+		if(!isset($_POST['title'])){
+			global $wpdb;
+			$article_id = (int)$_GET['article'];
+			$table 	= $wpdb->prefix . 'zendvn_mp_article';
+			$sql 	= 'SELECT * FROM ' . $table . ' WHERE id='. $article_id;
+			$row 	= $wpdb->get_row($sql);
+		}else{
+			$security_code = @$_REQUEST['security_code'];
+			if(wp_verify_nonce($security_code,'edit')){
+				$errors = $this->validate_form();
+				if(count($errors)== 0){					
+					$this->save_data('edit');
+					$url = $_REQUEST['_wp_http_referer'] . '&msg=1';
+					wp_redirect($url);
+				}
+			}
+		}
+		require_once ZENDVN_MP_TABLES_DIR . '/html/article_form.php';
 	}
     
     public function display_add() {
 		$security_code = @$_REQUEST['security_code'];
+		$errors = array();	
 		
 		if(wp_verify_nonce($security_code,'add')){
 			if(isset($_POST['title'])){
@@ -77,6 +96,10 @@ class Zendvn_Mp_Table_MyArticle{
 		$format =  array('%s','%s','%s','%d','%d');
 		if($action == 'add'){				
 			$wpdb->insert($table, $data,$format);
+		} else if($action == 'edit'){
+			$where = array('id'=> @$_GET['article']);
+			$where_format = array('%d');
+			$wpdb->update($table, $data, $where,$format,$where_format);
 		}
 	}
 	

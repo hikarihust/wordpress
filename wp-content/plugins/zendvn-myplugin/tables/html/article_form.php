@@ -2,6 +2,17 @@
 $htmlObj = new ZendvnHtml();
 $page = $_REQUEST['page'];
 $action = 'add';
+$lbl = 'Add new an article';
+if(isset($_GET['action'])){
+    $action = $_GET['action'];
+    if ($action == 'edit'){
+        $lbl = 'Edit an article';
+        $vTitle 	= $row->title;
+        $vPicture 	= $row->picture;
+        $vContent 	= $row->content;
+        $vStatus 	= $row->status;
+    }
+}
 
 $msg = '';
 if (count(@$errors) > 0) {
@@ -28,7 +39,7 @@ $options['data'] = array('Inactive', 'Active');
 $status  = $htmlObj->selectbox('status', @$vStatus, array('class' => 'regular-text'), $options);
 ?>
 <div class="wrap">
-    <h1>Add new an article</h1>
+    <h1><?php echo $lbl;?></h1>
     <?php echo $msg; ?>
     <form method="post" action="" novalidate="novalidate" id="<?php echo $page; ?>" enctype="multipart/form-data">
         <input type="hidden" name="action" value="<?php echo $action; ?>">
