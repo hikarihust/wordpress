@@ -2296,4 +2296,23 @@ Users (Role, Capabilites, Limiting Acess, Customizing Roles)
             Getter.
         WP_User::__isset( string $key )
             Magic method for checking the existence of a certain custom field.
+    User - Role - Cap 2
+        WP_User::exists()
+            Determine whether the user exists in the database.
+        WP_User::get( string $key )
+            Retrieve the value of a property or meta key.
+        WP_User::has_prop( string $key )
+            Determine whether a property or meta key is set
+        WP_User::get_role_caps()
+            Retrieves all of the capabilities of the user’s roles, and merges them with individual user capabilities.
+        WP_User::add_role( string $role )
+            Add role to user.
+        WP_User::remove_role( string $role )
+            Remove role from user.
+        WP_User::set_role( string $role )
+            Set the role of the user.
+            This will remove the previous roles of the user and assign the user the new one. You can set the role to an 
+                empty string and it will remove all of the roles from the user.
+        WP_User::add_cap( string $cap, bool $grant = true )
+            Add capability and grant or deny access to capability.
     
