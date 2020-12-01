@@ -2327,8 +2327,19 @@ Users (Role, Capabilites, Limiting Acess, Customizing Roles)
         get_userdata( int $user_id )
             Retrieve user info by user ID.
         WP_Role
+            https://developer.wordpress.org/reference/classes/wp_role/
             Core class used to extend the user roles API.
         get_role( string $role )
             Retrieve role object.
         Có thể bổ sung 1 số quyền hạn cho 1 nhóm nào đó bằng phương thức add_cap(), loại bỏ bằng remove_cap()
+    User - Role - Cap 4
+        Có thể tạo các role(nhóm) mới trong hệ thống WP bằng add_role() và loại bỏ bằng remove_role()
+        WP_Roles
+            https://developer.wordpress.org/reference/classes/wp_roles/
+            Core class used to implement a user roles API.
+            Đối tượng này lấy ra toàn bộ nhóm có trong hệ thống của WP 
+        WP_Roles::get_names()
+            Retrieve list of role names.
+        WP_Roles::get_role( string $role )
+            Retrieve role object by name.
     
