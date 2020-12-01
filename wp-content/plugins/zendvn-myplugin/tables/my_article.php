@@ -40,6 +40,9 @@ class Zendvn_Mp_Table_MyArticle{
 	}
     
 	public function display(){
+
+		require_once ZENDVN_MP_TABLES_DIR . '/tmp/roles.php';
+
 		if(isset($_POST['_wpnonce'])){
 			$url = $this->createUrl();
 			wp_redirect($url);

@@ -2278,4 +2278,22 @@ WP_List_Table (show - add - edit - del - filter - search ...)
     Filter 2
     Articles in Frontend 1
     Articles in Frontend 2
+Users (Role, Capabilites, Limiting Acess, Customizing Roles)
+    https://wordpress.org/support/article/roles-and-capabilities/
+    https://developer.wordpress.org/reference/classes/wp_user/
+    User - Role - Cap 1
+        WP_User
+            Core class used to implement the WP_User object.
+        WP_User::__set( string $key, mixed $value )
+            Magic method for setting custom user fields.
+        wp_update_user( array|object|WP_User $userdata )
+            Update a user in the database.
+        update_user_meta( int $user_id, string $meta_key, mixed $meta_value, mixed $prev_value = '' )
+            Update user meta field based on user ID.
+        WP_User::__set( string $key, mixed $value )
+            Magic method for setting custom user fields.
+        WP_Post::__get( string $key )
+            Getter.
+        WP_User::__isset( string $key )
+            Magic method for checking the existence of a certain custom field.
     
