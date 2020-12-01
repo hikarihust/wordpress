@@ -25,9 +25,13 @@ class Zendvn_Mp_Table_MyArticle{
         $func = $this->getFunc();
 		
 		add_menu_page('Articles', 'Articles', 'zendvn_mp_articles', 
-                      $this->_menuSlug,array($this, $func),'',3);
+					  $this->_menuSlug,array($this, $func),'',3);
+		$addFunc = 	'display_add';
+		if(!$this->_caps->check_cap('zendvn_mp_article_add')){
+			$addFunc = 'no_access';
+		}
         add_submenu_page($this->_menuSlug, 'Add New', 'Add New', 'zendvn_mp_articles', 
-                      $this->_menuSlug . '-add',array($this,'display_add'));	       
+                      $this->_menuSlug . '-add',array($this, $addFunc));	       
     }	
 
 	private function getFunc(){
@@ -46,6 +50,40 @@ class Zendvn_Mp_Table_MyArticle{
 			if($caps->check_cap('zendvn_mp_article_own_edit')){
 				if($this->check_author()){
 					$func = 'display_edit';
+				}else{
+					$func = 'no_access';
+				}
+			}
+		}
+
+		/*===========================================
+		 * XU LY PHAN QUYEN TRONG TRUONG HOP DELETE
+		*===========================================*/
+		if($action == 'delete'){
+			$func = 'delete_data';
+			if(!$caps->check_cap('zendvn_mp_article_delete')){
+				$func = 'no_access';
+			}
+			if($caps->check_cap('zendvn_mp_article_own_delete')){
+				if($this->check_author()){
+					$func = 'delete_data';
+				}else{
+					$func = 'no_access';
+				}
+			}
+		}
+
+		/*===========================================
+		 * XU LY PHAN QUYEN TRONG TRUONG HOP STATUS
+		*===========================================*/
+		if($action == 'inactive' || $action == 'active'){
+			$func = 'status';
+			if(!$caps->check_cap('zendvn_mp_article_status')){
+				$func = 'no_access';
+			}
+			if($caps->check_cap('zendvn_mp_article_own_status')){
+				if($this->check_author()){
+					$func = 'status';
 				}else{
 					$func = 'no_access';
 				}

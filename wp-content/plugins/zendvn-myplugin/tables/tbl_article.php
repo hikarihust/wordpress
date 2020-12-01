@@ -67,6 +67,12 @@ class Article_Table extends WP_List_Table{
 			$whereArr[] = " (a.title LIKE '%$s%' OR a.content LIKE  '%$s%') ";
 		}
 
+		require_once ZENDVN_MP_TABLES_DIR . '/caps.php';
+		$caps = new Zendvn_Mp_Article_Caps();
+		if($caps->check_cap('zendvn_mp_article_own_list')){
+			$whereArr[] = "(a.author_id = " . get_current_user_id() . ") ";
+		}
+
 		if(count($whereArr) > 0){
 			$sql .= " WHERE " . join(" AND ", $whereArr);
 		}

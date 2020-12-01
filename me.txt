@@ -2355,4 +2355,5 @@ Users (Role, Capabilites, Limiting Acess, Customizing Roles)
             zendvn_mp_article_status: Kích hoạt các bài viết
             zendvn_mp_article_own_status: Kích hoạt các bài viết do chính mình tạo ra
     Article Caps 2
+    Article Caps 3
     
