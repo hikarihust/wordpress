@@ -1,7 +1,12 @@
 <?php
+
+require_once ZENDVN_MP_TABLES_DIR . '/caps.php';
+
 class Zendvn_Mp_Table_MyArticle{
 
-    private $_menuSlug = 'zendvn-mp-table-my-article';
+	private $_menuSlug = 'zendvn-mp-table-my-article';
+	
+	private $_caps;
 	
 	public function __construct(){
         add_action('admin_menu', array($this,'article_menu'));
@@ -11,6 +16,8 @@ class Zendvn_Mp_Table_MyArticle{
 			add_action('admin_enqueue_scripts', array($this,'add_css_file'));
 		}
 		add_action('init',array($this,'do_output_buffer'));
+		$this->_caps = new Zendvn_Mp_Article_Caps();
+		add_action('admin_init', array($this->_caps,'add_caps_for_role'));
     }
     
 	public function article_menu(){
@@ -40,8 +47,6 @@ class Zendvn_Mp_Table_MyArticle{
 	}
     
 	public function display(){
-
-		require_once ZENDVN_MP_TABLES_DIR . '/tmp/roles.php';
 
 		if(isset($_POST['_wpnonce'])){
 			$url = $this->createUrl();

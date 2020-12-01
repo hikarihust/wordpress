@@ -2342,4 +2342,16 @@ Users (Role, Capabilites, Limiting Acess, Customizing Roles)
             Retrieve list of role names.
         WP_Roles::get_role( string $role )
             Retrieve role object by name.
+    Article Caps 1
+        Các chức năng: 
+            zendvn_mp_article_list: Liệt kê ra các bài viết -> ai vào trong plugin này cũng có thể thấy được các bài viết 
+                của người khác
+            zendvn_mp_article_own_list: Liệt kê ra các bài viết của người vừa login
+            zendvn_mp_article_add: Thêm bài viết
+            zendvn_mp_article_edit: Edit bài viết
+            zendvn_mp_article_own_edit: Chỉ edit bài viết do người đó tạo ra
+            zendvn_mp_article_delete: Xóa các bài viết
+            zendvn_mp_article_own_delete: Xóa các bài viết do chính mình tạo ra
+            zendvn_mp_article_status: Kích hoạt các bài viết
+            zendvn_mp_article_own_status: Kích hoạt các bài viết do chính mình tạo ra
     
