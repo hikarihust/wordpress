@@ -5,6 +5,16 @@ class Zendvn_Mp_Article_Caps
     {
     }
 
+	public function check_cap($cap =  null){
+        $user = wp_get_current_user();
+		$flag = false;
+		
+		if($cap != null && $user->has_cap($cap)){
+			$flag = true;
+		}
+		return $flag;
+	}
+
     public function add_caps_for_role()
     {
         $admin = array(

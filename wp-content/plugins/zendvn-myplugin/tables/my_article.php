@@ -24,26 +24,56 @@ class Zendvn_Mp_Table_MyArticle{
 
         $func = $this->getFunc();
 		
-		add_menu_page('Articles', 'Articles', 'manage_options', 
+		add_menu_page('Articles', 'Articles', 'zendvn_mp_articles', 
                       $this->_menuSlug,array($this, $func),'',3);
-        add_submenu_page($this->_menuSlug, 'Add New', 'Add New', 'manage_options', 
+        add_submenu_page($this->_menuSlug, 'Add New', 'Add New', 'zendvn_mp_articles', 
                       $this->_menuSlug . '-add',array($this,'display_add'));	       
     }	
 
 	private function getFunc(){
+		$caps = $this->_caps;
 		$action = @$_REQUEST['action'];
-		
-		switch ($action){
-			case 'edit'			: return 'display_edit';
+		$func = 'display';
 
-			case 'delete'		: return 'delete_data';
-
-			case 'inactive'		: return 'status';
-
-			case 'active'		: return 'status';
-			
-			default				: return 'display';
+		/*===========================================
+		 * XU LY PHAN QUYEN TRONG TRUONG HOP EDIT
+		 *===========================================*/
+		if($action == 'edit'){
+			$func = 'display_edit';
+			if(!$caps->check_cap('zendvn_mp_article_edit')){
+				$func = 'no_access';
+			}
+			if($caps->check_cap('zendvn_mp_article_own_edit')){
+				if($this->check_author()){
+					$func = 'display_edit';
+				}else{
+					$func = 'no_access';
+				}
+			}
 		}
+
+		return $func;
+	}
+
+	private function check_author(){
+		global $wpdb;
+		$author = false;
+		$tblArticle = $wpdb->prefix . 'zendvn_mp_article';
+		$articleID 	= @$_REQUEST['article'];
+		$sql = 'SELECT Count(a.id) '
+				. ' FROM ' . $tblArticle . ' AS a'
+				. ' WHERE a.author_id = %d '
+				. ' AND a.id = %d ';
+		$item =  $wpdb->get_var($wpdb->prepare($sql, get_current_user_id(),$articleID));
+		if($item == 1){
+			$author = true;
+		}
+		
+		return $author;
+	}
+
+	public function no_access(){
+		echo '<h3>Ban khong co quyen truy cap vao vung nay</h3>';	
 	}
     
 	public function display(){
@@ -204,4 +234,21 @@ class Zendvn_Mp_Table_MyArticle{
 	public function do_output_buffer(){
 		ob_start();
 	}
+
+	/* 
+	private function getFunc(){
+		$action = @$_REQUEST['action'];
+	
+		switch ($action){
+			case 'edit'			: return 'display_edit';
+				
+			case 'delete'		: return 'delete_data';
+				
+			case 'inactive'		: return 'status';
+				
+			case 'active'		: return 'status';
+				
+			default				: return 'display';
+		} 
+	}*/
 }
