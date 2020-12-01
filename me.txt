@@ -2315,4 +2315,20 @@ Users (Role, Capabilites, Limiting Acess, Customizing Roles)
                 empty string and it will remove all of the roles from the user.
         WP_User::add_cap( string $cap, bool $grant = true )
             Add capability and grant or deny access to capability.
+    User - Role - Cap 3
+        WP_User::remove_cap( string $cap )
+            Remove capability from user.
+        WP_User::has_cap( string $cap, mixed $args )
+            Returns whether the user has the specified capability.
+        get_current_user_id()
+            Get the current user’s ID
+        get_user_by( string $field, int|string $value )
+            Retrieve user info by a given field
+        get_userdata( int $user_id )
+            Retrieve user info by user ID.
+        WP_Role
+            Core class used to extend the user roles API.
+        get_role( string $role )
+            Retrieve role object.
+        Có thể bổ sung 1 số quyền hạn cho 1 nhóm nào đó bằng phương thức add_cap(), loại bỏ bằng remove_cap()
     
