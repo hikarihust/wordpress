@@ -2363,4 +2363,5 @@ HTTP API
             Performs an HTTP request using the GET method and returns its response.
         wp_remote_post( string $url, array $args = array() )
             Performs an HTTP request using the POST method and returns its response.
+    HTTP API 2
     

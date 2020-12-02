@@ -16,8 +16,28 @@ class Zendvn_Mp_Http_Api{
     }
     
     public function display() {
-		$url = get_site_url() . '/http/show_html.php';
-        $response = wp_remote_get($url);
+        $url = get_site_url() . '/http/show_html.php?article=1&status=1'; 
+		// Include an unmodified $wp_version.
+		require ABSPATH . WPINC . '/version.php';
+		$args = array(
+            'method'	  => 'POST',
+            'timeout'     => 5,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'user-agent'  => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
+            'blocking'    => true,
+            'headers'     => array('custom-id'=>'zendvn-123456'),
+            'cookies'     => array(),
+            // 'cookies'     => $_COOKIE,
+            'body'        => array('user'=>'quang','password'=>'123456'),
+            'compress'    => false,
+            'decompress'  => true,
+            'sslverify'   => true, 
+            'stream'      => false,
+            'filename'    => null
+        );
+        // $response = wp_remote_get($url, $args);
+        $response = wp_remote_post($url,$args);
 
 		echo '<pre>';
 		print_r($response);
