@@ -8,6 +8,12 @@ class ZendvnMpAdmin{
 		// $this->ajaxPage2();
 		// $this->tabsPage();
 		$this->myArticle();
+		$this->myHttp();
+	}
+
+	public function myHttp(){
+		require_once ZENDVN_MP_PLUGIN_DIR . '/http/request.php';
+		new Zendvn_Mp_Http_Api();
 	}
 
 	public function myArticle(){

@@ -2356,4 +2356,11 @@ Users (Role, Capabilites, Limiting Acess, Customizing Roles)
             zendvn_mp_article_own_status: Kích hoạt các bài viết do chính mình tạo ra
     Article Caps 2
     Article Caps 3
+HTTP API
+    https://developer.wordpress.org/plugins/http-api/
+    HTTP API 1
+        wp_remote_get( string $url, array $args = array() )
+            Performs an HTTP request using the GET method and returns its response.
+        wp_remote_post( string $url, array $args = array() )
+            Performs an HTTP request using the POST method and returns its response.
     
