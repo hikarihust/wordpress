@@ -2385,4 +2385,5 @@ HTTP API
             Retrieve only the response code from the raw response.
         wp_remote_retrieve_response_message( array|WP_Error $response )
             Retrieve only the response message from the raw response.
+    Ứng dụng 1
     
