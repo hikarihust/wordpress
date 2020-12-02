@@ -46,6 +46,7 @@ if(!is_admin()){
 }
 
 require_once ZENDVN_MP_PLUGIN_DIR . '/rewrite.php';
+$options['file'] = __FILE__;
 new Zendvn_Mp_Rewrite($options);
 
 /*

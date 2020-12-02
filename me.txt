@@ -2413,4 +2413,7 @@ Rewrite API
                 return $qvars;
             }
             add_filter( 'query_vars', 'themeslug_query_vars' );
+    Article rewrite 4
+        register_deactivation_hook( string $file, callable $function )
+            Set the deactivation hook for a plugin.
     
