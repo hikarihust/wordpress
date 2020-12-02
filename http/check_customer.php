@@ -1,10 +1,19 @@
 <?php
-$plugin = array(
-			'version' 	=> '2.0',
-			'price'		=> '4.99',
-			'discount'	=> '0.49',
-			'msg'		=> 'Hien nay plugin da co phien ban %s.
-							Ban co the cap nhat plugin nay voi gia $%s va ban duoc giam them $%s'					
-		);
+$user 		= 'quang';
+$password 	= '123456';
+$customID 	= 'zendvn-123456';
 
-echo json_encode($plugin);
+$msg['error'] = true;
+$msg['msg'] = "Ban dang su dung plugin lau. Va rat co the website cua ban da bi dinh ma doc";
+if(isset($_SERVER['HTTP_CUSTOM_ID']) && $_SERVER['HTTP_CUSTOM_ID'] == $customID){
+	
+	$key = md5($user . '-' . md5($password));	
+	$postKey = md5($_POST['user'] . '-' . $_POST['password']);
+	
+	if($key ==  $postKey){
+		$msg['error'] = false;
+		$msg['msg'] = "Ban hay <a href='#'>nhan vao day</a> de nang cap plugin hien thoi";
+	}
+}
+
+echo json_encode($msg);

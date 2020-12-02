@@ -18,17 +18,16 @@ class Zendvn_Mp_Http_Api{
 	public function check_customer(){
 		$args = array(
             'headers'     => array('custom-id'=>'zendvn-123456'),
-            'body'        => array('user'=>'quang','password'=>'123456'),
+            'body'        => array('user'=>'quang','password'=>md5('123456')),
         );
         $url = get_site_url() . '/http/check_customer.php';
         $response = wp_remote_post($url,$args);
         
         if($response['response']['code'] == 200){
-            $info = json_decode($response['body']);
-            if($this->_version < $info->version){
-                $msg = sprintf($info->msg,$info->version,$info->price,$info->discount);
-                echo '<div class="updated"><p>' . $msg . '</p></div>';
-            }
+			$info = json_decode($response['body']);
+			
+			$css = ($info->error ==  true)? 'error':'updated';				
+			echo '<div class="' . $css . '"><p>' . $info->msg . '</p></div>';
         }
 	}
 
