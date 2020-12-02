@@ -12,8 +12,25 @@ class Zendvn_Mp_Http_Api{
 		add_menu_page("HTTP API", 'HTTP API', 'manage_options', 
 					  $this->_menuSlug, array($this,'display2'),'',3);  // display, display2
 		add_submenu_page($this->_menuSlug, "Get Info", 'Get Info', 'manage_options',
-					  $this->_menuSlug . '-info', array($this,'check_version'),'',3); // json_data, json_data2, check_version
+					  $this->_menuSlug . '-info', array($this,'check_customer'),'',3); // json_data, json_data2, check_version, check_customer
     }
+
+	public function check_customer(){
+		$args = array(
+            'headers'     => array('custom-id'=>'zendvn-123456'),
+            'body'        => array('user'=>'quang','password'=>'123456'),
+        );
+        $url = get_site_url() . '/http/check_customer.php';
+        $response = wp_remote_post($url,$args);
+        
+        if($response['response']['code'] == 200){
+            $info = json_decode($response['body']);
+            if($this->_version < $info->version){
+                $msg = sprintf($info->msg,$info->version,$info->price,$info->discount);
+                echo '<div class="updated"><p>' . $msg . '</p></div>';
+            }
+        }
+	}
 
 	public function check_version(){
 		$args = array(
@@ -21,7 +38,15 @@ class Zendvn_Mp_Http_Api{
 				'body'        => array('user'=>'quang','password'=>'123456'),
 		);
 		$url = get_site_url() . '/http/check_version.php';
-		$response = wp_remote_post($url,$args);
+        $response = wp_remote_post($url,$args);
+        
+		if($response['response']['code'] == 200){
+			$info = json_decode($response['body']);
+			if($this->_version < $info->version){
+				$msg = sprintf($info->msg,$info->version,$info->price,$info->discount);
+				echo '<div class="updated"><p>' . $msg . '</p></div>';
+			}
+		}
 	}
 
 	public function json_data2(){
