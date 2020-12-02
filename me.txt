@@ -2388,4 +2388,8 @@ HTTP API
     Ứng dụng 1
     Ứng dụng 2
     Ứng dụng 3
+Rewrite API
+    Article rewrite 1
+        WP_Rewrite: Core class used to implement a rewrite component API.
+        https://developer.wordpress.org/reference/classes/wp_rewrite/
     

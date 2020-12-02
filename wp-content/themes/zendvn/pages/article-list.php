@@ -26,10 +26,16 @@
         $sql .= ' LIMIT ' . $per_page . ' OFFSET ' . $offset;
 
         $data = $wpdb->get_results($sql, ARRAY_A);
-
+        $pagename = get_query_var('pagename');
         echo '<ul>';
         foreach ($data as $info) {
-            $url = get_the_permalink() . '?article=' . $info['id'];
+			if(!empty($pagename)){
+				$url = $pagename . '/' . $info['slug'];
+			}else{
+				$url = '?page_id='. get_query_var('page_id') . '&article=' . $info['id'];
+            }
+			$url = site_url($url);
+
             $title = '<a href="' . $url . '">' . $info['title'] . '</a>';
             $content = '<p>' . $info['content'] . '</p>';
             echo '<li>'

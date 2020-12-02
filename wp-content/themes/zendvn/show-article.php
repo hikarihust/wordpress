@@ -12,8 +12,9 @@ get_header();?>
 						<?php require_once ZENDVN_THEME_INC_DIR . '/top-content.php';?>
 					
                         <?php if(have_posts()) while (have_posts()): the_post();?>
-                        <?php 
-                            if(!isset($_GET['article'])){
+						<?php 
+							$article = get_query_var('article');
+                            if(empty($article)){
                                 require_once 'pages/article-list.php';
                             }else{
                                 require_once 'pages/article.php';
