@@ -2364,4 +2364,25 @@ HTTP API
         wp_remote_post( string $url, array $args = array() )
             Performs an HTTP request using the POST method and returns its response.
     HTTP API 2
+    HTTP API 3
+        Hacking
+            $url = get_site_url() . '/http/create_file.php'; 
+            'stream'      => true,
+            'filename'    => ZENDVN_MP_PLUGIN_DIR . '/http/abc.php'
+            -> abc.php được tạo trong thư mục http, có thể sử dụng tập tin đó để đọc nội dung config để hiển thị lên
+            or filename cũng có thể là shell 
+        wp_remote_head( string $url, array $args = array() )
+            Performs an HTTP request using the HEAD method and returns its response.
+        wp_remote_request( string $url, array $args = array() )
+            Performs an HTTP request and returns its response.
+        wp_remote_retrieve_body( array|WP_Error $response )
+            Retrieve only the body from the raw response.
+        wp_remote_retrieve_header( array|WP_Error $response, string $header )
+            Retrieve a single header by name from the raw response.
+        wp_remote_retrieve_headers( array|WP_Error $response )
+            Retrieve only the headers from the raw response.
+        wp_remote_retrieve_response_code( array|WP_Error $response )
+            Retrieve only the response code from the raw response.
+        wp_remote_retrieve_response_message( array|WP_Error $response )
+            Retrieve only the response message from the raw response.
     

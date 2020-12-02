@@ -13,6 +13,7 @@
 
 <h1>Hiển thị các bài viết</h1>
 <?php 
+	$data = array();
 	foreach ($data as $item){
 ?>
 	<div class="item">
@@ -27,11 +28,13 @@
 	</div>
 <?php 
 	}
+	if($_SERVER['REQUEST_METHOD'] == 'GET'){
+		echo '<br/>Dang su dung phuong thuc GET';
+	}else{
+		echo '<br/>Dang su dung phuong thuc POST';
+	}
 	echo '<pre>';
-	print_r($_GET);
-	echo '</pre>'; 
-	echo '<pre>';
-	print_r($_POST);
+	print_r($_SERVER);
 	echo '</pre>'; 
 ?>
 </body>

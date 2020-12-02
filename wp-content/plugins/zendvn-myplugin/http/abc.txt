@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="no-store" />
+<title>Show HTML</title>
+<link rel='stylesheet' href='./css/http.css' type='text/css' media='all' />
+</head>
+<body>
+
+<h1>Hiển thị các bài viết</h1>
+	<div class="item">
+		<h2>
+			<a href="#">[37] This is a test</a>
+		</h2>
+		<div>
+			Author: 1 | 
+			Status: 1		</div>
+		<p>This is a content</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[36] Thy use Custom List Table Columns 123</a>
+		</h2>
+		<div>
+			Author: 1 | 
+			Status: 0		</div>
+		<p>Thy use Custom List Table Columns</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[29] I’ve been working on building a web application in WordPress</a>
+		</h2>
+		<div>
+			Author: 2 | 
+			Status: 1		</div>
+		<p>Once the application is done, I hope to provide a significantly more in-depth post on how I built it, but in the mean time I figured I’d cover how I’m handling certain challenges that I’ve faced in development.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[20] Lộ diện đội hình Olympic VN ở buổi tập tại TP HCM</a>
+		</h2>
+		<div>
+			Author: 2 | 
+			Status: 1		</div>
+		<p>Chiều 11/3, HLV Miura cùng các học trò đã có buổi tập nhẹ trên sân Thống Nhất, nhóm 9 cầu thủ trong đó có Công Phượng được ông thầy người Nhật cho tập riêng và giám sát chặt.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[19] HLV Miura tức giận với các học trò vì tập kém</a>
+		</h2>
+		<div>
+			Author: 3 | 
+			Status: 1		</div>
+		<p>HLV người Nhật Bản không hài lòng khi các cầu thủ Olympic Việt Nam thực hiện không tốt những yêu cầu của ông trong buổi tập sáng 12/3 tại sân Thống Nhất (TP HCM).</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[14] HLV Graechen: 'Học trò của tôi đủ sức đá V.League'</a>
+		</h2>
+		<div>
+			Author: 2 | 
+			Status: 1		</div>
+		<p>HLV Guillaume Graechen tự tin nói rằng các học trò của ông luôn biết cách để tránh xa những cám dỗ, đứng vững trên con đường trở thành cầu thủ chuyên nghiệp</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[13] Thầy Giôm đi học để dẫn dắt sao U19 dự V.League 2015</a>
+		</h2>
+		<div>
+			Author: 1 | 
+			Status: 1		</div>
+		<p>HLV Guillaume Greachen sẽ theo học lớp HLV bằng A, để có chứng chỉ đủ điều kiện dẫn dắt đội HAGL với nòng cốt là cầu thủ đang thuộc biên chế đội U19 Việt Nam dự V.League 2015.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[12] Cầu thủ người Gia Rai trở lại thi đấu cho U19 Việt Nam</a>
+		</h2>
+		<div>
+			Author: 3 | 
+			Status: 1		</div>
+		<p>Theo quy định của AFC, các đội tham dự VCK U19 châu Á sẽ được đăng ký thêm 3 cầu thủ so với số lượng đăng ký tại giải U19 Đông Nam Á vừa diễn ra tại Hà Nội.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[11] Bầu Đức tuyển sinh gà nòi tiếp bước đàn anh ở U19 Việt Nam</a>
+		</h2>
+		<div>
+			Author: 2 | 
+			Status: 1		</div>
+		<p>Học viện HAGL Arsenal-JMG của bầu Đức tiếp tục tuyển sinh cầu thủ nhí cho khóa 3 và 4 để tiếp nối các đàn anh Công Phượng, Tuấn Anh, Xuân Trường... đang thi đấu thành công ở U19 VN</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[10] Công Phượng lập cú đúp vào lưới đội hình hai U19 VN</a>
+		</h2>
+		<div>
+			Author: 1 | 
+			Status: 0		</div>
+		<p>Để giảm bớt sự nhàm chán sau hơn 1 tuần tập luyện tại Hàm Rồng, HLV Graechen đã chia đội hình U19 Việt Nam làm đôi để tổ chức một trận thi đấu đối kháng.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[9] Bổ sung HLV ngoại chuyên về thể lực cho U19 Việt Nam</a>
+		</h2>
+		<div>
+			Author: 2 | 
+			Status: 1		</div>
+		<p>Các cầu thủ U19 VN liên tiếp gặp phải những chấn thương trên sân cỏ vì điểm yếu về thể lực. Bầu Đức sẽ tuyển thêm một HLV thể lực người Pháp làm trợ lý cho HLV Graechen.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[8] Tuấn Anh trở lại tập luyện, hoàn tất giáo án nặng</a>
+		</h2>
+		<div>
+			Author: 3 | 
+			Status: 1		</div>
+		<p>Chấn thương đầu gối của Tuấn Anh đã bình phục hoàn toàn, tiền vệ trụ cột trở lại tập luyện cùng các đồng đội U19 Việt Nam từ sáng qua (29/9).</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[7] U19 Australia nhắm vé dự giải U20 thế giới</a>
+		</h2>
+		<div>
+			Author: 5 | 
+			Status: 0		</div>
+		<p>HLV Paul Okon của U19 Australia đã chốt danh sách 23 cầu thủ dự VCK U19 châu Á diễn ra tại Myanmar tháng 10 tới với mục tiêu giành quyền tham dự giải U20 thế giới 2015.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[6]  Lịch thi đấu của U19 Việt Nam tại VCK châu Á 2014</a>
+		</h2>
+		<div>
+			Author: 6 | 
+			Status: 1		</div>
+		<p>Dù có được lịch thi đấu thuận lợi thì thầy trò HLV Graechen vẫn sẽ gặp rất nhiều khó khăn khi nằm ở bảng đấu tử thần cùng với U19 Hàn Quốc, Nhật Bản và Trung Quốc.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[5] Đối thủ của U19 VN chỉ cần 5 ngày chuẩn bị cho giải châu Á</a>
+		</h2>
+		<div>
+			Author: 4 | 
+			Status: 0		</div>
+		<p>Hôm 29/9 vừa qua, tuyển U19 Nhật Bản đã tập trung trở lại để chuẩn bị cho VCK U19 châu Á sẽ khởi tranh trong ít ngày tới tại Myanmar.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[4] ĐT U19 Việt Nam sẽ tạo bất ngờ cho đối thủ</a>
+		</h2>
+		<div>
+			Author: 2 | 
+			Status: 1		</div>
+		<p>Dù nằm ở bảng đấu được coi là “tử thần” tại VCK U19 châu Á 2014, nhưng U19 Việt Nam đã và đang chuẩn bị những món quà bất ngờ dành cho các “đại gia” đến từ Đông Á.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[3] Niềm vui nhân đôi của chàng thủ quân Olympic Việt Nam</a>
+		</h2>
+		<div>
+			Author: 3 | 
+			Status: 1		</div>
+		<p>Thi đấu ấn tượng tại Asian Games 17, được triệu tập vào đội tuyển Việt Nam tham dự chuyến tập huấn Nhật Bản, tiền vệ Ngô Hoàng Thịnh còn nhận thêm tin vui từ gia đình.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[2] Messi Hàn Quốc dẫn đầu bộ tứ siêu đẳng đối đầu U19 Việt Nam</a>
+		</h2>
+		<div>
+			Author: 1 | 
+			Status: 1		</div>
+		<p>Liên đoàn bóng đá Hàn Quốc (KFA) đã công bố đội hình 23 cầu thủ đội U19 chuẩn bị cho giải châu Á sắp tới. Họ tự tin cho rằng đây là đội hình mạnh nhất từ trước đến nay.</p>
+	</div>
+	<div class="item">
+		<h2>
+			<a href="#">[1] Hàn Quốc vô địch, Thái Lan trắng tay tại ASIAD 17</a>
+		</h2>
+		<div>
+			Author: 2 | 
+			Status: 0		</div>
+		<p>Bàn thắng vàng ở phút 120+2 giúp Hàn Quốc giành chiến thắng nghẹt thở 1-0 trước CHDCND Triều Tiên ở trận chung kết. Trong khi đó Iraq đánh bại Thái Lan với cùng tỷ số để đoạt HCĐ.</p>
+	</div>
+<pre>Array
+(
+    [article] => 1
+    [status] => 1
+)
+</pre><pre>Array
+(
+    [user] => quang
+    [password] => 123456
+)
+</pre></body>
+</html>
