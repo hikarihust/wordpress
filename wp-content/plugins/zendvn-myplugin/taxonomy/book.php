@@ -40,6 +40,7 @@ class Zendvn_Mp_CT_BookCategory{
         );
 
         register_taxonomy('book-category', 'zproduct',$args);
+        // flush_rewrite_rules(false);
     }
 		
 }

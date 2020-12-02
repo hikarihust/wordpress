@@ -2416,4 +2416,12 @@ Rewrite API
     Article rewrite 4
         register_deactivation_hook( string $file, callable $function )
             Set the deactivation hook for a plugin.
+    Custom post - Taxonomy
+        Permalink Settings -> Post name	http://wordpress.xyz/sample-post/
+        flush_rewrite_rules(false);
+        add_rewrite_tag( string $tag, string $regex, string $query = '' )
+            Add a new rewrite tag (like %postname%).
+        add_permastruct( string $name, string $struct, array $args = array() )
+            Add permalink structure.
+        $wp_rewrite
     

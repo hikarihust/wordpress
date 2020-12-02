@@ -94,6 +94,7 @@ class Zendvn_Mp_Cp_Product{
             '_edit_link'           => 'post.php?post=%d',
         );
         register_post_type('zproduct',$args);
+        // flush_rewrite_rules(false);
     }
 
     function zproduct_updated_messages ( $messages ) {

@@ -2,13 +2,23 @@
 class Zendvn_Mp_Rewrite{
 	
 	public function __construct($options = array()){
-        add_action('init', array($this,'add_rules'));
+		add_action('init', array($this,'add_rules'));
+		add_action('init', array($this,'add_tags_rule'));
         add_filter('query_vars', array($this,'insert_query_vars'));
 
         register_deactivation_hook($options['file'], array($this,'plugin_deactivation'));
     }
 
 	public function plugin_deactivation(){
+		flush_rewrite_rules(false);
+	}
+
+	public function add_tags_rule(){
+		add_rewrite_tag('%zproduct%', '([^/]+)');
+		add_permastruct('zproduct', 'book-detail/%zproduct%');
+		
+		add_rewrite_tag('%book-category%', '([^/]+)');
+		add_permastruct('book-category', 'chuyen-de/%book-category%');
 		flush_rewrite_rules(false);
 	}
     

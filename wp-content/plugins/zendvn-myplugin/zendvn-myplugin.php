@@ -45,10 +45,6 @@ if(!is_admin()){
 	new Zendvn_Mp_Metabox_Main();
 }
 
-require_once ZENDVN_MP_PLUGIN_DIR . '/rewrite.php';
-$options['file'] = __FILE__;
-new Zendvn_Mp_Rewrite($options);
-
 /*
 require_once ZENDVN_MP_METABOX_DIR . '/taxonomy.php';
 new Zendvn_Mp_Mb_Taxonomy();
@@ -71,3 +67,7 @@ function last_post_widget_init(){
 
 add_action('widgets_init','last_post_widget_init');
 */
+
+require_once ZENDVN_MP_PLUGIN_DIR . '/rewrite.php';
+$options['file'] = __FILE__;
+new Zendvn_Mp_Rewrite($options);
