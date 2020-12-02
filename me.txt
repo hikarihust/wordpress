@@ -2424,4 +2424,7 @@ Rewrite API
         add_permastruct( string $name, string $struct, array $args = array() )
             Add permalink structure.
         $wp_rewrite
+    Category - Tag - Author
+        $wp_rewrite
+        [author_structure] => /author/%author%
     

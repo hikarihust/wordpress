@@ -4,12 +4,20 @@ class Zendvn_Mp_Rewrite{
 	public function __construct($options = array()){
 		add_action('init', array($this,'add_rules'));
 		add_action('init', array($this,'add_tags_rule'));
+		add_action('init', array($this,'change_author_permalinks'));
         add_filter('query_vars', array($this,'insert_query_vars'));
 
         register_deactivation_hook($options['file'], array($this,'plugin_deactivation'));
     }
 
 	public function plugin_deactivation(){
+		flush_rewrite_rules(false);
+	}
+
+	public function change_author_permalinks(){
+		global $wp_rewrite;
+		// author/%author%
+		$wp_rewrite->author_structure = '/tac-gia/%author%';
 		flush_rewrite_rules(false);
 	}
 
