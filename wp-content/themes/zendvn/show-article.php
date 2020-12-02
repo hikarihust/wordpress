@@ -18,7 +18,11 @@ get_header();?>
                                 require_once 'pages/article-list.php';
                             }else{
                                 require_once 'pages/article.php';
-                            }
+							}
+							
+							// echo '<pre>';
+							// print_r($wp_rewrite);
+							// echo '</pre>';
                         ?>
                         <?php endwhile;?>
 

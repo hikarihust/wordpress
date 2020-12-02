@@ -2392,4 +2392,10 @@ Rewrite API
     Article rewrite 1
         WP_Rewrite: Core class used to implement a rewrite component API.
         https://developer.wordpress.org/reference/classes/wp_rewrite/
+    Article rewrite 2
+        get_query_var() thay cho $_GET để lấy các giá trị trên url, get_query_var() phải trong the Loop thì mới hiển thị được 
+        add_rewrite_rule( string $regex, string|array $query, string $after = 'bottom' )
+            Adds a rewrite rule that transforms a URL structure to a set of query vars.
+        flush_rewrite_rules( bool $hard = true )
+            Remove rewrite rules and then recreate rewrite rules.
     
