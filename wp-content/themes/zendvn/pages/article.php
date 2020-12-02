@@ -1,19 +1,23 @@
 <?php 
 		global $wpdb;
-		echo '<br>' . __FILE__;
 		
-		// $tblArticle = $wpdb->prefix . 'zendvn_mp_article';
-		// $tblUser	= $wpdb->prefix . 'users';
+		$tblArticle = $wpdb->prefix . 'zendvn_mp_article';
+		$tblUser	= $wpdb->prefix . 'users';
 		
-		// $article_id = $_GET['article'];
-		// $sql = 'SELECT a.*, u.user_nicename
-		// 		FROM ' . $tblArticle . ' AS a
-		// 		INNER JOIN ' . $tblUser . ' AS u
-		// 		ON a.author_id = u.ID 
-		// 		WHERE a.status = 1 
-		// 		AND a.id = ' . $article_id;
+		$article = get_query_var('article');
+		$sql = 'SELECT a.*, u.user_nicename
+				FROM ' . $tblArticle . ' AS a
+				INNER JOIN ' . $tblUser . ' AS u
+				ON a.author_id = u.ID 
+				WHERE a.status = 1';
+		$pagename = get_query_var('pagename');
+		if(empty($pagename)){
+			$sql .= ' AND a.id = ' . $article;
+		}else{
+			$sql .= ' AND a.slug = \'' . $article .  '\'';
+		}
 		
-		// $data = $wpdb->get_row($sql,ARRAY_A);
+		$data = $wpdb->get_row($sql,ARRAY_A);
 		
 		
 		?>

@@ -19,10 +19,6 @@ get_header();?>
                             }else{
                                 require_once 'pages/article.php';
 							}
-							
-							// echo '<pre>';
-							// print_r($wp_rewrite);
-							// echo '</pre>';
                         ?>
                         <?php endwhile;?>
 

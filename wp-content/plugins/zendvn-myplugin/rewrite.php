@@ -3,6 +3,7 @@ class Zendvn_Mp_Rewrite{
 	
 	public function __construct($options = array()){
         add_action('init', array($this,'add_rules'));
+        add_filter('query_vars', array($this,'insert_query_vars'));
     }
     
 	public function add_rules(){
@@ -16,5 +17,10 @@ class Zendvn_Mp_Rewrite{
         add_rewrite_rule($regex, $redirect,'top');
 		
 		flush_rewrite_rules(false);
+    }
+    
+	public function insert_query_vars($vars){
+		$vars[] = 'article';
+		return $vars;
 	}
 }

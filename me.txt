@@ -2398,4 +2398,19 @@ Rewrite API
             Adds a rewrite rule that transforms a URL structure to a set of query vars.
         flush_rewrite_rules( bool $hard = true )
             Remove rewrite rules and then recreate rewrite rules.
+    Article rewrite 3
+        $wp_query
+        $wp_rewrite
+        get_query_var( string $var, mixed $default = '' )
+            Retrieve variable in the WP_Query class.
+            get_query_var() only retrieves public query variables that are recognized by WP_Query. This means that 
+                if you create your own custom URLs with their own query variables, get_query_var() will not retrieve them 
+                without some further work (see below).
+        $wp: Kiểm tra các tham số của hệ thống WP 
+        Khai tham số mới cho hệ thống WP 
+            function themeslug_query_vars( $qvars ) {
+                $qvars[] = 'custom_query_var';
+                return $qvars;
+            }
+            add_filter( 'query_vars', 'themeslug_query_vars' );
     
