@@ -6,8 +6,6 @@ if(!class_exists('WP_List_Table')){
 class Article_Table extends WP_List_Table{
 
 	private $_per_page = 5;
-
-	private $security_code = '';
 	
 	private $_sql;
     
@@ -18,7 +16,6 @@ class Article_Table extends WP_List_Table{
 			'ajax' => false,
 			'screen' => null,
 		));
-		$this->security_code = wp_create_nonce('my-nonce');
 	}
 
 	public function prepare_items(){

@@ -14,7 +14,6 @@
     <h1>Article List</h1>
     <?php echo $msg; ?>
     <form action="" method="post" name="<?php echo $page;?>" id="<?php echo $page;?>">
-    <?php wp_nonce_field('my-nonce', 'my-nonce', false); ?>
     <?php $tblArticle->search_box('Search Articles', 'article');?>
     <?php $tblArticle->display();?>
     </form>

@@ -44,6 +44,13 @@ class Zendvn_Mp_Table_MyArticle{
 		 *===========================================*/
 		if($action == 'edit'){
 			$func = 'display_edit';
+			$name = 'security_code';
+			$action = 'edit_id_' . $_GET['article'];	
+
+			if(!empty($_POST['security_code']) && !check_admin_referer($action,$name)){
+				return $func = 'no_access';
+			}
+
 			if(!$caps->check_cap('zendvn_mp_article_edit')){
 				$func = 'no_access';
 			}
@@ -61,6 +68,12 @@ class Zendvn_Mp_Table_MyArticle{
 		*===========================================*/
 		if($action == 'delete'){
 			$func = 'delete_data';
+			$name = 'security_code';
+			$action = 'delete_id_' . $_GET['article'];
+			
+			if(!isset($_GET['security_code']) || empty($_GET['security_code']) || !check_admin_referer($action,$name)){
+				return $func = 'no_access';
+			}
 			if(!$caps->check_cap('zendvn_mp_article_delete')){
 				$func = 'no_access';
 			}
@@ -150,9 +163,13 @@ class Zendvn_Mp_Table_MyArticle{
 			$sql 	= 'SELECT * FROM ' . $table . ' WHERE id='. $article_id;
 			$row 	= $wpdb->get_row($sql);
 		}else{
-			$security_code = @$_REQUEST['security_code'];
-			if(wp_verify_nonce($security_code,'edit')){
+			$name   = 'security_code';
+			$action = 'edit_id_' . $_GET['article'];
+			if(!check_admin_referer($action,$name)){
+				return $func = 'no_access';
+			}else{
 				$errors = $this->validate_form();
+				
 				if(count($errors)== 0){					
 					$this->save_data('edit');
 					$url = $_REQUEST['_wp_http_referer'] . '&msg=1';

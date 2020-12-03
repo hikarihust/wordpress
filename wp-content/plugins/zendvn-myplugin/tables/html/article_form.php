@@ -43,8 +43,13 @@ $status  = $htmlObj->selectbox('status', @$vStatus, array('class' => 'regular-te
     <?php echo $msg; ?>
     <form method="post" action="" novalidate="novalidate" id="<?php echo $page; ?>" enctype="multipart/form-data">
         <input type="hidden" name="action" value="<?php echo $action; ?>">
-        <?php wp_nonce_field($action, 'security_code', false); ?>
-        <?php wp_referer_field(); ?>
+		<?php 
+			if($action == 'edit'){
+				$action 	= 'edit_id_' . $_REQUEST['article'];
+			}
+		?>
+        <?php wp_nonce_field($action, 'security_code', true); ?>
+        <?php //wp_referer_field(); ?>
 
         <h3>Information:</h3>
 

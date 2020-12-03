@@ -2445,4 +2445,9 @@ Plugin Security
             Retrieve URL with nonce added to URL query.
         add_query_arg( $args )
             Retrieves a modified URL query string.
+    Nonce 2
+        Delete, change status action
+        Edit -> gắn chuỗi bảo mật vào trong form
+        check_admin_referer( int|string $action = -1, string $query_arg = '_wpnonce' )
+            Ensures intent by verifying that a user was referred from another admin page with the correct security nonce.
     
