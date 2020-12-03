@@ -213,21 +213,18 @@ class Zendvn_Mp_Table_MyArticle{
 		global $wpdb;
 		$table = $wpdb->prefix . 'zendvn_mp_article';
 		$article_id = @$_REQUEST['article'];
-		$security_code = @$_REQUEST['my-nonce'];
-		if(wp_verify_nonce( $security_code, 'my-nonce' )) {
-			if(!is_array($_REQUEST['article'])){
-				$where 			= array('id' => $article_id);
-				$where_format 	= array('%d');
-				$wpdb->delete($table, $where,$where_format);
-			}else{
-				$ids = join(',', $_REQUEST['article']);
-				$sql = 'DELETE FROM ' . $table . ' WHERE id IN ('. $ids . ')';
-				$wpdb->query($sql);
-			}
-			
-			$url = 'admin.php?page=' . $_REQUEST['page'] . '&msg=delete';
-			wp_redirect($url);
+		if(!is_array($_REQUEST['article'])){
+			$where 			= array('id' => $article_id);
+			$where_format 	= array('%d');
+			$wpdb->delete($table, $where,$where_format);
+		}else{
+			$ids = join(',', $_REQUEST['article']);
+			$sql = 'DELETE FROM ' . $table . ' WHERE id IN ('. $ids . ')';
+			$wpdb->query($sql);
 		}
+		
+		$url = 'admin.php?page=' . $_REQUEST['page'] . '&msg=delete';
+		wp_redirect($url);
 	}
 
 	private function save_data($action = 'add'){

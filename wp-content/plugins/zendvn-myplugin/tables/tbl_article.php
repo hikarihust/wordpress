@@ -179,9 +179,18 @@ class Article_Table extends WP_List_Table{
 
 	public function column_title($item){
 		$page = $_REQUEST['page'];
+
+		$name = 'security_code';
+		$lnkDelete = add_query_arg(array(
+						'action'  => 'delete',
+						'article' => $item['id']
+					));
+		$action 	= 'delete_id_' . $item['id'];
+		$lnkDelete = wp_nonce_url($lnkDelete,$action,$name);
+
 		$actions = array(
 					'edit' 		=> '<a href="?page=' . $page . '&action=edit&article=' . $item['id'] . '">Edit</a>',
-					'delete' 	=> '<a href="?page=' . $page . '&action=delete&my-nonce=' . $this->security_code . '&article=' . $item['id'] . '">Delete</a>',
+					'delete' 	=> '<a href="' . $lnkDelete . '">Delete</a>',
 					'view' 		=> '<a href="#">View</a>'
 				);
 		

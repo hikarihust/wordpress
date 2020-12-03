@@ -2437,4 +2437,12 @@ Plugin Security
         wp_rewrite
         wp
         query
+    Nonce 1
+        https://www.shorturl.at/shortener.php
+        http://wordpress.xyz/wp-admin/admin.php?page=zendvn-mp-table-my-article&action=delete&article=14
+        -> shorturl.at/nGKP4
+        wp_nonce_url( string $actionurl, int|string $action = -1, string $name = '_wpnonce' )
+            Retrieve URL with nonce added to URL query.
+        add_query_arg( $args )
+            Retrieves a modified URL query string.
     
