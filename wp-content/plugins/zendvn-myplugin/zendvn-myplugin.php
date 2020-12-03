@@ -71,3 +71,5 @@ add_action('widgets_init','last_post_widget_init');
 require_once ZENDVN_MP_PLUGIN_DIR . '/rewrite.php';
 $options['file'] = __FILE__;
 new Zendvn_Mp_Rewrite($options);
+
+require_once ZENDVN_MP_INCLUDES_DIR . '/debugs.php';

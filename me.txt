@@ -2427,4 +2427,9 @@ Rewrite API
     Category - Tag - Author
         $wp_rewrite
         [author_structure] => /author/%author%
+Plugin Security
+    User & Debug 1
+        Liên quan đến bảo mật: XSS, CSRF, SQL injection, Privilege Escalation, Hole 
+        ?debug=1&obj=wp_query
+        http://wordpress.xyz/?debug=1&obj=wp_query
     
