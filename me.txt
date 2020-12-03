@@ -2432,4 +2432,9 @@ Plugin Security
         Liên quan đến bảo mật: XSS, CSRF, SQL injection, Privilege Escalation, Hole 
         ?debug=1&obj=wp_query
         http://wordpress.xyz/?debug=1&obj=wp_query
+    User & Debug 2
+        wp_query
+        wp_rewrite
+        wp
+        query
     

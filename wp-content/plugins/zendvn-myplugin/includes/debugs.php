@@ -15,6 +15,24 @@ class Zendvn_Mp_Debug{
     }
     
 	public function debug_output(){
-    
+		$obj = $_GET['obj'];
+		
+		$tmp = array();
+		
+		switch ($obj){
+			case 'wp_query': global $wp_query; $tmp = $wp_query; break;
+			
+			case 'wp_rewrite': global $wp_rewrite; $tmp = $wp_rewrite; break;
+			
+			case 'wp': global $wp; $tmp = $wp; break;
+			
+			case 'query': 
+			default:	
+				global $wpdb; $tmp = $wpdb->queries; break;
+		}
+		
+		echo '<pre>';
+		print_r($tmp);
+		echo '</pre>';
 	}
 }
