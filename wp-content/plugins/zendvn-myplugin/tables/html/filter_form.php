@@ -1,5 +1,25 @@
 <?php
 $htmlObj 	= new ZendvnHtml();
+global $wpdb;
+$table = $wpdb->prefix . 'zendvn_mp_article';
+
+//===========================================
+// Database esc_sql // GET -POST
+//==========================================
+$title = esc_sql($_GET['title']);
+$sql = "SELECT *
+        FROM $table
+        WHERE title = '$title'";
+
+/*
+$author_id = intval($_GET['author_id']);
+$sql = "SELECT * 
+        FROM $table 
+        WHERE author_id = $author_id";
+*/
+
+echo '<br>' . $sql;
+echo '<br>' . $wpdb->query($sql);
 
 //===========================================
 // url // POST - GET - DB
@@ -110,9 +130,13 @@ echo  '<br/>absint: ' . absint($val);
 */
 //============================================	
 $lbl        = 'Data filter';
+/*
 $lbl		= '<script>alert("Hello")</script>';
 $vTitle 	= 'Zend"/>Password: <input name="password" value="123456"';
 $vPicture 	= "<script>alert('Hello')</script>";
+*/
+$vTitle 	= '';
+$vPicture 	= "";
 
 $title   = $htmlObj->textbox('title', @$vTitle, array('class' => 'regular-text'));
 $picture = $htmlObj->textbox('picture', @$vPicture, array('class' => 'regular-text'));

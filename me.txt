@@ -2480,4 +2480,15 @@ Plugin Security
             Escape single quotes, htmlspecialchar ” &, and fix line endings.
         esc_url( string $url, string[] $protocols = null, string $_context = 'display' )
             Checks and cleans a URL.
+    Data 1
+        esc_sql( string|array $data )
+            Escapes data for use in a MySQL query.
+        author_id
+            http://wordpress.xyz/wp-admin/admin.php?page=zendvn-mp-table-my-article-filter&author_id=1 
+            http://wordpress.xyz/wp-admin/admin.php?page=zendvn-mp-table-my-article-filter&author_id=1 OR 1=1
+        title
+            http://wordpress.xyz/wp-admin/admin.php?page=zendvn-mp-table-my-article-filter&title=U19 
+            http://wordpress.xyz/wp-admin/admin.php?page=zendvn-mp-table-my-article-filter&title=Y'; UPDATE wp_users SET email='abc@gmail.com' WHERE ID=1;
+            https://info.veracode.com/sql-injecttion-cheat-sheet.html 
+            https://www.veracode.com/security/sql-injection
     
