@@ -31,8 +31,14 @@ class Zendvn_Mp_Table_MyArticle{
 			$addFunc = 'no_access';
 		}
         add_submenu_page($this->_menuSlug, 'Add New', 'Add New', 'zendvn_mp_articles', 
-                      $this->_menuSlug . '-add',array($this, $addFunc));	       
-    }	
+					  $this->_menuSlug . '-add',array($this, $addFunc));	
+		add_submenu_page($this->_menuSlug, 'Validation', 'Validation', 'manage_options',
+					  $this->_menuSlug . '-filter',array($this,'data_filter'));
+	}	
+	
+	public function data_filter(){
+		require_once ZENDVN_MP_TABLES_DIR . '/html/filter_form.php';
+	}
 
 	private function getFunc(){
 		$caps = $this->_caps;

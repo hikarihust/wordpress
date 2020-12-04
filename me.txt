@@ -2450,4 +2450,7 @@ Plugin Security
         Edit -> gắn chuỗi bảo mật vào trong form
         check_admin_referer( int|string $action = -1, string $query_arg = '_wpnonce' )
             Ensures intent by verifying that a user was referred from another admin page with the correct security nonce.
+    Filter 1
+        Data Validate
+        https://codex.wordpress.org/Data_Validation
     
