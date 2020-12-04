@@ -2462,4 +2462,15 @@ Plugin Security
         HTML/XML Fragments
             wp_kses( string $string, array[]|string $allowed_html, string[] $allowed_protocols = array() )
                 Filters text content and strips out disallowed HTML.
+    Filter 3
+        wp_kses_post( string $data )
+            Sanitizes content for allowed HTML tags for post content.
+        wp_kses_allowed_html( string|array $context = '' )
+            Returns an array of allowed HTML tags and attributes for a given context.
+        force_balance_tags( string $text )
+            Balances tags of string using a modified stack.
+        esc_html( string $text )
+            Escaping for HTML blocks.
+        sanitize_text_field( string $str )
+            Sanitizes a string from user input or from the database.
     

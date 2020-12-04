@@ -2,6 +2,38 @@
 $htmlObj 	= new ZendvnHtml();
 
 //===========================================
+// Attribute Nodes // POST - GET - DB
+//==========================================
+$css = '<a href="http://www.zend.vn" title="ZendVN team" data-type="123">regular-text</a>';
+echo '<br/>orgin: ' . $css;
+echo '<br/>filter: ' . esc_attr($css);
+
+//===========================================
+// Text Nodes // POST - GET - DB
+//==========================================
+/*
+$val = '<a href="http://www.zend.vn" title="ZendVN team" data-type="123">Zendvn Team</a>';
+echo '<br/>orgin: ' . $val;
+echo '<br/>filter: ' . esc_html($val);
+
+echo '<br/>orgin: ' . $htmlObj->textbox('title', $val, array('class' => 'regular-text'));
+echo '<br/>filter: ' . $htmlObj->textbox('title', esc_html($val), array('class' => 'regular-text'));
+
+echo '<br/>filter 1:' . $htmlObj->textbox('title',sanitize_text_field($val),array('class'=>'regular-text'));
+*/
+	
+//===========================================
+// HTML/XML // POST - GET - DB
+//==========================================
+$val = '<h3>
+            <a href="http://www.zend.vn" title="ZendVN team" data-type="123">Zendvn Team
+        
+        <div>
+            <strong class="abc">Hi all! We are ZendVN Team. :)
+        </div>';
+// echo force_balance_tags($val);
+
+//===========================================
 // HTML/XML // POST - GET - DB
 //==========================================
 $val = '<h3>
@@ -22,7 +54,15 @@ $allowed_html = array(
     'br' => array(),
 );
 $protocols = array('mailto','http','https');
-echo '<br/>' . wp_kses($val, $allowed_html,$protocols); 
+// echo '<br/>' . wp_kses($val, $allowed_html,$protocols); 
+// echo '<br/>' . wp_kses_post($val);
+
+$allowed_html = wp_kses_allowed_html('post');
+/*
+echo '<pre>';
+print_r($allowed_html);
+echo '</pre>'; 
+*/
 
 //===========================================
 // Integers
