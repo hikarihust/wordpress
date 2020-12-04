@@ -4,6 +4,37 @@ global $wpdb;
 $table = $wpdb->prefix . 'zendvn_mp_article';
 
 //===========================================
+// tag_escape
+//==========================================
+$unsafeTag = "#1 Best! Movies! EVER!!!$@#%#$_.;'";
+$safeTag = tag_escape($unsafeTag);
+echo '$safeTag = ' . $safeTag;
+
+//===========================================
+// sanitize_user
+//==========================================
+/*
+echo '<br/>' . $username = 'khanhpham~!@#$%^&*()_';
+echo '<br/>' . sanitize_user($username,true);
+*/
+
+//===========================================
+// Database Insert // GET -POST - esc_sql - intval
+//==========================================
+/*
+$data = array(
+            'title' => 'This is a test',
+            'slug' => sanitize_title('This is a test'),
+            'picture' => 'abc234.jpg',
+            'content' => 'This is a content',
+            'author_id' => 1,
+            'status' => 1
+        );
+$formats = array('%s','%s','%s','%s','%d','%d');
+$wpdb->insert($table, $data,$formats);
+*/
+
+//===========================================
 // Database Update // GET -POST - esc_sql - intval
 //==========================================
 $values = array(
