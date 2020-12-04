@@ -4,6 +4,37 @@ global $wpdb;
 $table = $wpdb->prefix . 'zendvn_mp_article';
 
 //===========================================
+// Database Update // GET -POST - esc_sql - intval
+//==========================================
+$values = array(
+            'picture'	=> 'abc123456.jpg', //$_POST
+            'status'	=> 1
+        );
+$where = array('id'=>12);
+$formats_values = array('%s','%d');
+$formats_where = array('%d');
+
+$wpdb->update($table,$values,$where, $formats_values,$formats_where);
+
+//===========================================
+// Database prepare // GET -POST
+//==========================================	
+/*	
+$author_id 	= $_GET["author_id"];
+$title 		= $wpdb->esc_like($_GET['title']);
+$title		= '%' . $title . '%';
+$sql  = $wpdb->prepare("SELECT *
+                        FROM $table
+                        WHERE title LIKE %s 
+                        AND author_id = %d", 
+                        $title,
+                        $author_id
+                ); 
+
+echo '<br/>' . $sql;
+echo '<br>' . $wpdb->query($sql);
+*/
+//===========================================
 // Database esc_sql // GET -POST
 //==========================================
 $title = esc_sql($_GET['title']);

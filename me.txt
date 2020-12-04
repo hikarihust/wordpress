@@ -2491,4 +2491,11 @@ Plugin Security
             http://wordpress.xyz/wp-admin/admin.php?page=zendvn-mp-table-my-article-filter&title=Y'; UPDATE wp_users SET email='abc@gmail.com' WHERE ID=1;
             https://info.veracode.com/sql-injecttion-cheat-sheet.html 
             https://www.veracode.com/security/sql-injection
+    Data 2
+        wpdb::esc_like( string $text )
+            First half of escaping for LIKE special characters % and _ before preparing for MySQL.
+        http://wordpress.xyz/wp-admin/admin.php?page=zendvn-mp-table-my-article-filter&title=U19&author_id=1
+        $wpdb->prepare()
+        update( $table, $data, $where, $format = null, $where_format = null );
+            Update a row in the table. Returns false if errors, or the number of rows affected if successful. (wpdb::update)
     
