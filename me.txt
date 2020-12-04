@@ -2473,4 +2473,11 @@ Plugin Security
             Escaping for HTML blocks.
         sanitize_text_field( string $str )
             Sanitizes a string from user input or from the database.
+    Filter 4
+        esc_attr( string $text )
+            Escaping for HTML attributes.
+        esc_js( string $text )
+            Escape single quotes, htmlspecialchar ” &, and fix line endings.
+        esc_url( string $url, string[] $protocols = null, string $_context = 'display' )
+            Checks and cleans a URL.
     

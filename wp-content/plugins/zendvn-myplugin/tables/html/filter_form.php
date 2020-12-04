@@ -2,12 +2,46 @@
 $htmlObj 	= new ZendvnHtml();
 
 //===========================================
+// url // POST - GET - DB
+//==========================================
+/*
+$val = 'http://www.zend.vn/<script>alert(\'XSS\')</script>';
+echo '<br/>orgin: ' . $val;
+echo '<br/>filter:' . esc_url($val);
+*/
+/*
+$val = "javascript:alert('XSS');";
+$url = '<a href="' . $val . '">My URL</a>';
+echo '<br/>orgin: ' . $url;
+echo '<br/>filter:' . '<a href="' . esc_url($val) . '">My URL</a>'; 
+*/
+//===========================================
+// Javascript // POST - GET - DB
+//==========================================
+/*
+$val = 'I love <script>document.write("Wordpress");</script>';
+echo '<br/>' . $val;
+echo '<br/>' . esc_js($val); 
+*/
+    
+//===========================================
 // Attribute Nodes // POST - GET - DB
 //==========================================
+/*
+$js 	= '" onmouseover="alert(\'XSS\');';
+$val 	= '<a href="http://www.zend.vn" title="' . $js .'" data-type="123">regular-text</a>';
+echo '<br/>orgin: ' . $val;
+echo '<br/>filter: ' . '<a href="http://www.zend.vn" title="' . esc_attr($js) .'" data-type="123">regular-text</a>';
+*/
+
+/*
 $css = '<a href="http://www.zend.vn" title="ZendVN team" data-type="123">regular-text</a>';
 echo '<br/>orgin: ' . $css;
 echo '<br/>filter: ' . esc_attr($css);
 
+echo '<br/>orgin: ' . $htmlObj->textbox('title', '', array('class' => $css));
+echo '<br/>filter: ' . $htmlObj->textbox('title', '', array('class' => esc_attr(sanitize_text_field($css))));
+*/
 //===========================================
 // Text Nodes // POST - GET - DB
 //==========================================
