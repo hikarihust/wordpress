@@ -1,5 +1,40 @@
 <?php
 $htmlObj 	= new ZendvnHtml();
+
+//===========================================
+// HTML/XML // POST - GET - DB
+//==========================================
+$val = '<h3>
+<a href="http://www.zend.vn" title="ZendVN team" data-type="123">Zendvn Team</a>
+</h3>
+<div>
+    <strong class="abc">Hi all!</strong>We are ZendVN Team. :)
+</div>';
+
+$allowed_html = array(
+    'a' => array(
+                'href' => true,
+                'title'=> true,
+                'data-type' => null
+            ),
+    'strong' => array(),
+    'em' => array(),
+    'br' => array(),
+);
+$protocols = array('mailto','http','https');
+echo '<br/>' . wp_kses($val, $allowed_html,$protocols); 
+
+//===========================================
+// Integers
+//==========================================
+/*
+$val = 'asdasd123'; //POST - GET - DB
+
+echo  '<br/>orgin: ' . $val;
+echo  '<br/>intval: ' . intval($val);
+echo  '<br/>absint: ' . absint($val);
+*/
+//============================================	
 $lbl        = 'Data filter';
 $lbl		= '<script>alert("Hello")</script>';
 $vTitle 	= 'Zend"/>Password: <input name="password" value="123456"';
